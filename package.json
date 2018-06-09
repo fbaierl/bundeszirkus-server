@@ -1,0 +1,29 @@
+{
+  "name": "bundeszirkus-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "restart": "pm2 startOrRestart ecosystem.config.js",
+    "deploy": "pm2 deploy ecosystem.config.js production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xaraney/bundeszirkus-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xaraney/bundeszirkus-server/issues"
+  },
+  "homepage": "https://github.com/xaraney/bundeszirkus-server#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "xml2js": "^0.4.19",
+    "xmldom": "^0.1.27"
+  },
+  "devDependencies": {
+    "pm2": "^2.10.4"
+  }
+}

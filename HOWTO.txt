@@ -1,0 +1,2 @@
+pm2 deploy ecosystem.config.js production (setup)
+npm run-script deploy
