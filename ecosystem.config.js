@@ -9,7 +9,7 @@ module.exports = {
       host: 'ec2-18-188-186-31.us-east-2.compute.amazonaws.com',
       key: '~/.ssh/bundeszirkus.pem',
       ref: 'origin/master',
-      repo: 'git@github.com/fbaierl/bundeszirkus-server.git',
+      repo: 'git@github.com:fbaierl/bundeszirkus-server.git',
       path: '/home/ubuntu/bundeszirkus-server',
       'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
     }
