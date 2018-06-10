@@ -30,13 +30,11 @@
 
     <script>
 
-      var allComments;
-
       $(document).ready(function () {
         loadData();
       });
 
-      function bindDataTable(data) {
+      function initDataTable(data){
         $('#allCommentsTable').DataTable({
             sScrollX: "100%",
             data: data.data,
@@ -48,29 +46,21 @@
             });
       }
 
+      function initRandomInterruption(data){
+        var randInterruption = data.data[Math.floor(Math.random() * data.data.length)];
+        $('#randInterruptionFullname').html(randInterruption.fullname)
+        $('#randInterruptionParty').html("("+randInterruption.party+")")
+        $('#randInterruptionText').html("„"+randInterruption.text+"“")
+      }
+
       function loadData(){
         $.ajax({
           type: "GET",
           url: "comments",
           dataType: "json",
-
-
           success: function(response) {
-            bindDataTable(response)
-/*             console.log(response.data)
-            dataTable.data(response.data)
-
-
-            response.data.forEach(function(comment){
-             
-             
-            });
- */
-            
-            // get one random interruption
-/*             let randomInterruption  = response[Math.floor(Math.random() * response.length)];
-            console.log(randomInterruption);
-            $('randomInterruptionDiv').html(randomInterruption) */
+            initDataTable(response)
+            initRandomInterruption(response)
           }
         });
       }
@@ -103,10 +93,16 @@
 
 
 
-    <main role="main" class="container">
-
+    <main role="main" >
       <div id="randomInterruptionDiv" class="jumbotron" style="color: white; background-color: #333">
-        
+        <div style="text-align:center">
+          <h3 style="text-align:center; margin-bottom:20px;">Zufälliger Zwischenruf.</h3>
+          <p class="lead" id="randInterruptionText"/>
+          <div class="lead" style="line-height:1">
+            <span id="randInterruptionFullname"></span>
+            <span id="randInterruptionParty"></span>
+          </div>
+        </div>
       </div>
 
       <div class="jumbotron" style="color: white; background-color: #333">
@@ -120,8 +116,8 @@
 
       <!-- Data Table -->
       <div class="jumbotron" >
-        <h2 style="text-align:center;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags.</h2>
-        <table id="allCommentsTable" class="display" style="width:100%">>
+        <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags.</h3>
+        <table id="allCommentsTable" class="display" style="width:100%">
           <thead>
             <tr>
               <th>Name</th>
