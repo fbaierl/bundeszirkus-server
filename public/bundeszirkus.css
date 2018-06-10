@@ -5,3 +5,15 @@
     justify-content: center;
     text-align: center;
   }
+
+.jumbo-light {
+  border-radius: 0rem;
+  margin: 0px;
+}
+
+.jumbo-dark {
+  color: white; 
+  background-color: #343a40;
+  border-radius: 0rem;
+  margin: 0px;
+}

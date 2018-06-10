@@ -71,7 +71,7 @@
   <body>
 
     <!-- nav bar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Bundeszirkus</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -91,10 +91,8 @@
        </div>
     </nav>
 
-
-
     <main role="main" >
-      <div id="randomInterruptionDiv" class="jumbotron" style="color: white; background-color: #333">
+      <div id="randomInterruptionDiv" class="jumbotron jumbo-dark" >
         <div style="text-align:center">
           <h3 style="text-align:center; margin-bottom:20px;">Zufälliger Zwischenruf.</h3>
           <p class="lead" id="randInterruptionText"/>
@@ -105,17 +103,17 @@
         </div>
       </div>
 
-      <div class="jumbotron" style="color: white; background-color: #333">
+      <div class="jumbotron jumbo-light">
         <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
         Rangliste Parteien
       </div>
 
-      <div class="jumbotron" style="color: white; background-color: #333">
+      <div class="jumbotron jumbo-dark">
         Rangliste Politiker
       </div>
 
       <!-- Data Table -->
-      <div class="jumbotron" >
+      <div class="jumbotron jumbo-light" >
         <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags.</h3>
         <table id="allCommentsTable" class="display" style="width:100%">
           <thead>
@@ -129,11 +127,12 @@
       </div>
 
         <!-- FOOTER -->
-      <div class="jumbotron horizontal-center">
+      <div class="jumbotron jumbo-dark horizontal-center">
         <div class="container">
-          <div>Quelle: <a href="https://www.bundestag.de/service/opendata">https://www.bundestag.de/service/opendata</a></div>
+          <div style="line-height:1;">Quelle: <a style="color:white;" href="https://www.bundestag.de/service/opendata">https://www.bundestag.de/service/opendata</a></div>
           <br>
-          <div>Bundeszirkus ist hergestellt von Florian Baierl</div>
+          <div>Bundeszirkus wurde entwickelt von 
+              <a style="color:white;" href="mailto:fbaierl1@gmail.com">Florian Baierl</a>
         </div>
       </div>
     </main>
