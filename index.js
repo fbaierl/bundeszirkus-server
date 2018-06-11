@@ -6,12 +6,15 @@ var dataLoader = require('./dataLoader.js')
 app.use(express.static('public'))
 
 app.get('/comments', function(req, res){
-
-    dataLoader.comments(function(err, body){
-        res.send(body)
-    }); 
+    res.send(dataLoader.comments)
 })
 
-app.listen(3000, () => console.log('Server running on port 3000'))
+
+var startListening = function() {
+    app.listen(3000, () => console.log('Server running on port 3000'))
+}
+
+dataLoader.loadData(startListening)
+
 
   

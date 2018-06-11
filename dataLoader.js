@@ -76,37 +76,39 @@ function structureComment(comment){
     return result;
 }
 
-exports.comments = function(callback){
-   
+exports.loadData = function(callback){
     var dirPath = "data"
     var files = ""
 
+    console.log("Now loading data ...")
     fs.readdir(dirPath, function(err, items) {
 
         if(err){
             return callback(err);
         }
 
-        if(allComments.length <= 0){
-            for (var i=0; i<items.length; i++) {
-                let fileName = items[i]
-                let filePath = dirPath + "/" + fileName
+        for (var i=0; i<items.length; i++) {
+            let fileName = items[i]
+            let filePath = dirPath + "/" + fileName
 
-                var fileContent = fs.readFileSync(filePath, "utf8")
-                var document = DOMParser.parseFromString(fileContent);
-                var comments = findElements("kommentar", document);
+            console.log("Loading file " + fileName)
 
-                comments.forEach(function(comment) {
-                    let resultArr = structureComment(comment)
-                    if(resultArr){
-                        resultArr.forEach(function(result){
-                            allComments.push(result)
-                        });   
-                    }
-                });
-            }
+            var fileContent = fs.readFileSync(filePath, "utf8")
+            var document = DOMParser.parseFromString(fileContent);
+            var comments = findElements("kommentar", document);
+
+            comments.forEach(function(comment) {
+                let resultArr = structureComment(comment)
+                if(resultArr){
+                    resultArr.forEach(function(result){
+                        allComments.push(result)
+                    });   
+                }
+            });
         }
-
-        callback(null, {data:allComments})
+        
+        callback()
     });
-};
+}
+
+exports.comments = {data:allComments}
