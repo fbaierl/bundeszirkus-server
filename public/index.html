@@ -32,10 +32,11 @@
 
       $(document).ready(function () {
         loadData();
-      });
+        loadRandomInterruption();
+      });  
 
       function initDataTable(data){
-        $('#allCommentsTable').DataTable({
+        $('#allCommentsTable'). DataTable({
             sScrollX: "100%",
             data: data.data,
             columns: [
@@ -46,11 +47,11 @@
             });
       }
 
-      function initRandomInterruption(data){
-        var randInterruption = data.data[Math.floor(Math.random() * data.data.length)];
-        $('#randInterruptionFullname').html(randInterruption.fullname)
-        $('#randInterruptionParty').html("("+randInterruption.party+")")
-        $('#randInterruptionText').html("„"+randInterruption.text+"“")
+      function updateRandomInterruption(interruption){
+        console.log(interruption)
+        $('#randInterruptionFullname').html(interruption.fullname)
+        $('#randInterruptionParty').html("("+interruption.party+")")
+        $('#randInterruptionText').html("„"+interruption.text+"“")
       }
 
       function loadData(){
@@ -60,7 +61,17 @@
           dataType: "json",
           success: function(response) {
             initDataTable(response)
-            initRandomInterruption(response)
+          }
+        });
+      }
+
+       function loadRandomInterruption(){
+        $.ajax({
+          type: "GET",
+          url: "random",
+          dataType: "json",
+          success: function(response) {
+            updateRandomInterruption(response)
           }
         });
       }
@@ -100,6 +111,8 @@
             <span id="randInterruptionFullname"></span>
             <span id="randInterruptionParty"></span>
           </div>
+          <button id="nextInterruptionButton" onclick="loadRandomInterruption()"
+              style="margin-top:20px;" class="btn btn-info">Nächster Zwischenruf</button>
         </div>
       </div>
 

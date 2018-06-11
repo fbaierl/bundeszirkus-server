@@ -111,4 +111,11 @@ exports.loadData = function(callback){
     });
 }
 
-exports.comments = {data:allComments}
+
+exports.comments = function(){
+    return {data:allComments}
+}
+
+exports.random = function(){
+    return allComments[Math.floor(Math.random() * allComments.length)]
+}
