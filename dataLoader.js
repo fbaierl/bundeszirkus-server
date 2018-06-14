@@ -1,11 +1,22 @@
 var fs = require('fs');
+var knowledge = require('./knowledge.js')
 var DOMParser = new (require('xmldom')).DOMParser;
 
+/**
+ * 
+ */
+global.allComments = []
 
 /**
- * "poor-mans-database" that will store all comment objects.
- */  
-global.allComments = []
+ * Includes two arrays:
+ * 1. parties
+ * 2. total count of comments
+ * 
+ * e.g. if the CSU made 3 comments and the Afd made 2 comments:
+ * [[CSU, AFD],[3, 2]]
+ */
+global.totalCommentsPerParty = []
+
 
 function findElements(element, xml) {
     var output = [];
@@ -104,13 +115,34 @@ exports.loadData = function(callback){
                         allComments.push(result)
                     });   
                 }
-            });
+            }); 
         }
         
+        calculateStatisticalData(allComments)
+
         callback()
     });
 }
 
+
+function calculateStatisticalData(allComments) {
+    function findOccurences(data){
+        var a = [], b = [], prev;
+        for ( var i = 0; i < data.length; i++ ) {
+            if ( data[i] !== prev ) {
+                a.push(data[i]);
+                b.push(1);
+            } else {
+                b[b.length-1]++;
+            }
+            prev = data[i];
+        }
+
+        return [a, b]
+    }
+
+    totalCommentsPerParty = findOccurences(allComments.map(x => x.party).sort())
+}
 
 exports.comments = function(){
     return {data:allComments}
@@ -118,4 +150,27 @@ exports.comments = function(){
 
 exports.random = function(){
     return allComments[Math.floor(Math.random() * allComments.length)]
+}
+
+exports.statsTotalParties = function(){
+
+    let colors = []
+
+    for(party of totalCommentsPerParty[0]){
+        let c = knowledge.partyColor(party)
+        let rgba = 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ', 0.75)'
+        colors.push(rgba)
+    }
+
+    data = {
+        datasets: [{
+            data: totalCommentsPerParty[1],
+            backgroundColor: colors
+        }],
+
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels: totalCommentsPerParty[0]
+    };
+
+    return data
 }

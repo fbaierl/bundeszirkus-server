@@ -13,6 +13,10 @@ app.get("/random", function(req, res){
     res.send(dataLoader.random())
 })
 
+app.get("/stats_total_parties", function(req, res){
+    res.send(dataLoader.statsTotalParties())
+})
+
 var startListening = function() {
     app.listen(3000, () => console.log('Server running on port 3000'))
 }

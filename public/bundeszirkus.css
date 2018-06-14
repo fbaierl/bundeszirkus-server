@@ -17,3 +17,10 @@
   border-radius: 0rem;
   margin: 0px;
 }
+
+.pie-chart-container {
+  position: relative;
+  margin: auto;
+  max-height: 400px;
+  max-width: 400px;
+}

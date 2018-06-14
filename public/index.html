@@ -18,8 +18,10 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css"/>
     <script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    
-    
+  
+    <!-- charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
     <title>Bundeszirkus</title>
 
     <link href="navbar-top.css" rel="stylesheet">
@@ -33,6 +35,7 @@
       $(document).ready(function () {
         loadData();
         loadRandomInterruption();
+        loadCharts();
       });  
 
       function initDataTable(data){
@@ -48,7 +51,6 @@
       }
 
       function updateRandomInterruption(interruption){
-        console.log(interruption)
         $('#randInterruptionFullname').html(interruption.fullname)
         $('#randInterruptionParty').html("("+interruption.party+")")
         $('#randInterruptionText').html("„"+interruption.text+"“")
@@ -65,13 +67,30 @@
         });
       }
 
-       function loadRandomInterruption(){
+      function loadRandomInterruption(){
         $.ajax({
           type: "GET",
           url: "random",
           dataType: "json",
           success: function(response) {
             updateRandomInterruption(response)
+          }
+        });
+      }
+
+      function loadCharts(){
+        // comments per party
+        $.ajax({
+          type: "GET",
+          url: "stats_total_parties",
+          dataType: "json",
+          success: function(response) {
+            var ctx = document.getElementById('statsTotalPartiesChart').getContext('2d');
+            new Chart(ctx, {
+              type: 'doughnut',
+              data: response,
+              options: Chart.defaults.doughnut
+            });
           }
         });
       }
@@ -117,13 +136,24 @@
       </div>
 
       <div class="jumbotron jumbo-light">
-        <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-        Rangliste Parteien
+        <h3 style="text-align:center; margin-bottom:20px;">
+          Welche Partei hat am meisten dazwischengerufen?
+        </h3>
+        <div class="pie-chart-container">
+          <canvas id="statsTotalPartiesChart"></canvas>
+        </div>
       </div>
 
       <div class="jumbotron jumbo-dark">
-        Rangliste Politiker
-      </div>
+          <h3 style="text-align:center; margin-bottom:20px;">
+            Welcher Politiker hat am meisten dazwischengerufen?
+          </h3>
+          <div class="pie-chart-container">
+            <!--
+              <canvas id="statsTotalPartiesChart"></canvas>
+            -->
+          </div>
+        </div>
 
       <!-- Data Table -->
       <div class="jumbotron jumbo-light" >
