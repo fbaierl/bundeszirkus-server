@@ -20,6 +20,7 @@
   "homepage": "https://github.com/xaraney/bundeszirkus-server#readme",
   "dependencies": {
     "chart.js": "^2.7.2",
+    "chart.piecelabel.js": "^0.11.0",
     "express": "^4.16.3",
     "xml2js": "^0.4.19",
     "xmldom": "^0.1.27"

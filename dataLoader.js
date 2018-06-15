@@ -162,15 +162,12 @@ exports.statsTotalParties = function(){
         colors.push(rgba)
     }
 
-    data = {
+    return {
         datasets: [{
             data: totalCommentsPerParty[1],
-            backgroundColor: colors
+            backgroundColor: colors, 
         }],
-
         // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: totalCommentsPerParty[0]
     };
-
-    return data
 }

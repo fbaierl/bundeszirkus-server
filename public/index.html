@@ -21,6 +21,7 @@
   
     <!-- charts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript" src="/charts.piecelabel.js"></script>
 
     <title>Bundeszirkus</title>
 
@@ -89,7 +90,17 @@
             new Chart(ctx, {
               type: 'doughnut',
               data: response,
-              options: Chart.defaults.doughnut
+              // options: Chart.defaults.doughnut
+
+              options: {
+                  pieceLabel: {
+                      mode: 'percent',
+                      fontStyle: 'bold',
+                      fontColor: '#FFF'
+                  }
+              }
+
+            
             });
           }
         });
@@ -144,7 +155,7 @@
         </div>
       </div>
 
-      <div class="jumbotron jumbo-dark">
+      <div class="jumbotron jumbo-light">
           <h3 style="text-align:center; margin-bottom:20px;">
             Welcher Politiker hat am meisten dazwischengerufen?
           </h3>
