@@ -9,30 +9,16 @@ var DOMParser = new (require('xmldom')).DOMParser;
 allComments = []
 
 /**
- * Includes two arrays:
- * 1. parties
- * 2. total count of comments
  * 
- * e.g. if the CSU made 3 comments and the Afd made 2 comments:
- * [[CSU, AFD],[3, 2]]
  */
 totalCommentsPerParty = []
 
 /**
- * Includes 3 arrays:
- * 1. politicians
- * 2. their party
- * 2. total count of comments
  * 
- * e.g. if Dr. Alexander Gauland made 3 comments and 
- * Agnieszka Brugger made 200 comments:
- * [[Dr. Alexander Gauland, Agnieszka Brugger],
- * [AfD, BÜNDNIS 90/DIE GRÜNEN],
- * [3, 200]]
  */
-totaCommentsPerPolitician = []
+totalCommentsPerPolitician = []
 
-commentsPerPoliticianData = []
+
 
 function findElements(element, xml) {
     var output = [];
@@ -146,26 +132,33 @@ function calculateStatisticalData(allComments) {
     /*
      * Comments per political party
      */
-    totalCommentsPerParty = aH.findOccurences(allComments.map(x => x.party))
-
-    // TODO sort totalCommentsPerParty
+    totalCommentsPerParty = aH.findOccurencesOfPartiesCommenting(
+        allComments.map(function(elem) {
+            return {
+              party: elem.party
+            }
+        })
+    )
+    totalCommentsPerParty.sort(function (a, b) {
+        return b.occurences - a.occurences;
+    });
 
     /*
      * Comments per politician
      */
-    commentsPerPoliticianData = aH.findOccurencesOfPoliticiansCommenting(
+    totalCommentsPerPolitician = aH.findOccurencesOfPoliticiansCommenting(
         allComments.map(function(elem) {
             return {
               fullname: elem.fullname,
-              party: elem.party,
+              party: elem.party
             }
         })
     );
-    commentsPerPoliticianData.sort(function (a, b) {
+    totalCommentsPerPolitician.sort(function (a, b) {
         return b.occurences - a.occurences;
     });
     // Top 20
-    commentsPerPoliticianData = commentsPerPoliticianData.slice(0,20)
+    totalCommentsPerPolitician = totalCommentsPerPolitician.slice(0,20)
    
 
 }
@@ -179,25 +172,18 @@ exports.random = function(){
 }
 
 exports.statsTotalParties = function(){
-    let colors = []
-
-    for(party of totalCommentsPerParty[0]){
-        let c = knowledge.partyColor(party)
-        let rgba = 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ', 0.75)'
-        colors.push(rgba)
-    }
-
-    return {
-        datasets: [{
-            data: totalCommentsPerParty[1],
-            backgroundColor: colors,
-        }],
-        labels: totalCommentsPerParty[0]
-    };
+    return totalCommentsPerParty.map(function(e, i) {
+        let c = knowledge.partyColor(e.party)
+        return {
+            party: e.party,
+            occurences: e.occurences,
+            color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
+        }
+      }); 
 }
 
 exports.statsTotalPoliticians = function(){
-    return commentsPerPoliticianData.map(function(e, i) {
+    return totalCommentsPerPolitician.map(function(e, i) {
         let c = knowledge.partyColor(e.party)
         return {
             fullname: e.fullname,

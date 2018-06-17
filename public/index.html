@@ -89,7 +89,13 @@
             var ctx = document.getElementById('statsTotalPartiesChart').getContext('2d');
             new Chart(ctx, {
               type: 'doughnut',
-              data: response,
+              data: {
+                datasets: [{
+                    data: response.map(x => x.occurences),
+                    backgroundColor:  response.map(x => x.color),
+                }],
+                labels: response.map(x => x.party)
+              },
               options: {
                   pieceLabel: {
                       mode: 'percent',

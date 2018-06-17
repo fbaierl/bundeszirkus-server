@@ -17,6 +17,55 @@ function sortByFullname(a, b) {
     return 0;
 }
 
+/**
+ * Comparator function to sort an object-array according to its party parameter.
+ * @param {*} a 
+ * @param {*} b 
+ */
+function sortByParty(a, b) {
+    var nameA = a.party.toUpperCase(); // ignore upper and lowercase
+    var nameB = b.party.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+
+    // names must be equal
+    return 0;
+}
+
+
+/**
+ * Takes a list of {party: xxx} objects and returns a list looking like this:
+ * [{party: xxx, occurences: xxx}] where party is unique and occurences is the number of
+ * occurences this party has made a comment.
+ * @param {*} data [{party: xxx}]
+ * @returns [{party: xxx, occurences: xxx}]
+ */
+exports.findOccurencesOfPartiesCommenting = function(data) {
+    data.sort(sortByParty);
+
+    var result = [], prevParty;
+
+    // data needs to be sorted by fullname before this loop
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].party !== prevParty) {
+            // first time we see this politician
+            result.push({party: data[i].party, occurences: 1 });
+        }
+        else {
+            // add one to occurences
+            let entry = result[result.length - 1];
+            entry.occurences++;
+            result[result.length - 1] = entry;
+        }
+        prevParty = data[i].party;
+    }
+
+    return result
+}
 
 /**
  * Takes a list of {fullname: xxx, party: xxx} objects and returns a list looking like this:
@@ -48,26 +97,4 @@ exports.findOccurencesOfPoliticiansCommenting = function(data) {
     return result
 }
 
-
-/**
- * TODo doc
- * @param {*} data 
- */
-exports.findOccurences = function(data){
-
-    data.sort()
-
-    var a = [], b = [], prev;
-    for (var i = 0; i < data.length; i++ ) {
-        if ( data[i] !== prev ) {
-            a.push(data[i]);
-            b.push(1);
-        } else {
-            b[b.length-1]++;
-        }
-        prev = data[i];
-    }
-
-    return [a, b]
-}
 
