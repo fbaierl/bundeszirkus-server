@@ -107,11 +107,9 @@
           url: "stats_total_politicians",
           dataType: "json",
           success: function(response) {
-
             var ctx = document.getElementById('statsTotalPoliticiansChart').getContext('2d');
-            
-            ctx.canvas.width = 380;
-            ctx.canvas.height = 500;
+            ctx.canvas.width = 400;
+            ctx.canvas.height = 550;
             
             new Chart(ctx, {
               type: 'horizontalBar',
@@ -144,9 +142,11 @@
                 tooltips: {
                   callbacks: {
                     label: function(item, data) {
-                    
-                      return response.map(x => x.fullname)[item.index] 
-                      + " (" + response.map(x => x.party)[item.index]  + ")"
+                      return response.map(x => x.occurences)[item.index]
+                        + " " 
+                        + "(" 
+                        + response.map(x => x.party)[item.index]  
+                        + ")"
                     }
                   }
                 }
@@ -155,9 +155,6 @@
           }
         });
       }
-
-    
-
       </script>
   </head>
 
@@ -211,8 +208,8 @@
           <h3 style="text-align:center; margin-bottom:20px;">
             Welcher Politiker hat am meisten dazwischengerufen?
           </h3>
-          <div class="pie-chart-container" style="min-height: 500px;">
-            <canvas id="statsTotalPoliticiansChart"></canvas>
+          <div style="max-height:550px; max-width:400px; margin:auto">
+            <canvas  id="statsTotalPoliticiansChart"></canvas>
           </div>
         </div>
 
