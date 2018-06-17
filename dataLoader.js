@@ -1,11 +1,12 @@
 var fs = require('fs');
 var knowledge = require('./knowledge.js')
+var aH = require('./arrayHelper.js')
 var DOMParser = new (require('xmldom')).DOMParser;
 
 /**
  * 
  */
-global.allComments = []
+allComments = []
 
 /**
  * Includes two arrays:
@@ -15,8 +16,23 @@ global.allComments = []
  * e.g. if the CSU made 3 comments and the Afd made 2 comments:
  * [[CSU, AFD],[3, 2]]
  */
-global.totalCommentsPerParty = []
+totalCommentsPerParty = []
 
+/**
+ * Includes 3 arrays:
+ * 1. politicians
+ * 2. their party
+ * 2. total count of comments
+ * 
+ * e.g. if Dr. Alexander Gauland made 3 comments and 
+ * Agnieszka Brugger made 200 comments:
+ * [[Dr. Alexander Gauland, Agnieszka Brugger],
+ * [AfD, BÜNDNIS 90/DIE GRÜNEN],
+ * [3, 200]]
+ */
+totaCommentsPerPolitician = []
+
+commentsPerPoliticianData = []
 
 function findElements(element, xml) {
     var output = [];
@@ -126,22 +142,32 @@ exports.loadData = function(callback){
 
 
 function calculateStatisticalData(allComments) {
-    function findOccurences(data){
-        var a = [], b = [], prev;
-        for ( var i = 0; i < data.length; i++ ) {
-            if ( data[i] !== prev ) {
-                a.push(data[i]);
-                b.push(1);
-            } else {
-                b[b.length-1]++;
+    
+    /*
+     * Comments per political party
+     */
+    totalCommentsPerParty = aH.findOccurences(allComments.map(x => x.party))
+
+    // TODO sort totalCommentsPerParty
+
+    /*
+     * Comments per politician
+     */
+    commentsPerPoliticianData = aH.findOccurencesOfPoliticiansCommenting(
+        allComments.map(function(elem) {
+            return {
+              fullname: elem.fullname,
+              party: elem.party,
             }
-            prev = data[i];
-        }
+        })
+    );
+    commentsPerPoliticianData.sort(function (a, b) {
+        return b.occurences - a.occurences;
+    });
+    // Top 20
+    commentsPerPoliticianData = commentsPerPoliticianData.slice(0,20)
+   
 
-        return [a, b]
-    }
-
-    totalCommentsPerParty = findOccurences(allComments.map(x => x.party).sort())
 }
 
 exports.comments = function(){
@@ -153,7 +179,6 @@ exports.random = function(){
 }
 
 exports.statsTotalParties = function(){
-
     let colors = []
 
     for(party of totalCommentsPerParty[0]){
@@ -165,9 +190,20 @@ exports.statsTotalParties = function(){
     return {
         datasets: [{
             data: totalCommentsPerParty[1],
-            backgroundColor: colors, 
+            backgroundColor: colors,
         }],
-        // These labels appear in the legend and in the tooltips when hovering different arcs
         labels: totalCommentsPerParty[0]
     };
+}
+
+exports.statsTotalPoliticians = function(){
+    return commentsPerPoliticianData.map(function(e, i) {
+        let c = knowledge.partyColor(e.party)
+        return {
+            fullname: e.fullname,
+            party: e.party,
+            occurences: e.occurences,
+            color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
+        }
+      }); 
 }

@@ -80,7 +80,7 @@
       }
 
       function loadCharts(){
-        // comments per party
+        // comments per party - total
         $.ajax({
           type: "GET",
           url: "stats_total_parties",
@@ -90,8 +90,6 @@
             new Chart(ctx, {
               type: 'doughnut',
               data: response,
-              // options: Chart.defaults.doughnut
-
               options: {
                   pieceLabel: {
                       mode: 'percent',
@@ -99,12 +97,66 @@
                       fontColor: '#FFF'
                   }
               }
+            });
+          }
+        });
 
+        // comments per politicians - total
+        $.ajax({
+          type: "GET",
+          url: "stats_total_politicians",
+          dataType: "json",
+          success: function(response) {
+
+            var ctx = document.getElementById('statsTotalPoliticiansChart').getContext('2d');
             
+            ctx.canvas.width = 380;
+            ctx.canvas.height = 500;
+            
+            new Chart(ctx, {
+              type: 'horizontalBar',
+              data: {
+                datasets: [{
+                  data: response.map(x => x.occurences),
+                  backgroundColor: response.map(x => x.color)
+                }],
+                labels: response.map(x => x.fullname)
+              },
+              options: {
+                responsive: true,
+                legend: {
+                  display: false
+                },
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      fontColor: 'white',
+                      fontSize: 14
+                    },
+                  }],
+                  xAxes: [{
+                    ticks: {
+                      fontColor: 'white',
+                      fontSize: 14
+                    },
+                  }]
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(item, data) {
+                    
+                      return response.map(x => x.fullname)[item.index] 
+                      + " (" + response.map(x => x.party)[item.index]  + ")"
+                    }
+                  }
+                }
+              }
             });
           }
         });
       }
+
+    
 
       </script>
   </head>
@@ -122,12 +174,12 @@
            <li class="nav-item active">
              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
            </li>
-           <li class="nav-item">
+<!--            <li class="nav-item">
              <a class="nav-link" href="#">Link</a>
            </li>
            <li class="nav-item">
              <a class="nav-link disabled" href="#">Disabled</a>
-           </li>
+           </li> -->
          </ul>
        </div>
     </nav>
@@ -159,10 +211,8 @@
           <h3 style="text-align:center; margin-bottom:20px;">
             Welcher Politiker hat am meisten dazwischengerufen?
           </h3>
-          <div class="pie-chart-container">
-            <!--
-              <canvas id="statsTotalPartiesChart"></canvas>
-            -->
+          <div class="pie-chart-container" style="min-height: 500px;">
+            <canvas id="statsTotalPoliticiansChart"></canvas>
           </div>
         </div>
 

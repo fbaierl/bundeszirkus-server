@@ -22,5 +22,9 @@ exports.partyColor = function(partyName){
         return [0, 0, 0]
     } else if(name.includes('grün')){
         return [76, 184, 72]
+    } else if(name.includes('fraktionslos')){
+        return [125, 125, 125]
+    } else {
+        return [50, 50, 50]
     }
 }
