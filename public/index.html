@@ -189,21 +189,22 @@
 
     <main role="main" >
       <div id="randomInterruptionDiv" class="jumbotron jumbo-dark" >
-        <div style="text-align:center">
-          <h3 style="text-align:center; margin-bottom:20px;">Zufälliger Zwischenruf.</h3>
-          <p class="lead" id="randInterruptionText"/>
-          <div class="lead" style="line-height:1">
-            <span id="randInterruptionFullname"></span>
-            <span id="randInterruptionParty"></span>
+          <div style="text-align:center">
+            <h3 style="text-align:center; margin-bottom:20px;">Zufälliger Zwischenruf.</h3>
+            <p class="lead" id="randInterruptionText"/>
+            <div class="lead" style="line-height:1">
+              <span id="randInterruptionFullname"></span>
+              <span id="randInterruptionParty"></span>
+            </div>
+            <button id="nextInterruptionButton" onclick="loadRandomInterruption()"
+                style="margin-top:20px;" class="btn btn-info">Nächster Zwischenruf</button>
           </div>
-          <button id="nextInterruptionButton" onclick="loadRandomInterruption()"
-              style="margin-top:20px;" class="btn btn-info">Nächster Zwischenruf</button>
-        </div>
       </div>
 
       <div class="jumbotron jumbo-light">
         <div class="container">
           <div class="row">
+
             <div class="col-sm mb-5">
               <h3 style="text-align:center; margin-bottom: 10px">
                 <span>Welche </span> 
@@ -214,18 +215,20 @@
                 <canvas id="statsTotalPartiesChart"></canvas>
               </div>
             </div>
-            <div class="col-sm mb-5">
-              <h3 style="text-align:center; margin-bottom: 10px">
-                <span>Welcher </span>
-                <span style="text-decoration: underline;">Politiker</span>
-                <span> hat am meisten dazwischengerufen?</span>
-              </h3>
-              <div style="max-height:550px; max-width:400px; margin:auto">
-                <canvas  id="statsTotalPoliticiansChart"></canvas>
+
+          <div class="col-sm mb-5">
+            <h3 style="text-align:center; margin-bottom: 10px">
+              <span>Welcher </span>
+              <span style="text-decoration: underline;">Politiker</span>
+              <span> hat am meisten dazwischengerufen?</span>
+            </h3>
+            <div style="max-height:550px; max-width:400px; margin:auto">
+              <canvas  id="statsTotalPoliticiansChart"></canvas>
             </div>
           </div>
         </div>
       </div>
+    </div>
               
 <!-- 
       <div class="jumbotron jumbo-dark">
@@ -248,14 +251,13 @@
 
         <!-- FOOTER -->
       <div class="jumbotron jumbo-dark horizontal-center">
-        <div class="container">
-          <div style="line-height:1;">Quelle: <a style="color:white;" href="https://www.bundestag.de/service/opendata">bundestag.de/service/opendata</a></div>
-          <br>
-          <div>Bundeszirkus wurde entwickelt von 
-              <a style="color:white;" href="mailto:fbaierl1@gmail.com">Florian Baierl</a>
+        <div style="line-height:1;">Quelle: <a style="color:white;" href="https://www.bundestag.de/service/opendata">bundestag.de/service/opendata</a></div>
+        <br>
+        <div>Bundeszirkus wurde entwickelt von 
+          <a style="color:white;" href="mailto:fbaierl1@gmail.com">Florian Baierl</a>
         </div>
       </div>
-    </main>
 
+    </main>
   </body>
 </html>
