@@ -134,13 +134,13 @@
                 scales: {
                   yAxes: [{
                     ticks: {
-                      fontColor: 'white',
+                      fontColor: 'black',
                       fontSize: 14
                     },
                   }],
                   xAxes: [{
                     ticks: {
-                      fontColor: 'white',
+                      fontColor: 'black',
                       fontSize: 14
                     },
                   }]
@@ -202,22 +202,35 @@
       </div>
 
       <div class="jumbotron jumbo-light">
-        <h3 style="text-align:center; margin-bottom:20px;">
-          Welche Partei hat am meisten dazwischengerufen?
-        </h3>
-        <div class="pie-chart-container">
-          <canvas id="statsTotalPartiesChart"></canvas>
-        </div>
-      </div>
-
-      <div class="jumbotron jumbo-dark">
-          <h3 style="text-align:center; margin-bottom:20px;">
-            Welcher Politiker hat am meisten dazwischengerufen?
-          </h3>
-          <div style="max-height:550px; max-width:400px; margin:auto">
-            <canvas  id="statsTotalPoliticiansChart"></canvas>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm mb-5">
+              <h3 style="text-align:center; margin-bottom: 10px">
+                <span>Welche </span> 
+                <span style="text-decoration: underline;">Partei</span>
+                <span> hat am meisten dazwischengerufen?</span>
+              </h3>
+              <div class="pie-chart-container">
+                <canvas id="statsTotalPartiesChart"></canvas>
+              </div>
+            </div>
+            <div class="col-sm mb-5">
+              <h3 style="text-align:center; margin-bottom: 10px">
+                <span>Welcher </span>
+                <span style="text-decoration: underline;">Politiker</span>
+                <span> hat am meisten dazwischengerufen?</span>
+              </h3>
+              <div style="max-height:550px; max-width:400px; margin:auto">
+                <canvas  id="statsTotalPoliticiansChart"></canvas>
+            </div>
           </div>
         </div>
+      </div>
+              
+<!-- 
+      <div class="jumbotron jumbo-dark">
+         
+        </div> -->
 
       <!-- Data Table -->
       <div class="jumbotron jumbo-light" >
