@@ -25,6 +25,6 @@ exports.partyColor = function(partyName){
     } else if(name.includes('fraktionslos')){
         return [125, 125, 125]
     } else {
-        return [50, 50, 50]
+        return [50, 50, 50] 
     }
 }

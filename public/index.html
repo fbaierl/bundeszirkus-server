@@ -44,17 +44,21 @@
             sScrollX: "100%",
             data: data.data,
             columns: [
-                { data: 'fullname' },
-                { data: 'party' },
-                { data: 'text' }
+                { data: 'speaker.fullname' },
+                { data: 'speaker.roleOrFraction' },
+                { data: 'comment.fullname' },
+                { data: 'comment.party' },
+                { data: 'comment.text' }
             ]
             });
       }
 
       function updateRandomInterruption(interruption){
-        $('#randInterruptionFullname').html(interruption.fullname)
-        $('#randInterruptionParty').html("("+interruption.party+")")
-        $('#randInterruptionText').html("„"+interruption.text+"“")
+        $('#randInterruptionSpeakerFullname').html(interruption.speaker.fullname)
+        $('#randInterruptionSpeakerPartyOrRole').html(interruption.speaker.partyOrRole)
+        $('#randInterruptionFullname').html(interruption.comment.fullname)
+        $('#randInterruptionParty').html("("+interruption.comment.party+")")
+        $('#randInterruptionText').html("„"+interruption.comment.text+"“")
       }
 
       function loadData(){
@@ -134,12 +138,14 @@
                 scales: {
                   yAxes: [{
                     ticks: {
+                      beginAtZero: true,
                       fontColor: 'black',
                       fontSize: 14
                     },
                   }],
                   xAxes: [{
                     ticks: {
+                      beginAtZero: true,
                       fontColor: 'black',
                       fontSize: 14
                     },
@@ -177,12 +183,6 @@
            <li class="nav-item active">
              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
            </li>
-<!--            <li class="nav-item">
-             <a class="nav-link" href="#">Link</a>
-           </li>
-           <li class="nav-item">
-             <a class="nav-link disabled" href="#">Disabled</a>
-           </li> -->
          </ul>
        </div>
     </nav>
@@ -195,6 +195,10 @@
             <div class="lead" style="line-height:1">
               <span id="randInterruptionFullname"></span>
               <span id="randInterruptionParty"></span>
+              <span> zur Rede von </span>
+              <span id="randInterruptionSpeakerFullname"/>
+              <span id="randInterruptionSpeakerPartyOrRole"/>
+              <!-- TODO "in der x. Sitzung der aktuellen Legislaturperiode"-->
             </div>
             <button id="nextInterruptionButton" onclick="loadRandomInterruption()"
                 style="margin-top:20px;" class="btn btn-info">Nächster Zwischenruf</button>
@@ -230,24 +234,21 @@
       </div>
     </div>
               
-<!-- 
-      <div class="jumbotron jumbo-dark">
-         
-        </div> -->
-
-      <!-- Data Table -->
-      <div class="jumbotron jumbo-light" >
-        <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags.</h3>
-        <table id="allCommentsTable" class="display" style="width:100%">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Partei</th>
-              <th>Zwischenruf</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
+    <!-- Data Table -->
+    <div class="jumbotron jumbo-light" >
+      <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags.</h3>
+      <table id="allCommentsTable" class="display" style="width:100%">
+        <thead>
+          <tr>
+            <th>Name Sprecher</th>
+            <th>Fraktion/Rolle Sprecher</th>
+            <th>Name Zwischenrufer</th>
+            <th>Partei Zwischenrufer</th>
+            <th>Zwischenruf</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
 
         <!-- FOOTER -->
       <div class="jumbotron jumbo-dark horizontal-center">

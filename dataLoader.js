@@ -4,7 +4,15 @@ var aH = require('./arrayHelper.js')
 var DOMParser = new (require('xmldom')).DOMParser;
 
 /**
- * 
+ * Format:
+ * [{
+ *   "speaker_fullname":"Dr. Wolfgang Schäuble", 
+ *   "speaker_party":"CDU/CSU", 
+ *   "speaker_role:"",
+ *   "fullName":"Martin Schulz", 
+ *   "party":"SPD", 
+ *   "text":"Da kennt ihr euch ja aus!"
+ * }]
  */
 allComments = []
 
@@ -19,8 +27,12 @@ totalCommentsPerParty = []
 totalCommentsPerPolitician = []
 
 
-
-function findElements(element, xml) {
+/**
+ * Finds basic (non-hierarchical) elements in an XML and returns its value. 
+ * @param {*} element the nodes name to search the values for
+ * @param {*} xml the xml to search
+ */
+function findValues(element, xml) {
     var output = [];
 
     var nodes = xml.childNodes;
@@ -30,13 +42,90 @@ function findElements(element, xml) {
             if (nodes[i].nodeName == element && nodes[i].childNodes.length == 1) {
                 output.push(nodes[i].childNodes[0].nodeValue);
             } else {
-                output = output.concat(findElements(element, nodes[i]));
+                output = output.concat(findValues(element, nodes[i]));
             }
         }
     }
     return output;
 }
 
+/**
+ * Finds all nodes with the tag nodename in an XML.
+ * Returns a list of nodes.
+ * @param {*} nodeName the node's name to search for 
+ * @param {*} xml
+ */
+function findNodes(nodeName, xml){
+    var output = []
+    var nodes = xml.childNodes
+    if(nodes){
+        for (var i = 0; i < nodes.length; i++) {
+            if(nodes[i].nodeName == nodeName){
+                output.push(nodes[i])
+            } else {
+                output = output.concat(findNodes(nodeName, nodes[i]));
+            }
+        }
+    }
+    return output;
+}
+
+/**
+ * Transforms a speaker (<redner>) xml tag into json.
+ * 
+ * example 1:
+ *  <redner id="11001938">
+ *      <name>
+ *          <titel>Dr.</titel>
+ *          <vorname>Wolfgang</vorname>
+ *          <nachname>Schäuble</nachname>
+ *          <fraktion>CDU/CSU</fraktion>
+ *      </name>
+ *  </redner>
+ *  will return: {fullname:"Dr. Wolfgang Schäuble", party:"CDU/CSU", "role:"""}
+ * 
+ * example 2:
+ *  <redner id="11002190">
+ *      <name>
+ *          <vorname>Alterspräsident Dr. Hermann</vorname>
+ *          <nachname>Otto Solms</nachname>
+ *          <rolle>
+ *              <rolle_lang>Alterspräsident</rolle_lang>
+ *              <rolle_kurz>Alterspräsident</rolle_kurz>
+ *          </rolle>
+ *      </name>
+ * </redner>
+ * will return: {fullname:"Dr. Hermann Otto Solms", party:"", role:"Alterspräsident"}
+ * 
+ * @param {*} speechXml the speaker xml
+ * @return {fullname:"xxx", party:"xxx", role:"xxx"}
+ */
+function structureSpeaker(speakerXml){
+    // each speaker has a first and a last name
+    let firstname = findValues("vorname", speakerXml)[0].trim()
+    let lastname = findValues("nachname", speakerXml)[0].trim()
+    // each speaker has either information about their fraction OR their role
+    let role = null
+    let party = null
+    
+    let roles = findValues("rolle_lang", speakerXml)
+    let parties = findValues("fraktion", speakerXml)
+
+    if(roles.length > 0){
+        role = roles[0].trim()
+    } else if (parties.length > 0){
+        party = parties[0].trim()
+    } else {
+        console.log("Couldn't find role or fraction for speaker: " + firstname + " " +  lastname)
+    }
+
+    // sometimes the role is included in the firstname, so we remove it here
+    if(role){
+        firstname = firstname.replace(role, "").trim()
+    }
+
+    return {fullname:firstname + " " + lastname, party:party, role:role}
+}
 
 /**
  * Returns a list of structured comment objects. 
@@ -95,7 +184,6 @@ exports.loadData = function(callback){
 
     console.log("Now loading data ...")
     fs.readdir(dirPath, function(err, items) {
-
         if(err){
             return callback(err);
         }
@@ -107,17 +195,34 @@ exports.loadData = function(callback){
             console.log("Loading file " + fileName)
 
             var fileContent = fs.readFileSync(filePath, "utf8")
-            var document = DOMParser.parseFromString(fileContent);
-            var comments = findElements("kommentar", document);
+            var document = DOMParser.parseFromString(fileContent, "application  /xml");
 
-            comments.forEach(function(comment) {
-                let resultArr = structureComment(comment)
-                if(resultArr){
-                    resultArr.forEach(function(result){
-                        allComments.push(result)
-                    });   
-                }
-            }); 
+            var speeches = findNodes("rede", document)
+
+            speeches.forEach(function(speech) {
+                // find meta data about this speech
+                // TODO date
+                let speakerXml = findNodes("redner", speech)
+                // should include one speaker tag per speech
+                let speaker = structureSpeaker(speakerXml[0])
+              
+                // find comments for each speech and push them to all comments list
+                let comments = findValues("kommentar", speech);
+                comments.forEach(function(comment) {
+                    let resultArr = structureComment(comment)
+                    if(resultArr){
+                        resultArr.forEach(function(result){
+                            allComments.push({
+                                speaker: {
+                                    fullname:speaker.fullname,
+                                    roleOrFraction: (speaker.party) ? speaker.party : speaker.role
+                                },
+                                comment: result
+                            })
+                        });   
+                    }
+                });
+            })
         }
         
         calculateStatisticalData(allComments)
@@ -128,14 +233,13 @@ exports.loadData = function(callback){
 
 
 function calculateStatisticalData(allComments) {
-    
     /*
      * Comments per political party
      */
     totalCommentsPerParty = aH.findOccurencesOfPartiesCommenting(
         allComments.map(function(elem) {
             return {
-              party: elem.party
+              party: elem.comment.party
             }
         })
     )
@@ -149,8 +253,8 @@ function calculateStatisticalData(allComments) {
     totalCommentsPerPolitician = aH.findOccurencesOfPoliticiansCommenting(
         allComments.map(function(elem) {
             return {
-              fullname: elem.fullname,
-              party: elem.party
+              fullname: elem.comment.fullname,
+              party: elem.comment.party
             }
         })
     );
@@ -159,7 +263,6 @@ function calculateStatisticalData(allComments) {
     });
     // Top 20
     totalCommentsPerPolitician = totalCommentsPerPolitician.slice(0,20)
-   
 
 }
 
