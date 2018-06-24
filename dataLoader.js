@@ -116,7 +116,7 @@ function structureSpeaker(speakerXml){
     } else if (parties.length > 0){
         party = parties[0].trim()
     } else {
-        console.log("Couldn't find role or fraction for speaker: " + firstname + " " +  lastname)
+        console.log("Couldn't find role or party for speaker: " + firstname + " " +  lastname)
     }
 
     // sometimes the role is included in the firstname, so we remove it here
@@ -215,7 +215,7 @@ exports.loadData = function(callback){
                             allComments.push({
                                 speaker: {
                                     fullname:speaker.fullname,
-                                    roleOrFraction: (speaker.party) ? speaker.party : speaker.role
+                                    partyOrRole: (speaker.party) ? speaker.party : speaker.role
                                 },
                                 comment: result
                             })

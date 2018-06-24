@@ -45,7 +45,7 @@
             data: data.data,
             columns: [
                 { data: 'speaker.fullname' },
-                { data: 'speaker.roleOrFraction' },
+                { data: 'speaker.partyOrRole' },
                 { data: 'comment.fullname' },
                 { data: 'comment.party' },
                 { data: 'comment.text' }
@@ -54,8 +54,9 @@
       }
 
       function updateRandomInterruption(interruption){
+        console.log(interruption.speaker.partyOrRole)
         $('#randInterruptionSpeakerFullname').html(interruption.speaker.fullname)
-        $('#randInterruptionSpeakerPartyOrRole').html(interruption.speaker.partyOrRole)
+        $('#randInterruptionSpeakerPartyOrRole').html("("+interruption.speaker.partyOrRole+")")
         $('#randInterruptionFullname').html(interruption.comment.fullname)
         $('#randInterruptionParty').html("("+interruption.comment.party+")")
         $('#randInterruptionText').html("„"+interruption.comment.text+"“")
@@ -196,8 +197,8 @@
               <span id="randInterruptionFullname"></span>
               <span id="randInterruptionParty"></span>
               <span> zur Rede von </span>
-              <span id="randInterruptionSpeakerFullname"/>
-              <span id="randInterruptionSpeakerPartyOrRole"/>
+              <span id="randInterruptionSpeakerFullname"></span>
+              <span id="randInterruptionSpeakerPartyOrRole"></span>
               <!-- TODO "in der x. Sitzung der aktuellen Legislaturperiode"-->
             </div>
             <button id="nextInterruptionButton" onclick="loadRandomInterruption()"
