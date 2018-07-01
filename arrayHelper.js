@@ -34,7 +34,6 @@ function sortByParty(a, b) {
     return 0;
 }
 
-
 /**
  * Takes a list of {party: xxx} objects and returns a list looking like this:
  * [{party: xxx, occurences: xxx}] where party is unique and occurences is the number of

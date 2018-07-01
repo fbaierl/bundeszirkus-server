@@ -22,21 +22,20 @@
     <!-- charts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script type="text/javascript" src="/charts.piecelabel.js"></script>
-
+    <script type="text/javascript" src="/chartMaker.js"></script>
     <title>Bundeszirkus</title>
 
     <link href="navbar-top.css" rel="stylesheet">
     <link href="bundeszirkus.css" rel="stylesheet">
 
-
     <!-- Scripts -->
-
     <script>
 
       $(document).ready(function () {
-        loadData();
         loadRandomInterruption();
-        loadCharts();
+        loadTotalPartiesChart('statsTotalPartiesChart')
+        loadTotalPoliticiansChart('statsTotalPoliticiansChart')
+        loadDataTable();
       });  
 
       function initDataTable(data){
@@ -62,7 +61,7 @@
         $('#randInterruptionText').html("„"+interruption.comment.text+"“")
       }
 
-      function loadData(){
+      function loadDataTable(){
         $.ajax({
           type: "GET",
           url: "comments",
@@ -84,96 +83,14 @@
         });
       }
 
-      function loadCharts(){
-        // comments per party - total
-        $.ajax({
-          type: "GET",
-          url: "stats_total_parties",
-          dataType: "json",
-          success: function(response) {
-            var ctx = document.getElementById('statsTotalPartiesChart').getContext('2d');
-            new Chart(ctx, {
-              type: 'doughnut',
-              data: {
-                datasets: [{
-                    data: response.map(x => x.occurences),
-                    backgroundColor:  response.map(x => x.color),
-                }],
-                labels: response.map(x => x.party)
-              },
-              options: {
-                  pieceLabel: {
-                      mode: 'percent',
-                      fontStyle: 'bold',
-                      fontColor: '#FFF'
-                  }
-              }
-            });
-          }
-        });
-
-        // comments per politicians - total
-        $.ajax({
-          type: "GET",
-          url: "stats_total_politicians",
-          dataType: "json",
-          success: function(response) {
-            var ctx = document.getElementById('statsTotalPoliticiansChart').getContext('2d');
-            ctx.canvas.width = 400;
-            ctx.canvas.height = 550;
-            
-            new Chart(ctx, {
-              type: 'horizontalBar',
-              data: {
-                datasets: [{
-                  data: response.map(x => x.occurences),
-                  backgroundColor: response.map(x => x.color)
-                }],
-                labels: response.map(x => x.fullname)
-              },
-              options: {
-                responsive: true,
-                legend: {
-                  display: false
-                },
-                scales: {
-                  yAxes: [{
-                    ticks: {
-                      beginAtZero: true,
-                      fontColor: 'black',
-                      fontSize: 14
-                    },
-                  }],
-                  xAxes: [{
-                    ticks: {
-                      beginAtZero: true,
-                      fontColor: 'black',
-                      fontSize: 14
-                    },
-                  }]
-                },
-                tooltips: {
-                  callbacks: {
-                    label: function(item, data) {
-                      return response.map(x => x.occurences)[item.index]
-                        + " " 
-                        + "(" 
-                        + response.map(x => x.party)[item.index]  
-                        + ")"
-                    }
-                  }
-                }
-              }
-            });
-          }
-        });
-      }
-      </script>
+    </script>
   </head>
 
   <body>
 
-    <!-- nav bar -->
+    <!-- 
+      nav bar 
+    -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Bundeszirkus</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -187,8 +104,13 @@
          </ul>
        </div>
     </nav>
-
+    <!--
+      main
+    -->
     <main role="main" >
+      <!--
+        random comment
+      -->
       <div id="randomInterruptionDiv" class="jumbotron jumbo-dark" >
           <div style="text-align:center">
             <h3 style="text-align:center; margin-bottom:20px;">Zufälliger Zwischenruf.</h3>
@@ -205,53 +127,84 @@
                 style="margin-top:20px;" class="btn btn-info">Nächster Zwischenruf</button>
           </div>
       </div>
-
-      <div class="jumbotron jumbo-light">
-        <div class="container">
-          <div class="row">
-
+        <!-- 
+          active 
+        -->
+        <div class="jumbotron jumbo-light">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm mb-5">
+                <h3 style="text-align:center; margin-bottom: 10px">
+                  <span>Welche </span> 
+                  <span style="text-decoration: underline;">Partei</span>
+                  <span> hat am meisten dazwischengerufen?</span>
+                </h3>
+                <div class="pie-chart-container">
+                  <canvas id="statsTotalPartiesChart"></canvas>
+                </div>
+              </div>
             <div class="col-sm mb-5">
               <h3 style="text-align:center; margin-bottom: 10px">
-                <span>Welche </span> 
-                <span style="text-decoration: underline;">Partei</span>
+                <span>Welcher </span>
+                <span style="text-decoration: underline;">Politiker</span>
                 <span> hat am meisten dazwischengerufen?</span>
               </h3>
-              <div class="pie-chart-container">
-                <canvas id="statsTotalPartiesChart"></canvas>
+              <div style="max-height:550px; max-width:400px; margin:auto">
+                <canvas  id="statsTotalPoliticiansChart"></canvas>
               </div>
-            </div>
-
-          <div class="col-sm mb-5">
-            <h3 style="text-align:center; margin-bottom: 10px">
-              <span>Welcher </span>
-              <span style="text-decoration: underline;">Politiker</span>
-              <span> hat am meisten dazwischengerufen?</span>
-            </h3>
-            <div style="max-height:550px; max-width:400px; margin:auto">
-              <canvas  id="statsTotalPoliticiansChart"></canvas>
             </div>
           </div>
         </div>
       </div>
-    </div>
-              
-    <!-- Data Table -->
-    <div class="jumbotron jumbo-light" >
-      <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags.</h3>
-      <table id="allCommentsTable" class="display" style="width:100%">
-        <thead>
-          <tr>
-            <th>Name Sprecher</th>
-            <th>Fraktion/Rolle Sprecher</th>
-            <th>Name Zwischenrufer</th>
-            <th>Partei Zwischenrufer</th>
-            <th>Zwischenruf</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-
-        <!-- FOOTER -->
+      <!--
+        passive
+      -->
+      <div class="jumbotron jumbo-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm mb-5">
+                <h3 style="text-align:center; margin-bottom: 10px">
+                  <span>Welcher </span> 
+                  <span style="text-decoration: underline;">Partei</span>
+                  <span> wurde am meisten dazwischengerufen?</span>
+                </h3>
+                <div class="pie-chart-container">
+                  <canvas id="statsTotalPartiesPassiveChart"></canvas>
+                </div>
+              </div>
+            <div class="col-sm mb-5">
+              <h3 style="text-align:center; margin-bottom: 10px">
+                <span>Welchem </span>
+                <span style="text-decoration: underline;">Politiker</span>
+                <span> wurde am meisten dazwischengerufen?</span>
+              </h3>
+              <div style="max-height:550px; max-width:400px; margin:auto">
+                <canvas  id="statsTotalPoliticiansPassiveChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>           
+      <!-- 
+        data table 
+      -->
+      <div class="jumbotron jumbo-light" >
+        <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags.</h3>
+        <table id="allCommentsTable" class="display" style="width:100%">
+          <thead>
+            <tr>
+              <th>Name Sprecher</th>
+              <th>Fraktion/Rolle Sprecher</th>
+              <th>Name Zwischenrufer</th>
+              <th>Partei Zwischenrufer</th>
+              <th>Zwischenruf</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <!-- 
+        footer 
+      -->
       <div class="jumbotron jumbo-dark horizontal-center">
         <div style="line-height:1;">Quelle: <a style="color:white;" href="https://www.bundestag.de/service/opendata">bundestag.de/service/opendata</a></div>
         <br>
@@ -259,7 +212,6 @@
           <a style="color:white;" href="mailto:fbaierl1@gmail.com">Florian Baierl</a>
         </div>
       </div>
-
     </main>
   </body>
 </html>
