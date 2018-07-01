@@ -7,9 +7,7 @@
  * @param partyName 
  */
 exports.partyColor = function(partyName){
-
     let name = partyName.toLowerCase()
-
     if(name.includes('afd')){
         return [0, 159, 225]
     } else if(name.includes('spd')){

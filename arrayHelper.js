@@ -12,7 +12,6 @@ function sortByFullname(a, b) {
     if (nameA > nameB) {
       return 1;
     }
-
     // names must be equal
     return 0;
 }
@@ -31,7 +30,6 @@ function sortByParty(a, b) {
     if (nameA > nameB) {
       return 1;
     }
-
     // names must be equal
     return 0;
 }
@@ -46,9 +44,7 @@ function sortByParty(a, b) {
  */
 exports.findOccurencesOfPartiesCommenting = function(data) {
     data.sort(sortByParty);
-
     var result = [], prevParty;
-
     // data needs to be sorted by fullname before this loop
     for (var i = 0; i < data.length; i++) {
         if (data[i].party !== prevParty) {
@@ -63,7 +59,6 @@ exports.findOccurencesOfPartiesCommenting = function(data) {
         }
         prevParty = data[i].party;
     }
-
     return result
 }
 
@@ -76,9 +71,7 @@ exports.findOccurencesOfPartiesCommenting = function(data) {
  */
 exports.findOccurencesOfPoliticiansCommenting = function(data) {
     data.sort(sortByFullname);
-
     var result = [], prevName;
-
     // data needs to be sorted by fullname before this loop
     for (var i = 0; i < data.length; i++) {
         if (data[i].fullname !== prevName) {
@@ -93,7 +86,6 @@ exports.findOccurencesOfPoliticiansCommenting = function(data) {
         }
         prevName = data[i].fullname;
     }
-
     return result
 }
 
