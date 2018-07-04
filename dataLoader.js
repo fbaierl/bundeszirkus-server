@@ -8,25 +8,52 @@ var DOMParser = new (require('xmldom')).DOMParser;
  * 
  * Format:
  * [{
- *   "speaker_fullname":"Dr. Wolfgang Schäuble", 
- *   "speaker_party":"CDU/CSU", 
- *   "speaker_role:"",
- *   "fullname":"Martin Schulz", 
- *   "party":"SPD", 
- *   "text":"Da kennt ihr euch ja aus!"
+ *   "speaker":{
+ *      "fullname": "Dr. Wolfgang Schäuble", 
+ *      "partyOrRole":"CDU/CSU", 
+ *   },
+ *   "comment":{
+ *      "fullname":"Martin Schulz", 
+ *      "party":"SPD", 
+ *      "text":"Da kennt ihr euch ja aus!"
+ *   }
  * }]
  */
 allComments = []
 
 /**
+ * Data depicting how much comments a party made in total.
  * 
+ * Format:
+ * [{
+ *  "party": "SPD",
+ *  "occurences":100
+ * }]
  */
 totalCommentsPerParty = []
 
 /**
- * 
+ * Data depicting how much comments a politician made in total.
+ *
+ * Format:
+ *  [{
+ *   "fullname": "Martin Schulz", 
+ *   "party": "SPD", 
+ *   "occurences": "100"
+ *  }]
  */
 totalCommentsPerPolitician = []
+
+/**
+ * Data depicting how much comments were made during a particular parties speech.
+ * 
+ * Format:
+ * [{
+ *  "party": "SPD",
+ *  "occurences": "100"
+ * }]
+ */
+totalCommentsPerPartyPassive = []
 
 /**
  * Finds basic (non-hierarchical) elements in an XML and returns its value. 
@@ -262,9 +289,19 @@ function findCommentsPerPolitician(allComments){
     })
 } 
 
+function findCommentsPerPartyPassive(allComments){
+
+}
+
+function findCommentsPerPoliticianPassive(allComments){
+
+}
+
 function calculateStatisticalData(allComments) {
     totalCommentsPerParty = findCommentsPerParty(allComments)
     totalCommentsPerPolitician = findCommentsPerPolitician(allComments).slice(0,20)
+    totalCommentsPerPartyPassive = findCommentsPerPartyPassive(allComments)
+    totalCommentsPerPoliticianPassive = findCommentsPerPoliticianPassive(allComments)
 }
 
 exports.comments = function(){
@@ -288,6 +325,29 @@ exports.statsTotalParties = function(){
 
 exports.statsTotalPoliticians = function(){
     return totalCommentsPerPolitician.map(function(e, i) {
+        let c = knowledge.partyColor(e.party)
+        return {
+            fullname: e.fullname,
+            party: e.party,
+            occurences: e.occurences,
+            color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
+        }
+      }); 
+}
+
+exports.statsTotalPartiesPassive = function(){
+    return totalCommentsPerPartyPassive.map(function(e, i) {
+        let c = knowledge.partyColor(e.party)
+        return {
+            party: e.party,
+            occurences: e.occurences,
+            color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
+        }
+      }); 
+}
+
+exports.statsTotalPoliticiansPassive = function(){
+    return totalCommentsPerPoliticianPassive.map(function(e, i) {
         let c = knowledge.partyColor(e.party)
         return {
             fullname: e.fullname,

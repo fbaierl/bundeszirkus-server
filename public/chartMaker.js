@@ -1,93 +1,104 @@
+function ChartMaker()
+{
+    const horizontalBarChartCanvasWidth = 400
+    const horizontalBarChartCanvasHeight = 550
 
-function loadTotalPartiesChart(domId){
-    $.ajax({
-        type: "GET",
-        url: "stats_total_parties",
-        dataType: "json",
-        success: function(response) {
-          var ctx = document.getElementById(domId).getContext('2d');
-          new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-              datasets: [{
-                  data: response.map(x => x.occurences),
-                  backgroundColor:  response.map(x => x.color),
-              }],
-              labels: response.map(x => x.party)
+    /**
+     * Creates the basic options for a horizontal bar chart.
+     * @param {string} fontColor font color
+     * @param {callback} labelCallback callback determines whats being displayed on hover; 
+     * takes an item and the data array
+     * @returns {Object} the options object
+     */
+    var horizontalBarChartOptions = function(fontColor, labelCallback) {
+        return {
+            responsive: true,
+            legend: {
+                display: false
             },
-            options: {
-                pieceLabel: {
-                    mode: 'percent',
-                    fontStyle: 'bold',
-                    fontColor: '#FFF'
+            scales: {
+            yAxes: [{
+                ticks: {
+                beginAtZero: true,
+                fontColor: fontColor,
+                fontSize: 14
+                },
+            }],
+            xAxes: [{
+                ticks: {
+                beginAtZero: true,
+                fontColor: fontColor,
+                fontSize: 14
+                },
+            }]
+            },
+            tooltips: {
+            callbacks: {
+                label: labelCallback
                 }
             }
-          });
         }
-    });
-}
+        
+    }
 
-function loadTotalPoliticiansChart(domId){
-    $.ajax({
-        type: "GET",
-        url: "stats_total_politicians",
-        dataType: "json",
-        success: function(response) {
+    this.createTotalPartiesChart = function(domId){
+        $.ajax({
+            type: "GET",
+            url: "stats_total_parties",
+            dataType: "json",
+            success: function(response) {
             var ctx = document.getElementById(domId).getContext('2d');
-            ctx.canvas.width = 400;
-            ctx.canvas.height = 550;
-            
             new Chart(ctx, {
-            type: 'horizontalBar',
-            data: {
+                type: 'doughnut',
+                data: {
                 datasets: [{
-                data: response.map(x => x.occurences),
-                backgroundColor: response.map(x => x.color)
+                    data: response.map(x => x.occurences),
+                    backgroundColor:  response.map(x => x.color),
                 }],
-                labels: response.map(x => x.fullname)
-            },
-            options: {
-                responsive: true,
-                legend: {
-                display: false
+                labels: response.map(x => x.party)
                 },
-                scales: {
-                yAxes: [{
-                    ticks: {
-                    beginAtZero: true,
-                    fontColor: 'black',
-                    fontSize: 14
-                    },
-                }],
-                xAxes: [{
-                    ticks: {
-                    beginAtZero: true,
-                    fontColor: 'black',
-                    fontSize: 14
-                    },
-                }]
-                },
-                tooltips: {
-                callbacks: {
-                    label: function(item, data) {
-                    return response.map(x => x.occurences)[item.index]
-                        + " " 
-                        + "(" 
-                        + response.map(x => x.party)[item.index]  
-                        + ")"
+                options: {
+                    pieceLabel: {
+                        mode: 'percent',
+                        fontStyle: 'bold',
+                        fontColor: '#FFF'
                     }
                 }
-                }
-            }
             });
-        }
-    });
+            }
+        });
+    }
+
+    this.createTotalPoliticiansChart = function(domId){
+        $.ajax({
+            type: "GET",
+            url: "stats_total_politicians",
+            dataType: "json",
+            success: function(response) {
+                var ctx = document.getElementById(domId).getContext('2d');
+                ctx.canvas.width = horizontalBarChartCanvasWidth;
+                ctx.canvas.height = horizontalBarChartCanvasHeight;
+                
+                new Chart(ctx, {
+                    type: 'horizontalBar',
+                    data: {
+                        datasets: [{
+                            data: response.map(x => x.occurences),
+                            backgroundColor: response.map(x => x.color)
+                        }],
+                        labels: response.map(x => x.fullname)
+                    },
+                    options: horizontalBarChartOptions('black', 
+                        function(item, data) {
+                            return response.map(x => x.occurences)[item.index]
+                                + " " 
+                                + "(" 
+                                + response.map(x => x.party)[item.index]  
+                                + ")"
+                            })
+                    });
+            }
+        });
+    }
 }
 
-function loadCharts(){
-    // comments per party - total
-   
-
-    // comments per politicians - total
-    
-  }

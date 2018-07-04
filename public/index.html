@@ -22,7 +22,7 @@
     <!-- charts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script type="text/javascript" src="/charts.piecelabel.js"></script>
-    <script type="text/javascript" src="/chartMaker.js"></script>
+    <script type="text/javascript" src="/ChartMaker.js"></script>
     <title>Bundeszirkus</title>
 
     <link href="navbar-top.css" rel="stylesheet">
@@ -33,8 +33,11 @@
 
       $(document).ready(function () {
         loadRandomInterruption();
-        loadTotalPartiesChart('statsTotalPartiesChart')
-        loadTotalPoliticiansChart('statsTotalPoliticiansChart')
+
+        let chartMaker = new ChartMaker()
+        chartMaker.createTotalPartiesChart('statsTotalPartiesChart')
+        chartMaker.createTotalPoliticiansChart('statsTotalPoliticiansChart')
+        
         loadDataTable();
       });  
 
@@ -82,7 +85,7 @@
           }
         });
       }
-
+      
     </script>
   </head>
 
