@@ -37,11 +37,11 @@ function sortByParty(a, b) {
 /**
  * Takes a list of {party: xxx} objects and returns a list looking like this:
  * [{party: xxx, occurences: xxx}] where party is unique and occurences is the number of
- * occurences this party has made a comment.
+ * occurences this party has appeared in the input list.
  * @param {*} data [{party: xxx}]
  * @returns [{party: xxx, occurences: xxx}]
  */
-exports.findOccurencesOfPartiesCommenting = function(data) {
+exports.findOccurencesOfParties = function(data) {
     data.sort(sortByParty);
     var result = [], prevParty;
     // data needs to be sorted by fullname before this loop
@@ -64,11 +64,11 @@ exports.findOccurencesOfPartiesCommenting = function(data) {
 /**
  * Takes a list of {fullname: xxx, party: xxx} objects and returns a list looking like this:
  * [{fullname: xxx, party: xxx, occurences: xxx}] where fullname is unique and occurences is the number of
- * occurences this politician has made a comment.
+ * occurences this politician has appeared in the input list.
  * @param {*} data [{fullname: xxx, party: xxx}]
  * @returns [{fullname: xxx, party: xxx, occurences: xxx}]
  */
-exports.findOccurencesOfPoliticiansCommenting = function(data) {
+exports.findOccurencesOfPoliticians = function(data) {
     data.sort(sortByFullname);
     var result = [], prevName;
     // data needs to be sorted by fullname before this loop

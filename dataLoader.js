@@ -10,7 +10,8 @@ var DOMParser = new (require('xmldom')).DOMParser;
  * [{
  *   "speaker":{
  *      "fullname": "Dr. Wolfgang Schäuble", 
- *      "partyOrRole":"CDU/CSU", 
+ *      "party":"CDU/CSU", 
+ *      "role": "" // speaker can have either role or party
  *   },
  *   "comment":{
  *      "fullname":"Martin Schulz", 
@@ -131,8 +132,8 @@ function structureSpeaker(speakerXml){
     let firstname = findValues("vorname", speakerXml)[0].trim()
     let lastname = findValues("nachname", speakerXml)[0].trim()
     // each speaker has either information about their fraction OR their role
-    let role = null
-    let party = null
+    let role = ""
+    let party = ""
     let roles = findValues("rolle_lang", speakerXml)
     let parties = findValues("fraktion", speakerXml)
     if(roles.length > 0){
@@ -207,7 +208,8 @@ function loadSpeech(speech) {
                 allComments.push({
                     speaker: {
                         fullname: speaker.fullname,
-                        partyOrRole: (speaker.party) ? speaker.party : speaker.role
+                        party: speaker.party,
+                        role: speaker.role
                     },
                     comment: result
                 })
@@ -259,7 +261,7 @@ exports.loadData = function(callback){
  * @returns {Object[]} comments per political party stats
  */
 function findCommentsPerParty(allComments){
-    return aH.findOccurencesOfPartiesCommenting(
+    return aH.findOccurencesOfParties(
         allComments.map(function(elem) {
             return {
               party: elem.comment.party
@@ -270,13 +272,32 @@ function findCommentsPerParty(allComments){
     });
 }
 
+function findCommentsPerPartyPassive(allComments){
+    return aH.findOccurencesOfParties(
+        allComments
+        // filter out speakers with a role instead of party affiliation
+        .filter(comment => comment.speaker.party != null && 
+                           comment.speaker.party != undefined && 
+                           comment.speaker.party != "")
+        // use speaker
+        .map(function(elem) {
+            return { 
+                fullname: elem.speaker.fullname,
+                party: elem.speaker.party
+            }
+    }))
+    .sort(function (a, b) {
+        return b.occurences - a.occurences;
+    })
+}
+
 /**
  * 
  * @param {*} allComments 
  * @returns {Object[]} comments per politician
  */
 function findCommentsPerPolitician(allComments){
-    return aH.findOccurencesOfPoliticiansCommenting(
+    return aH.findOccurencesOfPoliticians(
         allComments.map(function(elem) {
             return {
               fullname: elem.comment.fullname,
@@ -289,23 +310,39 @@ function findCommentsPerPolitician(allComments){
     })
 } 
 
-function findCommentsPerPartyPassive(allComments){
-
-}
-
 function findCommentsPerPoliticianPassive(allComments){
-
+    return aH.findOccurencesOfPoliticians(
+        allComments
+        // use speaker
+        .map(function(elem) {
+            return { 
+                fullname: elem.speaker.fullname,
+                party: elem.speaker.party + elem.speaker.role  // only one of those is not an empty string 
+            }
+        })
+    )
+    .sort(function (a, b) {
+        return b.occurences - a.occurences;
+    })
 }
 
 function calculateStatisticalData(allComments) {
     totalCommentsPerParty = findCommentsPerParty(allComments)
     totalCommentsPerPolitician = findCommentsPerPolitician(allComments).slice(0,20)
     totalCommentsPerPartyPassive = findCommentsPerPartyPassive(allComments)
-    totalCommentsPerPoliticianPassive = findCommentsPerPoliticianPassive(allComments)
+    totalCommentsPerPoliticianPassive = findCommentsPerPoliticianPassive(allComments).slice(0,20)
 }
 
 exports.comments = function(){
-    return {data:allComments}
+    return {data:allComments.map(function(elem){
+        // combine party and role to one field here for easier display
+        return  { speaker:{
+                    fullname: elem.speaker.fullname, 
+                    partyOrRole: elem.speaker.party + elem.speaker.role, // only one of those is not an empty string 
+                  },
+                  comment: elem.comment
+                }
+    })}
 }
 
 exports.random = function(){
@@ -343,7 +380,7 @@ exports.statsTotalPartiesPassive = function(){
             occurences: e.occurences,
             color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
         }
-      }); 
+      });
 }
 
 exports.statsTotalPoliticiansPassive = function(){
