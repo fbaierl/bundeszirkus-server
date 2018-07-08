@@ -60,7 +60,7 @@
       function updateRandomInterruption(interruption){
         console.log(interruption.speaker.partyOrRole)
         $('#randInterruptionSpeakerFullname').html(interruption.speaker.fullname)
-        $('#randInterruptionSpeakerPartyOrRole').html("("+interruption.speaker.partyOrRole+")")
+        $('#randInterruptionSpeakerPartyOrRole').html("("+interruption.speaker.party + interruption.speaker.role + ")")
         $('#randInterruptionFullname').html(interruption.comment.fullname)
         $('#randInterruptionParty').html("("+interruption.comment.party+")")
         $('#randInterruptionText').html("„"+interruption.comment.text+"“")
@@ -227,12 +227,12 @@
 
         <br>
           <!-- Disclaimer -->
-        <div style="font-size: 11px">
+        <div style="font-size:11px; max-width:700px;">
           <h3 style="text-align:center; margin-bottom: 10px">
             <span>Disclaimer</span>
           </h3>
-          Alle Statistiken auf dieser Seite bezüglich von Zwischenrufen beziehen sich ausschließlich auf jene welche präzise - d.h- mit dem Namen  und der Partei - des Zwischenrufers protokolliert wurden. 
-          Falls im Protokoll lediglich "Zwischenrufe von der CDU/CSU" oder "Beifall von Seiten der AfD" beschrieben sind, so finden diese Einträge keine statistische Beachtung auf dieser Seite.
+          Alle Statistiken auf dieser Seite bezüglich von Zwischenrufen beziehen sich ausschließlich auf jene welche präzise - d.h. mit dem vollen Namen und der Partei des Zwischenrufers - protokolliert wurden. 
+          Falls im Protokoll lediglich "Zwischenrufe von der CDU/CSU" oder "Beifall von Seiten der AfD" beschrieben sind, so finden diese Einträge (noch) keinerlei statistische Beachtung auf dieser Seite.
           Alle Angaben dieser Seite sind ohne Gewähr.
           Dieses Projekt ist komplett Open-source: 
           <a style="color:white;" href="https://github.com/fbaierl/bundeszirkus-server">github.com/fbaierl/bundeszirkus-server</a> 
@@ -242,6 +242,7 @@
         <br>
         <!-- sources -->
         <div style="line-height:1;">Quelle: <a style="color:white;" href="https://www.bundestag.de/service/opendata">bundestag.de/service/opendata</a></div>
+        <br>
         <div>Bundeszirkus wurde entwickelt von 
           <a style="color:white;" href="mailto:fbaierl1@gmail.com">Florian Baierl</a>
         </div>
