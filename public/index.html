@@ -40,13 +40,16 @@
         chartMaker.createTotalPartiesPassiveChart('statsTotalPartiesPassiveChart')
         chartMaker.createTotalPoliticiansPassiveChart('statsTotalPoliticiansPassiveChart')
         
-        loadDataTable();
+        initDataTable();
       });  
 
-      function initDataTable(data){
+      function initDataTable(){
         $('#allCommentsTable'). DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "comments_server_processing",
             sScrollX: "100%",
-            data: data.data,
+            // data: data.data,
             columns: [
                 { data: 'speaker.fullname' },
                 { data: 'speaker.partyOrRole' },
@@ -65,7 +68,7 @@
         $('#randInterruptionParty').html("("+interruption.comment.party+")")
         $('#randInterruptionText').html("„"+interruption.comment.text+"“")
       }
-
+/*
       function loadDataTable(){
         $.ajax({
           type: "GET",
@@ -76,7 +79,7 @@
           }
         });
       }
-
+*/
       function loadRandomInterruption(){
         $.ajax({
           type: "GET",

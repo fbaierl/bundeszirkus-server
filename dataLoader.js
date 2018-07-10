@@ -333,6 +333,22 @@ function calculateStatisticalData(allComments) {
     totalCommentsPerPoliticianPassive = findCommentsPerPoliticianPassive(allComments).slice(0,20)
 }
 
+exports.commentsSlice = function(start, length){
+    let data = allComments.slice(start, start + length).map(function(elem){
+        // combine party and role to one field here for easier display
+        return  { speaker:{
+                    fullname: elem.speaker.fullname, 
+                    partyOrRole: elem.speaker.party + elem.speaker.role, // only one of those is not an empty string 
+                  },
+                  comment: elem.comment
+                }
+    })
+    return {data: data, 
+            recordsTotal: allComments.length,
+            recordsFiltered: allComments.length // TODO searching
+           }
+}
+
 exports.comments = function(){
     return {data:allComments.map(function(elem){
         // combine party and role to one field here for easier display

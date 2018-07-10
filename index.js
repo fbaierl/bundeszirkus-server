@@ -9,6 +9,14 @@ app.get('/comments', function(req, res){
     res.send(dataLoader.comments())
 })
 
+app.get('/comments_server_processing', function(req, res){    
+    let length = parseInt(req.query.length)
+    let start = parseInt(req.query.start)
+    let search = req.query.search.value
+
+    res.send(dataLoader.commentsSlice(start, length))
+})
+
 app.get("/random", function(req, res){
     res.send(dataLoader.random())
 })
