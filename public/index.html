@@ -23,6 +23,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script type="text/javascript" src="/charts.piecelabel.js"></script>
     <script type="text/javascript" src="/assets/scripts/chartMaker.js"></script>
+
+    <!-- yadcf (DataTables plugin) -->
+    <script type="stylesheet" src="/yadcf-0.9.3/jquery.dataTables.yadcf.css"></script>
+    <script type="text/javascript" src="/yadcf-0.9.3/jquery.dataTables.yadcf.js"></script>
+
+
     <title>Bundeszirkus</title>
 
     <link href="navbar-top.css" rel="stylesheet">
@@ -44,12 +50,11 @@
       });  
 
       function initDataTable(){
-        $('#allCommentsTable'). DataTable({
+        let table = $('#allCommentsTable').DataTable({
             processing: true,
             serverSide: true,
             ajax: "comments_server_processing",
             sScrollX: "100%",
-            // data: data.data,
             columns: [
                 { data: 'speaker.fullname' },
                 { data: 'speaker.partyOrRole' },
@@ -58,28 +63,44 @@
                 { data: 'comment.text' }
             ]
             });
+
+        yadcf.init(table, [
+            {
+              column_number: 0,
+                 filter_type: "text",
+                 filter_delay: 500
+            },
+            {
+                 column_number: 1,
+                 filter_type: "text",
+                 filter_delay: 500
+            },
+            {
+              column_number: 2,
+                 filter_type: "text",
+                 filter_delay: 500
+            },
+            {
+              column_number: 3,
+                 filter_type: "text",
+                 filter_delay: 500
+            },
+            {
+              column_number: 4,
+                 filter_type: "text",
+                 filter_delay: 500
+            }
+        ]);
       }
 
       function updateRandomInterruption(interruption){
-        console.log(interruption.speaker.partyOrRole)
         $('#randInterruptionSpeakerFullname').html(interruption.speaker.fullname)
         $('#randInterruptionSpeakerPartyOrRole').html("("+interruption.speaker.party + interruption.speaker.role + ")")
         $('#randInterruptionFullname').html(interruption.comment.fullname)
         $('#randInterruptionParty').html("("+interruption.comment.party+")")
         $('#randInterruptionText').html("„"+interruption.comment.text+"“")
       }
-/*
-      function loadDataTable(){
-        $.ajax({
-          type: "GET",
-          url: "comments",
-          dataType: "json",
-          success: function(response) {
-            initDataTable(response)
-          }
-        });
-      }
-*/
+
       function loadRandomInterruption(){
         $.ajax({
           type: "GET",

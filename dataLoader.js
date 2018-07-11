@@ -333,7 +333,8 @@ function calculateStatisticalData(allComments) {
     totalCommentsPerPoliticianPassive = findCommentsPerPoliticianPassive(allComments).slice(0,20)
 }
 
-exports.commentsSlice = function(start, length){
+exports.commentsSlice = function(start, length, searchParameters){
+    // TODO work with search parameters
     let data = allComments.slice(start, start + length).map(function(elem){
         // combine party and role to one field here for easier display
         return  { speaker:{

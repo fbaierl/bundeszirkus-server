@@ -12,9 +12,16 @@ app.get('/comments', function(req, res){
 app.get('/comments_server_processing', function(req, res){    
     let length = parseInt(req.query.length)
     let start = parseInt(req.query.start)
-    let search = req.query.search.value
+    let searchColumns = req.query.columns
+    let searchParameters = {
+        speakerFullname: searchColumns[0].search.value,
+        speakerPartyOrRole: searchColumns[1].search.value,
+        commentFullname: searchColumns[2].search.value,
+        commentParty: searchColumns[3].search.value,
+        commentText: searchColumns[4].search.value
+    }
 
-    res.send(dataLoader.commentsSlice(start, length))
+    res.send(dataLoader.commentsSlice(start, length, searchParameters))
 })
 
 app.get("/random", function(req, res){
