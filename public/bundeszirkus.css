@@ -34,7 +34,6 @@ tfoot input {
 /*
  * Disable standard filter for DataTable
  */
-#allCommentsTable_filter 
-{
+#allCommentsTable_filter {
     display:none;
 }

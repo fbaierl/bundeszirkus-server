@@ -39,13 +39,11 @@
 
       $(document).ready(function () {
         loadRandomInterruption();
-
         let chartMaker = new ChartMaker()
         chartMaker.createTotalPartiesChart('statsTotalPartiesChart')
         chartMaker.createTotalPoliticiansChart('statsTotalPoliticiansChart')
         chartMaker.createTotalPartiesPassiveChart('statsTotalPartiesPassiveChart')
-        chartMaker.createTotalPoliticiansPassiveChart('statsTotalPoliticiansPassiveChart')
-        
+        chartMaker.createTotalPoliticiansPassiveChart('statsTotalPoliticiansPassiveChart')  
         initDataTable();
       });  
 
@@ -54,17 +52,18 @@
             processing: true,
             serverSide: true,
             ordering:  false,
+            bLengthChange: false,
             language: {
                 url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
               },
             ajax: "comments_server_processing",
             sScrollX: "100%",
             columns: [
-                { data: 'speaker.fullname' },
-                { data: 'speaker.partyOrRole' },
                 { data: 'comment.fullname' },
                 { data: 'comment.party' },
-                { data: 'comment.text' }
+                { data: 'comment.text' },
+                { data: 'speaker.fullname' },
+                { data: 'speaker.partyOrRole' },
             ]
             });
             
@@ -216,11 +215,11 @@
         <table id="allCommentsTable" class="display" style="width:100%">
           <thead>
             <tr>
-              <th>Name Sprecher</th>
-              <th>Fraktion/Rolle Sprecher</th>
               <th>Name Zwischenrufer</th>
               <th>Partei Zwischenrufer</th>
               <th>Zwischenruf</th>
+              <th>Name Sprecher</th>
+              <th>Fraktion/Rolle Sprecher</th>
             </tr>
           </thead>
         </table>

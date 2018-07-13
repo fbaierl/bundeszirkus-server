@@ -335,10 +335,6 @@ function calculateStatisticalData(allComments) {
 
 function applySearchParams(comments, searchParams){
     let result = comments
-
-    console.log("search params: ")
-    console.log(searchParams)
-
     if(searchParams.speakerFullname && searchParams.speakerFullname != ""){
         result = result.filter(f => f.speaker.fullname.toLowerCase().includes(searchParams.speakerFullname.toLowerCase()))
     }
@@ -359,9 +355,8 @@ function applySearchParams(comments, searchParams){
 }
 
 exports.commentsSlice = function(start, length, searchParameters){
-    // search parameters
     let dataToSend = applySearchParams(allComments, searchParameters)
-    // slice
+    let recordsFiltered = dataToSend.length
     dataToSend = dataToSend.slice(start, start + length).map(function(elem){
         // combine party and role to one field here for easier display
         return  { speaker:{
@@ -373,7 +368,7 @@ exports.commentsSlice = function(start, length, searchParameters){
     })
     return {data: dataToSend, 
             recordsTotal: allComments.length,
-            recordsFiltered: allComments.length // TODO searching
+            recordsFiltered: recordsFiltered
            }
 }
 
