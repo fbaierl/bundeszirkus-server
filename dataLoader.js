@@ -333,9 +333,36 @@ function calculateStatisticalData(allComments) {
     totalCommentsPerPoliticianPassive = findCommentsPerPoliticianPassive(allComments).slice(0,20)
 }
 
+function applySearchParams(comments, searchParams){
+    let result = comments
+
+    console.log("search params: ")
+    console.log(searchParams)
+
+    if(searchParams.speakerFullname && searchParams.speakerFullname != ""){
+        result = result.filter(f => f.speaker.fullname.toLowerCase().includes(searchParams.speakerFullname.toLowerCase()))
+    }
+    if(searchParams.speakerPartyOrRole && searchParams.speakerPartyOrRole != ""){
+        result = result.filter(f => (f.speaker.party && f.speaker.party.toLowerCase().includes(searchParams.speakerPartyOrRole.toLowerCase()) ||
+                                    (f.speaker.role && f.speaker.role.toLowerCase().includes(searchParams.speakerPartyOrRole.toLowerCase()))))
+    }
+    if(searchParams.commentFullname && searchParams.commentFullname != ""){
+        result = result.filter(f => f.comment.fullname.toLowerCase().includes(searchParams.commentFullname.toLowerCase()))
+    }
+    if(searchParams.commentParty && searchParams.commentParty != ""){
+        result = result.filter(f => f.comment.party.toLowerCase().includes(searchParams.commentParty.toLowerCase()))
+    }
+    if(searchParams.commentText && searchParams.commentText != ""){
+        result = result.filter(f => f.comment.text.toLowerCase().includes(searchParams.commentText.toLowerCase()))
+    }
+    return result
+}
+
 exports.commentsSlice = function(start, length, searchParameters){
-    // TODO work with search parameters
-    let data = allComments.slice(start, start + length).map(function(elem){
+    // search parameters
+    let dataToSend = applySearchParams(allComments, searchParameters)
+    // slice
+    dataToSend = dataToSend.slice(start, start + length).map(function(elem){
         // combine party and role to one field here for easier display
         return  { speaker:{
                     fullname: elem.speaker.fullname, 
@@ -344,7 +371,7 @@ exports.commentsSlice = function(start, length, searchParameters){
                   comment: elem.comment
                 }
     })
-    return {data: data, 
+    return {data: dataToSend, 
             recordsTotal: allComments.length,
             recordsFiltered: allComments.length // TODO searching
            }

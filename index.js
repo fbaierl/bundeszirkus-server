@@ -13,6 +13,9 @@ app.get('/comments_server_processing', function(req, res){
     let length = parseInt(req.query.length)
     let start = parseInt(req.query.start)
     let searchColumns = req.query.columns
+    console.log(">-------------------")
+    console.log(searchColumns)
+    console.log("-------------------<")
     let searchParameters = {
         speakerFullname: searchColumns[0].search.value,
         speakerPartyOrRole: searchColumns[1].search.value,

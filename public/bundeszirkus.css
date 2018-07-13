@@ -31,3 +31,10 @@ tfoot input {
   box-sizing: border-box;
 }
 
+/*
+ * Disable standard filter for DataTable
+ */
+#allCommentsTable_filter 
+{
+    display:none;
+}

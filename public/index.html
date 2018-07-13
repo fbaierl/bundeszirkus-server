@@ -53,6 +53,10 @@
         let table = $('#allCommentsTable').DataTable({
             processing: true,
             serverSide: true,
+            ordering:  false,
+            language: {
+                url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
+              },
             ajax: "comments_server_processing",
             sScrollX: "100%",
             columns: [
@@ -63,33 +67,23 @@
                 { data: 'comment.text' }
             ]
             });
-
+            
+        let yadcfColumnDef = function(i){
+          return {
+            column_number: i,
+            filter_type: "text",
+            filter_delay: 500,
+            filter_reset_button_text: false,
+            filter_default_label: "Filter"
+          }
+        }
+  
         yadcf.init(table, [
-            {
-              column_number: 0,
-                 filter_type: "text",
-                 filter_delay: 500
-            },
-            {
-                 column_number: 1,
-                 filter_type: "text",
-                 filter_delay: 500
-            },
-            {
-              column_number: 2,
-                 filter_type: "text",
-                 filter_delay: 500
-            },
-            {
-              column_number: 3,
-                 filter_type: "text",
-                 filter_delay: 500
-            },
-            {
-              column_number: 4,
-                 filter_type: "text",
-                 filter_delay: 500
-            }
+          yadcfColumnDef(0),
+          yadcfColumnDef(1),
+          yadcfColumnDef(2),
+          yadcfColumnDef(3),
+          yadcfColumnDef(4),
         ]);
       }
 
