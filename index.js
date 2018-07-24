@@ -5,6 +5,9 @@ var dataLoader = require('./dataLoader.js')
 
 app.use(express.static('public'))
 
+
+app.use('/node_modules', express.static(__dirname + '/node_modules/'));
+
 app.get('/comments', function(req, res){
     res.send(dataLoader.comments())
 })
