@@ -63,6 +63,9 @@ totalCommentsPerPartyPassive = []
  */
 function findValues(element, xml) {
     var output = [];
+    if(!xml || !xml.childNodes){
+        return output;
+    }
     var nodes = xml.childNodes;
     if (nodes != null) {
         for (var i = 0; i < nodes.length; i++) {
@@ -84,6 +87,9 @@ function findValues(element, xml) {
  */
 function findNodes(nodeName, xml){
     var output = []
+    if(!xml || !xml.childNodes){
+        return output
+    }
     var nodes = xml.childNodes
     if(nodes){
         for (var i = 0; i < nodes.length; i++) {
@@ -143,7 +149,7 @@ function structureSpeaker(speakerXml){
     } else if (parties.length > 0){
         party = parties[0].trim()
     } else {
-        console.log("Couldn't find role or party for speaker: " + firstname + " " +  lastname)
+        console.log("[loader] Couldn't find role or party for speaker: " + firstname + " " +  lastname)
     }
     return {fullname:firstname + " " + lastname, party:party, role:role}
 }
@@ -225,7 +231,7 @@ function loadSpeech(speech) {
  */
 function loadFile(dirPath, fileName){
     let filePath = dirPath + "/" + fileName
-    console.log("Loading file " + fileName)
+    console.log("[loader] loading file " + fileName)
     var fileContent = fs.readFileSync(filePath, "utf8")
     var document = DOMParser.parseFromString(fileContent, "application  /xml");
     var speeches = findNodes("rede", document)
@@ -242,7 +248,7 @@ function loadFile(dirPath, fileName){
 exports.loadData = function(callback){
     var dirPath = "data"
     var files = ""
-    console.log("Loading data ...")
+    console.log("[loader] loading data ...")
     fs.readdir(dirPath, function(err, items) {
         if(err){
             return callback(err);
