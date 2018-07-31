@@ -8,6 +8,10 @@ var url = require('url');
 let BT_LINK = "http://www.bundestag.de"
 var DOWNLOAD_DIR = './data/';
 
+var _callback = null
+var _foundLinks = 0
+var _downloadedLinks = 0
+
 // TODO needs callback to trigger data loading
 
 function downloadFileFromHref(href) {
@@ -22,6 +26,11 @@ function downloadFileFromHref(href) {
         let file = fs.createWriteStream(DOWNLOAD_DIR + fileName)
         file.write(data)
         file.end()
+        // TODO this is not a pretty solution... need to research on how to do it better
+        _downloadedLinks++
+        if(_downloadedLinks >= _foundLinks){
+            _callback()
+        }
     })
 }
 
@@ -45,7 +54,8 @@ function onDocumentLinkFound(href) {
     }
 }
 
-exports.scrape = function() {
+exports.scrape = function(cb) {
+    _callback = cb
     // not sure if this link is okay 
     scraperjs.StaticScraper.create("http://www.bundestag.de/ajax/filterlist/de/service/opendata/-/543410")
 	.scrape(function($) {
@@ -54,8 +64,9 @@ exports.scrape = function() {
 		}).get();
 	})
 	.then(function(hrefs) {
+        _foundLinks = hrefs.length
         hrefs.forEach(href => {
-            onDocumentLinkFound(href)
+            onDocumentLinkFound(href, hrefs.length)
         });
     })
 }

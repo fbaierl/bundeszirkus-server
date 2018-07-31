@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 var dataLoader = require('./dataLoader.js')
-// var dataScraper = require('./dataScraper.js')
+var dataScraper = require('./dataScraper.js')
 
 app.use(express.static('public'))
 
@@ -47,12 +47,11 @@ app.get("/stats_total_politicians_passive", function(req, res){
     res.send(dataLoader.statsTotalPoliticiansPassive())
 })
 
-var startListening = function() {
-    app.listen(3000, () => console.log('Server running on port 3000'))
-}
+// callback hell is coming... need to find a better way for this 
+var startServer = function() { app.listen(3000, () => console.log('Server running on port 3000')) }
+var load = function() { dataLoader.loadData(startServer) } 
+dataScraper.scrape(load)
 
-// TODO dataScraper.scrape()
-dataLoader.loadData(startListening)
 
 
   
