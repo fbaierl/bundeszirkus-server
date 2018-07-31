@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 var dataLoader = require('./dataLoader.js')
-var dataScraper = require('./dataScraper.js')
+// var dataScraper = require('./dataScraper.js')
 
 app.use(express.static('public'))
 
