@@ -1,11 +1,17 @@
+
+const schedule = require('node-schedule') 
 const express = require('express')
 const app = express()
 
-var dataLoader = require('./dataLoader.js')
+const DataLoader = require('./dataLoader')
 var dataScraper = require('./dataScraper.js')
 
-app.use(express.static('public'))
+const port = 3000
 
+var dataLoader
+var serverRunning = false
+
+app.use(express.static('public'))
 
 app.use('/node_modules', express.static(__dirname + '/node_modules/'));
 
@@ -47,15 +53,32 @@ app.get("/stats_total_politicians_passive", function(req, res){
     res.send(dataLoader.statsTotalPoliticiansPassive())
 })
 
-function start(){
-    var startServer = function() { app.listen(3000, () => console.log('Server running on port 3000')) }
-    var load = function() { dataLoader.loadData(startServer) } 
-    dataScraper.scrape(load)
+var startServer = function() { 
+    app.listen(port, (err) =>  {
+        if(err){
+            console.log(err)
+            serverRunning = false
+        }
+        serverRunning = true
+        console.log('Server running on port ' + port)
+    }) 
 }
 
-start()
+var loadData = function() {
+    dataLoader = new DataLoader()
+    let startServerIfNotRunning = () => {
+        if(!serverRunning){
+            startServer()
+        }
+    }
+    dataLoader.loadData(startServerIfNotRunning)
+}
 
+// schedule reloading/scraping of data every 3 hours
+schedule.scheduleJob('0 0 */3 * *', () => {
+    // scrape & load data w/o restarting the server 
+    dataScraper.scrape(loadData) 
+}) 
 
-
-
-  
+// scrape, load data & start the server
+dataScraper.scrape(loadData)

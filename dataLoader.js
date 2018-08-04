@@ -240,36 +240,6 @@ function loadFile(dirPath, fileName){
     })
 }
 
-function resetData(){
-    allComments = []
-    totalCommentsPerParty = []
-    totalCommentsPerPolitician = []
-    totalCommentsPerPartyPassive = []
-}
-
-/**
- * This method should be called before the server starts listening to requests 
- * in order to load all data neccessary.
- * @param {function} callback 
- */
-exports.loadData = function(callback){
-    resetData()
-    var dirPath = "data"
-    var files = ""
-    console.log("[loader] loading data ...")
-    fs.readdir(dirPath, function(err, items) {
-        if(err){
-            return callback(err);
-        }
-        for (var i=0; i<items.length; i++) {
-            let fileName = items[i]
-            loadFile(dirPath, fileName)
-        }
-        calculateStatisticalData(allComments)
-        callback()
-    });
-}
-
 /**
  * @param {*} allComments 
  * @returns {Object[]} comments per political party stats
@@ -368,82 +338,111 @@ function applySearchParams(comments, searchParams){
     return result
 }
 
-exports.commentsSlice = function(start, length, searchParameters){
-    let dataToSend = applySearchParams(allComments, searchParameters)
-    let recordsFiltered = dataToSend.length
-    dataToSend = dataToSend.slice(start, start + length).map(function(elem){
-        // combine party and role to one field here for easier display
-        return  { speaker:{
-                    fullname: elem.speaker.fullname, 
-                    partyOrRole: elem.speaker.party + elem.speaker.role, // only one of those is not an empty string 
-                  },
-                  comment: elem.comment
-                }
-    })
-    return {data: dataToSend, 
-            recordsTotal: allComments.length,
-            recordsFiltered: recordsFiltered
-           }
+class DataLoader{
+    /**
+     * This method should be called before the server starts listening to requests 
+     * in order to load all data neccessary.
+     * @param {function} callback 
+     */
+    loadData(callback){
+        var dirPath = "data"
+        var files = ""
+        console.log("[loader] loading data ...")
+        fs.readdir(dirPath, function(err, items) {
+            if(err){
+                return callback(err);
+            }
+            for (var i=0; i<items.length; i++) {
+                let fileName = items[i]
+                loadFile(dirPath, fileName)
+            }
+            calculateStatisticalData(allComments)
+            if(callback){
+                callback()
+            }
+        });
+    }
+
+    commentsSlice(start, length, searchParameters){
+        let dataToSend = applySearchParams(allComments, searchParameters)
+        let recordsFiltered = dataToSend.length
+        dataToSend = dataToSend.slice(start, start + length).map(function(elem){
+            // combine party and role to one field here for easier display
+            return  { speaker:{
+                        fullname: elem.speaker.fullname, 
+                        partyOrRole: elem.speaker.party + elem.speaker.role, // only one of those is not an empty string 
+                    },
+                    comment: elem.comment
+                    }
+        })
+        return {data: dataToSend, 
+                recordsTotal: allComments.length,
+                recordsFiltered: recordsFiltered
+            }
+    }
+
+    comments(){
+        return {data:allComments.map(function(elem){
+            // combine party and role to one field here for easier display
+            return  { speaker:{
+                        fullname: elem.speaker.fullname, 
+                        partyOrRole: elem.speaker.party + elem.speaker.role, // only one of those is not an empty string 
+                    },
+                    comment: elem.comment
+                    }
+        })}
+    }
+
+    random(){
+        return allComments[Math.floor(Math.random() * allComments.length)]
+    }
+
+    statsTotalParties(){
+        return totalCommentsPerParty.map(function(e, i) {
+            let c = knowledge.partyColor(e.party)
+            return {
+                party: e.party,
+                occurences: e.occurences,
+                color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
+            }
+        }); 
+    }
+
+    statsTotalPoliticians(){
+        return totalCommentsPerPolitician.map(function(e, i) {
+            let c = knowledge.partyColor(e.party)
+            return {
+                fullname: e.fullname,
+                party: e.party,
+                occurences: e.occurences,
+                color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
+            }
+        }); 
+    }
+
+    statsTotalPartiesPassive(){
+        return totalCommentsPerPartyPassive.map(function(e, i) {
+            let c = knowledge.partyColor(e.party)
+            return {
+                party: e.party,
+                occurences: e.occurences,
+                color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
+            }
+        });
+    }
+
+    statsTotalPoliticiansPassive(){
+        return totalCommentsPerPoliticianPassive.map(function(e, i) {
+            let c = knowledge.partyColor(e.party)
+            return {
+                fullname: e.fullname,
+                party: e.party,
+                occurences: e.occurences,
+                color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
+            }
+        }); 
+    }
+
 }
 
-exports.comments = function(){
-    return {data:allComments.map(function(elem){
-        // combine party and role to one field here for easier display
-        return  { speaker:{
-                    fullname: elem.speaker.fullname, 
-                    partyOrRole: elem.speaker.party + elem.speaker.role, // only one of those is not an empty string 
-                  },
-                  comment: elem.comment
-                }
-    })}
-}
-
-exports.random = function(){
-    return allComments[Math.floor(Math.random() * allComments.length)]
-}
-
-exports.statsTotalParties = function(){
-    return totalCommentsPerParty.map(function(e, i) {
-        let c = knowledge.partyColor(e.party)
-        return {
-            party: e.party,
-            occurences: e.occurences,
-            color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
-        }
-      }); 
-}
-
-exports.statsTotalPoliticians = function(){
-    return totalCommentsPerPolitician.map(function(e, i) {
-        let c = knowledge.partyColor(e.party)
-        return {
-            fullname: e.fullname,
-            party: e.party,
-            occurences: e.occurences,
-            color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
-        }
-      }); 
-}
-
-exports.statsTotalPartiesPassive = function(){
-    return totalCommentsPerPartyPassive.map(function(e, i) {
-        let c = knowledge.partyColor(e.party)
-        return {
-            party: e.party,
-            occurences: e.occurences,
-            color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
-        }
-      });
-}
-
-exports.statsTotalPoliticiansPassive = function(){
-    return totalCommentsPerPoliticianPassive.map(function(e, i) {
-        let c = knowledge.partyColor(e.party)
-        return {
-            fullname: e.fullname,
-            party: e.party,
-            occurences: e.occurences,
-            color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
-        }
-      }); 
-}
+module.exports = DataLoader
