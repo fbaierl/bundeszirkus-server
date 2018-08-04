@@ -240,12 +240,20 @@ function loadFile(dirPath, fileName){
     })
 }
 
+function resetData(){
+    allComments = []
+    totalCommentsPerParty = []
+    totalCommentsPerPolitician = []
+    totalCommentsPerPartyPassive = []
+}
+
 /**
  * This method should be called before the server starts listening to requests 
  * in order to load all data neccessary.
  * @param {function} callback 
  */
 exports.loadData = function(callback){
+    resetData()
     var dirPath = "data"
     var files = ""
     console.log("[loader] loading data ...")

@@ -12,26 +12,31 @@ var _callback = null
 var _foundLinks = 0
 var _downloadedLinks = 0
 
-// TODO needs callback to trigger data loading
-
 function downloadFileFromHref(href) {
     let fileName = url.parse(href).pathname.split('/').pop();
-    // TODO should check if file is already present
     console.log("[scraper] downloading file: " + fileName + " from href: " + href)
     scraperjs.StaticScraper.create(href)
 	.scrape(function($) {
 		return $.html()
 	})
 	.then(function(data) {
-        let file = fs.createWriteStream(DOWNLOAD_DIR + fileName)
-        file.write(data)
-        file.end()
-        // TODO this is not a pretty solution... need to research on how to do it better
+        createFile(fileName, data)
         _downloadedLinks++
-        if(_downloadedLinks >= _foundLinks){
-            _callback()
-        }
+        callbackIfFinished();
     })
+}
+
+function callbackIfFinished(){
+    if(_downloadedLinks >= _foundLinks){
+        console.log("[scraper] finished downloading " + _foundLinks +  " files.")
+        _callback()
+    }
+}
+
+function createFile(fileName, data){
+    let file = fs.createWriteStream(DOWNLOAD_DIR + fileName)
+    file.write(data)
+    file.end()
 }
 
 function onDocumentLinkFound(href) {
@@ -56,6 +61,7 @@ function onDocumentLinkFound(href) {
 
 exports.scrape = function(cb) {
     _callback = cb
+    _downloadedLinks = 0
     // not sure if this link is okay 
     scraperjs.StaticScraper.create("http://www.bundestag.de/ajax/filterlist/de/service/opendata/-/543410")
 	.scrape(function($) {

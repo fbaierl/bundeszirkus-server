@@ -47,10 +47,14 @@ app.get("/stats_total_politicians_passive", function(req, res){
     res.send(dataLoader.statsTotalPoliticiansPassive())
 })
 
-// callback hell is coming... need to find a better way for this 
-var startServer = function() { app.listen(3000, () => console.log('Server running on port 3000')) }
-var load = function() { dataLoader.loadData(startServer) } 
-dataScraper.scrape(load)
+function start(){
+    var startServer = function() { app.listen(3000, () => console.log('Server running on port 3000')) }
+    var load = function() { dataLoader.loadData(startServer) } 
+    dataScraper.scrape(load)
+}
+
+start()
+
 
 
 
