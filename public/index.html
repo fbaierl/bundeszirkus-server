@@ -30,7 +30,6 @@
 
     <title>Bundeszirkus</title>
 
-    <link href="navbar-top.css" rel="stylesheet">
     <link href="bundeszirkus.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -44,7 +43,7 @@
         chartMaker.createTotalPartiesPassiveChart('statsTotalPartiesPassiveChart')
         chartMaker.createTotalPoliticiansPassiveChart('statsTotalPoliticiansPassiveChart')  
         initDataTable();
-      });  
+      });
 
       function initDataTable(){
         let table = $('#allCommentsTable').DataTable({
@@ -137,9 +136,9 @@
       -->
       <div id="randomInterruptionDiv" class="jumbotron jumbo-dark" >
           <div style="text-align:center">
-            <h3 style="text-align:center; margin-bottom:20px;">Zufälliger Zwischenruf.</h3>
-            <p class="lead" id="randInterruptionText"/>
-            <div class="lead" style="line-height:1">
+            <h3 style="text-align:center; margin-bottom:30px;">Zufälliger Zwischenruf.</h3>
+            <p class="display-4" style="font-size:1.6rem;" id="randInterruptionText"/>
+            <div class="lead" style="font-size:1.2rem; line-height:1; margin-bottom:20px;">
               <span id="randInterruptionFullname"></span>
               <span id="randInterruptionParty"></span>
               <span> zur Rede von </span>
