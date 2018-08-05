@@ -3,6 +3,9 @@ var knowledge = require('./knowledge.js')
 var aH = require('./arrayHelper.js')
 var DOMParser = new (require('xmldom')).DOMParser;
 
+const Comment = require('./model/comment')
+const Speaker = require('./model/speaker')
+
 /**
  * Contains all comments.
  * 
@@ -151,7 +154,7 @@ function structureSpeaker(speakerXml){
     } else {
         console.log("[loader] Couldn't find role or party for speaker: " + firstname + " " +  lastname)
     }
-    return {fullname:firstname + " " + lastname, party:party, role:role}
+    return new Speaker(firstname + " " + lastname, party, role)
 }
 
 /**
@@ -164,38 +167,15 @@ function structureSpeaker(speakerXml){
  * @param {*} comment the comment to categorize as a string 
  * @returns []
  */
-function structureComment(comment){
+function structureComment(text){
     let result = []
-    let parts = comment.split("–")
+    let parts = text.split("–")
     parts.forEach(function(part){
-        /*
-        * Regex will result in capturing groups, e.g. for "(Beifall bei der AfD – Martin Schulz [SPD]: Da kennt ihr euch ja aus!)"
-        * 1. "Martin Schulz"
-        * 2. "SPD"
-        * 3. "Da kennt ihr euch ja aus!"
-        * 
-        * Some comments also include "an ... gewandt", e.g.
-        * "Dr. Volker Ullrich [CDU/CSU], an DIE LINKE gewandt: Wo ist denn Frau Wagenknecht heute?)"
-        * 
-        * Some comments also include the city a representative is from, e.g. 
-        * "Carsten Schneider [Erfurt] [SPD]: Wir sind es schon!"
-        * 
-        * Good resource for testing regex: regex101.com
-        */
-        let r = /(?:\(|^)?(.*?) (?:\[.+\] )?\[(.*?)\](?::|, an .+? gewandt:) (.*?)(?:\)|$)/g
-        let match = r.exec(part);
-        if(match){
-            let fullname = match[1].trim()
-                             // ... in case fullname is e.g. "Gegenruf des Abg. Karsten Hilse"
-                            .replace(/Gegenrufe? de(s|r) Abg[.]?/, "")
-                            // ... in case fullname has a predeceding "Abg" or "Abg."
-                            .replace(/Abg.?/,"").trim()
-            let party = match[2].trim()
-            let text = match[3].trim() 
-            result.push({fullname:fullname, party:party, text:text})
+        let newComment = new Comment(part)
+        if(!newComment.invalid){
+            result.push(newComment)
         }
     })
-
     return result;
 }
 
