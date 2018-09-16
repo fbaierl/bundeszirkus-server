@@ -318,6 +318,13 @@ function applySearchParams(comments, searchParams){
     return result
 }
 
+function reset(){
+    allComments = []
+    totalCommentsPerParty = []
+    totalCommentsPerPolitician = []
+    totalCommentsPerPartyPassive = []
+}
+
 class DataLoader{
     /**
      * This method should be called before the server starts listening to requests 
@@ -325,6 +332,7 @@ class DataLoader{
      * @param {function} callback 
      */
     loadData(callback){
+        reset()
         var dirPath = "data"
         var files = ""
         console.log("[loader] loading data ...")
