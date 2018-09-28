@@ -1,3 +1,5 @@
+var util = require('./../util.js')
+
 function Comment(fullname, party, text) {
         this.fullname = fullname
         this.party = party
@@ -21,17 +23,19 @@ function Comment(text){
         * "Carsten Schneider [Erfurt] [SPD]: Wir sind es schon!"
         * 
         * Good resource for testing regex: regex101.com
+        * 
+        * Sometimes the document uses different kinds of whitespaces, so we have to filter them out too...
         */
        let r = /(?:\(|^)?(.*?) (?:\[.+\] )?\[(.*?)\](?::|, an .+? gewandt:) (.*?)(?:\)|$)/g
        let match = r.exec(text);
        if(match){
-           this.fullname = match[1].trim()
+           this.fullname = util.cleanWhiteSpaces(match[1].trim()
                             // ... in case fullname is e.g. "Gegenruf des Abg. Karsten Hilse"
                            .replace(/Gegenrufe? de(s|r) Abg[.]?/, "")
                            // ... in case fullname has a predeceding "Abg" or "Abg."
-                           .replace(/Abg.?/,"").trim()
-           this.party = match[2].trim()
-           this.text = match[3].trim() 
+                           .replace(/Abg.?/,"")).trim()
+           this.party = util.cleanWhiteSpaces(match[2].trim())
+           this.text = util.cleanWhiteSpaces(match[3].trim())
        } else {
            return {invalid:true}
        }

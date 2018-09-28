@@ -75,7 +75,7 @@ var loadData = function() {
 }
 
 // schedule reloading/scraping of data every 3 hours
-schedule.scheduleJob('0 0 */3 * *', () => {
+schedule.scheduleJob('* */3 * * *', () => {
     // scrape & load data w/o restarting the server 
     dataScraper.scrape(loadData) 
 }) 
