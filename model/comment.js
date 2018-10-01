@@ -9,7 +9,7 @@ function Comment(fullname, party, text) {
 /**
  * Constructs a Comment object using a text passage from the protocols
  */
-function Comment(text){
+function Comment(raw){
         /*
         * Regex will result in capturing groups, e.g. for "(Beifall bei der AfD – Martin Schulz [SPD]: Da kennt ihr euch ja aus!)"
         * 1. "Martin Schulz"
@@ -27,15 +27,22 @@ function Comment(text){
         * Sometimes the document uses different kinds of whitespaces, so we have to filter them out too...
         */
        let r = /(?:\(|^)?(.*?) (?:\[.+\] )?\[(.*?)\](?::|, an .+? gewandt:) (.*?)(?:\)|$)/g
-       let match = r.exec(text);
+       let match = r.exec(raw);
        if(match){
-           this.fullname = util.cleanWhiteSpaces(match[1].trim()
-                            // ... in case fullname is e.g. "Gegenruf des Abg. Karsten Hilse"
-                           .replace(/Gegenrufe? de(s|r) Abg[.]?/, "")
-                           // ... in case fullname has a predeceding "Abg" or "Abg."
-                           .replace(/Abg.?/,"")).trim()
-           this.party = util.cleanWhiteSpaces(match[2].trim())
-           this.text = util.cleanWhiteSpaces(match[3].trim())
+            let fullname = match[1].trim()
+                        // ... in case fullname is e.g. "Gegenruf des Abg. Karsten Hilse"
+                        .replace(/Gegenrufe? de(s|r) Abg[.]?/, "")
+                        // ... in case fullname has a predeceding "Abg" or "Abg."
+                        .replace(/Abg.?/,"")
+            let party = match[2].trim()
+            // work-around for a faulty raw xml file (19046-data.xml)
+            if(party === "BÜNDNIS 90/D"){
+                party = "BÜNDNIS 90/DIE GRÜNEN"
+             }
+            let text = match[3].trim()
+            this.fullname = util.cleanWhiteSpaces(fullname).trim()
+            this.party = util.cleanWhiteSpaces(party)
+            this.text = util.cleanWhiteSpaces(text)
        } else {
            return {invalid:true}
        }
