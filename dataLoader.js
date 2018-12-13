@@ -72,7 +72,9 @@ function findValues(element, xml) {
     var nodes = xml.childNodes;
     if (nodes != null) {
         for (var i = 0; i < nodes.length; i++) {
-            if (nodes[i].nodeName == element && nodes[i].childNodes.length == 1) {
+            if (nodes[i].nodeName == element && 
+                nodes[i].childNodes.length == 1 && 
+                nodes[i].childNodes[0].nodeValue) {
                 output.push(nodes[i].childNodes[0].nodeValue);
             } else {
                 output = output.concat(findValues(element, nodes[i]));
@@ -138,8 +140,14 @@ function findNodes(nodeName, xml){
  */
 function structureSpeaker(speakerXml){
     // each speaker has a first and a last name
-    let firstname = findValues("vorname", speakerXml)[0].trim()
-    let lastname = findValues("nachname", speakerXml)[0].trim()
+    let firstnames = findValues("vorname", speakerXml)
+    let lastnames = findValues("nachname", speakerXml)
+    // in rare cases the xml may be broken...
+    if(firstnames.length <= 0 || lastnames <= 0) {
+      return  
+    } 
+    let firstname = firstnames[0].trim()
+    let lastname = lastnames[0].trim()
     // each speaker has either information about their fraction OR their role
     let role = ""
     let party = ""
@@ -185,23 +193,25 @@ function loadSpeech(speech) {
     let speakerXml = findNodes("redner", speech)
     // should include one speaker tag per speech
     let speaker = structureSpeaker(speakerXml[0])
-    // find comments for each speech and push them to all comments list
-    let comments = findValues("kommentar", speech);
-    comments.forEach(function(comment) {
-        let resultArr = structureComment(comment)
-        if(resultArr){
-            resultArr.forEach(function(result){
-                allComments.push({
-                    speaker: {
-                        fullname: speaker.fullname,
-                        party: speaker.party,
-                        role: speaker.role
-                    },
-                    comment: result
-                })
-            });   
-        }
-    });
+    if(speaker){
+        // find comments for each speech and push them to all comments list
+        let comments = findValues("kommentar", speech);
+        comments.forEach(function(comment) {
+            let resultArr = structureComment(comment)
+            if(resultArr){
+                resultArr.forEach(function(result){
+                    allComments.push({
+                        speaker: {
+                            fullname: speaker.fullname,
+                            party: speaker.party,
+                            role: speaker.role
+                        },
+                        comment: result
+                    })
+                });   
+            }
+        });
+    }
 }
 
 /**
