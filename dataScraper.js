@@ -3,6 +3,8 @@ var $ = require('jquery');
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
+const Nightmare = require('nightmare');
+const cheerio = require('cheerio');
 
 // https is NOT supported
 const BT_LINK = "http://www.bundestag.de"
@@ -22,12 +24,13 @@ function downloadFileFromHref(href) {
 	.then(function(data) {
         createFile(fileName, data)
         _downloadedLinks++
+        callbackIfFinished()
     })
 }
 
 function callbackIfFinished(){
     if(_downloadedLinks >= _foundLinks){
-        console.log("[scraper] finished downloading " + _foundLinks +  " files.")
+        console.log("[scraper] finished downloading  all " + _downloadedLinks +  " files.")
         _callback()
     }
 }
@@ -60,29 +63,45 @@ function checkDocumentLink(href) {
   }
   
 
+
 exports.scrape = function(cb) {
     _callback = cb
     _downloadedLinks = 0
-    // not sure if this link is okay 
-    scraperjs.StaticScraper.create("http://www.bundestag.de/ajax/filterlist/de/service/opendata/-/543410")
-	.scrape(function($) {
-		return $("a").map(function() {
-			return $(this).attr('href')
-		}).get();
-	})
-	.then(function(hrefs) {
-        _foundLinks = hrefs.length
-        _downloadedLinks = 0
-        let validLinks = hrefs.filter(checkDocumentLink)
-        console.log("[scraper] found " + validLinks.length + " valid links (out of " + hrefs.length + ").")
-        if(validLinks.length > 0){
-            validLinks.forEach(href => {
-                downloadFileFromHref(href)
-                callbackIfFinished();
-            });
-        } else {
-            console.log("[scraper] did not download any files.")
-             _callback()
-        }  
-    })
+
+    const nightmare = Nightmare({ show: false })
+    const url = 'https://www.bundestag.de/services/opendata'
+
+    // we request nightmare to browse to the bundestag.de url and extract the whole inner html
+    nightmare
+        .goto(url)
+        .wait('body')
+        .evaluate(() => document.querySelector('body').innerHTML)
+        .end()
+        .then(response => {
+            _downloadedLinks = 0
+            let validLinks = extractLinks(response)
+            _foundLinks = validLinks.length
+            console.log("[scraper] found " + validLinks.length + " valid links.")
+            if(validLinks.length > 0){
+                validLinks.forEach(href => {
+                    downloadFileFromHref(BT_LINK + href)
+                });
+            } else {
+                console.log("[scraper] did not download any files.")
+                _callback()
+            }  
+        }).catch(err => {
+            console.log(err);
+        });
+
+    // Extracting the links we need
+    let extractLinks = html => {
+        data = [];
+        const $ = cheerio.load(html);
+        $('.bt-link-dokument').each(function() {
+            data.push(this.attribs.href);
+         });
+         return data.filter(checkDocumentLink)
+    } 
+
 }
