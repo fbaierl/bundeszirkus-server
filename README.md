@@ -1,5 +1,7 @@
 Link to the webpage: [www.bundeszirkus.de](http://www.bundeszirkus.de/)
 
+![Screenshot](/screencapture-bundeszirkus.png?raw=true "Screenshot Bundeszirkus.de")
+
 ## MIT License
 
 Copyright 2018 Florian Baierl
