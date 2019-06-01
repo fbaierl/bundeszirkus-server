@@ -1,2 +1,5 @@
 pm2 deploy ecosystem.config.js production (setup)
 npm run-script deploy
+
+
+DEBUG=nightmare xvfb-run -a --server-args="-screen 0 1920x1080x24" node index.js
