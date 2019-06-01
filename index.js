@@ -54,6 +54,7 @@ app.get("/stats_total_politicians_passive", function(req, res){
 })
 
 var startServer = function() { 
+    console.log("Starting the server.")
     app.listen(port, (err) =>  {
         if(err){
             console.log(err)
@@ -65,6 +66,7 @@ var startServer = function() {
 }
 
 var loadData = function() {
+    console.log("Loading data.") 
     dataLoader = new DataLoader()
     let startServerIfNotRunning = () => {
         if(!serverRunning){
@@ -76,9 +78,11 @@ var loadData = function() {
 
 // schedule reloading/scraping of data every 3 hours
 schedule.scheduleJob('* */3 * * *', () => {
-    // scrape & load data w/o restarting the server 
+    // scrape & load data w/o restarting the server
+    console.log("Starting scheduled scraping.") 
     dataScraper.scrape(loadData) 
 }) 
 
 // scrape, load data & start the server
+console.log("Starting initial scraping.")
 dataScraper.scrape(loadData)
