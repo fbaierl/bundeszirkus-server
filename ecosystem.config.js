@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
     name: 'bundeszirkus-server',
-    script: './index.js'
+    script: 'DEBUG=nightmare xvfb-run -a --server-args="-screen 0 1920x1080x24" node index.js'
   }],
   deploy: {
     production: {
