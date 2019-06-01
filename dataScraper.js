@@ -5,8 +5,8 @@ var fs = require('fs');
 var url = require('url');
 
 // https is NOT supported
-let BT_LINK = "http://www.bundestag.de"
-var DOWNLOAD_DIR = './data/';
+const BT_LINK = "http://www.bundestag.de"
+const DOWNLOAD_DIR = './data/';
 
 var _callback = null
 var _foundLinks = 0
@@ -22,7 +22,6 @@ function downloadFileFromHref(href) {
 	.then(function(data) {
         createFile(fileName, data)
         _downloadedLinks++
-        callbackIfFinished();
     })
 }
 
@@ -39,8 +38,8 @@ function createFile(fileName, data){
     file.end()
 }
 
-function onDocumentLinkFound(href) {
-	// get href; ex: 
+function checkDocumentLink(href) {
+    // get href; ex: 
 	// (X) /blob/490380/1d83b7e383f9f09d88bd9e89aba07fb0/pp14-data.zip  
 	// (O) /blob/562990/056c28051cb695642cb9d72521bba93b/19044-data.xml
 	// check with regex:
@@ -55,9 +54,11 @@ function onDocumentLinkFound(href) {
         let completeHref = BT_LINK + href
         // construct filename
         let fileName = match[1] + "." + match[2]
-        downloadFileFromHref(completeHref)
+        return true
     }
-}
+    return false
+  }
+  
 
 exports.scrape = function(cb) {
     _callback = cb
@@ -71,8 +72,17 @@ exports.scrape = function(cb) {
 	})
 	.then(function(hrefs) {
         _foundLinks = hrefs.length
-        hrefs.forEach(href => {
-            onDocumentLinkFound(href, hrefs.length)
-        });
+        _downloadedLinks = 0
+        let validLinks = hrefs.filter(checkDocumentLink)
+        console.log("[scraper] found " + validLinks.length + " valid links (out of " + hrefs.length + ").")
+        if(validLinks.length > 0){
+            validLinks.forEach(href => {
+                downloadFileFromHref(href)
+                callbackIfFinished();
+            });
+        } else {
+            console.log("[scraper] did not download any files.")
+             _callback()
+        }  
     })
 }
