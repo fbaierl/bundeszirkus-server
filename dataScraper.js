@@ -91,7 +91,8 @@ exports.scrape = function(cb) {
                 _callback()
             }  
         }).catch(err => {
-            console.log(err);
+            console.log("[scraper] did not download any files.")
+            _callback()
         });
 
     // Extracting the links we need
