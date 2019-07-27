@@ -1,0 +1,661 @@
+&#xFEFF;<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="dbtplenarprotokoll.css" type="text/css" charset="UTF-8"?>
+<!DOCTYPE dbtplenarprotokoll SYSTEM "dbtplenarprotokoll.dtd">
+<dbtplenarprotokoll herstellung="Satz: Satzweiss.com Print, Web, Software GmbH, Mainzer Stra&#xDF;e 116, 66121 Saarbr&#xFC;cken, www.satzweiss.com, Druck: Printsystem GmbH, Schafw&#xE4;sche 1-3, 71296 Heimsheim, www.printsystem.de" sitzung-datum="24.07.2019" sitzung-ende-uhrzeit="13:39" sitzung-naechste-datum="10.09.2019" sitzung-nr="109" sitzung-start-uhrzeit="12:00" start-seitennr="13503" vertrieb="Bundesanzeiger Verlagsgesellschaft mbH, Postfach 1 0 05 34, 50445 K&#xF6;ln, Telefon (02 21) 97 66 83 40, Fax (02 21) 97 66 83 44, www.betrifft-gesetze.de" wahlperiode="19">
+  <vorspann>
+    <kopfdaten>
+      <plenarprotokoll-nummer>Plenarprotokoll <wahlperiode>19</wahlperiode>/<sitzungsnr>109</sitzungsnr></plenarprotokoll-nummer>
+      <herausgeber>Deutscher Bundestag</herausgeber>
+      <berichtart>Stenografischer Bericht</berichtart>
+      <sitzungstitel><sitzungsnr>109</sitzungsnr>. Sitzung</sitzungstitel>
+      <veranstaltungsdaten><ort>Berlin</ort>, <datum date="24.07.2019">Mittwoch, den 24. Juli 2019</datum></veranstaltungsdaten>
+    </kopfdaten>
+    <inhaltsverzeichnis>
+      <ivz-titel>Inhalt:</ivz-titel>
+      <ivz-block>
+        <ivz-block-titel>Tagesordnungspunkt 1:</ivz-block-titel>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt>Eidesleistung der Bundesministerin der Verteidigung </ivz-eintrag-inhalt>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="999990083"><name><vorname>Annegret</vorname><nachname>Kramp-Karrenbauer</nachname><rolle><rolle_lang>Bundesministerin der Verteidigung</rolle_lang><rolle_kurz>Bundesministerin BMVg</rolle_kurz></rolle></name></redner>Annegret Kramp-Karrenbauer, Bundesministerin BMVg</ivz-eintrag-inhalt>
+          <xref div="D" pnr="13503" ref-type="rede" rid="ID1910900100">
+            <a href="S13503" typ="druckseitennummer"><seite>13503</seite> <seitenbereich>D</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+      </ivz-block>
+      <ivz-block>
+        <ivz-block-titel>Tagesordnungspunkt 2:</ivz-block-titel>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt>Abgabe einer Regierungserkl&#xE4;rung durch die Bundesministerin der Verteidigung: &#xA0; In Verantwortung f&#xFC;r die Zukunft Deutschlands. F&#xFC;r eine starke Bundeswehr in einer Welt im Wandel. </ivz-eintrag-inhalt>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="999990083"><name><vorname>Annegret</vorname><nachname>Kramp-Karrenbauer</nachname><rolle><rolle_lang>Bundesministerin der Verteidigung</rolle_lang><rolle_kurz>Bundesministerin BMVg</rolle_kurz></rolle></name></redner>Annegret Kramp-Karrenbauer, Bundesministerin BMVg</ivz-eintrag-inhalt>
+          <xref div="A" pnr="13504" ref-type="rede" rid="ID1910900200">
+            <a href="S13504" typ="druckseitennummer"><seite>13504</seite> <seitenbereich>A</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="11004807"><name><vorname>R&#xFC;diger</vorname><nachname>Lucassen</nachname><fraktion>AfD</fraktion></name></redner>R&#xFC;diger Lucassen (AfD)</ivz-eintrag-inhalt>
+          <xref div="D" pnr="13506" ref-type="rede" rid="ID1910900300">
+            <a href="S13506" typ="druckseitennummer"><seite>13506</seite> <seitenbereich>D</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="11003599"><name><titel>Dr.</titel><vorname>Rolf</vorname><nachname>M&#xFC;tzenich</nachname><fraktion>SPD</fraktion></name></redner>Dr.&#xA0;Rolf M&#xFC;tzenich (SPD)</ivz-eintrag-inhalt>
+          <xref div="B" pnr="13508" ref-type="rede" rid="ID1910900400">
+            <a href="S13508" typ="druckseitennummer"><seite>13508</seite> <seitenbereich>B</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="11004097"><name><vorname>Christian</vorname><nachname>Lindner</nachname><fraktion>FDP</fraktion></name></redner>Christian Lindner (FDP)</ivz-eintrag-inhalt>
+          <xref div="A" pnr="13510" ref-type="rede" rid="ID1910900500">
+            <a href="S13510" typ="druckseitennummer"><seite>13510</seite> <seitenbereich>A</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="11004182"><name><titel>Dr.</titel><vorname>Johann David</vorname><nachname>Wadephul</nachname><fraktion>CDU/CSU</fraktion></name></redner>Dr.&#xA0;Johann David Wadephul (CDU/CSU)</ivz-eintrag-inhalt>
+          <xref div="A" pnr="13511" ref-type="rede" rid="ID1910900600">
+            <a href="S13511" typ="druckseitennummer"><seite>13511</seite> <seitenbereich>A</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="11003034"><name><titel>Dr.</titel><vorname>Dietmar</vorname><nachname>Bartsch</nachname><fraktion>DIE LINKE</fraktion></name></redner>Dr.&#xA0;Dietmar Bartsch (DIE LINKE)</ivz-eintrag-inhalt>
+          <xref div="D" pnr="13512" ref-type="rede" rid="ID1910900700">
+            <a href="S13512" typ="druckseitennummer"><seite>13512</seite> <seitenbereich>D</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="11004106"><name><vorname>Agnieszka</vorname><nachname>Brugger</nachname><fraktion>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</fraktion></name></redner>Agnieszka Brugger (B&#xDC;NDNIS 90/DIE GR&#xDC;NEN)</ivz-eintrag-inhalt>
+          <xref div="A" pnr="13514" ref-type="rede" rid="ID1910900800">
+            <a href="S13514" typ="druckseitennummer"><seite>13514</seite> <seitenbereich>A</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="11003821"><name><vorname>Henning</vorname><nachname>Otte</nachname><fraktion>CDU/CSU</fraktion></name></redner>Henning Otte (CDU/CSU)</ivz-eintrag-inhalt>
+          <xref div="C" pnr="13515" ref-type="rede" rid="ID1910900900">
+            <a href="S13515" typ="druckseitennummer"><seite>13515</seite> <seitenbereich>C</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="11004906"><name><titel>Dr.</titel><vorname>Marie-Agnes</vorname><nachname>Strack-Zimmermann</nachname><fraktion>FDP</fraktion></name></redner>Dr.&#xA0;Marie-Agnes Strack-Zimmermann &#xA0;(FDP)</ivz-eintrag-inhalt>
+          <xref div="C" pnr="13516" ref-type="rede" rid="ID1910901000">
+            <a href="S13516" typ="druckseitennummer"><seite>13516</seite> <seitenbereich>C</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="11004272"><name><titel>Dr.</titel><vorname>Fritz</vorname><nachname>Felgentreu</nachname><fraktion>SPD</fraktion></name></redner>Dr.&#xA0;Fritz Felgentreu (SPD)</ivz-eintrag-inhalt>
+          <xref div="B" pnr="13517" ref-type="rede" rid="ID1910901100">
+            <a href="S13517" typ="druckseitennummer"><seite>13517</seite> <seitenbereich>B</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt><redner id="11004018"><name><titel>Dr.</titel><vorname>Reinhard</vorname><nachname>Brandl</nachname><fraktion>CDU/CSU</fraktion></name></redner>Dr.&#xA0;Reinhard Brandl (CDU/CSU)</ivz-eintrag-inhalt>
+          <xref div="A" pnr="13518" ref-type="rede" rid="ID1910901200">
+            <a href="S13518" typ="druckseitennummer"><seite>13518</seite> <seitenbereich>A</seitenbereich></a>
+          </xref>
+        </ivz-eintrag>
+      </ivz-block>
+      <ivz-eintrag>
+        <ivz-eintrag-inhalt>N&#xE4;chste Sitzung</ivz-eintrag-inhalt>
+        <a href="S13519" typ="druckseitennummer"><seite>13519</seite> <seitenbereich>C</seitenbereich></a>
+      </ivz-eintrag>
+      <ivz-block>
+        <ivz-block-titel>Anlage</ivz-block-titel>
+        <ivz-eintrag>
+          <ivz-eintrag-inhalt>Entschuldigte Abgeordnete </ivz-eintrag-inhalt>
+          <a href="S13521" typ="druckseitennummer"><seite>13521</seite> <seitenbereich>A</seitenbereich></a>
+        </ivz-eintrag>
+      </ivz-block>
+    </inhaltsverzeichnis>
+  </vorspann>
+  <sitzungsverlauf>
+    <sitzungsbeginn sitzung-start-uhrzeit="12:00">
+      <a id="S13503" name="S13503" typ="druckseitennummer">
+      <p klasse="N">Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</p>
+      <p klasse="J_1">Liebe Kolleginnen und Kollegen, ich begr&#xFC;&#xDF;e Sie. Bitte nehmen Sie Platz. Die Sitzung ist er&#xF6;ffnet.</p>
+      <p klasse="J">Ich habe die heutige Sitzung auf Verlangen der Bundeskanzlerin gem&#xE4;&#xDF; Artikel&#xA0;39 Absatz&#xA0;3 des Grundgesetzes in Verbindung mit &#xA7;&#xA0;21 Absatz&#xA0;2 unserer Gesch&#xE4;ftsordnung einberufen.</p>
+      <p klasse="J">Wir k&#xF6;nnen heute nicht in unserem Plenarsaal tagen, da in der sitzungsfreien Zeit dort notwendige Bauarbeiten stattfinden. Im Plenarsaal werden zurzeit die Induktionsschleifen zur Unterst&#xFC;tzung von H&#xF6;rgesch&#xE4;digten, die Feuerl&#xF6;schanlage und der Teppichboden erneuert. Wir waren uns im &#xC4;ltestenrat einig, dass diese Arbeiten bis zur n&#xE4;chsten regul&#xE4;ren Sitzungswoche&#xA0;&#x2013; das ist die Haushaltswoche im September&#xA0;&#x2013; abgeschlossen sein m&#xFC;ssen. Deswegen mussten wir heute ins Paul-L&#xF6;be-Haus ausweichen.</p>
+      <p klasse="J">Die Raumsituation ist nicht ideal. Frieren werden wir nicht.</p>
+      <kommentar>(Heiterkeit)</kommentar>
+      <p klasse="O">Mit Augenma&#xDF; und Kreativit&#xE4;t werden wir aber gemeinsam auch an diesem Ort eine w&#xFC;rdige Plenarsitzung durchf&#xFC;hren&#xA0;&#x2013; so wie der Namensgeber dieses Hauses einmal gesagt hat: &#x201E;Es braucht nicht niederrei&#xDF;ende Polemik, sondern aufbauende Tat.&#x201C;</p>
+      <p klasse="J">&#xDC;brigens: Als Paul L&#xF6;be Alterspr&#xE4;sident des ersten Bundestages war, hatte unser Parlament noch 410&#xA0;Abgeordnete. Das war nat&#xFC;rlich zu einer anderen Zeit&#xA0;&#x2013; aber mit Blick auf die immer dringlichere Wahlrechtsreform ist es an diesem Ort eine Erw&#xE4;hnung wert.</p>
+      <kommentar>(Beifall bei der CDU/CSU, der FDP, der LINKEN und dem B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN sowie bei Abgeordneten der SPD und der AfD)</kommentar>
+      <p klasse="T">Jetzt rufe ich den Tagesordnungspunkt&#xA0;1 auf:</p>
+    </a></sitzungsbeginn>
+    <tagesordnungspunkt top-id="Tagesordnungspunkt 1">
+      <p klasse="T_fett">Eidesleistung der Bundesministerin der Verteidigung</p>
+      <p klasse="J">F&#xFC;r den Bundespr&#xE4;sidenten hat mir der Erste Vizepr&#xE4;sident des Bundesrats, Herr Michael M&#xFC;ller, mitgeteilt, dass er am 17.&#xA0;Juli 2019 gem&#xE4;&#xDF; Artikel&#xA0;64 Absatz&#xA0;1 des Grundgesetzes f&#xFC;r die Bundesrepublik Deutschland auf Vorschlag der Frau Bundeskanzlerin die Bundesministerin der Verteidigung, Frau Dr.&#xA0;Ursula von der Leyen, aus ihrem Amt als Bundesministerin entlassen und Frau Annegret Kramp-Karrenbauer zur Bundesministerin der Verteidigung ernannt hat.</p>
+      <p klasse="J">Nach Artikel&#xA0;64 Absatz&#xA0;2 des Grundgesetzes leistet eine Bundesministerin bei der Amts&#xFC;bernahme den in Artikel&#xA0;56 vorgesehenen Eid.</p>
+      <p klasse="J">Frau Kramp-Karrenbauer, ich bitte Sie jetzt, zur Eidesleistung zu mir bzw. zu dem Mikrofon zu kommen.</p>
+      <kommentar>(Die Anwesenden erheben sich)</kommentar>
+      <p klasse="J">Ich darf Sie bitten, den im Grundgesetz vorgeschriebenen Text der Eidesformel zu sprechen.</p>
+      <rede id="ID1910900100">
+        <p klasse="redner"><redner id="999990083"><name><vorname>Annegret</vorname><nachname>Kramp-Karrenbauer</nachname><rolle><rolle_lang>Bundesministerin der Verteidigung</rolle_lang><rolle_kurz>Bundesministerin BMVg</rolle_kurz></rolle></name></redner>Annegret Kramp-Karrenbauer, Bundesministerin der Verteidigung:</p>
+        <p klasse="J_1">Ich schw&#xF6;re, dass ich meine Kraft dem Wohle des deutschen Volkes widmen, seinen Nutzen mehren, Schaden von ihm wenden, das Grundgesetz und die Gesetze des Bundes wahren und verteidigen, meine Pflichten gewissenhaft erf&#xFC;llen und Gerechtigkeit gegen jedermann &#xFC;ben werde. So wahr mir Gott helfe.</p>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">Danke sehr.&#xA0;&#x2013; Frau Bundesministerin, Sie haben den notwendigen Eid geleistet.</p>
+        <kommentar>(Beifall&#xA0;&#x2013; Bundesministerin Annegret Kramp-Karrenbauer nimmt Gratulationen entgegen)</kommentar>
+        <p klasse="O">Ich gratuliere Ihnen pers&#xF6;nlich und im Namen des ganzen Hauses&#xA0;&#x2013; wie auch der Beifall schon ausgedr&#xFC;ckt hat&#xA0;&#x2013; herzlich, und ich w&#xFC;nsche Ihnen f&#xFC;r Ihre Aufgabe alles Gute und Gottes Segen.<a id="S13504" name="S13504" typ="druckseitennummer"></a></p>
+        <p klasse="J">Ihnen, sehr geehrte Frau Dr.&#xA0;von der Leyen, danke ich im Namen des ganzen Hauses f&#xFC;r Ihre T&#xE4;tigkeit als Abgeordnete und als Mitglied der Bundesregierung. Wir alle w&#xFC;nschen Ihnen f&#xFC;r Ihre neue, f&#xFC;r unser Europa so wichtige Aufgabe alles Gute, viel Erfolg und viel Gl&#xFC;ck.</p>
+        <kommentar>(Anhaltender Beifall bei der CDU/CSU&#xA0;&#x2013; Beifall bei der SPD, der LINKEN und dem B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN sowie bei Abgeordneten der FDP)</kommentar>
+      </rede>
+      <p klasse="T">Dann rufe ich den Tagesordnungspunkt&#xA0;2 auf:</p>
+    </tagesordnungspunkt>
+    <tagesordnungspunkt top-id="Tagesordnungspunkt 2">
+      <p klasse="T_NaS">Abgabe einer Regierungserkl&#xE4;rung durch die Bundesministerin der Verteidigung</p>
+      <p klasse="T_fett">In Verantwortung f&#xFC;r die Zukunft Deutschlands. F&#xFC;r eine starke Bundeswehr in einer Welt im Wandel.</p>
+      <p klasse="J">Es liegt uns ein Entschlie&#xDF;ungsantrag der Fraktion Die Linke vor.</p>
+      <p klasse="J">Nach einer interfraktionellen Vereinbarung sind f&#xFC;r die Aussprache im Anschluss an die Regierungserkl&#xE4;rung 60&#xA0;Minuten vorgesehen.&#xA0;&#x2013; Mangels Widerspruchs ist das so beschlossen.</p>
+      <p klasse="J">Dann erteile ich jetzt das Wort zur Abgabe einer Regierungserkl&#xE4;rung der Bundesministerin der Verteidigung, Frau Annegret Kramp-Karrenbauer.</p>
+      <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+      <rede id="ID1910900200">
+        <p klasse="redner"><redner id="999990083"><name><vorname>Annegret</vorname><nachname>Kramp-Karrenbauer</nachname><rolle><rolle_lang>Bundesministerin der Verteidigung</rolle_lang><rolle_kurz>Bundesministerin BMVg</rolle_kurz></rolle></name></redner>Annegret Kramp-Karrenbauer, Bundesministerin der Verteidigung:</p>
+        <p klasse="J_1">Sehr geehrter Herr Pr&#xE4;sident! Meine sehr geehrten Damen und Herren Abgeordnete! Ich spreche heute hier unter erkennbar au&#xDF;ergew&#xF6;hnlichen Umst&#xE4;nden zu Ihnen, und au&#xDF;ergew&#xF6;hnlich und wertvoll ist die besondere Beziehung zwischen Parlament und Parlamentsarmee, zwischen dem Deutschen Bundestag und der Bundeswehr.</p>
+        <p klasse="J">Ich habe gr&#xF6;&#xDF;ten Respekt vor den Soldatinnen und Soldaten f&#xFC;r ihren Dienst und den Mitarbeiterinnen und Mitarbeitern unserer Bundeswehr. Ich habe gr&#xF6;&#xDF;ten Respekt vor Ihrer Verantwortung als Abgeordnete des Deutschen Bundestages f&#xFC;r unsere Bundeswehr. Dieser Respekt ist f&#xFC;r mich die Grundlage meiner Arbeit und unserer Zusammenarbeit.</p>
+        <p klasse="J">In den letzten Tagen haben eine Reihe von Mitgliedern dieses Hauses Erwartungen zum Verteidigungsbereich ge&#xE4;u&#xDF;ert, auch in den pers&#xF6;nlichen Gespr&#xE4;chen mit mir. F&#xFC;r mich sind diese Erwartungen zuerst einmal Ausdruck Ihres Engagements f&#xFC;r unsere Streitkr&#xE4;fte, f&#xFC;r unsere Streitkr&#xE4;fte, auf die wir alle stolz sein k&#xF6;nnen&#xA0;&#x2013; ich jedenfalls bin es.</p>
+        <p klasse="J">Ich bin stolz auf die enorme Leistung der mehr als 180&#xA0;000&#xA0;Soldatinnen und Soldaten, die jeden Tag f&#xFC;r Deutschlands Sicherheit einstehen und unsere Freiheit verteidigen.</p>
+        <kommentar>(Beifall bei der CDU/CSU und der SPD sowie bei Abgeordneten der AfD, der FDP und des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="O">Und ich bin stolz auf die mehr als 60&#xA0;000&#xA0;zivilen Mitarbeiterinnen und Mitarbeiter, die genau daf&#xFC;r die Voraussetzungen schaffen, von der Ausr&#xFC;stung bis zum Personalwesen. Und darin schlie&#xDF;e ich ausdr&#xFC;cklich alle Familien mit ein; denn die haben oft ein schweres Los mit zu tragen.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der SPD, der AfD, der FDP und des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="J">Meine sehr verehrten Damen und Herren, dieser Dienst braucht Respekt, dieser Dienst braucht Unterst&#xFC;tzung, und zwar konkret und mit Priorit&#xE4;t. Denn diese Frauen und M&#xE4;nner dienen. Sie dienen, damit wir in Frieden und Freiheit leben k&#xF6;nnen, in einem Frieden, der leider nicht selbstverst&#xE4;ndlich ist, nicht selbstverst&#xE4;ndlich gerade in Zeiten, in denen sich die Welt rasant wandelt und die Sicherheitslage durch erhebliche Risiken gepr&#xE4;gt ist; die aktuellen Entwicklungen in der Stra&#xDF;e von Hormus zeugen davon.</p>
+        <p klasse="J">Gerade in diesen Zeiten ist unsere Bundeswehr eines der zentralen Instrumente unserer Sicherheit. Denn wir tragen Verantwortung, gerade auch als nichtst&#xE4;ndiges Mitglied im Sicherheitsrat der Vereinten Nationen. Wir tragen Verantwortung f&#xFC;r eine internationale Ordnung, in der nicht das Recht des St&#xE4;rkeren gilt, sondern die St&#xE4;rke des Rechts.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der SPD und des Abg. Cem &#xD6;zdemir [B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN])</kommentar>
+        <p klasse="O">Wir tragen Verantwortung f&#xFC;r eine Friedensordnung, die eine freiheitliche Ordnung ist&#xA0;&#x2013; freiheitlich deshalb, weil sie der unantastbaren W&#xFC;rde jedes einzelnen Menschen verpflichtet ist. Und wir tragen Verantwortung f&#xFC;r die Verteidigung unseres B&#xFC;ndnisgebietes, die gemeinsamen Anstrengungen zur Landes- und B&#xFC;ndnisverteidigung im engen Schulterschluss mit unseren Freunden. Den Anspruch an unser Handeln gibt uns dabei das Grundgesetz vor: &#x201E;in einem vereinten Europa dem Frieden der Welt zu dienen&#x201C;.</p>
+        <p klasse="J">Meine sehr geehrten Damen und Herren, zu Recht hat Ursula von der Leyen deshalb letzte Woche in Br&#xFC;ssel festgestellt&#xA0;&#x2013; ich darf sie zitieren&#xA0;&#x2013;: Die Welt ruft nach mehr Europa, und die Welt braucht mehr Europa.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der SPD, der FDP und des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN&#xA0;&#x2013; Lachen bei der AfD)</kommentar>
+        <p klasse="O">Wir wollen Europa stark machen, auch in handfesten milit&#xE4;rischen F&#xE4;higkeiten. Vieles haben wir angesto&#xDF;en, und wir haben mit der Ratspr&#xE4;sidentschaft im n&#xE4;chsten Jahr die Gelegenheit, die europ&#xE4;ische Verteidigungsunion weiter auszugestalten, so wie wir uns das im Koalitionsvertrag vorgenommen haben. Aber dabei gilt unver&#xE4;ndert: Deutschland ist und bleibt fest verankert im transatlantischen B&#xFC;ndnis, ist und bleibt fest verankert in der NATO.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der SPD und der FDP)<a id="S13505" name="S13505" typ="druckseitennummer"></a></kommentar>
+        <p klasse="O">Die NATO ist der Garant unserer Sicherheit. Sie vereint als politische und milit&#xE4;rische Allianz die Werte und die Interessen aller ihrer Mitglieder. Die historischen und kulturellen Erfahrungen und unsere politischen &#xDC;berzeugungen binden uns dabei zusammen. Und genau dieses Band unterscheidet uns von den autorit&#xE4;ren Kr&#xE4;ften, die uns und die internationale Ordnung herausfordern.</p>
+        <p klasse="J">Meine sehr geehrten Damen und Herren, wir wissen, auf welcher Seite des Tisches wir sitzen.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="O">Wir sind ein verl&#xE4;sslicher Verb&#xFC;ndeter, der einen fairen Teil der gemeinsamen Aufgaben schultert, und das wird auch in Zukunft so bleiben. An dem Ziel der Bundesregierung, 2&#xA0;Prozent anzustreben&#xA0;&#x2013; ein Ziel, auf das sich alle Verb&#xFC;ndeten wiederholt geeinigt haben&#xA0;&#x2013;, halte ich daher fest.</p>
+        <kommentar>(Anhaltender Beifall bei der CDU/CSU&#xA0;&#x2013; Zurufe von der LINKEN: Buh!)</kommentar>
+        <p klasse="O">Auf dem Weg dorthin m&#xFC;ssen und wollen wir bis 2024 ein Verteidigungsbudget in H&#xF6;he von 1,5&#xA0;Prozent des Bruttoinlandsproduktes erreichen. Diesen Wert haben wir abgestimmt gegen&#xFC;ber der NATO angezeigt, und er entspricht im Minimum auch unserem Bedarf. Es geht hier&#xA0;&#x2013; um das ganz deutlich zu sagen&#xA0;&#x2013; nicht um W&#xFC;nsche von au&#xDF;en, es geht hier nicht um Aufr&#xFC;stung. Es geht hier um Ausr&#xFC;stung und Personal, es geht um unsere Bundeswehr.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der FDP)</kommentar>
+        <p klasse="J">Es geht um eine Bundeswehr, die die Aufgaben erf&#xFC;llen kann, die wir ihr geben. Es geht um unser ureigenes Interesse, und in diesem Interesse liegen die Eins&#xE4;tze, die einsatzgleichen Verpflichtungen, die Dauereinsatzaufgaben und die nationale Krisenvorsorge. Rund 18&#xA0;000&#xA0;Soldatinnen und Soldaten sind zurzeit in diesen Aufgaben gebunden. Von der Pr&#xE4;senz an den Grenzen unseres &#xF6;stlichen B&#xFC;ndnisgebietes &#xFC;ber die Stabilisierungsmissionen in Afghanistan und Mali bis zu den Beitr&#xE4;gen zur Bek&#xE4;mpfung des islamistischen Terrorismus in der Counter-Daesh-Koalition und unseren Stand-by-Verpflichtungen: Soldatinnen und Soldaten der Bundeswehr stehen gemeinsam mit den Frauen und M&#xE4;nnern im Polizeidienst, bei der Entwicklungshilfe, im diplomatischen Dienst, in der zivilen Aufbauhilfe in genau dieser Minute an vielen Orten dieser Welt f&#xFC;r Frieden und Freiheit ein, und das teilweise unter erheblicher pers&#xF6;nlicher Gefahr. Das d&#xFC;rfen wir nie vergessen, meine sehr geehrten Damen und Herren.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der SPD, der FDP und des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="O">Sie verk&#xF6;rpern damit ganz praktisch unseren vernetzten Ansatz von Friedenspolitik, und sie verdienen unsere Anerkennung und unseren Dank.</p>
+        <p klasse="J">Unsere Mandate, unsere Eins&#xE4;tze sind nie Selbstzweck. Sie m&#xFC;ssen immer wieder gepr&#xFC;ft werden, und sie m&#xFC;ssen sich an ver&#xE4;nderte Entwicklungen anpassen. Dabei ist mir eins wichtig: Unsere Beitr&#xE4;ge, die Gestaltung unserer Kontingente, die Obergrenze unserer Mandate und die Festlegung der Einsatzregeln&#xA0;&#x2013; das alles sind und d&#xFC;rfen keine vordergr&#xFC;ndig parteipolitischen Fragen sein,</p>
+        <kommentar>(Zurufe von der LINKEN)</kommentar>
+        <p klasse="O">sondern m&#xFC;ssen Fragen sein, die in Verantwortung f&#xFC;r unsere Soldatinnen und Soldaten, in Verantwortung f&#xFC;r unser Land und gemeinsam mit unseren Verb&#xFC;ndeten und den Partnern entschieden werden m&#xFC;ssen. Das hei&#xDF;t, dass wir Unterst&#xFC;tzungsanfragen unserer Partner immer gewissenhaft pr&#xFC;fen m&#xFC;ssen. Weder d&#xFC;rfen wir sie vorschnell bejahen, noch d&#xFC;rfen wir ihnen reflexartige Absagen erteilen.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="O">Das hei&#xDF;t auch, dass wir unsere Einsatzregeln so gestalten, wie dies milit&#xE4;risch sinnvoll und partnerschaftlich geboten erscheint. An diesen Fragen muss sich unsere Diskussion &#xFC;ber Eins&#xE4;tze und Mandate k&#xFC;nftig orientieren. Das ist der richtige politische Ma&#xDF;stab.</p>
+        <p klasse="J">Meine sehr geehrten Damen und Herren, ich sage in aller Klarheit: Damit wir in Deutschland in Zukunft gut und sicher leben k&#xF6;nnen, braucht es auch eine einsatzbereite Bundeswehr. Lange, ja vielleicht zu lange haben wir daran geglaubt, dass die Welt um uns herum immer friedlicher, die Ordnung immer stabiler wird. Die Entwicklungen der letzten Jahre haben gezeigt: Das war ein tr&#xFC;gerisches Bild. Deshalb haben wir nach 25&#xA0;Jahren des Sparens den Schalter umgelegt. Daf&#xFC;r bin ich allen, die daran mitgewirkt haben, und insbesondere meiner Vorg&#xE4;ngerin von Herzen dankbar.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Die Bundeswehr w&#xE4;chst wieder. Personal und Material: Alle Trendlinien zeigen endlich wieder aufw&#xE4;rts. Diese Trendwenden will ich fortsetzen, und diese Trendwenden m&#xFC;ssen dauerhaft abgesichert werden. Die Grundlagen daf&#xFC;r liegen auf dem Tisch: das Wei&#xDF;buch der Bundesregierung, darauf aufbauend die Konzeption der Bundeswehr und das F&#xE4;higkeitsprofil. Es ist&#xA0;&#x2013; das wissen Sie&#xA0;&#x2013; ein sehr ehrgeiziger Weg, aber dieser Weg ist erforderlich, weil es um unsere Sicherheit geht.</p>
+        <p klasse="J">Meine sehr geehrten Damen und Herren, die Basis daf&#xFC;r ist und bleibt eine verl&#xE4;ssliche Finanzierung. Wir haben dazu und zu anderen Bereichen generelle Vereinbarungen im Koalitionsvertrag getroffen. Es bleibt festzuhalten: Wenn die Bundeswehr die F&#xE4;higkeiten zeigen soll, die wir von ihr verlangen und die wir erwarten, dann muss der Verteidigungshaushalt weiter ansteigen; dann brauchen wir 1,5&#xA0;Prozent in 2024, und dann brauchen wir einen verl&#xE4;sslich und stetig wachsenden Pfad bis dorthin. Auch daf&#xFC;r werde ich mich einsetzen.</p>
+        <kommentar>(Beifall bei der CDU/CSU&#xA0;&#x2013; Zurufe von der LINKEN: Buh!)<a id="S13506" name="S13506" typ="druckseitennummer"></a></kommentar>
+        <p klasse="J">Ich wei&#xDF;, dass das nicht einfach ist, dass es nicht einfach ist, die Anstrengungen der letzten Jahre fortzusetzen. Ich wei&#xDF;, dass Geld alleine nicht ausreicht. Die Mittel, die Sie in diesem Haus zur Verf&#xFC;gung stellen, m&#xFC;ssen schneller und reibungsloser als bisher sichtbar und sp&#xFC;rbar in Personal und Material investiert werden. Das gilt f&#xFC;r die dringend ben&#xF6;tigten Gro&#xDF;projekte, die Projekte, die wir mit unseren europ&#xE4;ischen Partnern gemeinsam entwickeln, wie das k&#xFC;nftige Kampfflugzeug und den Kampfpanzer.</p>
+        <kommentar>(Zuruf des Abg. J&#xFC;rgen Trittin [B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN])</kommentar>
+        <p klasse="O">Und das gilt f&#xFC;r die nationalen Projekte, die Sie alle kennen. Wir werden bis zum Herbst entscheiden und verbindlich vorlegen, wann wir in dieser Legislaturperiode mit welchen Projekten in dieses Parlament zur Entscheidung gehen, meine sehr geehrten Damen und Herren.</p>
+        <p klasse="J">Das gilt aber auch&#xA0;&#x2013; und das ist mir genauso wichtig&#xA0;&#x2013; f&#xFC;r den Grundbetrieb. Unsere Soldatinnen und Soldaten sollen Tag f&#xFC;r Tag erleben, wie die L&#xFC;cken bei Material und Ausr&#xFC;stung endlich geschlossen werden: dass sie das bestm&#xF6;gliche Ger&#xE4;t, die bestm&#xF6;gliche Ausr&#xFC;stung, die modernste pers&#xF6;nliche Ausstattung nicht nur im Einsatz, nicht nur bei gro&#xDF;en &#xDC;bungen, sondern schon f&#xFC;r die t&#xE4;gliche Ausbildung haben, dass wir gen&#xFC;gend Flugstunden, einsatzklare Schiffe und gefechtsbereite Panzer haben, dass die Munitionslager voll sind, die Ersatzteile schnell ankommen, auch in der Fl&#xE4;che. Unsere Soldatinnen und Soldaten sollen das Ger&#xE4;t beherrschen, das sie im Einsatz nutzen. Wenn jeder Soldat das Ger&#xE4;t hat, das er f&#xFC;r seine Aufgabe braucht&#xA0;&#x2013; und ich betone: in seiner Einheit und nicht auf Leihschein&#xA0;&#x2013;, dann ist die Bundeswehr wirklich auch ein attraktiver Arbeitgeber, und daran arbeiten wir.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Was ist getan worden, und was m&#xFC;ssen wir tun? Erstens. Die Agenda Nutzung ist gestartet. Mit ihr bringen wir Logistik und Ersatzteilversorgung nach vorne, nahe an die Truppe. Die Expertenempfehlungen zur Anpassung und zur Verbesserung der Beschaffungs- und Nutzungsorganisation liegen auf dem Tisch, und wir werden nach Ende der Sommerpause einen Vorschlag zur Umsetzung machen. Wir werden zweitens die Entscheidungsfreiheit der Kommandeure und Verantwortlichen vor Ort st&#xE4;rken auf der Grundlage des Programms &#x201E;Innere F&#xFC;hrung Heute&#x201C;. Und drittens. Wir werden die Sichtbarkeit der Bundeswehr in unserem Land, in unserer Gesellschaft erh&#xF6;hen: ob es das freie Bahnfahren in Uniform oder Gel&#xF6;bnisse oder Zapfenstreiche in der &#xD6;ffentlichkeit sind.</p>
+        <p klasse="J">Meine Damen und Herren, unsere Soldatinnen und Soldaten kommen aus der Mitte der Gesellschaft. Deshalb ist die Bundeswehr kein Platz und deshalb ist in der Bundeswehr kein Platz f&#xFC;r Extremisten.</p>
+        <kommentar>(Beifall bei der CDU/CSU, der SPD, der FDP und dem B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN sowie bei Abgeordneten der der LINKEN und des Abg. J&#xFC;rgen Kamann [fraktionslos])</kommentar>
+        <p klasse="J">Deshalb geh&#xF6;rt die Bundeswehr aber auch erkennbar und sichtbar in die Mitte unserer Gesellschaft, in die Mitte unserer St&#xE4;dte und Gemeinden. Ich habe daher alle Ministerpr&#xE4;sidenten angeschrieben und ihnen vorgeschlagen, zum Geburtstag der Bundeswehr am 12.&#xA0;November in ihren Bundesl&#xE4;ndern &#xF6;ffentliche Gel&#xF6;bnisse durchzuf&#xFC;hren.</p>
+        <kommentar>(Zurufe von der LINKEN: Buh!)</kommentar>
+        <p klasse="O">Das w&#xE4;re ein starkes Signal und ein starkes Zeichen der Anerkennung f&#xFC;r unsere Soldatinnen und Soldaten.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der SPD, der AfD und der FDP und des Abg. Uwe Kamann [fraktionslos])</kommentar>
+        <p klasse="O">Und: F&#xFC;r die Bundeswehr als Parlamentsarmee w&#xFC;rde ich mir auch ein Gel&#xF6;bnis vor dem Reichstag w&#xFC;nschen.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der AfD und der FDP)</kommentar>
+        <p klasse="J">Meine sehr geehrten Damen und Herren, es gibt viel zu tun f&#xFC;r eine einsatzbereite Bundeswehr, f&#xFC;r eine Bundeswehr, auf die unser Land stolz sein kann.</p>
+        <p klasse="J">Lassen Sie mich zur&#xFC;ckkommen auf Paul L&#xF6;be, den der Bundestagspr&#xE4;sident eben zitiert hat. &#x201E;Es braucht nicht niederrei&#xDF;ende Polemik, sondern aufbauende Tat.&#x201C; Das sollte uns auch heute leiten; denn es geht um unsere Bundeswehr, und es geht um unser Land.</p>
+        <p klasse="J">Vielen Dank.</p>
+        <kommentar>(Anhaltender Beifall und rhythmisches Klatschen bei der CDU/CSU&#xA0;&#x2013; Beifall bei Abgeordneten der SPD und der FDP)</kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">Liebe Kolleginnen und Kollegen, bevor ich die Aussprache er&#xF6;ffne, m&#xF6;chte ich alle Rednerinnen und Redner des heutigen Tages darauf aufmerksam machen, dass anders als in unserem Plenarsaal die Redezeit am Rednerpult nicht angezeigt wird.</p>
+        <kommentar>(Heiterkeit)</kommentar>
+        <p klasse="O">Aber&#xA0;&#x2013; es wird niemanden &#xFC;berraschen&#xA0;&#x2013;: Die vereinbarten Redezeiten gelten gleichwohl. Die ablaufende Redezeit wird den Rednern auf dem Bildschirm gegen&#xFC;ber dem Rednerpult</p>
+        <kommentar>(Zurufe: Aha!)</kommentar>
+        <p klasse="O">hinreichend deutlich&#xA0;&#x2013; un&#xFC;bersehbar&#xA0;&#x2013; angezeigt. Bitte achten Sie darauf. Ich bin ja gehalten, auf die Einhaltung der Redezeit zu achten.</p>
+        <p klasse="J">F&#xFC;r Zwischenfragen oder Zwischenbemerkungen in der Aussprache sollten Sie die im Saal aufgestellten Saalmikrofone benutzen. Weil wir angesichts der Anordnung dieses Saals keinen vollst&#xE4;ndigen &#xDC;berblick haben, w&#xE4;re es am besten, wenn Sie sich&#xA0;&#x2013; wenn Sie eine Zwischenfrage stellen oder Zwischenbemerkung machen wollen&#xA0;&#x2013; gleich zu einem Mikrofon begeben. Dann k&#xF6;nnen wir es in jedem Fall eindeutig erkennen.</p>
+        <p klasse="J">Mit diesen Hinweisen er&#xF6;ffne ich die Aussprache. Das Wort hat der Kollege R&#xFC;diger Lucassen, AfD.</p>
+        <kommentar>(Beifall bei der AfD)</kommentar>
+      </rede>
+      <rede id="ID1910900300">
+        <p klasse="redner"><redner id="11004807"><name><vorname>R&#xFC;diger</vorname><nachname>Lucassen</nachname><fraktion>AfD</fraktion></name></redner>R&#xFC;diger Lucassen (AfD):<a id="S13507" name="S13507" typ="druckseitennummer"></a></p>
+        <p klasse="J_1">Herr Pr&#xE4;sident! Meine Damen und Herren! Wer nicht wei&#xDF;, dass Frau Kramp-Karrenbauer in der CDU ist, wer nicht wei&#xDF;, dass Angela Merkel Bundeskanzlerin ist, und wer nicht wei&#xDF;, dass die SPD in dieser Regierung steckt&#xA0;&#x2013; wobei dies tats&#xE4;chlich leicht zu &#xFC;bersehen ist&#xA0;&#x2013;, der k&#xF6;nnte jetzt denken: Donnerwetter! Ab morgen wird die Bundeswehr wieder auf die Beine gestellt. Herrliche Zeiten brechen an! &#xD6;ffentliche Gel&#xF6;bnisse am 12.&#xA0;November in den Bundesl&#xE4;ndern und vor dem Reichstag.</p>
+        <p klasse="J">Aber dieser Ank&#xFC;ndigungsorgie steht die unverr&#xFC;ckbare Realit&#xE4;t der &#xC4;ra Merkel gegen&#xFC;ber. Und die besteht vor allem aus Moderieren und Aussitzen. Noch vorige Woche sagte die Bundeskanzlerin &#xFC;ber die neue Ministerin: Ich freue mich, dass Annegret Kramp-Karrenbauer sich entschieden hat, Verteidigungsministerin zu werden. Und sie wird es sehr gut machen nach meiner festen &#xDC;berzeugung.&#xA0;&#x2013; Zitat Ende.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="O">&#x2013;&#xA0;Darauf hatte ich jetzt endlich mal gehofft. Ich habe es erreicht. Danke sch&#xF6;n.</p>
+        <kommentar>(Beifall bei der AfD&#xA0;&#x2013; Michael Grosse-&#xAD;Br&#xF6;mer [CDU/CSU]: Es hat geklappt!)</kommentar>
+        <p klasse="J">Was, Frau Bundeskanzlerin, &#xFC;berzeugt Sie eigentlich jedes Mal aufs Neue, dass v&#xF6;llig fachfremdes Personal, fernab jeder Affinit&#xE4;t zu Streitkr&#xE4;ften, die Bundeswehr gut f&#xFC;hren kann?</p>
+        <p klasse="J">Die Bundeswehr ist heute in der schlechtesten Verfassung seit ihrer Aufstellung in 1955. Diese erschreckende Diagnose galt auch schon vor f&#xFC;nf Jahren. Seitdem hat sich substanziell nichts verbessert, vieles ist aber weiter bergab gegangen: Schiffe, Panzer und Flugzeuge sind nicht einsatzbereit. Die Moral der Truppe ist am Boden. Genderunfug und aufgeweichte Standards in der Ausbildung haben das innere Gef&#xFC;ge unserer Streitkr&#xE4;fte zersetzt.</p>
+        <kommentar>(Beifall bei der AfD&#xA0;&#x2013; Britta Ha&#xDF;elmann [B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN]: Sie wissen doch gar nicht, was das ist, &#x201E;gendern&#x201C;!)</kommentar>
+        <p klasse="O">Ein handfester Betrugsskandal bei Auftragsvergabe um das Segelschulschiff &#x201E;Gorch Fock&#x201C;. Ein G&#xFC;nstlingsskandal um den illegalen Einsatz von Beratern.</p>
+        <p klasse="J">Das sicherheitspolitische Umfeld Europas ist angespannt wie seit 30&#xA0;Jahren nicht. Und was macht die CDU-gef&#xFC;hrte Bundesregierung?</p>
+        <kommentar>(Zuruf von der CDU/CSU: Arbeiten!)</kommentar>
+        <p klasse="O">Sie begeht Verfassungsbruch. Artikel&#xA0;87a: &#x201E;Der Bund stellt Streitkr&#xE4;fte zur Verteidigung auf.&#x201C; Unsere Streitkr&#xE4;fte sind zur Landesverteidigung nicht bef&#xE4;higt.</p>
+        <kommentar>(Beifall bei der AfD)</kommentar>
+        <p klasse="J">In dieser &#xE4;u&#xDF;erst kritischen Situation setzt die CDU eine sicherheitspolitische Novizin aus dem Saarland als Verteidigungsministerin ein,</p>
+        <kommentar>(Beifall bei der AfD&#xA0;&#x2013; Widerspruch bei der CDU/CSU)</kommentar>
+        <p klasse="O">eine Frau, die &#xFC;ber einen deutsch-franz&#xF6;sischen Flugzeugtr&#xE4;ger fabuliert, eine Frau, die &#xFC;ber deutsche Bodentruppen in Syrien nachdenkt. Meine Damen und Herren, die CDU ist zum gr&#xF6;&#xDF;ten Risiko f&#xFC;r die deutsche Sicherheitspolitik geworden.</p>
+        <kommentar>(Beifall bei der AfD&#xA0;&#x2013; Widerspruch bei der CDU/CSU)</kommentar>
+        <p klasse="J">Die Union benutzt das Verteidigungsministerium seit 14&#xA0;Jahren als Steinbruch, um ihren Machterhalt zu sichern. Die CDU sieht das Amt des Verteidigungsministers als Trainee-Stelle, um Provinz- und Familienpolitikerinnen kanzlertauglich zu machen.</p>
+        <kommentar>(Lebhafter Beifall bei der AfD&#xA0;&#x2013; Widerspruch bei der CDU/CSU&#xA0;&#x2013; Zuruf vom B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN: Peinlich! Peinlich!)</kommentar>
+        <p klasse="O">Um die Einsatzbereitschaft der Bundeswehr oder um die Soldaten selbst geht es der Union schon lange nicht mehr.</p>
+        <kommentar>(Britta Ha&#xDF;elmann [B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN]: Jetzt reicht es mit frauenfeindlichen Bemerkungen!)</kommentar>
+        <p klasse="O">Wie die CDU mit der Sicherheit Deutschlands umgeht, ist skandal&#xF6;s. Es ist schlimmer als das: Es ist unpatriotisch!</p>
+        <kommentar>(Beifall bei der AfD)</kommentar>
+        <p klasse="J">Um die Sicherheit Deutschlands sch&#xFC;tzen zu k&#xF6;nnen, brauchen wir eine Bundeswehr, die zur Landes- und B&#xFC;ndnisverteidigung bef&#xE4;higt ist. Das ist ihr grundgesetzlicher Auftrag. Unsere Soldaten leisten ihren Eid darauf. Damit unsere Soldaten diesen Eid auch erf&#xFC;llen k&#xF6;nnen, brauchen sie materielle Vollausstattung. Die gro&#xDF;en Beschaffungsvorhaben m&#xFC;ssen z&#xFC;gig auf den Weg gebracht werden. Die Bundeswehr braucht auch die personelle Vollausstattung, um ihren Auftrag erf&#xFC;llen zu k&#xF6;nnen.</p>
+        <p klasse="J">Der f&#xFC;nfj&#xE4;hrige Versuch, mit Werbekampagnen, YouTube-Filmchen und Girls Days</p>
+        <kommentar>(Britta Ha&#xDF;elmann [B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN]: Vorsicht!)</kommentar>
+        <p klasse="O">gute und gen&#xFC;gend Rekruten zu gewinnen, ist gescheitert, genau wie die dazugeh&#xF6;rige Ministerin. 20&#xA0;000&#xA0;Stellen sind nicht besetzt.</p>
+        <kommentar>(Britta Ha&#xDF;elmann [B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN]: Nicht noch so eine frauenfeindliche Bemerkung!)</kommentar>
+        <p klasse="O">Deutschland braucht die Wehrpflicht zur&#xFC;ck.</p>
+        <kommentar>(Beifall bei der AfD)</kommentar>
+        <p klasse="J">Frau Kramp-Karrenbauer sprach sich im Sommer sehr energisch f&#xFC;r eine allgemeine Dienstpflicht aus. Die soll nach ihrer Vorstellung ja auch die Wehrpflicht enthalten. Ich nehme also an, Frau Ministerin, dass Sie bereits die Weisung erteilt haben, die Wiedereinsetzung der Wehrpflicht in Ihrem Hause zu pr&#xFC;fen. Ich nehme auch an, dass Sie bereits Weisung erteilt haben, die Investitionen der Bundeswehr im Hinblick auf &#x201E;1,5&#xA0;Prozent bis 2014 und das 2-Prozent-Ziel dar&#xFC;ber hinaus&#x201C; auszuplanen.<a id="S13508" name="S13508" typ="druckseitennummer"></a></p>
+        <p klasse="J">Was unsere Bundeswehr vordringlich braucht, kostet zun&#xE4;chst nicht viel Geld. Unsere Bundeswehr braucht eine geistig-moralische Neuaufstellung.</p>
+        <kommentar>(Beifall bei der AfD&#xA0;&#x2013; Widerspruch bei der SPD und dem B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN&#xA0;&#x2013; Thomas Hitschler [SPD]: Wir k&#xF6;nnen uns vorstellen, wie Sie das meinen!)</kommentar>
+        <p klasse="O">Geradlinigkeit, Ehrlichkeit und der Wille, dem deutschen Volk zu dienen, sind unabdingbare Voraussetzungen f&#xFC;r gute Soldaten und eine schlagkr&#xE4;ftige Armee mit der Bef&#xE4;higung zum Kampf. Wie aber kann man von seinen Soldaten dies alles verlangen, wenn sich die politische Leitung nicht daran h&#xE4;lt? Beim Gel&#xF6;bnis am letzten Samstag sagte die neue Ministerin den 400&#xA0;angetretenen Rekruten: &#x201E;Sie k&#xF6;nnen sich auf mich verlassen.&#x201C; Noch vor zwei Wochen allerdings sagte die neue Ministerin auch, gar nicht Ministerin werden zu wollen. Und heute wurden Sie hier vereidigt. Ist das die Art Verl&#xE4;sslichkeit, die Sie meinen?</p>
+        <kommentar>(Beifall bei der AfD)</kommentar>
+        <p klasse="J">Mit ihrer Art, Politik zu machen, sch&#xE4;digt die Bundesregierung nachhaltig das Vertrauen der Bev&#xF6;lkerung in unseren Staat. Die Bundeskanzlerin installiert ihre sogenannten Kronprinzessinnen nach feudaler Art. Wahlergebnisse werden ignoriert, das gegebene Wort hat keinen Wert. Es geht um Macht und um Macht allein, auf dem R&#xFC;cken unserer Soldaten und unserer aller Sicherheit. Und die Verteidigungspolitiker der CDU tragen dies alles mit. Im Ausschuss m&#xFC;hen Sie sich nach Kr&#xE4;ften ab, um das konservative Gesicht der CDU zu erhalten. Aber im entscheidenden Moment geben Sie kampflos auf und lassen sich zu Staffagen degradieren. Die Nachfolgeregelung der Bundeskanzlerin ist in der CDU wichtiger als Fachkompetenz und der Dienst f&#xFC;r unser Volk. Ehrlich gesagt, tun Sie mir leid.</p>
+        <kommentar>(Beifall bei der AfD)</kommentar>
+        <p klasse="J">Der neuen Ministerin ist bereits viel Gl&#xFC;ck f&#xFC;r ihr Amt gew&#xFC;nscht worden.</p>
+        <kommentar>(Katrin G&#xF6;ring-Eckardt [B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN]: Aufh&#xF6;ren!)</kommentar>
+        <p klasse="O">Vollkommen falsch! Unsere Bundeswehr ordentlich zu f&#xFC;hren, ist n&#xE4;mlich keine Gl&#xFC;ckssache, sondern eine Frage des Sachverstands und des Herzens.</p>
+        <p klasse="J">Danke.</p>
+        <kommentar>(Anhaltender Beifall bei der AfD&#xA0;&#x2013; Die Abgeordneten der AfD erheben sich&#xA0;&#x2013; Uwe Kekeritz [B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN]: Niveaulos!)</kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">Jetzt erteile ich das Wort dem Vorsitzenden der SPD-Fraktion, Dr.&#xA0;Rolf M&#xFC;tzenich.</p>
+        <kommentar>(Beifall bei der SPD)</kommentar>
+      </rede>
+      <rede id="ID1910900400">
+        <p klasse="redner"><redner id="11003599"><name><titel>Dr.</titel><vorname>Rolf</vorname><nachname>M&#xFC;tzenich</nachname><fraktion>SPD</fraktion></name></redner>Dr.&#xA0;Rolf M&#xFC;tzenich (SPD):</p>
+        <p klasse="J_1">Sehr geehrter Herr Pr&#xE4;sident! Liebe Kolleginnen und Kollegen! Liebe Frau Kramp-Karrenbauer, im Namen meiner Fraktion m&#xF6;chte ich Ihnen gratulieren. Ich w&#xFC;nsche Ihnen Kraft und Konzentration f&#xFC;r Ihre wichtige Aufgabe. Auf der Grundlage des Koalitionsvertrages bieten wir Ihnen gute Zusammenarbeit an.</p>
+        <kommentar>(Beifall bei der SPD und der CDU/CSU)</kommentar>
+        <p klasse="J">Gleichzeitig bin ich &#xFC;berzeugt: Das Ressort braucht eine Politikerin, die sich ohne Abstriche um die Bundeswehr k&#xFC;mmern kann. Allein das Haus bedeutet viel Arbeit; Ihre Vorg&#xE4;ngerinnen und Vorg&#xE4;nger k&#xF6;nnen Ihnen eine Menge davon erz&#xE4;hlen. Ihre unmittelbare Vorg&#xE4;ngerin hat Ihnen viel Arbeit hinterlassen, n&#xE4;mlich wichtige Baustellen und Herausforderungen. Allein vier will ich benennen: neue und wichtige Beschaffungsvorhaben, internationale Kooperationsprojekte, die Steigerung der Attraktivit&#xE4;t der Bundeswehr, aber auch&#xA0;&#x2013; diese Frage ist zwischen uns umstritten&#xA0;&#x2013; die Privatisierung verteidigungspolitischer Aufgaben. Auch dar&#xFC;ber werden Sie mit Ihrem Koalitionspartner noch das eine oder andere Wort wechseln m&#xFC;ssen.</p>
+        <kommentar>(Beifall bei der SPD)</kommentar>
+        <p klasse="O">Genauso wichtig ist mir: Die &#xD6;ffentlichkeit und wir werden Sie daran messen, ob die Berateraff&#xE4;re aufgekl&#xE4;rt werden kann, ohne R&#xFC;cksicht auf derzeit handelnde Personen.</p>
+        <kommentar>(Beifall bei der SPD)</kommentar>
+        <p klasse="J">Meine Damen und Herren, die uns bekannte internationale Ordnung steht seit Jahren unter Druck: Weltbev&#xF6;lkerung, Klimawandel, Flucht, R&#xFC;ckzug aus dem Multilateralismus, Aufstieg neuer M&#xE4;chte, zerfallende Staatlichkeit. Deswegen war es gut, heute eine Regierungserkl&#xE4;rung zu diesen Themen abzugeben, wie man die Bundeswehr einzubetten gedenkt.</p>
+        <p klasse="J">Ich stelle mir schon die Frage, ob vor dem Hintergrund der aktuellen Weltprobleme Ihr Begriff von Sicherheitspolitik ein angemessener, ein zeitgem&#xE4;&#xDF;er ist.</p>
+        <kommentar>(Beifall bei der SPD sowie bei Abgeordneten des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="O">In Ihrer Rede war viel von St&#xE4;rke und Abschreckung die Rede. Unser Verst&#xE4;ndnis einer modernen Sicherheitspolitik ist breiter: ja, eine moderne Bundeswehr, die eingebettet ist in Demokratie, gemeinsame Sicherheit und den Aufbau einer europ&#xE4;ischen Friedensordnung, auch&#xA0;&#x2013; das sage ich ganz bewusst&#xA0;&#x2013; unter Einschluss Russlands, wenn es gelingt,</p>
+        <kommentar>(Beifall bei der SPD)</kommentar>
+        <p klasse="O">den Abbau von Spannungen und die Bereitschaft zum Dialog und insbesondere die Konflikt- und Krisenpr&#xE4;vention und R&#xFC;stungskontrolle.<a id="S13509" name="S13509" typ="druckseitennummer"></a></p>
+        <p klasse="J">Was ist der Ma&#xDF;stab daf&#xFC;r? Offensichtlich ist das aus Ihrer Sicht&#xA0;&#x2013; das wurde insbesondere in Ihrer Rede deutlich&#xA0;&#x2013; eine Frage des Geldes. Ich muss Ihnen sagen: 45&#xA0;Milliarden Euro, die das Kabinett jetzt beschlossen hat, sind eine Menge Geld. Allein ein Drittel der neuen Mittel sind dem Verteidigungsministerium, Ihrem Ressort, zur Verf&#xFC;gung gestellt worden. Deswegen w&#xE4;re mein bescheidener Ratschlag an Sie gewesen, am Wochenende diese Interviews nicht zu f&#xFC;hren, in denen Sie mehr Verteidigungsmittel verlangt haben, sondern sich erst einmal die Zeit zu nehmen, sich die Schwachstellen in Ihrem Ressort anzuschauen und diese dann abzustellen.</p>
+        <kommentar>(Beifall bei der SPD, der LINKEN und dem B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="O">Dabei hilft auch nicht der Bezug auf ein angebliches 2&#x2011;Prozent-Ziel.</p>
+        <kommentar>(Zuruf von der CDU/CSU: Wir sind eine Verpflichtung eingegangen!)</kommentar>
+        <p klasse="O">Mich erinnert die Diskussion mehr und mehr an den Tanz um das goldene Kalb. Wir sollten besser &#xFC;ber die F&#xE4;higkeiten der Bundeswehr reden, die wir in die NATO einbringen k&#xF6;nnen, und diese F&#xE4;higkeiten letztlich st&#xE4;rken.</p>
+        <kommentar>(Beifall bei der SPD sowie bei Abgeordneten der CDU/CSU und des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="J">Im &#xDC;brigen bleibt festzuhalten: Der Bundestag hat das Budgetrecht. Kein B&#xFC;ndnis und keine internationale Organisation kann sich das anma&#xDF;en.</p>
+        <kommentar>(Beifall bei der SPD, der LINKEN und dem B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="O">Ohnehin ist Sicherheitspolitik&#xA0;&#x2013; vielleicht darf ich das sehr bescheiden formulieren&#xA0;&#x2013; l&#xE4;ngst nicht mehr das alleinige Feld der Regierung. Frau Ministerin, Ihnen steht ein selbstbewusstes Parlament gegen&#xFC;ber, das sich &#xFC;ber Jahre au&#xDF;en- und sicherheitspolitische Expertise angeeignet hat. Es besitzt eigene Kompetenzen und Beteiligungsrechte, und die werden wir als sozialdemokratische Bundestagsfraktion immer wieder einfordern und st&#xE4;rken, meine Damen und Herren.</p>
+        <kommentar>(Beifall bei der SPD)</kommentar>
+        <p klasse="J">Wenn ich ein Wort an den Kollegen Lucassen richten darf: Der Sozialdemokrat Paul L&#xF6;be, ein mutiger Reichstagsabgeordneter, der der NSDAP die Stirn geboten hat, w&#xE4;re ersch&#xFC;ttert, solche Worte von einer Partei in diesem Parlament zu h&#xF6;ren. Ich m&#xF6;chte sehr deutlich sagen: Das, was Sie in Ihrem Pamphlet &#x201E;Streitkraft Bundeswehr&#x201C; formuliert haben, entspricht nicht dem, wie wir Sozialdemokratinnen und Sozialdemokraten&#xA0;&#x2013; und wahrscheinlich auch das &#xFC;brige Parlament&#xA0;&#x2013; uns die Bundeswehr vorstellen.</p>
+        <kommentar>(Beifall bei der SPD, der FDP und dem B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN sowie bei Abgeordneten der CDU/CSU und der LINKEN&#xA0;&#x2013; Zurufe von der AfD)</kommentar>
+        <p klasse="J">Frau Ministerin, ich m&#xF6;chte kurz eine aktuelle Differenz zwischen uns und einem Teil der Union ansprechen. Wir h&#xF6;ren immer wieder, dass das Mandat zur Bek&#xE4;mpfung des IS verl&#xE4;ngert werden soll. Ich m&#xF6;chte Sie gerne unterrichten&#xA0;&#x2013; vielleicht tauschen Sie sich auch mit Ihrer Vorg&#xE4;ngerin dar&#xFC;ber aus&#xA0;&#x2013;: Es gab eine Kabinettsvorlage der gesamten Bundesregierung, am 31.&#xA0;Oktober dieses Jahres das Mandat einzustellen. Ich habe keine Kritik geh&#xF6;rt, als die Niederlande, Belgien, Norwegen und Australien Kampfflugzeuge abgezogen haben. Ich finde, f&#xFC;nf Jahre Einsatz der Bundeswehr zur Bek&#xE4;mpfung des IS waren ein angemessener Beitrag. Deshalb war die Schlussfolgerung, die die Bundesregierung damals dem Parlament &#xFC;berantwortet hat, richtig. Das Mandat endet am 31.&#xA0;Oktober dieses Jahres.</p>
+        <kommentar>(Beifall bei der SPD sowie bei Abgeordneten der LINKEN)</kommentar>
+        <p klasse="J">Im &#xDC;brigen ist es angesichts der aktuellen Situation gut, sehr bewusst dar&#xFC;ber zu reden, ob es richtig ist, einen milit&#xE4;rischen Fu&#xDF;abdruck in einer Region zu hinterlassen, in der gegenw&#xE4;rtig neue Kriege drohen. Ich sage sehr deutlich an alle im Parlament: Allein b&#xFC;ndnispolitische Erw&#xE4;gungen gen&#xFC;gen nicht, seitdem ein Rassist im Wei&#xDF;en Haus sitzt, der sich durch Unberechenbarkeit und Egoismus auszeichnet.</p>
+        <kommentar>(Beifall bei der SPD, der LINKEN und dem B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN&#xA0;&#x2013; Zurufe von der AfD: Pfui!&#xA0;&#x2013; Dr.&#xA0;Alice Weidel [AfD]: Unglaublich! Das ist ja wohl eine Frechheit! Linksradikal ist das!&#xA0;&#x2013; J&#xFC;rgen Braun [AfD]: Unglaublich, dieser M&#xFC;tzenich!)</kommentar>
+        <p klasse="O">Deswegen, liebe Frau Bundeskanzlerin, m&#xF6;chte ich mich bei Ihnen f&#xFC;r die klaren Worte auf der Pressekonferenz ganz herzlich bedanken. Ich finde, die politische Tonlage, die aus dem Wei&#xDF;en Haus kommt, ist gegen&#xFC;ber den europ&#xE4;ischen Partnern nicht mehr angemessen. Vielen Dank daf&#xFC;r.</p>
+        <kommentar>(Beifall bei der SPD, der LINKEN und dem B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="J">Gleichzeitig wissen wir, dass die Region weiterhin unsere gro&#xDF;e Aufmerksamkeit und unser Engagement braucht. Frau Bundesverteidigungsministerin, Sie haben die Krise im Golf von Oman angesprochen. Ja, es ist richtig: Sie braucht unsere Aufmerksamkeit, aber insbesondere in Form von Diplomatie, der Hilfe zur Vermittlung, die der Bundesau&#xDF;enminister tagt&#xE4;glich anbietet, und auch in Form von humanit&#xE4;rer Hilfe, die wir durch den Haushalt gest&#xE4;rkt wissen wollen. Was ich in dieser Debatte an den Beitr&#xE4;gen aus London interessant finde, ist: Offensichtlich ist eine Regierung, die den Austritt aus der Europ&#xE4;ischen Union versucht, nicht gewillt, eine Milit&#xE4;raktion mit den USA zu unternehmen. Vielmehr will sie mit der Europ&#xE4;ischen Union zusammenarbeiten, weil sie sich dort besser aufgehoben f&#xFC;hlt. Ich finde, das bietet auf europ&#xE4;ischer Ebene Chancen in der Diskussion mit Gro&#xDF;britannien. Ich hoffe, dass Premierminister Johnson in den Gespr&#xE4;chen mit der Europ&#xE4;ischen Union in den n&#xE4;chsten Wochen von dem verheerenden Pfad abkommt. Das w&#xE4;re uns wichtig.</p>
+        <kommentar>(Beifall bei der SPD)</kommentar>
+        <p klasse="J">Wenn die Fragen, die ich eben gestellt habe, auch Ihnen, liebe Frau Kramp-Karrenbauer, wichtig sind, so werden wir als Koalitionspartner uns mit aller Kraft und &#xDC;berzeugung in die Debatte einbringen.</p>
+        <p klasse="J">Vielen Dank.</p>
+        <kommentar>(Anhaltender Beifall bei der SPD&#xA0;&#x2013; Beifall bei Abgeordneten des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN)<a id="S13510" name="S13510" typ="druckseitennummer"></a></kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">N&#xE4;chster Redner ist der Fraktionsvorsitzende der FDP, Christian Lindner.</p>
+        <kommentar>(Beifall bei der FDP)</kommentar>
+      </rede>
+      <rede id="ID1910900500">
+        <p klasse="redner"><redner id="11004097"><name><vorname>Christian</vorname><nachname>Lindner</nachname><fraktion>FDP</fraktion></name></redner>Christian Lindner (FDP):</p>
+        <p klasse="J_1">Herr Pr&#xE4;sident! Liebe Kolleginnen! Liebe Kollegen! Frau Ministerin Kramp-Karrenbauer, die &#xD6;ffentlichkeit hat intensiv Anteil an Ihrer Ernennung genommen. Auch &#xFC;ber Ihre Eignung f&#xFC;r dieses Staatsamt wurde debattiert, auch heute in dieser Sitzung. Von der Rede des Kollegen der AfD wird in Erinnerung bleiben, dass er Engagement im l&#xE4;ndlichen Raum und f&#xFC;r die Familienpolitik geradezu als Disqualifikation f&#xFC;r ein h&#xF6;chstes Staatsamt betrachtet. Das sagt viel &#xFC;ber diese Fraktion aus.</p>
+        <kommentar>(Beifall bei der FDP und der CDU/CSU sowie bei Abgeordneten der SPD und des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="J">Dar&#xFC;ber hinaus wird gefragt: Kann man Bundesministerin der Verteidigung und Vorsitzende einer Partei sein? Ja, was spricht denn dagegen, wenn man Vorsitzende einer Partei und Regierungschefin sein kann? Wenn man Ministerpr&#xE4;sidentin und Innenministerin eines Landes war, dann hat man sicherheitspolitische Expertise.</p>
+        <kommentar>(Lachen bei Abgeordneten der AfD)</kommentar>
+        <p klasse="O">Daher kann man sich &#xFC;ber das, was &#xF6;ffentlich diskutiert wird, nur wundern.</p>
+        <kommentar>(Beifall bei der FDP und der CDU/CSU)</kommentar>
+        <p klasse="O">Das Einzige, woran Sie noch arbeiten m&#xFC;ssen: Sie haben ausgeschlossen, ins Kabinett zu geben, um es dann doch zu tun. Sie werden Martin Schulz erkl&#xE4;ren m&#xFC;ssen, wie so etwas geht.</p>
+        <kommentar>(Heiterkeit und Beifall bei der FDP)</kommentar>
+        <p klasse="J">Wir werden keinen Ansto&#xDF; daran nehmen; denn die Eignung einer Ministerin f&#xFC;r ihr Amt zeigt sich nicht allein daran, was sie vorher getan hat, sondern ausschlie&#xDF;lich an ihrer Amtsf&#xFC;hrung und daran, was sie f&#xFC;r die Bundeswehr erreichen kann. In diesem Sinne w&#xFC;nschen wir Ihnen eine gute Hand und viel Erfolg, Frau Kramp-&#xAD;Karrenbauer.</p>
+        <kommentar>(Beifall bei der FDP und der CDU/CSU)</kommentar>
+        <p klasse="O">Frau Ministerin, wir trauen Ihnen Leadership zu.</p>
+        <p klasse="J">Die Sozialdemokratie ist ja inzwischen auf dem Weg in die Opposition. Die Rede des Kollegen M&#xFC;tzenich hat das &#xFC;berdeutlich gemacht.</p>
+        <kommentar>(Beifall bei der FDP sowie bei Abgeordneten der CDU/CSU)</kommentar>
+        <p klasse="O">Herr M&#xFC;tzenich, auch wir sind oft&#xA0;&#x2013; um das Freundlichste zu sagen&#xA0;&#x2013; irritiert &#xFC;ber die Zitate, die der amerikanische Pr&#xE4;sident liefert. Aber gerade in einer Zeit, in der die NATO von einer Spaltungstendenz bedroht ist, den amerikanischen Pr&#xE4;sidenten &#x201E;Rassist&#x201C; zu nennen,</p>
+        <kommentar>(Zuruf von der SPD: Ist er auch!)</kommentar>
+        <p klasse="O">tr&#xE4;gt nicht zu einer Entspannung bei.</p>
+        <kommentar>(Beifall bei der FDP und der AfD sowie bei Abgeordneten der CDU/CSU und des Abg. Uwe Kamann [fraktionslos])</kommentar>
+        <p klasse="O">Ich sage Ihnen, Herr M&#xFC;tzenich: Die Frau Bundeskanzlerin hat angemessenere Worte der Kritik gefunden als Sie.</p>
+        <kommentar>(Beifall bei der FDP und der CDU/CSU&#xA0;&#x2013; Zurufe von der SPD)</kommentar>
+        <p klasse="J">Ins Zentrum gestellt hat die neue Verteidigungsministerin die Finanzierung der Bundeswehr. Aus dem 2-Prozent-Ziel f&#xFC;r 2024 hat Frau Merkel aber schon bei der M&#xFC;nchner Sicherheitskonferenz das 1,5-Prozent-Ziel gemacht. Aber noch nicht einmal dieses 1,5-Prozent-Ziel wird mit der aktuellen mittelfristigen Finanzplanung erreicht. Das kann man ausrechnen, wie es unser Kollege Karsten Klein im Zusammenhang mit einer Kleinen Anfrage gemacht hat: Die mittelfristige Finanzplanung von Herrn Scholz sieht f&#xFC;r 2023&#xA0; 1,25&#xA0;Prozent vor, weil die Mittel nicht steigen, sondern konstant bleiben. Das bedeutet: Wenn wir Wirtschaftswachstum haben&#xA0;&#x2013; trotz Peter Altmaier&#xA0;&#x2013;,</p>
+        <kommentar>(Heiterkeit und Beifall bei der FDP)</kommentar>
+        <p klasse="O">dann sinkt der Anteil des Wehretats an der Wirtschaftsleistung.&#xA0;&#x2013; Da ist also viel zu tun.</p>
+        <kommentar>(Zuruf des Abg. Michael Grosse-Br&#xF6;mer [CDU/CSU])</kommentar>
+        <p klasse="O">&#x2013;&#xA0;Kollege Grosse-Br&#xF6;mer, ja, das war nicht nett, aber leider wahr.&#xA0;&#x2013;</p>
+        <kommentar>(Heiterkeit und Beifall bei der FDP)</kommentar>
+        <p klasse="O">Wir werden Sie, Frau Ministerin, daran messen.</p>
+        <p klasse="J">Wir erwarten von Ihnen Leadership in Bezug auf unsere internationale Verantwortung, also in Bezug auf die Weiterentwicklung von PESCO, in Bezug auf die R&#xFC;stungskontrolle und nat&#xFC;rlich auch in Bezug auf die Frage, inwieweit wir die Bundeswehr einsetzen, um unsere legitimen Interessen zu verteidigen. Es ist doch v&#xF6;llig richtig, dass Deutschland zusammen mit Frankreich und Gro&#xDF;britannien jetzt in der Iran-Frage vermittelt und eben nicht unkritisch den Kurs der USA &#xFC;bernimmt. Dann d&#xFC;rfen wir uns bei der Sicherung der Seewege als Handelsnation aber auch nicht aus der Solidarit&#xE4;t mit Franzosen und Briten verabschieden. Auch da haben wir Verantwortung zu &#xFC;bernehmen. Ich h&#xE4;tte mir gew&#xFC;nscht, dass Sie dazu etwas sagen, Frau Ministerin.</p>
+        <kommentar>(Beifall bei der FDP sowie bei Abgeordneten der CDU/CSU)</kommentar>
+        <p klasse="J">Wir erwarten von Ihnen Leadership bei der Aufarbeitung unserer Auslandseins&#xE4;tze. Es wird an einer Friedensl&#xF6;sung f&#xFC;r Afghanistan gearbeitet. Wir w&#xFC;nschen uns Ihren unbefangenen Blick, Frau Kramp-Karrenbauer, bei der Evaluation des Afghanistan-Einsatzes und bei der Planung einer Exit-Strategie, die, sobald m&#xF6;glich, umgesetzt werden sollte.</p>
+        <kommentar>(Beifall bei der FDP)<a id="S13511" name="S13511" typ="druckseitennummer"></a></kommentar>
+        <p klasse="J">Zuletzt, Frau Kramp-Karrenbauer: Wir trauen Ihnen Leadership zu, auch wenn es darum geht, die schwierige Berateraff&#xE4;re und das Missmanagement im Bereich Beschaffung bei der Bundeswehr aufzuarbeiten. Auch wenn Ihre Vorg&#xE4;ngerin&#xA0;&#x2013; herzlichen Gl&#xFC;ckwunsch!&#xA0;&#x2013; in ein h&#xF6;chstes Amt bef&#xF6;rdert worden ist, darf jetzt nichts unter den Teppich gekehrt werden; denn sonst wird die Bilanz der Vorg&#xE4;ngerin auch Ihre Bilanz werden, Frau Kramp-Karrenbauer.</p>
+        <kommentar>(Beifall bei der FDP)</kommentar>
+        <p klasse="J">Wir w&#xFC;nschen Ihnen Gl&#xFC;ck und Erfolg, Frau Kramp-Karrenbauer; denn die Bundeswehr ist eine Parlamentsarmee. Es ist nicht Ihre Armee, es ist die Armee des Parlaments und des deutschen Volkes, und deshalb ist Ihr Erfolg auch unser aller Erfolg.</p>
+        <p klasse="J">Vielen Dank.</p>
+        <kommentar>(Beifall bei der FDP sowie bei Abgeordneten der CDU/CSU)</kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">Jetzt erteile ich das Wort dem Kollegen Dr.&#xA0;Johann Wadephul, CDU/CSU.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+      </rede>
+      <rede id="ID1910900600">
+        <p klasse="redner"><redner id="11004182"><name><titel>Dr.</titel><vorname>Johann David</vorname><nachname>Wadephul</nachname><fraktion>CDU/CSU</fraktion></name></redner>Dr.&#xA0;Johann David Wadephul (CDU/CSU):</p>
+        <p klasse="J_1">Herr Pr&#xE4;sident! Meine lieben Kolleginnen und Kollegen! Herr Kollege Lindner, Sie haben den Sinn dieser Debatte bezweifelt. Ihr Beitrag und die Beitr&#xE4;ge der anderen&#xA0;&#x2013; das gilt auch f&#xFC;r die, die noch folgen&#xA0;&#x2013; zeigen doch, dass es sinnvoll ist, dass wir hier zusammenkommen und miteinander diskutieren. Lassen Sie uns diese Chance miteinander nutzen. In den Beitr&#xE4;gen tauchten unterschiedliche Auffassungen auf, die miteinander beleuchtet werden m&#xFC;ssen.</p>
+        <p klasse="J">Ich m&#xF6;chte mit dem beginnen, was der Kollege Lucassen uns hier vorgehalten hat. Er hat von Verfassungsbruch gesprochen. Ich finde das einigerma&#xDF;en abenteuerlich, da es in Ihren Reihen wirre K&#xF6;pfe gibt, die meinen, einen Aufstand der Gener&#xE4;le der Bundeswehr initiieren zu m&#xFC;ssen, meine sehr verehrten Damen und Herren.</p>
+        <kommentar>(Beifall bei Abgeordneten der CDU/CSU, der SPD, der FDP und des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="J">In diesem Zusammenhang, Herr Lucassen: Sie haben, wie manch ein anderer, einen bemerkenswerten beruflichen Weg hinter sich, sodass man denken k&#xF6;nnte, da w&#xE4;re eine gewisse Fachkenntnis vorhanden und Sie h&#xE4;tten Interesse an einem Austausch mit den Vertretern der demokratischen Parteien in diesem Hause. Aber solange Sie mit den v&#xF6;lkischen Truppen von Herrn H&#xF6;cke</p>
+        <kommentar>(Zurufe von der AfD)</kommentar>
+        <p klasse="O">und mit derartigen Menschen wie diesem Mann, der zu einem Putsch in der Bundeswehr aufruft, gemeinsame Sache machen, stehen Sie au&#xDF;erhalb des demokratischen Spektrums der Bundesrepublik Deutschland und arbeiten wir nicht mit Ihnen zusammen.</p>
+        <kommentar>(Beifall bei der CDU/CSU, der SPD und der FDP sowie bei Abgeordneten der LINKEN und des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="J">Die letzte Woche war doch eine sch&#xF6;ne Woche f&#xFC;r Deutschland und Europa: Zwei Frauen mit Regierungsverantwortung sind in neue &#xC4;mter gew&#xE4;hlt worden.</p>
+        <kommentar>(Beifall bei Abgeordneten der CDU/CSU&#xA0;&#x2013; Lachen bei Abgeordneten der AfD)</kommentar>
+        <p klasse="O">Das ist alles nicht selbstverst&#xE4;ndlich, wenn wir ehrlich sind. Ich m&#xF6;chte an dieser Stelle Ursula von der Leyen im Namen der CDU/CSU-Bundestagsfraktion sehr herzlich f&#xFC;r ihr Wirken danken. Als Familienministerin und sp&#xE4;ter als Arbeitsministerin haben Sie, manchmal auch gegen Widerst&#xE4;nde im eigenen Laden, eine Trendwende in der Familienpolitik hinsichtlich der Frage der Vereinbarkeit von Familie und Beruf und eine Trendwende hinsichtlich der Strukturen der Jobcenter hingelegt. Und Sie haben f&#xFC;r die Bundeswehr die existenziell notwendigen Trendwenden in den Bereichen Personal, Material und Finanzen eingeleitet. Frau von der Leyen, Sie haben sich verdient gemacht um die Bundesrepublik Deutschland. Daf&#xFC;r danken wir Ihnen.</p>
+        <kommentar>(Beifall bei der CDU/CSU&#xA0;&#x2013; Lachen bei der AfD)</kommentar>
+        <p klasse="J">Herr Kollege M&#xFC;tzenich, ich glaube, wir beide sch&#xE4;tzen uns gegenseitig sehr; aber Ihre Rede war wohl ein bisschen ausgerichtet auf die Wahl des SPD-Fraktionsvorsitzenden im September.</p>
+        <kommentar>(Zuruf von der CDU/CSU: Ein bisschen?&#xA0;&#x2013; Lachen bei Abgeordneten der SPD)</kommentar>
+        <p klasse="O">&#x2013;&#xA0;Zustimmung in Ihrer Fraktion. Damit h&#xE4;tten wir das auch gekl&#xE4;rt.&#xA0;&#x2013; Ich h&#xE4;tte von Ihnen ein paar Worte zu der eigent&#xFC;mlichen Situation erwartet, in die wir gekommen sind: Der Spitzenkandidat, der die meisten Stimmen bekommen hat, wird von der sozialistischen Fraktion im Europaparlament abgelehnt. Dann ist die Bundeskanzlerin sogar bereit, den Zweitplatzierten, den Sozialisten Timmermans, zu unterst&#xFC;tzen. Dieser Vorschlag war aber nicht mehrheitsf&#xE4;hig. Und dann haben SPD-Abgeordnete im Europaparlament nichts Besseres zu tun, als eine gro&#xDF;e institutionelle Krise auf europ&#xE4;ischer Ebene zu riskieren, indem sie gegen Frau von der Leyen stimmen.&#xA0;&#x2013; Das ist kein europ&#xE4;isches Verhalten gewesen. Dazu h&#xE4;tte ich von Ihnen ein paar Worte erwartet.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der FDP)<a id="S13512" name="S13512" typ="druckseitennummer"></a></kommentar>
+        <p klasse="J">Ich finde, dass Parteien der Mitte Deutschlands zum Ausdruck bringen sollten, dass Deutschland Amerika wahnsinnig viel zu verdanken hat: nicht weniger als die Befreiung vom Naziregime, nicht weniger als den Wiederaufbau, nicht weniger als die Wiedervereinigung. Sie k&#xF6;nnen nachlesen, dass die amerikanische Unterst&#xFC;tzung zu damaliger Zeit vielleicht sogar etwas st&#xE4;rker war als die franz&#xF6;sische und die englische Unterst&#xFC;tzung. Wir sollten aus der Mitte dieses Parlamentes heraus keinen plumpen Antiamerikanismus betreiben, meine sehr verehrten Damen und Herren. Das ist unverantwortlich.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der FDP)</kommentar>
+        <p klasse="O">Es gibt starke Freunde in Amerika, die uns sch&#xE4;tzen. Denken Sie nur an die umjubelte Rede der Bundeskanzlerin an einer Universit&#xE4;t in Amerika.</p>
+        <kommentar>(J&#xFC;rgen Trittin [B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN]: Die halten alle Herrn Trump f&#xFC;r einen Rassisten! Alle!&#xA0;&#x2013; Zurufe von der SPD)</kommentar>
+        <p klasse="O">Es gibt ein Amerika, das mit uns weiter zusammenarbeiten will. Mit diesem Amerika wollen auch wir zusammenarbeiten. Amerika ist unser wichtigster B&#xFC;ndnispartner, liebe Kolleginnen und Kollegen.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie des Abg. Frank M&#xFC;ller-Rosentritt [FDP])</kommentar>
+        <p klasse="J">Die Verabredungen sind nicht mit dem Pr&#xE4;sidenten getroffen worden, sie sind noch nicht einmal bilateral mit den Vereinigten Staaten von Amerika getroffen worden, sondern sie sind mit der NATO getroffen worden, mit den kleinsten Partnerinnen und Partnern in der NATO. Unser Bundesau&#xDF;enminister wird nicht m&#xFC;de, daf&#xFC;r zu werben, dass wir in dieser Zeit, in der der amerikanische Pr&#xE4;sident andere Schwerpunkte setzt, einen neuen Multilateralismus brauchen. Er betont, dass wir mit anderen Partnern multilateral weiter zusammenarbeiten wollen. Und im Verteidigungsbereich ist der Multilateralismus nun einmal auf Ebene der NATO und der Europ&#xE4;ischen Union angesiedelt. Wer sich nicht an Zusagen h&#xE4;lt, der leistet einen Beitrag dazu, dass die gemeinsame Basis unseres B&#xFC;ndnisses erodiert, und das liegt nicht im europ&#xE4;ischen und auch nicht im deutschen Interesse, meine sehr verehrten Damen und Herren.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der FDP)</kommentar>
+        <p klasse="J">Die Worte zur Parlamentsarmee stimmen vollkommen; das war absolut richtig. Wir haben das Recht und die Pflicht, uns um die Bundeswehr zu k&#xFC;mmern. Das tun wir auch; die Verteidigungsministerin hat das gesagt. Niemand in der Bundesregierung und niemand in den Koalitionsfraktionen verfolgt das Ziel, die Au&#xDF;enpolitik, die Sicherheitspolitik und die Politik im Bereich wirtschaftliche Zusammenarbeit und Entwicklung nur milit&#xE4;risch zu betreiben. Niemand macht das.</p>
+        <kommentar>(J&#xFC;rgen Trittin [B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN]: Wieso k&#xFC;rzen Sie dann die Mittel?)</kommentar>
+        <p klasse="O">Aber, meine sehr verehrten Damen und Herren, das geh&#xF6;rt schon alles zusammen.</p>
+        <p klasse="J">Wenn das Kabinett ein Wei&#xDF;buch verabschiedet&#xA0;&#x2013; das Parlament hat es gesehen&#xA0;&#x2013;, wenn eine Konzeption der Bundeswehr entwickelt wird, wenn der Generalin&#xAD;spekteur daraus ein Aufgabenprofil f&#xFC;r die Bundeswehr entwickelt, was einen entsprechenden Finanzbedarf bedeutet, lieber Kollege M&#xFC;tzenich, dann d&#xFC;rfen nicht unsere Verteidigungspolitiker das alles mittragen und die Haushaltspolitiker hinterher sagen: Das bezahlen wir nicht.&#xA0;&#x2013; So kann man keine verl&#xE4;ssliche Politik f&#xFC;r die Bundeswehr machen. Sie braucht Verl&#xE4;sslichkeit, meine sehr verehrten Damen und Herren.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Multilateralismus&#xA0;&#x2013; auch wenn es nicht angenehm ist&#xA0;&#x2013; bedeutet, dass Deutschland bereit ist, Verantwortung zu &#xFC;bernehmen, dass es in schwierigen Eins&#xE4;tzen da ist. Wenn wir, Deutschland&#xA0;&#x2013; das haben die Bundeskanzlerin und der Au&#xDF;enminister gemacht, und das machen auch wir Au&#xDF;en- und Verteidigungspolitiker&#xA0;&#x2013;, die Amerikaner bitten, in Syrien zu bleiben, und die Amerikaner sagen: &#x201E;Ja, wir sind bereit, dort zu bleiben, wenn auch ihr mithelft, dass es dort insgesamt gelingen kann, eine Sicherheitsstruktur aufzubauen&#x201C;, dann darf Deutschland sich nicht einfach wieder einen schlanken Fu&#xDF; machen und sagen: F&#xFC;r Sicherheit sorgen schon andere; da machen wir uns nicht die H&#xE4;nde schmutzig.&#xA0;&#x2013; Nein, dann m&#xFC;ssen auch wir zu unserer Verantwortung stehen. Nur dann werden wir im B&#xFC;ndnis ernst genommen; nur dann werden wir die Amerikaner wieder &#xFC;berzeugen k&#xF6;nnen, mit uns gemeinsam im B&#xFC;ndnis Politik zu formulieren und wirkliche Multilateralisten zu sein.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Abschlie&#xDF;end: Es ist viel &#xFC;ber die Motivation, die Ziele usw. der Verteidigungsministerin gesagt worden. Ich finde, es gibt kein deutlicheres Zeichen f&#xFC;r die Soldatinnen und Soldaten unserer Bundeswehr, die einen schweren Dienst leisten, als dass die Vorsitzende der gr&#xF6;&#xDF;ten Partei in Deutschland bereit ist, dieses risikoreiche Amt zu &#xFC;bernehmen. Wir sind Annegret Kramp-Karrenbauer dankbar, dass sie das Amt der Verteidigungsministerin &#xFC;bernimmt. Herr Kollege Kahrs, ich w&#xFC;rde Ihre Worte etwas abwandeln: Wie reich ist die Bundeswehr, dass sie diese Verteidigungsministerin hat!</p>
+        <p klasse="J">Herzlichen Dank.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">N&#xE4;chster Redner ist der Vorsitzende der Fraktion Die Linke, Dr.&#xA0;Dietmar Bartsch.</p>
+        <kommentar>(Beifall bei der LINKEN)</kommentar>
+      </rede>
+      <rede id="ID1910900700">
+        <p klasse="redner"><redner id="11003034"><name><titel>Dr.</titel><vorname>Dietmar</vorname><nachname>Bartsch</nachname><fraktion>DIE LINKE</fraktion></name></redner>Dr.&#xA0;Dietmar Bartsch (DIE LINKE):</p>
+        <p klasse="J_1">Herr Pr&#xE4;sident! Meine Damen und Herren! Die Veranstaltung hier ist schon ein bisschen grotesk: Sommerpause, alle MdBs zur&#xFC;ckgeholt, gef&#xFC;hlte 90&#xA0;Grad. Das w&#xE4;re auch anders gegangen; das h&#xE4;tten wir anders l&#xF6;sen k&#xF6;nnen. Aber sei&#x2019;s drum.</p>
+        <kommentar>(Beifall bei der LINKEN sowie bei Abgeordneten der AfD)<a id="S13513" name="S13513" typ="druckseitennummer"></a></kommentar>
+        <p klasse="J">Meine Damen und Herren, die letzten Wochen haben gezeigt: Unter Annegret Kramp-Karrenbauer wird die CDU zu einem Klub der Unglaubw&#xFC;rdigkeit. Sie, Frau Kramp-Karrenbauer, haben Monate f&#xFC;r Manfred Weber als Kommissionspr&#xE4;sident geworben. Wir kennen das Ergebnis: Das Ergebnis ist Ursula von der Leyen. Sie hat aber gar nicht zur Wahl gestanden. Ich glaube, das ist eine schwere Verletzung der Demokratie. Was sollen die W&#xE4;hlerinnen und W&#xE4;hler von dieser Unglaubw&#xFC;rdigkeit halten?</p>
+        <kommentar>(Beifall bei der LINKEN)</kommentar>
+        <p klasse="O">Dazu kommt: Frau von der Leyen ist mit den Stimmen von den Salvinis, den Webers und auch den Orbans gew&#xE4;hlt worden. Immerhin hat Herr Weber noch die Stimmen von Herrn Orban abgelehnt. Aber sei&#x2019;s drum.</p>
+        <p klasse="J">Frau Kramp-Karrenbauer, Ihre Glaubw&#xFC;rdigkeit als Verteidigungsministerin ist zum Start nahe null. Ministerien&#xA0;&#x2013; das sehen wir&#xA0;&#x2013; werden zu Verschiebebahnh&#xF6;fen, um die Personalprobleme der Union zu regeln. Das Verteidigungsministerium soll zum Karrieresprungbrett der Kanzlerschaft werden. Das zeigt: Sie, Frau Kramp-&#xAD;Karrenbauer, haben ein instrumentelles Verh&#xE4;ltnis zum Verteidigungsministerium. Wollten Sie sich nicht voll der CDU widmen? Noch in diesem Monat haben Sie gesagt&#xA0;&#x2013; ich zitiere&#xA0;&#x2013;:</p>
+        <p klasse="Z">Ich habe mich bewusst entschieden, aus einem Staatsamt in ein Parteiamt zu wechseln.</p>
+        <p klasse="O">Ist das glaubw&#xFC;rdig? Machen Sie jetzt eigentlich beides halbtags?</p>
+        <kommentar>(Beifall bei der LINKEN)</kommentar>
+        <p klasse="O">Kennen Sie die vielen Baustellen im Verteidigungsministerium, die heute schon alle genannt worden sind, von Beratervertr&#xE4;gen bis zum Chaos in der Beschaffung und, und, und? Was sollen die W&#xE4;hlerinnen und W&#xE4;hler davon halten? Glaubw&#xFC;rdig ist das nicht.</p>
+        <kommentar>(Beifall bei der LINKEN)</kommentar>
+        <p klasse="J">Wenn Sie im &#xDC;brigen das Gewicht der CDU-Vorsitzenden wirklich in ein Zukunftsproblem einbringen wollten, dann h&#xE4;tten Sie doch Umweltministerin werden k&#xF6;nnen. Das ist doch aktuell die Zukunftsfrage. Oder weil das ein SPD-Ressort ist, h&#xE4;tten Sie vielleicht das Ressort Wirtschaft und Energie &#xFC;bernehmen k&#xF6;nnen. Energie ist doch auch eine Zukunftsfrage. Das w&#xE4;re noch halbwegs glaubw&#xFC;rdig gewesen.</p>
+        <p klasse="J">Nachdem Ihre einzige europapolitische Idee in einem Flugzeugtr&#xE4;ger bestand, haben Sie jetzt mit dem sogenannten 2-Prozent-Ziel gerade am Wochenende heftig nachgelegt. Ich will darauf verweisen&#xA0;&#x2013; auch Kollege M&#xFC;tzenich hat das getan&#xA0;&#x2013;: Das ist wider den Koalitionsvertrag. Ich will vor allen Dingen deutlich festhalten: Das entscheidet immer noch der Bundestag, keine Regierung und keine Ministerin. Wir haben eine Parlamentsarmee, und nur hier wird entschieden, nirgendwo anders.</p>
+        <kommentar>(Beifall bei der LINKEN sowie bei Abgeordneten der SPD)</kommentar>
+        <p klasse="J">Diese 2&#xA0;Prozent w&#xE4;ren eine beispiellose Aufr&#xFC;stung, die es in der Geschichte der Bundesrepublik so noch nicht gegeben hat. Nach Auffassung der Linken sind wir jetzt schon auf einem falschen Pfad. Ich war einmal Haush&#xE4;lter, und als ich 2014 aufh&#xF6;rte, hatte der Verteidigungshaushalt ein Volumen von 32&#xA0;Milliarden Euro. 2018 waren es schon 38,5&#xA0;Milliarden Euro, und in diesem Jahr werden es 43,2&#xA0;Milliarden Euro.</p>
+        <kommentar>(Beifall des Abg. Markus Gr&#xFC;bel [CDU/CSU])</kommentar>
+        <p klasse="O">Aber mit Ihrer Forderung ist das alles nichts. Ihre Forderung ist im Kern ein Kotau vor Trump und vor der R&#xFC;stungsindustrie, meine Damen und Herren.</p>
+        <kommentar>(Beifall bei der LINKEN sowie bei Abgeordneten der SPD und des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN&#xA0;&#x2013; Zuruf von der CDU/CSU: Peinlich!)</kommentar>
+        <p klasse="O">Offensichtlich soll die NATO in ein globales Interventionsb&#xFC;ndnis verwandelt werden.</p>
+        <p klasse="J">Willensstark sind Sie insbesondere in der Frage der Aufr&#xFC;stung. Aber falls Ihnen das noch niemand gesagt hat: Nicht wer die h&#xF6;chste Zahl fordert, macht das Beste f&#xFC;r die Bundeswehr. Schon die 1,5&#xA0;Prozent sind ja im Kern schon 60&#xA0;Milliarden Euro. Ihre Forderung ist nur entweder mit massiven K&#xFC;rzungen im Sozialbereich finanzierbar oder durch Neuverschuldung, durch die unsere Kinder und Enkelkinder f&#xFC;r diesen R&#xFC;stungswahn zahlen m&#xFC;ssen. Sie sind unglaubw&#xFC;rdig, weil Sie gar nichts zur Finanzierung Ihrer Vorhaben sagen. Sie haben heute einen Eid geleistet. Wenn Sie diesen Eid erf&#xFC;llen wollen, dann k&#xF6;nnen Sie eine derartige Zusage nicht leisten.</p>
+        <kommentar>(Beifall bei der LINKEN)</kommentar>
+        <p klasse="J">Vor allen Dingen wird das immer mit Russland begr&#xFC;ndet. Ich will aber darauf hinweisen, dass die NATO-Mitgliedstaaten &#xFC;ber ein Milit&#xE4;rbudget von 1&#xA0;000&#xA0;Milliarden US-Dollar verf&#xFC;gen, Russland dagegen nur von 63&#xA0;Milliarden US-Dollar.</p>
+        <kommentar>(Dr.&#xA0;Marie-Agnes Strack-Zimmermann [FDP]: Abteilung M&#xE4;rchenstunde!)</kommentar>
+        <p klasse="O">Wenn Sie 2&#xA0;Prozent erreichen w&#xFC;rden, w&#xFC;rde sogar Deutschland allein dar&#xFC;berliegen, meine Damen und Herren.</p>
+        <p klasse="J">Lassen Sie mich sehr grunds&#xE4;tzlich sagen: Der Titel der Regierungserkl&#xE4;rung macht deutlich: Sie definieren Verantwortungs&#xFC;bernahme vor allen Dingen milit&#xE4;risch. Sie haben von St&#xE4;rke, von Abschreckung gesprochen. Aber, meine Damen und Herren, es gab einmal Zeiten, in denen in Deutschland mit Zur&#xFC;ckhaltung &#xFC;ber die Rolle des Milit&#xE4;rs bei der Gestaltung deutscher Au&#xDF;enpolitik diskutiert wurde. Die scheinen offensichtlich vorbei zu sein.</p>
+        <kommentar>(Beifall bei der LINKEN)</kommentar>
+        <p klasse="O">Milit&#xE4;rische Potenziale als Instrumente deutscher Au&#xDF;enpolitik haben Sie offen artikuliert, Frau Kramp-&#xAD;Karrenbauer. Das wird Die Linke nicht akzeptieren. Sie reden hier im &#xDC;brigen &#xFC;ber Gel&#xF6;bnisse, sagen aber kein Wort zu dem Konflikt an der Stra&#xDF;e von Hormus, und Sie haben auch kein Wort zu Syrien gesagt.</p>
+        <kommentar>(Widerspruch bei der CDU/CSU)<a id="S13514" name="S13514" typ="druckseitennummer"></a></kommentar>
+        <p klasse="J">Frau Kramp-Karrenbauer, h&#xF6;ren Sie auf, Aussagen zu treffen, die Halbwertzeiten von nur wenigen Tagen haben und die v&#xF6;llig unglaubw&#xFC;rdig sind! Die W&#xE4;hler, die Soldaten und das Parlament haben Glaubw&#xFC;rdigkeit verdient und keine Selbstprofilierung mit Blick auf die Kanzlerschaft.</p>
+        <p klasse="J">Herzlichen Dank.</p>
+        <kommentar>(Beifall bei der LINKEN)</kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">N&#xE4;chste Rednerin ist die Kollegin Agnieszka Brugger, B&#xFC;ndnis&#xA0;90/Die Gr&#xFC;nen.</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+      </rede>
+      <rede id="ID1910900800">
+        <p klasse="redner"><redner id="11004106"><name><vorname>Agnieszka</vorname><nachname>Brugger</nachname><fraktion>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</fraktion></name></redner>Agnieszka Brugger (B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN):</p>
+        <p klasse="J_1">Herr Pr&#xE4;sident! Meine Damen und Herren! Bevor die neue Ministerin &#xFC;berhaupt richtig im Amt war, wusste eine altbackene Herrenriege schon, dass sie eine ganz furchtbare Wahl ist, und es wurde Gift und Galle verspr&#xFC;ht. Ich habe mich gewundert, in welcher Gesellschaft sich da auch die FDP in &#xE4;hnlicher Art und Weise ge&#xE4;u&#xDF;ert hat. Herr Lindner, ich bin froh, dass Sie das heute hier geradeger&#xFC;ckt haben.</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN sowie bei Abgeordneten der CDU/CSU)</kommentar>
+        <p klasse="O">Denn denen, die hier mit so einer &#xE4;tzenden H&#xE4;me kommentieren, geht es eben nicht um die Probleme der Bundeswehr, sondern denen geht es um das parteipolitische Klein-Klein.</p>
+        <kommentar>(Zuruf von der CDU/CSU: Sehr gut!)</kommentar>
+        <p klasse="O">Dass es nicht um die Bundeswehr geht, ist auch eine Ursache f&#xFC;r die vielen schlechten Nachrichten der letzten Jahre.</p>
+        <p klasse="J">Frau Kramp-Karrenbauer, Ihre Vorg&#xE4;nger in diesem schwierigen Amt sind der Versuchung erlegen, die Bundeswehr als spannende Kulisse f&#xFC;r ihre Selbstinszenierung auszunutzen. Ich hoffe, dass Sie einen anderen Weg w&#xE4;hlen werden. Dieses Amt ist doch zu wichtig, als dass es nur eine Station f&#xFC;r diejenigen ist, die sich selbst auf dem Weg nach oben sehen. Blitzlichtgewitter und bombastische Ank&#xFC;ndigungen, davon gab es unter Ministern wie Karl-Theodor zu Guttenberg, aber auch unter Ursula von der Leyen wahrlich mehr als genug.</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="O">Bei der gro&#xDF;en Show sind aber zukunftsfeste L&#xF6;sungen auf der Strecke geblieben. Das, was nun alle bei der Bundeswehr beklagen, ist das Werk von zehn Jahren konservativen Selbstdarstellern.</p>
+        <p klasse="J">Meine Damen und Herren, es braucht eine politische F&#xFC;hrung, die weniger auf zackige Schlagzeilen und Ich-Show setzt, sondern sich ganz unglamour&#xF6;s und solide den immensen Problemen der Bundeswehr widmet und dabei die Soldatinnen und Soldaten wieder mitnimmt. Das ist Ihre Verantwortung, Frau Ministerin.</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="O">Wenn Sie diese annehmen, dann w&#xFC;nschen wir auch aus der Opposition Ihnen in Ihrem neuen Amt gerade mit Blick auf die Menschen in der Bundeswehr alles Gute.</p>
+        <p klasse="J">Am Wochenende aber haben Sie dann wieder die gef&#xFC;hlt hundertste Runde im sinnlosen GroKo-Streit um das 2-Prozent-Ziel der NATO eingel&#xE4;utet. Ich kann es wirklich nicht mehr h&#xF6;ren: Es braucht nur noch viel mehr Geld und dann, ja dann wird endlich alles gut.&#xA0;&#x2013; Glauben Sie in der Union dieses M&#xE4;rchen eigentlich selbst noch?</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN sowie bei Abgeordneten der SPD)</kommentar>
+        <p klasse="O">Der Verteidigungshaushalt ist von 2014 bis 2019 von 32&#xA0;Milliarden auf &#xFC;ber 43&#xA0;Milliarden Euro angewachsen, und die Probleme sind definitiv nicht kleiner geworden. Wenn die Union es mit dem 2-Prozent-Ziel ernst meint, dann sprechen wir &#xFC;brigens von 25&#xA0;Milliarden Euro zus&#xE4;tzlich. Das w&#xFC;rde Deutschland zur gr&#xF6;&#xDF;ten Milit&#xE4;rmacht in Europa machen. Gerade in diesen schwierigen Zeiten braucht es starke Ideen f&#xFC;r R&#xFC;stungskontrolle, Abr&#xFC;stung und Dialog. Davon haben wir in Ihrer Rede nichts geh&#xF6;rt, Frau Kramp-Karrenbauer. Da muss mehr kommen!</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN und bei der SPD)</kommentar>
+        <p klasse="J">Nein, zu wenig Geld, das ist nicht das Problem. Ob die Skandale um die &#x201E;Gorch Fock&#x201C; oder die Berateraff&#xE4;re, als neue Ministerin im Amt ist es nun Ihre dringende Aufgabe, daf&#xFC;r zu sorgen, dass Kumpanei, Missmanagement und Geldverschwendung in der R&#xFC;stungspolitik nach so vielen Jahrzehnten endlich ein Ende haben.</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="J">Meine Damen und Herren, wir Gr&#xFC;ne werden immer aufs Sch&#xE4;rfste gefragt: Wie wollen Sie eigentlich Ihre Klimaschutzvorhaben finanzieren?&#xA0;&#x2013; Ich w&#xFC;rde gerne einmal zur&#xFC;ckfragen: Wie wollen Sie von der Union eigentlich die krasse Forderung nach 25 zus&#xE4;tzlichen Milliarden f&#xFC;r das Milit&#xE4;r gegenfinanzieren? Die Schuldenbremse aufbohren? Ihre 2-Prozent-Forderung ist nicht nur sicherheitspolitisch fahrl&#xE4;ssig, sondern sie ist auch finanzpolitisch v&#xF6;llig unseri&#xF6;s.</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN sowie bei Abgeordneten der SPD)</kommentar>
+        <p klasse="J">Im Verteidigungsausschuss besch&#xE4;ftigt uns noch ein weiteres sehr ernstes Thema. Viele Soldatinnen und Soldaten tun ihren Dienst mit einer beeindruckenden Haltung und dem richtigen Verst&#xE4;ndnis von Kameradschaft. Auch von ihnen h&#xF6;re ich Best&#xFC;rzung und gro&#xDF;e Sorge angesichts der F&#xE4;lle von Rechtsextremismus und der erschreckenden Verbindungen zwischen ihnen. Auch hier sind schonungslose Aufkl&#xE4;rung und klare Konsequenzen&#xA0;&#x2013; da nehmen wir Sie beim Wort, Frau Ministerin&#xA0;&#x2013; geboten; denn es darf in unseren Sicherheitsbeh&#xF6;rden keinen Platz f&#xFC;r Rechtsextremismus geben.</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN, bei der SPD und der LINKEN sowie bei Abgeordneten der CDU/CSU)<a id="S13515" name="S13515" typ="druckseitennummer"></a></kommentar>
+        <p klasse="J">Meine Damen und Herren, in einer Welt, die rauer geworden ist und in der einige unsere Friedensordnung unter Beschuss nehmen, liegt unsere Zukunft in Europa. Aber mehr Europa darf eben nicht bedeuten, blind Donald Trumps Milliardenforderungen nachzulaufen oder zu springen, wenn er mehr Milit&#xE4;r fordert. Im Gegenteil: Es braucht eine klare gemeinsame Stimme gegen seine gef&#xE4;hrliche Politik der Provokation. Gerade die aktuelle Situation in der Golfregion zeigt doch, wie Hardliner auf allen Seiten so lange an der Eskalationsspirale drehen, bis die Kriegsgefahr riesig wird. Mehr denn je braucht es jetzt einen starken Einsatz f&#xFC;r Krisenpr&#xE4;vention und Diplomatie.</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="J">Mehr Europa, das verlangt auch, sich zur Humanit&#xE4;t zu bekennen. Auf dem Mittelmeer hat die Bundeswehr in den letzten Jahren Tausende Menschenleben gerettet. Aber alle europ&#xE4;ischen Rettungsaktivit&#xE4;ten sind jetzt eingestellt. Freiwillige Retterinnen und Retter werden drangsaliert und kriminalisiert. Frau Kramp-&#xAD;Karrenbauer, setzen Sie sich gemeinsam mit dem Au&#xDF;enminister f&#xFC;r eine zivile Seenotrettungsmission und eine faire Verteilung der Geretteten ein!</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN sowie bei Abgeordneten der SPD)</kommentar>
+        <p klasse="O">Solange Menschen vor unseren Augen ertrinken, k&#xF6;nnen wir nicht glaubw&#xFC;rdig &#xFC;ber ein Europa der Werte sprechen.</p>
+        <p klasse="J">Nicht zuletzt: Eine moderne Sicherheitspolitik geht nicht ohne konsequenten Klimaschutz. Wo das Zuhause von Menschen zerst&#xF6;rt wird, versch&#xE4;rfen sich Konflikte und entstehen neue Krisen. Wer die Erneuerbaren ausbremst und auf &#xD6;l, Kohle und Gas setzt, zerst&#xF6;rt nicht nur die Zukunft unserer Kinder, sondern macht uns auch abh&#xE4;ngig von den Bad Guys dieser Welt und f&#xFC;llt deren Taschen.</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="O">Daher appellieren wir an Sie als Verteidigungsministerin, aber auch als Mitglied im Kabinett Merkel: Klimaschutz ist kein Thema, wo Umweltministerin Schulze Vorschl&#xE4;gchen machen darf, die dann von der Union gekillt werden. Klimaschutz, das ist die Megaherausforderung unserer Zeit, und die Antworten liegen l&#xE4;ngst auf dem Tisch: Ausbau der Erneuerbaren, Kohleausstieg, CO 2 -Preis, Klimaschutzgesetz.</p>
+        <kommentar>(Widerspruch bei der CDU/CSU und der FDP)</kommentar>
+        <p klasse="O">Sie m&#xFC;ssen einfach nur handeln, f&#xFC;r das Klima, f&#xFC;r unsere Kinder und f&#xFC;r unsere Sicherheit.</p>
+        <p klasse="J">Vielen Dank f&#xFC;r die Aufmerksamkeit.</p>
+        <kommentar>(Beifall beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">Jetzt erteile ich das Wort dem Kollegen Henning Otte, CDU/CSU.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+      </rede>
+      <rede id="ID1910900900">
+        <p klasse="redner"><redner id="11003821"><name><vorname>Henning</vorname><nachname>Otte</nachname><fraktion>CDU/CSU</fraktion></name></redner>Henning Otte (CDU/CSU):</p>
+        <p klasse="J_1">Sehr geehrter Herr Pr&#xE4;sident! Meine sehr verehrten Damen und Herren! Es ist gut, dass wir als Parlament heute hier im Deutschen Bundestag zusammenkommen, um der Vereidigung unserer neuen Bundesverteidigungsministerin beizuwohnen; denn das ist unser Anspruch als Parlament. Wir gratulieren Ihnen sehr herzlich, sehr geehrte Frau Ministerin, zur &#xDC;bernahme dieses so wichtigen Amtes. Wir w&#xFC;nschen Ihnen alles Gute. Ich sage als verteidigungspolitischer Sprecher: Wir freuen uns auf die Zusammenarbeit mit Ihnen; denn Sie haben deutlich zum Ausdruck gebracht, dass f&#xFC;r Sie der Mensch, die Soldatinnen und Soldaten, ganz im Mittelpunkt steht, und zwar sowohl in Ihrer Rede zum feierlichen Gel&#xF6;bnis am 20.&#xA0;Juli als auch heute noch einmal. Herzlichen Dank daf&#xFC;r! Wir setzen uns ein f&#xFC;r die Soldatinnen und Soldaten, f&#xFC;r die zivilen Mitarbeiter und damit f&#xFC;r die Sicherheit unseres Landes.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Ich bin auch dem Herrn Bundestagspr&#xE4;sidenten dankbar, dass er zu dieser Sitzung eingeladen hat; denn es geht darum, dass wir schnell Fahrt aufnehmen, dass die Inhaberin der Befehls- und Kommandogewalt die F&#xFC;hrung &#xFC;bernimmt. Es ist ein starkes politisches Signal, dass die Bundesvorsitzende der CDU bereit ist, diese Verantwortung zu &#xFC;bernehmen, sozusagen die Bundeswehr zur politischen Chefsache zu erkl&#xE4;ren, und das auch mit einer solchen Sitzung des Deutschen Bundestages. Herr Dr.&#xA0;Bartsch, wenn ich Sie richtig verstanden habe, h&#xE4;tten Sie offensichtlich gerne auf diese Sitzung verzichtet. Sie w&#xE4;ren offensichtlich gern irgendwo anders gewesen als hier, wo das Herz der Demokratie schl&#xE4;gt, ganz im Sinne eines Salonsozialismus: Gern die Freiheit dieses Landes genie&#xDF;en, aber nicht bereit sein, etwas daf&#xFC;r zu geben, dass wir die Sicherheit gew&#xE4;hrleisten k&#xF6;nnen!</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Die Ministerin hat deutlich gesagt, dass wir unseren Soldaten auch Vertrauen schenken, dass wir ihnen politische R&#xFC;ckendeckung geben und dass wir den Entscheidungstr&#xE4;gern wieder mehr Freiheit geben; denn die Bundeswehr muss einsatzbereiter werden, und wir m&#xFC;ssen ein verl&#xE4;sslicher Partner f&#xFC;r unsere B&#xFC;ndnispartner sein. Dazu ist es wichtig, dass wir die finanzielle Ausstattung verbessern. Man kann nicht auf der einen Seite beklagen, dass die Bundeswehr mehr Material braucht, und auf der anderen Seite ihr die finanzielle Ausstattung versagen. Wir m&#xFC;ssen deutlich machen, dass die personelle Schutz&#xAD;ausstattung und das Gro&#xDF;ger&#xE4;t schneller zuflie&#xDF;en m&#xFC;ssen. Daf&#xFC;r m&#xFC;ssen wir die Vergabeverordnung anpassen. Wir machen deutlich&#xA0;&#x2013; genauso wie das unsere Bundeskanzlerin gesagt hat&#xA0;&#x2013;: 1,5&#xA0;Prozent bis 2024 ist unser klares Ziel, um die Modernisierung voranzubringen und ein verl&#xE4;sslicher Partner zu sein. Damit machen wir deutlich: Die Sicherheit unseres Landes ist nicht verhandelbar. Das Ziel 2&#xA0;Prozent ist ein klarer Ausdruck daf&#xFC;r, dass wir bereit sind, in die Sicherheit unseres Landes zu investieren, f&#xFC;r heute, f&#xFC;r die Zukunft und f&#xFC;r die nachfolgenden Generationen. Das ist nachhaltige Sicherheitspolitik.</p>
+        <kommentar>(Beifall bei der CDU/CSU)<a id="S13516" name="S13516" typ="druckseitennummer"></a></kommentar>
+        <p klasse="J">Wenn die Kollegin Brugger hier anmerkt, was alles in Deutschland besser gemacht werden m&#xFC;sste, dann kann ich nur sagen: Das ist ein typisch gr&#xFC;nes Spiel, ein bisschen hier, ein bisschen mehr bei den Auslandsmandaten, ein Teil der Gr&#xFC;nen daf&#xFC;r, der andere dagegen, die dritte Gruppe enth&#xE4;lt sich, ganz nach Beliebigkeit.&#xA0;&#x2013; Nein, wir brauchen keine Beliebigkeit. Wir brauchen ein klares Ziel. Wir brauchen eine klare Strategie, um aus der St&#xE4;rke heraus unseren Frieden zu gew&#xE4;hrleisten.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der FDP)</kommentar>
+        <p klasse="J">Deswegen rufe ich unserem Koalitionspartner zu: Steht zu den Zusagen, die auf dem NATO-Gipfel in Wales getroffen worden sind. Es war der Au&#xDF;enminister Steinmeier, der immer wieder gesagt hat: Die Erreichung des 2-Prozent-Ziels ist wichtig. Wir m&#xFC;ssen damit deutlich machen: Das, was die Bundesregierung an Verpflichtungen eingegangen ist, das wollen wir auch halten und unterst&#xFC;tzen.&#xA0;&#x2013; Wir wollen nicht im Nachhinein die Worte des jetzigen Bundespr&#xE4;sidenten diskreditieren, sondern wir stehen dazu.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Wir m&#xFC;ssen eines deutlich machen: Sicherheitspolitik hat sich nicht an der Stimmungslage einer Partei zu orientieren, sondern an dem, wie die Lage ist. Der IS ist zwar bek&#xE4;mpft, aber noch nicht besiegt. Deswegen leisten wir einen Beitrag in Syrien: mit den Betankungsflugzeugen, mit den Aufkl&#xE4;rungsflugzeugen. Deswegen leisten wir einen Beitrag im Irak, um die Ausbildung der irakischen Armee weiter zu verbessern, um deutlich zu machen: Wir wollen, dass Frieden und Freiheit f&#xFC;r unser Land gew&#xE4;hrleistet ist, dass Frieden und Freiheit auch in anderen L&#xE4;ndern gew&#xE4;hrleistet werden kann.</p>
+        <p klasse="J">Da wissen wir uns eines Partners im Rahmen der transatlantischen Beziehungen sicher. Wir stehen zu den USA in guten und auch in manchmal nicht so guten Zeiten. Was soll wohl Herr Gabriel als neuer Pr&#xE4;sident der Atlantik-Br&#xFC;cke dar&#xFC;ber denken, Herr M&#xFC;ntefering</p>
+        <kommentar>(Lachen bei Abgeordneten der SPD, der FDP und des B&#xDC;NDNISSES&#xA0;90/DIE GR&#xDC;NEN)</kommentar>
+        <p klasse="O">&#x2013;&#xA0;Herr M&#xFC;tzenich! Herr M&#xFC;ntefering h&#xE4;tte das wahrscheinlich nicht gesagt, was Sie heute zum amerikanischen Pr&#xE4;sidenten gesagt haben.</p>
+        <p klasse="J">Wir m&#xFC;ssen die materielle Ausstattung verbessern. Daher m&#xFC;ssen wir bereit sein, auch den Beschaffungsprozess zu verbessern, und zwar nicht nur national, sondern auch europ&#xE4;isch. Wir wollen den Weg der Verteidigungsunion weiter voranbringen, und wir haben mit Ursula von der Leyen als Pr&#xE4;sidentin der Europ&#xE4;ischen Kommission jetzt genau die Chance, den Weg, den Sie eingeleitet haben, beherzt weiterzugehen, die Verteidigungsunion voranzubringen. Aber wir m&#xFC;ssen deutlich sagen: Wir m&#xFC;ssen unsere nationalen Interessen auch weiter wahren.</p>
+        <p klasse="J">Deswegen, meine Damen und Herren, sage ich hier zum Abschluss: Die Bundeswehr ist der Garant f&#xFC;r die Sicherheit und f&#xFC;r den Frieden. Die zivilen Mitarbeiter, die milit&#xE4;rischen Mitarbeiter, sie alle stehen mit ihren Angeh&#xF6;rigen und Familien zusammen, um den Frieden, die Freiheit, die Einigkeit und auch das Recht Deutschlands zu wahren. Das machen wir in der Gemeinschaft innerhalb der Vereinten Nationen, der NATO, der OSZE und auch der Europ&#xE4;ischen Union. Wir wollen transatlantisch bleiben. Wir m&#xFC;ssen europ&#xE4;ischer werden. Daf&#xFC;r muss Deutschland Verantwortung zeichnen. Wir als Union sind dazu bereit. Wir freuen uns, dass Sie als Verteidigungsministerin, liebe Frau Kramp-Karrenbauer, dies in Ihrer Rede deutlich zum Ausdruck gebracht haben. Wir stehen ein f&#xFC;r unser Land.</p>
+        <p klasse="J">Herzlichen Dank.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">Jetzt erteile ich das Wort der Kollegin Marie-Agnes Strack-Zimmermann, FDP.</p>
+      </rede>
+      <rede id="ID1910901000">
+        <p klasse="redner"><redner id="11004906"><name><titel>Dr.</titel><vorname>Marie-Agnes</vorname><nachname>Strack-Zimmermann</nachname><fraktion>FDP</fraktion></name></redner>Dr.&#xA0;Marie-Agnes Strack-Zimmermann (FDP):</p>
+        <p klasse="J_1">Sehr geehrter Herr Pr&#xE4;sident! Verehrte Damen und Herren! Sehr geehrte Frau Ministerin, wir gratulieren Ihnen herzlich zur Wahl. Wir werden als konstruktive Opposition an Ihrer Seite stehen. F&#xFC;r uns &#xFC;brigens, Herr Wadephul, ist es kein gro&#xDF;es Fest, wenn Frauen Minister werden; das ist bei den Freien Demokraten selbstverst&#xE4;ndlich.</p>
+        <kommentar>(Beifall bei der FDP&#xA0;&#x2013; Lachen beim B&#xDC;NDNIS&#xA0;90/DIE GR&#xDC;NEN sowie bei Abgeordneten der CDU/CSU)</kommentar>
+        <p klasse="J">Liebe Frau Brugger, wenn Frauen sich in die erste Reihe begeben, m&#xFC;ssen sie auch Druck abk&#xF6;nnen; da gibt es keinen Artenschutz. Das sollten Sie auch wissen.</p>
+        <kommentar>(Beifall bei der FDP)</kommentar>
+        <p klasse="J">Wir werden Sie begleiten. Aber Ihre Vorg&#xE4;ngerin hat ja eine Menge Minenfelder und wenige bl&#xFC;hende Truppen&#xFC;bungspl&#xE4;tze hinterlassen. Umso interessanter war, dass Sie sich so dezidiert zum 2-Prozent-Ziel ge&#xE4;u&#xDF;ert haben. Die SPD hat wie gewohnt reflexartig reagiert. Aber den Vogel abgeschossen hat ihr Generalsekret&#xE4;r: Wer der Bundesrepublik unterstellt, eine Marionette von US-Pr&#xE4;sident Trump zu sein, der entlarvt nicht nur seinen gering ausgepr&#xE4;gten Intellekt, sondern er stellt auch Deutschlands B&#xFC;ndnisverl&#xE4;sslichkeit infrage, und das ist uns&#xE4;glich.</p>
+        <kommentar>(Beifall bei der FDP sowie bei Abgeordneten der CDU/CSU)<a id="S13517" name="S13517" typ="druckseitennummer"></a></kommentar>
+        <p klasse="J">Und nun zum Mitschreiben nur noch f&#xFC;r die Sozialdemokratie, weil Sie offensichtlich Ihre Geschichte vergessen: Das 2-Prozent-Ziel tr&#xE4;gt die Handschrift des ehemaligen SPD-Au&#xDF;enministers Frank-Walter Steinmeier. Es war &#xFC;brigens auch der Sozialdemokrat Helmut Schmidt, der den NATO-Doppelbeschluss durchsetzte. Es war der Sozialdemokrat Peter Struck, der erkl&#xE4;rte, die Sicherheit der Bundesrepublik werde am Hindukusch verteidigt. Es war der Sozialdemokrat Gerhard Schr&#xF6;der, der, &#xFC;brigens zusammen mit den Gr&#xFC;nen, die Bundeswehr nach Afghanistan geschickt hat. Das nur mal zur Erinnerung. Bei Ihnen scheint da ja ein Loch im Gro&#xDF;hirn zu sein.</p>
+        <kommentar>(Heiterkeit und Beifall bei der FDP sowie bei Abgeordneten der CDU/CSU)</kommentar>
+        <p klasse="J">Frau Ministerin, abschlie&#xDF;end: Sie haben Anspruch auf Schonfrist in den ersten 100&#xA0;Tagen. Aber Sie wissen wie ich, dass wir im Grunde genommen diese Zeit nicht haben. L&#xF6;sen Sie die Probleme! Ich w&#xFC;nsche Ihnen dabei sehr, sehr viel Gl&#xFC;ck. Beenden Sie das &#x201E;Gorch Fock&#x201C;-Desaster, das schwimmende Beispiel f&#xFC;r Missmanagement, fehlende Kontrolle und Gutgl&#xE4;ubigkeit den Staatssekret&#xE4;ren gegen&#xFC;ber! Sorgen Sie daf&#xFC;r, dass in Ihrem Ministerium keine weiteren Auftr&#xE4;ge ohne korrekte Ausschreibung erteilt werden! Es darf nicht mehr so sein, dass man sich nur kennen muss, um an lukrative Auftr&#xE4;ge zu kommen. Wir behandeln das gerade im Beratervertr&#xE4;ge-Untersuchungsausschuss.</p>
+        <kommentar>(Beifall bei der FDP)</kommentar>
+        <p klasse="J">Frau Ministerin, mehr Mittel f&#xFC;r die Bundeswehr, besseres Management, gepaart mit Mehrausgaben f&#xFC;r die Diplomatie und die Entwicklungshilfe, wenn Sie diesen Weg gehen, haben Sie uns an Ihrer Seite.</p>
+        <kommentar>(Beifall bei der FDP sowie bei Abgeordneten der CDU/CSU)</kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">Jetzt erteile ich das Wort dem Kollegen Dr.&#xA0;Fritz Felgentreu.</p>
+        <kommentar>(Beifall bei der SPD)</kommentar>
+        <p klasse="J">Da der Ger&#xE4;uschpegel allm&#xE4;hlich ansteigt, bitte ich, auch den beiden letzten Rednern in dieser Debatte gen&#xFC;gend Aufmerksamkeit zukommen zu lassen.</p>
+      </rede>
+      <rede id="ID1910901100">
+        <p klasse="redner"><redner id="11004272"><name><titel>Dr.</titel><vorname>Fritz</vorname><nachname>Felgentreu</nachname><fraktion>SPD</fraktion></name></redner>Dr.&#xA0;Fritz Felgentreu (SPD):</p>
+        <p klasse="J_1">Vielen Dank.&#xA0;&#x2013; Herr Pr&#xE4;sident! Meine Damen und Herren! Zun&#xE4;chst m&#xF6;chte ich Ihnen, sehr geehrte Frau Bundesministerin, zu Ihrem neuen Amt gratulieren und Ihnen eine gl&#xFC;ckliche Hand w&#xFC;nschen. Ich sage nichts Neues, wenn ich hinzuf&#xFC;ge: Die Bundeswehr braucht jetzt eine Ministerin, die mit ganzer Tatkraft und Fortune die anstehenden Entscheidungen vorantreibt.</p>
+        <p klasse="J">Das gro&#xDF;e Thema der Verteidigungspolitik ist die volle Wiederherstellung der Einsatzbereitschaft der Bundeswehr, und zwar nicht nur f&#xFC;r Auslandseins&#xE4;tze, sondern auch f&#xFC;r die Aufgaben der B&#xFC;ndnis- und Landesverteidigung. Nach jahrzehntelangem Ab- und R&#xFC;ckbau ist das eine schwere Aufgabe. Das ist l&#xE4;ngst auch denjenigen klar, die sich nicht t&#xE4;glich mit Verteidigungspolitik besch&#xE4;ftigen. Die Bundeswehr ist heute eine in der Geschichte der deutschen Streitkr&#xE4;fte einmalig kleine Armee, und sie wird es auch bleiben. Wir garantieren die Sicherheit des Landes mit weniger als 200&#xA0;000&#xA0;Soldatinnen und Soldaten. Das geht nur als Teil eines starken B&#xFC;ndnisses. Umso wichtiger ist, dass wir diese kleine Armee zu 100&#xA0;Prozent mit Personal, Waffen und Ger&#xE4;t ausstatten, damit sie ihren Auftrag erf&#xFC;llen kann.</p>
+        <kommentar>(Beifall bei der SPD und der CDU/CSU)</kommentar>
+        <p klasse="J">Wir haben daf&#xFC;r in der Koalition die Weichen gestellt; insbesondere dieses Haus hat seinen Teil getan. Jahr f&#xFC;r Jahr stellt der Deutsche Bundestag zus&#xE4;tzliche Mittel bereit. Frau Ministerin, aus diesem Grund habe ich wenig Verst&#xE4;ndnis daf&#xFC;r, dass Sie am Wochenende in einer Ihrer ersten Verlautbarungen im Amt meinten beim Thema Verteidigungsetat den Koalitionspartner ein bisschen treiben zu m&#xFC;ssen. Ich habe das als schlechten Start f&#xFC;r die Zusammenarbeit empfunden. Deswegen gestatten Sie mir, uns allen kurz ein paar Fakten in Erinnerung zu rufen: Erstens. Wir haben in der Koalition eine klare Vereinbarung, bis 2024 eine NATO-Quote von 1,5&#xA0;Prozent zu erreichen. Dar&#xFC;ber hinaus k&#xF6;nnte heute keine Koalition seri&#xF6;s planen. Zweitens. Die Bundesregierung hat der NATO dieses Ziel auch offiziell gemeldet. Damit sind wir verbindlich in der Pflicht, und das bestreitet auch niemand. Drittens&#xA0;&#x2013; damit keine Missverst&#xE4;ndnisse aufkommen&#xA0;&#x2013;: Erst seit die SPD wieder regiert, unternimmt dieses Land Jahr f&#xFC;r Jahr gr&#xF6;&#xDF;ere Anstrengungen f&#xFC;r Sicherheit und Verteidigung.</p>
+        <kommentar>(Beifall bei der SPD&#xA0;&#x2013; Widerspruch bei der CDU/CSU)</kommentar>
+        <p klasse="O">Seit 2005 war ein Unionsminister nach dem anderen f&#xFC;r Abbau und F&#xE4;higkeitsverlust verantwortlich.</p>
+        <kommentar>(Zuruf von der SPD: So ist das!)</kommentar>
+        <p klasse="O">Insbesondere die Amtszeit des Verteidigungsministers zu Guttenberg hat bis heute Nachwirkungen mit desastr&#xF6;sen Folgen.</p>
+        <kommentar>(Beifall bei der SPD)</kommentar>
+        <p klasse="J">Seit die SPD regiert, haben wir einen Aufwuchs des Etats um fast 40&#xA0;Prozent erreicht. Im Haushalt&#xA0;2019, f&#xFC;r den Olaf Scholz verantwortlich zeichnet, haben wir einen Anstieg von 12&#xA0;Prozent. Kein Finanzminister der Union h&#xE4;tte das geschafft.</p>
+        <kommentar>(Beifall bei Abgeordneten der SPD&#xA0;&#x2013; Lachen bei Abgeordneten der CDU/CSU)</kommentar>
+        <p klasse="O">Und wir werden weiter nicht lockerlassen, um die Bundeswehr wieder dahin zu bringen, wo dieses Land sie braucht.</p>
+        <p klasse="J">Sie, Frau Ministerin, lade ich ein, auf der vom Deutschen Bundestag geschaffenen Grundlage endlich die Ministerin f&#xFC;r Personalaufbau und F&#xE4;higkeitsaufbau zu werden, die die Bundeswehr braucht. Sorgen Sie daf&#xFC;r, dass Verwaltung und Ministerium endlich schnell, zielgerichtet und effektiv arbeiten! Geben Sie die Richtung vor: bei der Inneren F&#xFC;hrung, beim Schweren Transporthubschrauber, beim Mehrzweckkampfschiff, bei der Tornado-Nachfolge, bei der Raketenabwehr, bei der Speerspitzen-Brigade f&#xFC;r 2023. Es ist viel liegen geblieben in den letzten Monaten. Es gibt unendlich viel zu tun.</p>
+        <p klasse="J">Und seien Sie versichert: Wenn Sie jetzt Schritt f&#xFC;r Schritt umsetzen, was Ihres Amtes ist, dann werden Sie in der SPD-Fraktion einen konstruktiven Partner daf&#xFC;r haben.</p>
+        <p klasse="J">Vielen Dank.</p>
+        <kommentar>(Beifall bei der SPD sowie bei Abgeordneten der CDU/CSU)<a id="S13518" name="S13518" typ="druckseitennummer"></a></kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">Voraussichtlich letzter Redner in dieser Debatte ist der Kollege Dr.&#xA0;Reinhard Brandl, CDU/CSU.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+      </rede>
+      <rede id="ID1910901200">
+        <p klasse="redner"><redner id="11004018"><name><titel>Dr.</titel><vorname>Reinhard</vorname><nachname>Brandl</nachname><fraktion>CDU/CSU</fraktion></name></redner>Dr.&#xA0;Reinhard Brandl (CDU/CSU):</p>
+        <p klasse="J_1">Herr Pr&#xE4;sident! Verehrte Kolleginnen und Kollegen! Es w&#xE4;re uns in der Verteidigungspolitik viel geholfen, wenn alle in der SPD so wie der Kollege Felgentreu mehr Geld f&#xFC;r die Bundeswehr wollen w&#xFC;rden. Liebe Kolleginnen und Kollegen von der SPD, nehmen Sie sich ein Beispiel an Ihrem verteidigungspolitischen Sprecher! Er hat heute vieles Richtige gesagt.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Frau Bundesministerin, ich gratuliere Ihnen recht herzlich zu Ihrem Amt. Deutsche Verteidigungsministerin, das ist nicht das leichteste Amt unter der Sonne. Aber ich kann sagen: Es ist mit eines der interessantesten &#xC4;mter, die man in Deutschland erreichen kann. Sie haben eine tolle Truppe, und Sie haben Gestaltungsspielraum.</p>
+        <p klasse="J">Ich glaube, als Verteidigungsministerin kann man viel machen; man kann aber auch viel falsch machen. Ihre Vorg&#xE4;ngerin, Frau von der Leyen, hat vieles, vieles richtig gemacht.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="O">Sie wird als die Ministerin in die Geschichte eingehen, die in der Bundeswehr die Trendwenden geschafft hat. Sie wird als die Ministerin in die Geschichte eingehen, die mit 32&#xA0;Milliarden Euro &#xFC;bernommen und mit 45&#xA0;Milliarden Euro &#xFC;bergeben hat. Das muss ihr erst einmal einer nachmachen. Frau von der Leyen, wir k&#xF6;nnen Ihnen dankbar sein.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Aber Geld ist nicht alles. Was die Ministerin geschafft hat, ist, dass sie den Mut gehabt hat, den Finger in die Wunde zu legen; denn es l&#xE4;uft nicht alles rund bei der Bundeswehr und bei der Beschaffungsorganisation.</p>
+        <p klasse="J">Was wir heute haben, ist die transparenteste Bundeswehr, die wir jemals hatten. Ich habe Ihnen hier beispielhaft den R&#xFC;stungsbericht mitgebracht. Es ist mittlerweile die neunte Ausgabe, 250&#xA0;Seiten. &#xDC;ber jedes einzelne R&#xFC;stungsvorhaben wird im Detail berichtet, &#xFC;ber Schwierigkeiten und &#xFC;ber Risiken. Da l&#xE4;uft nicht alles rund. Herr Lucassen von der AfD, fr&#xFC;her war auch nicht alles besser. Aber fr&#xFC;her haben wir es nicht gewusst. Jetzt wissen wir es, und das ist wichtig, um die Probleme zu l&#xF6;sen.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Meine Damen und Herren, Geld ist nicht alles, aber es ist nat&#xFC;rlich ein Teil der L&#xF6;sung. Es ist auch kein Selbstzweck; denn es sind wir hier im Deutschen Bundestag, die unsere Soldatinnen und Soldaten in die Auslandseins&#xE4;tze schicken. Es sind wir hier, die ihnen die Aufgaben geben, und es ist unsere verdammte Pflicht, ihnen zumindest die Ausr&#xFC;stung zu geben, die sie zur Erf&#xFC;llung ihres Auftrags brauchen.</p>
+        <kommentar>(Beifall bei der CDU/CSU sowie bei Abgeordneten der FDP)</kommentar>
+        <p klasse="J">Es geht um mehr Geld. Da will ich Ihnen eine ganz einfache Rechnung aufmachen. Allein um die Substanz zu erhalten, braucht die Bundeswehr eine knappe Milliarde Euro im Jahr mehr. Sie braucht dieses Geld, um die Personalkostensteigerung und die allgemeine Preisentwicklung aufzufangen. Wenn sie dieses Geld nicht bekommt, dann geht das zulasten der Substanz. Wir haben bei der Bundeswehr &#xFC;ber viele, viele Jahre auf Kosten der Substanz gelebt, und das hat Frau von der Leyen abgestellt.</p>
+        <kommentar>(Beifall bei der CDU/CSU)</kommentar>
+        <p klasse="J">Aber diese Milliarde reicht nicht, um neue F&#xE4;higkeiten zu bekommen, um neue Antworten auf die Herausforderungen unserer Zeit zu geben. Meine Damen und Herren, &#xFC;berall auf der Welt verbreiten sich moderne Langstreckenraketentechnologien. Was wir in Deutschland haben, sch&#xFC;tzt uns gegen die Raketen der 1990er- und 2000er-Jahre. Das ist kein Schutz gegen die Bedrohungen unserer Zeit. Wir reden viel &#xFC;ber den Cyberraum. Die Bundeswehr ist heute in der Lage, ihre eigenen Netze zu sch&#xFC;tzen. Sie ist bei Weitem nicht in der Lage, unser Land vor einem gro&#xDF;fl&#xE4;chigen Cyberangriff zu sch&#xFC;tzen. Der Schwere Transporthubschrauber ist 1972 in die Bundeswehr eingef&#xFC;hrt worden. Kurz danach ist der Tornado eingef&#xFC;hrt worden. Mit dem Material&#xA0;&#x2013; das ist jetzt 40, 50&#xA0;Jahre alt&#xA0;&#x2013; sch&#xFC;tzen wir unser Land. Meine Damen und Herren, das ist nicht angemessen. Wir brauchen dringend mehr Investitionen.</p>
+        <p klasse="J">Zu den 2&#xA0;Prozent, um die es hier allen geht. Da denkt man: Die kommen vom Himmel oder von Donald Trump.&#xA0;&#x2013; Meine Damen und Herren, die Bundeswehr hat ein F&#xE4;higkeitsprofil vorgelegt, eine Finanzbedarfsanalyse vorgelegt, worin sie Punkt f&#xFC;r Punkt begr&#xFC;ndet hat, was sie f&#xFC;r die Erf&#xFC;llung ihrer Aufgaben braucht. Von all den Rednern, die sich heute dagegen gewandt haben, die gesagt haben: &#x201E;Nein, nicht zus&#xE4;tzlich Geld f&#xFC;r die Bundeswehr; das f&#xFC;hrt nur zu einer Aufr&#xFC;stung&#x201C;, hat kein einziger gesagt, welche Aufgabe die Bundeswehr nicht erf&#xFC;llen soll. Meine Damen und Herren, das geh&#xF6;rt aber zur Seriosit&#xE4;t dazu, wenn man sich hinstellt und sagt: Die Bundeswehr ist gen&#xFC;gend finanziert.</p>
+        <kommentar>(Johannes Kahrs [SPD]: Ihr habt sie doch kaputtgespart!)</kommentar>
+        <p klasse="J">Frau Kramp-Karrenbauer kann vieles, aber, liebe Kolleginnen und Kollegen, sie kann nicht zaubern.</p>
+        <kommentar>(Zuruf von der SPD: Ach so?)</kommentar>
+        <p klasse="O">Sie wird die Unterst&#xFC;tzung des Parlaments brauchen, um die Soldaten, um die Bundeswehr wieder optimal auszur&#xFC;sten. Ich kann Ihnen, Frau Ministerin, von meiner Fraktion zusichern: Unsere Unterst&#xFC;tzung haben Sie. Alles Gute und Gottes Segen f&#xFC;r Ihr Amt!</p>
+        <kommentar>(Beifall bei der CDU/CSU)<a id="S13519" name="S13519" typ="druckseitennummer"></a></kommentar>
+        <name>Pr&#xE4;sident Dr.&#xA0;Wolfgang Sch&#xE4;uble:</name>
+        <p klasse="J_1">Damit schlie&#xDF;e ich die Aussprache.</p>
+        <p klasse="J">Wir kommen zu dem Entschlie&#xDF;ungsantrag der Fraktion Die Linke auf der Drucksache&#xA0;19/11870. Die Fraktion Die Linke w&#xFC;nscht Abstimmung in der Sache; die Fraktionen der CDU/CSU und SPD w&#xFC;nschen &#xDC;berweisung, und zwar federf&#xFC;hrend an den Verteidigungsausschuss und mitberatend an den Ausw&#xE4;rtigen Ausschuss.</p>
+        <p klasse="J">Nach st&#xE4;ndiger &#xDC;bung stimmen wir zun&#xE4;chst &#xFC;ber den Antrag auf Ausschuss&#xFC;berweisung ab. Ich frage deshalb: Wer stimmt f&#xFC;r die beantragte &#xDC;berweisung?&#xA0;&#x2013; Wer stimmt dagegen?&#xA0;&#x2013; Dann haben alle Fraktionen mit Ausnahme der Fraktion Die Linke f&#xFC;r die &#xDC;berweisung gestimmt, und die &#xDC;berweisung ist somit beschlossen. Damit stimmen wir &#xFC;ber den Entschlie&#xDF;ungsantrag auf der Drucksache&#xA0;19/11870 in der Sache nicht ab.</p>
+        <p klasse="J">Schon sind wir am Schluss unserer heutigen Tagesordnung.</p>
+        <p klasse="J">Ich danke Ihnen, dass Sie alle mitgeholfen haben, die Sitzung an diesem ungew&#xF6;hnlichen Ort ordnungsgem&#xE4;&#xDF; abzuhalten.</p>
+        <p klasse="J">Ich berufe die n&#xE4;chste Sitzung des Deutschen Bundestages auf Dienstag, den 10.&#xA0;September 2019, 10&#xA0;Uhr, ein.</p>
+        <p klasse="J">Ich w&#xFC;nsche Ihnen weiterhin gute, erholsame Wochen und schlie&#xDF;e die Sitzung.</p>
+        <p klasse="T_Beratung">(Schluss: 13.39 Uhr)</p>
+      </rede>
+    </tagesordnungspunkt>
+    <sitzungsende sitzung-ende-uhrzeit="13:39">
+  </sitzungsende></sitzungsverlauf>
+  <anlagen>
+    <anlagen-titel>Anlagen zum Stenografischen Bericht</anlagen-titel>
+    <anlage>
+      <anlagen-titel>Anlage 1</anlagen-titel>
+      <anlagen-text anlagen-typ="Liste der entschuldigten Abgeordneten">
+        <a id="S13521" name="S13521" typ="druckseitennummer">
+        <p klasse="Anlage_2">Liste der entschuldigten Abgeordneten<a id="S13523" name="S13523" typ="druckseitennummer"></a></p>
+        <p klasse="J">
+          <table><tbody><tr><th>Abgeordnete(r)</th><th></th></tr><tr><td>Akbulut, G&#xF6;kay</td><td>DIE LINKE</td></tr><tr><td>Amtsberg, Luise</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Aschenberg-Dugnus, Christine</td><td>FDP</td></tr><tr><td>Baerbock, Annalena</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Baradari, Nezahat</td><td>SPD</td></tr><tr><td>Barnett, Doris</td><td>SPD</td></tr><tr><td>Barrientos, Simone</td><td>DIE LINKE</td></tr><tr><td>Bernstein, Melanie</td><td>CDU/CSU</td></tr><tr><td>Bernstiel, Christoph</td><td>CDU/CSU</td></tr><tr><td>Binding (Heidelberg), Lothar</td><td>SPD</td></tr><tr><td>Bleck, Andreas</td><td>AfD</td></tr><tr><td>Bluhm-F&#xF6;rster, Heidrun</td><td>DIE LINKE</td></tr><tr><td>Brackmann, Norbert</td><td>CDU/CSU</td></tr><tr><td>Brandner, Stephan</td><td>AfD</td></tr><tr><td>Brandt, Michel</td><td>DIE LINKE</td></tr><tr><td>Budde, Katrin</td><td>SPD</td></tr><tr><td>B&#xFC;low, Marco</td><td>fraktionslos</td></tr><tr><td>Bystron, Petr</td><td>AfD</td></tr><tr><td>Cotar, Joana</td><td>AfD</td></tr><tr><td>Cronenberg, Carl-Julius</td><td>FDP</td></tr><tr><td>Dassler, Britta Katharina</td><td>FDP</td></tr><tr><td>De Masi, Fabio</td><td>DIE LINKE</td></tr><tr><td>De Ridder, Dr. Daniela</td><td>SPD</td></tr><tr><td>Delig&#xF6;z, Ekin</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Dittmar, Sabine</td><td>SPD</td></tr><tr><td>D&#xF6;rner, Katja</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Elsner von Gronow, Berengar</td><td>AfD</td></tr><tr><td>Fechner, Dr. Johannes</td><td>SPD</td></tr><tr><td>Freese, Ulrich</td><td>SPD</td></tr><tr><td>Freihold, Brigitte</td><td>DIE LINKE</td></tr><tr><td>Freitag, Dagmar</td><td>SPD</td></tr><tr><td>Freudenstein, Dr. Astrid</td><td>CDU/CSU</td></tr><tr><td>Gabelmann, Sylvia</td><td>DIE LINKE</td></tr><tr><td>Gehrke, Dr. Axel</td><td>AfD</td></tr><tr><td>Gminder, Franziska</td><td>AfD</td></tr><tr><td>Gottberg, Wilhelm von</td><td>AfD</td></tr><tr><td>Gutting, Olav</td><td>CDU/CSU</td></tr><tr><td>Gysi, Dr. Gregor</td><td>DIE LINKE</td></tr><tr><td>Hacker, Thomas</td><td>FDP</td></tr><tr><td>Hagedorn, Bettina</td><td>SPD</td></tr><tr><td>Hahn, Dr. Andr&#xE9;</td><td>DIE LINKE</td></tr><tr><td>Hakverdi, Metin</td><td>SPD</td></tr><tr><td>H&#xE4;nsel, Heike</td><td>DIE LINKE</td></tr><tr><td>Hartmann, Sebastian</td><td>SPD</td></tr><tr><td>Hartmann, Verena</td><td>AfD</td></tr><tr><td>Heidenblut, Dirk</td><td>SPD</td></tr><tr><td>Heil, Mechthild</td><td>CDU/CSU</td></tr><tr><td>Heinrich, Gabriela</td><td>SPD</td></tr><tr><td>Held, Marcus</td><td>SPD</td></tr><tr><td>Helling-Plahr, Katrin</td><td>FDP</td></tr><tr><td>Hendricks, Dr. Barbara</td><td>SPD</td></tr><tr><td>Hennrich, Michael</td><td>CDU/CSU</td></tr><tr><td>Herbrand, Markus</td><td>FDP</td></tr><tr><td>Herdt, Waldemar</td><td>AfD</td></tr><tr><td>Hessel, Katja</td><td>FDP</td></tr><tr><td>He&#xDF;enkemper, Dr. Heiko</td><td>AfD</td></tr><tr><td>Hiller-Ohm, Gabriele</td><td>SPD</td></tr><tr><td>Hoffmann, Dr. Bettina</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Hofreiter, Dr. Anton</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Holtz, Ottmar von</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Janecek, Dieter</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Jarzombek, Thomas</td><td>CDU/CSU</td></tr><tr><td>JIrmer, Hans-J&#xFC;rgen</td><td>CDU/CSU</td></tr><tr><td>Kappert-Gonther, Dr. Kirsten</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Karl, Alois</td><td>CDU/CSU</td></tr><tr><td>Katzmarek, Gabriele</td><td>SPD</td></tr><tr><td>Kauder, Volker</td><td>CDU/CSU</td></tr><tr><td>Keul, Katja</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Kindler, Sven-Christian</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Kipping, Katja</td><td>DIE LINKE</td></tr><tr><td>Kiziltepe, Cansel</td><td>SPD</td></tr><tr><td>Klein-Schmeink, Maria</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Kober, Pascal</td><td>FDP</td></tr><tr><td>Kofler, Dr. B&#xE4;rbel</td><td>SPD</td></tr><tr><td>K&#xF6;rber, Carsten</td><td>CDU/CSU</td></tr><tr><td>Korkmaz, Elvan</td><td>SPD</td></tr><tr><td>Kramme, Anette</td><td>SPD</td></tr><tr><td>Krellmann, Jutta</td><td>DIE LINKE</td></tr><tr><td>Krings, Dr. G&#xFC;nter</td><td>CDU/CSU</td></tr><tr><td>Kubicki, Wolfgang</td><td>FDP</td></tr><tr><td>K&#xFC;hne, Dr. Roy</td><td>CDU/CSU</td></tr><tr><td>K&#xFC;nast, Renate</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Lamers, Dr. Dr. h. c. Karl A.</td><td>CDU/CSU</td></tr><tr><td>Lazar, Monika</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Lehmann, Jens</td><td>CDU/CSU</td></tr><tr><td>Lehmann, Sven</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Leutert, Michael</td><td>DIE LINKE</td></tr><tr><td>Lischka, Burkhard</td><td>SPD</td></tr><tr><td>Loos, Bernhard</td><td>CDU/CSU</td></tr><tr><td>Luczak, Dr. Jan-Marco</td><td>CDU/CSU</td></tr><tr><td>Magnitz, Frank</td><td>AfD</td></tr><tr><td>Maier, Jens</td><td>AfD</td></tr><tr><td>Martens, Dr. J&#xFC;rgen</td><td>FDP</td></tr><tr><td>Meister, Dr. Michael</td><td>CDU/CSU</td></tr><tr><td>Mieruch, Mario</td><td>fraktionslos</td></tr><tr><td>Mindrup, Klaus</td><td>SPD</td></tr><tr><td>M&#xF6;hring, Cornelia</td><td>DIE LINKE</td></tr><tr><td>Mohrs, Falko</td><td>SPD</td></tr><tr><td>M&#xFC;ller (Potsdam), Norbert</td><td>DIE LINKE</td></tr><tr><td>M&#xFC;ller, Axel</td><td>CDU/CSU</td></tr><tr><td>M&#xFC;ller, Hansj&#xF6;rg</td><td>AfD</td></tr><tr><td>M&#xFC;ller, Sepp</td><td>CDU/CSU</td></tr><tr><td>M&#xFC;ller-Gemmeke, Beate</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Nahles, Andrea</td><td>SPD</td></tr><tr><td>Nastic, Zaklin</td><td>DIE LINKE</td></tr><tr><td>Neu, Dr. Alexander S.</td><td>DIE LINKE</td></tr><tr><td>Nissen, Ulli</td><td>SPD</td></tr><tr><td>Noll, Michaela</td><td>CDU/CSU</td></tr><tr><td>Oehme, Ulrich</td><td>AfD</td></tr><tr><td>&#xD6;zo&#x11F;uz, Aydan</td><td>SPD</td></tr><tr><td>Pasemann, Frank</td><td>AfD</td></tr><tr><td>Pellmann, S&#xF6;ren</td><td>DIE LINKE</td></tr><tr><td>Petry, Christian</td><td>SPD</td></tr><tr><td>Petry, Dr. Frauke</td><td>fraktionslos</td></tr><tr><td>Pilger, Detlev</td><td>SPD</td></tr><tr><td>Pilsinger, Stephan</td><td>CDU/CSU</td></tr><tr><td>Raabe, Dr. Sascha</td><td>SPD</td></tr><tr><td>Remmers, Ingrid</td><td>DIE LINKE</td></tr><tr><td>Renner, Martin Erwin</td><td>AfD</td></tr><tr><td>Reuther, Bernd</td><td>FDP</td></tr><tr><td>Rohde, Dennis</td><td>SPD</td></tr><tr><td>Rosemann, Dr. Martin</td><td>SPD</td></tr><tr><td>Rossmann, Dr. Ernst Dieter</td><td>SPD</td></tr><tr><td>R&#xF6;&#xDF;ner, Tabea</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Roth (Augsburg), Claudia</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>R&#xFC;ddel, Erwin</td><td>CDU/CSU</td></tr><tr><td>Ruppert, Dr. Stefan</td><td>FDP</td></tr><tr><td>Rupprecht, Albert</td><td>CDU/CSU</td></tr><tr><td>R&#xFC;thrich, Susann</td><td>SPD</td></tr><tr><td>Saathoff, Johann</td><td>SPD</td></tr><tr><td>Sch&#xE4;fer (Saalstadt), Anita</td><td>CDU/CSU</td></tr><tr><td>Schieder, Marianne</td><td>SPD</td></tr><tr><td>Schimke, Jana</td><td>CDU/CSU</td></tr><tr><td>Schmidt (Wetzlar), Dagmar</td><td>SPD</td></tr><tr><td>Schmidt, Stefan</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Schneider, J&#xF6;rg</td><td>AfD</td></tr><tr><td>Schreiber, Eva-Maria</td><td>DIE LINKE</td></tr><tr><td>Sch&#xFC;le, Dr. Manja</td><td>SPD</td></tr><tr><td>Schulz (Spandau), Swen</td><td>SPD</td></tr><tr><td>Schulz, Jimmy</td><td>FDP</td></tr><tr><td>Schulz, Martin</td><td>SPD</td></tr><tr><td>Schulz-Asche, Kordula</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Schwarz, Andreas</td><td>SPD</td></tr><tr><td>Schweiger, Torsten</td><td>CDU/CSU</td></tr><tr><td>Steffel, Frank</td><td>CDU/CSU</td></tr><tr><td>Steinke, Kersten</td><td>DIE LINKE</td></tr><tr><td>Storch, Beatrix von</td><td>AfD</td></tr><tr><td>Straetmanns, Friedrich</td><td>DIE LINKE</td></tr><tr><td>Tack, Kerstin</td><td>SPD</td></tr><tr><td>Theurer, Michael</td><td>FDP</td></tr><tr><td>Toncar, Dr. Florian</td><td>FDP</td></tr><tr><td>T&#xF6;ns, Markus</td><td>SPD</td></tr><tr><td>Tr&#xE4;ger, Carsten</td><td>SPD</td></tr><tr><td>Tressel, Markus</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Vaatz, Arnold</td><td>CDU/CSU</td></tr><tr><td>Veith, Oswin</td><td>CDU/CSU</td></tr><tr><td>Verlinden, Dr. Julia</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Vogel (Olpe), Johannes</td><td>FDP</td></tr><tr><td>Vogt, Ute</td><td>SPD</td></tr><tr><td>Wagenknecht, Dr. Sahra</td><td>DIE LINKE</td></tr><tr><td>Wagner, Daniela</td><td>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</td></tr><tr><td>Warken, Nina</td><td>CDU/CSU</td></tr><tr><td>Weber, Gabi</td><td>SPD</td></tr><tr><td>Weiler, Albert H.</td><td>CDU/CSU</td></tr><tr><td>Weinberg, Harald</td><td>DIE LINKE</td></tr><tr><td>Westig, Nicole</td><td>FDP</td></tr><tr><td>Weyel, Dr. Harald</td><td>AfD</td></tr><tr><td>Witt, Uwe</td><td>AfD</td></tr><tr><td>Ziegler, Dagmar</td><td>SPD</td></tr><tr><td>Zierke, Stefan</td><td>SPD</td></tr><tr><td>Zimmermann (Zwickau), Sabine</td><td>DIE LINKE</td></tr><tr><td>Zimmermann, Pia</td><td>DIE LINKE</td></tr></tbody></table>
+          <a id="S13524" name="S13524" typ="druckseitennummer">
+        </a></p>
+      </a></anlagen-text>
+    </anlage>
+  </anlagen>
+  <rednerliste sitzung-datum="24.07.2019">
+    <redner id="999990083">
+      <name>
+        <vorname>Annegret</vorname>
+        <nachname>Kramp-Karrenbauer</nachname>
+        <rolle><rolle_lang>Bundesministerin der Verteidigung</rolle_lang><rolle_kurz>Bundesministerin BMVg</rolle_kurz></rolle>
+      </name>
+    </redner>
+    <redner id="11004807">
+      <name>
+        <vorname>R&#xFC;diger</vorname>
+        <nachname>Lucassen</nachname>
+        <fraktion>AfD</fraktion>
+      </name>
+    </redner>
+    <redner id="11003599">
+      <name>
+        <titel>Dr.</titel>
+        <vorname>Rolf</vorname>
+        <nachname>M&#xFC;tzenich</nachname>
+        <fraktion>SPD</fraktion>
+      </name>
+    </redner>
+    <redner id="11004097">
+      <name>
+        <vorname>Christian</vorname>
+        <nachname>Lindner</nachname>
+        <fraktion>FDP</fraktion>
+      </name>
+    </redner>
+    <redner id="11004182">
+      <name>
+        <titel>Dr.</titel>
+        <vorname>Johann David</vorname>
+        <nachname>Wadephul</nachname>
+        <fraktion>CDU/CSU</fraktion>
+      </name>
+    </redner>
+    <redner id="11003034">
+      <name>
+        <titel>Dr.</titel>
+        <vorname>Dietmar</vorname>
+        <nachname>Bartsch</nachname>
+        <fraktion>DIE LINKE</fraktion>
+      </name>
+    </redner>
+    <redner id="11004106">
+      <name>
+        <vorname>Agnieszka</vorname>
+        <nachname>Brugger</nachname>
+        <fraktion>B&#xDC;NDNIS 90/DIE GR&#xDC;NEN</fraktion>
+      </name>
+    </redner>
+    <redner id="11003821">
+      <name>
+        <vorname>Henning</vorname>
+        <nachname>Otte</nachname>
+        <fraktion>CDU/CSU</fraktion>
+      </name>
+    </redner>
+    <redner id="11004906">
+      <name>
+        <titel>Dr.</titel>
+        <vorname>Marie-Agnes</vorname>
+        <nachname>Strack-Zimmermann</nachname>
+        <fraktion>FDP</fraktion>
+      </name>
+    </redner>
+    <redner id="11004272">
+      <name>
+        <titel>Dr.</titel>
+        <vorname>Fritz</vorname>
+        <nachname>Felgentreu</nachname>
+        <fraktion>SPD</fraktion>
+      </name>
+    </redner>
+    <redner id="11004018">
+      <name>
+        <titel>Dr.</titel>
+        <vorname>Reinhard</vorname>
+        <nachname>Brandl</nachname>
+        <fraktion>CDU/CSU</fraktion>
+      </name>
+    </redner>
+  </rednerliste>
+</dbtplenarprotokoll>
