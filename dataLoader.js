@@ -6,6 +6,7 @@ var DOMParser = new (require('xmldom')).DOMParser;
 const Comment = require('./model/comment')
 const Speaker = require('./model/speaker')
 
+
 /**
  * Contains all comments.
  * 

@@ -1,6 +1,8 @@
+var modelUtil = require('./modelUtil.js')
+
 function Speaker(fullname, party, role) {
         this.fullname = fullname
-        this.party = party
+        this.party = modelUtil.cleanUpParty(party)
         this.role = role
 }
 
