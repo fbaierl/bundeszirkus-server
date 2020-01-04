@@ -76,8 +76,8 @@ var loadData = function() {
     dataLoader.loadData(startServerIfNotRunning)
 }
 
-// schedule reloading/scraping of data every 3 hours
-schedule.scheduleJob('* */3 * * *', () => {
+// schedule reloading/scraping of data every hour (at minute 0)
+schedule.scheduleJob('0 * * * *', () => {
     // scrape & load data w/o restarting the server
     console.log("Starting scheduled scraping.") 
     dataScraper.scrape(loadData) 

@@ -68,7 +68,7 @@ exports.scrape = function(cb) {
     _callback = cb
     _downloadedLinks = 0
 
-    const nightmare = Nightmare({ show: false })
+    let nightmare = new Nightmare({ show: false })
     const url = 'https://www.bundestag.de/services/opendata'
 
     // we request nightmare to browse to the bundestag.de url and extract the whole inner html

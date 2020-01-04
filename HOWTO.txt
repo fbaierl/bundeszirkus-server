@@ -2,4 +2,25 @@ pm2 deploy ecosystem.config.js production (setup)
 npm run-script deploy
 
 
+test with:
+
 DEBUG=nightmare xvfb-run -a --server-args="-screen 0 1920x1080x24" node index.js
+
+run with: 
+
+xvfb-run -a --server-args="-screen 0 1920x1080x24" node index.js
+
+explanation: 
+
+Nightmare.js is a high level browser automation library. I recently w anted to use it to scrape data off a website that make it fairly difficult to scrape via normal methods such as requests/cheerio library. Nightmare.js uses electron.js under the hood. I wanted to run this cron on one of my VPS servers which doesn’t have a framebuffer for electron to run in. To get this working, I need to use xvfb which creates a virtual frame buffer for electron to use.
+xvfb has a number of dependencies to get working. We install them and xvfb with:
+
+apt-get update && apt-get install -y xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic x11-apps clang libdbus-1-dev libgtk2.0-dev libnotify-dev libgnome-keyring-dev libgconf2-dev libasound2-dev libcap-dev libcups2-dev libxtst-dev libxss1 libnss3-dev gcc-multilib g++-multilib
+
+Once, this is done we can use xvfb-run to start our node script:
+
+xvfb-run — server-args=”-screen 0 1024x768x24" node app.js
+
+If you are still having issues with getting electron to work, you can enable debug logging:
+
+DEBUG=nightmare:*,electron:* xvfb-run — server-args=”-screen 0 1024x768x24" node cron.js
