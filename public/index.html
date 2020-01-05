@@ -30,6 +30,9 @@
 
     <title>Bundeszirkus</title>
 
+    <!-- icon -->
+    <link rel="icon" type="image/png" href="icon_black.png"/>
+
     <link href="bundeszirkus.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -57,9 +60,9 @@
             ajax: "comments_server_processing",
             sScrollX: "100%",
             columns: [
+                { data: 'comment.text' },
                 { data: 'comment.fullname' },
                 { data: 'comment.party' },
-                { data: 'comment.text' },
                 { data: 'speaker.fullname' },
                 { data: 'speaker.partyOrRole' },
             ]
@@ -131,6 +134,22 @@
       main
     -->
     <main role="main" >
+        <!-- 
+          intro 
+        -->
+      <div class="jumbotron jumbo-dark horizontal-center">
+        <div style="font-size:1.2rem; max-width:900px;">
+          Bundeszirkus.de sammelt automatisiert Plenarprotokolle um diese in Bezug auf Zwischenrufe zu analysieren. 
+          Inspiriert wurde das Projekt von einem 
+          <a style="color:white;" href="https://projekte.sueddeutsche.de/artikel/politik/die-afd-im-bundestag-e362724/">Artikel der Süddeutschen Zeitung</a>.
+        </div>
+      </div>
+      <!-- 
+        icon 
+      -->
+      <div class="jumbotron jumbo-dark horizontal-center" style="padding:0px">
+        <img style="height:200px" src="icon_white.png">
+    </div>
       <!--
         random comment
       -->
