@@ -28,7 +28,7 @@
     "scraperjs": "^1.2.0",
     "xml2js": "^0.4.23",
     "xmldom": "^0.2.1",
-    "yadcf": "^0.9.3"
+    "yadcf": "^0.9.4"
   },
   "devDependencies": {
     "express": "^4.17.1",

@@ -24,11 +24,11 @@ app.get('/comments_server_processing', function(req, res){
     let start = parseInt(req.query.start)
     let searchColumns = req.query.columns
     let searchParameters = {
-        commentFullname: searchColumns[0].search.value,
-        commentParty: searchColumns[1].search.value,
-        commentText: searchColumns[2].search.value,
+        commentText: searchColumns[0].search.value,
+        commentFullname: searchColumns[1].search.value,
+        commentParty: searchColumns[2].search.value,
         speakerFullname: searchColumns[3].search.value,
-        speakerPartyOrRole: searchColumns[4].search.value,
+        speakerPartyOrRole: searchColumns[4].search.value
     }
     res.send(dataLoader.commentsSlice(start, length, searchParameters))
 })
