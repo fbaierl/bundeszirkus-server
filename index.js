@@ -2,6 +2,7 @@
 const schedule = require('node-schedule') 
 const express = require('express')
 const app = express()
+const logger = require('./logger')
 
 const DataLoader = require('./dataLoader')
 var dataScraper = require('./dataScraper.js')
@@ -54,19 +55,19 @@ app.get("/stats_total_politicians_passive", function(req, res){
 })
 
 var startServer = function() { 
-    console.log("Starting the server.")
+    logger.info("Starting the server.")
     app.listen(port, (err) =>  {
         if(err){
-            console.log(err)
+            logger.info(err)
             serverRunning = false
         }
         serverRunning = true
-        console.log('Server running on port ' + port)
+        logger.info('Server running on port ' + port)
     }) 
 }
 
 var loadData = function() {
-    console.log("Loading data.") 
+    logger.info("Loading data.") 
     dataLoader = new DataLoader()
     let startServerIfNotRunning = () => {
         if(!serverRunning){
@@ -79,10 +80,11 @@ var loadData = function() {
 // schedule reloading/scraping of data every hour (at minute 0)
 schedule.scheduleJob('0 * * * *', () => {
     // scrape & load data w/o restarting the server
-    console.log("Starting scheduled scraping.") 
+    logger.info("Starting scheduled scraping.") 
     dataScraper.scrape(loadData) 
 }) 
 
+logger.info("Starting server!")
 // scrape, load data & start the server
-console.log("Starting initial scraping.")
+logger.info("Starting initial scraping.")
 dataScraper.scrape(loadData)

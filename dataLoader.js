@@ -2,6 +2,7 @@ var fs = require('fs');
 var knowledge = require('./knowledge.js')
 var aH = require('./arrayHelper.js')
 var DOMParser = new (require('xmldom')).DOMParser;
+const logger = require('./logger')
 
 const Comment = require('./model/comment')
 const Speaker = require('./model/speaker')
@@ -161,7 +162,7 @@ function structureSpeaker(speakerXml){
     } else if (parties.length > 0){
         party = parties[0].trim()
     } else {
-        console.log("[loader] Couldn't find role or party for speaker: " + firstname + " " +  lastname)
+        logger.info("[loader] Couldn't find role or party for speaker: " + firstname + " " +  lastname)
     }
     return new Speaker(firstname + " " + lastname, party, role)
 }
@@ -222,7 +223,7 @@ function loadSpeech(speech) {
  */
 function loadFile(dirPath, fileName){
     let filePath = dirPath + "/" + fileName
-    console.log("[loader] loading file " + fileName)
+    logger.info("[loader] loading file " + fileName)
     var fileContent = fs.readFileSync(filePath, "utf8")
     var document = DOMParser.parseFromString(fileContent, "application  /xml");
     var speeches = findNodes("rede", document)
@@ -346,7 +347,7 @@ class DataLoader{
         reset()
         var dirPath = "data"
         var files = ""
-        console.log("[loader] loading data ...")
+        logger.info("[loader] loading data ...")
         fs.readdir(dirPath, function(err, items) {
             if(err){
                 return callback(err);

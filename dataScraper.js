@@ -5,6 +5,7 @@ var fs = require('fs');
 var url = require('url');
 const Nightmare = require('nightmare');
 const cheerio = require('cheerio');
+const logger = require('./logger')
 
 // https is NOT supported
 const BT_LINK = "http://www.bundestag.de"
@@ -16,7 +17,7 @@ var _downloadedLinks = 0
 
 function downloadFileFromHref(href) {
     let fileName = url.parse(href).pathname.split('/').pop();
-    console.log("[scraper] downloading file: " + fileName + " from href: " + href)
+    logger.info("[scraper] downloading file: " + fileName + " from href: " + href)
     scraperjs.StaticScraper.create(href)
 	.scrape(function($) {
 		return $.html()
@@ -30,7 +31,7 @@ function downloadFileFromHref(href) {
 
 function callbackIfFinished(){
     if(_downloadedLinks >= _foundLinks){
-        console.log("[scraper] finished downloading  all " + _downloadedLinks +  " files.")
+        logger.info("[scraper] finished downloading  all " + _downloadedLinks +  " files.")
         _callback()
     }
 }
@@ -81,17 +82,17 @@ exports.scrape = function(cb) {
             _downloadedLinks = 0
             let validLinks = extractLinks(response)
             _foundLinks = validLinks.length
-            console.log("[scraper] found " + validLinks.length + " valid links.")
+            logger.info("[scraper] found " + validLinks.length + " valid links.")
             if(validLinks.length > 0){
                 validLinks.forEach(href => {
                     downloadFileFromHref(BT_LINK + href)
                 });
             } else {
-                console.log("[scraper] did not download any files.")
+                logger.info("[scraper] did not download any files.")
                 _callback()
             }  
         }).catch(err => {
-            console.log("[scraper] did not download any files.")
+            logger.info("[scraper] did not download any files.")
             _callback()
         });
 
