@@ -1,4 +1,4 @@
-Link to the webpage: [http://bundeszirkus.de](bundeszirkus.de)
+Link to the webpage: [bundeszirkus.de](http://bundeszirkus.de)
 
 ![Screenshot](/screencapture-bundeszirkus.png?raw=true "Screenshot Bundeszirkus.de")
 
