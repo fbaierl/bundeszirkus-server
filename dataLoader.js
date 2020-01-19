@@ -61,6 +61,7 @@ totalCommentsPerPolitician = []
  */
 totalCommentsPerPartyPassive = []
 
+
 /**
  * Finds basic (non-hierarchical) elements in an XML and returns its value. 
  * @param {*} element the nodes name to search the values for
@@ -101,7 +102,7 @@ function findNodes(nodeName, xml){
     if(nodes){
         for (var i = 0; i < nodes.length; i++) {
             if(nodes[i].nodeName == nodeName){
-                output.push(nodes[i])
+                 output.push(nodes[i])
             } else {
                 output = output.concat(findNodes(nodeName, nodes[i]));
             }
@@ -109,6 +110,37 @@ function findNodes(nodeName, xml){
     }
     return output;
 }
+
+/**
+ * Transforms a header data (<kopfdaten>) xml tag into json.
+ * 
+ * example: 
+ * 
+ * <kopfdaten>
+ *   <plenarprotokoll-nummer>Plenarprotokoll <wahlperiode>19</wahlperiode>/<sitzungsnr>14</sitzungsnr></plenarprotokoll-nummer>
+ *   <herausgeber>Deutscher Bundestag</herausgeber>
+ *   <berichtart>Stenografischer Bericht</berichtart>
+ *   <sitzungstitel><sitzungsnr>14</sitzungsnr>. Sitzung</sitzungstitel>
+ *   <veranstaltungsdaten><ort>Berlin</ort>, <datum date="22.02.2018">Donnerstag, den 22. Februar 2018</datum></veranstaltungsdaten>
+ * </kopfdaten>
+ * 
+ * will return: { date: 22.02.2018, electionPeriod: 19, sessionNumber: 14 }
+ * 
+ * @param {*} headerDataXml the header data xml
+ * @return { date: xxx, electionPeriod: xxx, sessionNumber: xxx }
+ */
+function structureHeaderDataXml(headerDataXml){
+    let datumNode = findNodes("datum", headerDataXml)[0]
+    var date = undefined
+    if(datumNode) {
+        date = datumNode.getAttribute("date") 
+    }
+    let sessionNumber = findValues("sitzungsnr", headerDataXml)[0]
+    let electionPeriod = findValues("wahlperiode", headerDataXml)[0]
+    let result = { date: date, sessionNumber: sessionNumber, electionPeriod: electionPeriod }
+    return result
+}
+
 
 /**
  * Transforms a speaker (<redner>) xml tag into json.
@@ -189,9 +221,7 @@ function structureComment(text){
     return result;
 }
 
-function loadSpeech(speech) {
-    // find meta data about this speech
-    // TODO date
+function loadSpeech(speech, headerData) {
     let speakerXml = findNodes("redner", speech)
     // should include one speaker tag per speech
     let speaker = structureSpeaker(speakerXml[0])
@@ -208,6 +238,9 @@ function loadSpeech(speech) {
                             party: speaker.party,
                             role: speaker.role
                         },
+                        date: headerData.date,
+                        sessionNumber: headerData.sessionNumber,
+                        electionPeriod: headerData.electionPeriod,
                         comment: result
                     })
                 });   
@@ -225,9 +258,9 @@ function loadFile(dirPath, fileName){
     let filePath = dirPath + "/" + fileName
     var fileContent = fs.readFileSync(filePath, "utf8")
     var document = DOMParser.parseFromString(fileContent, "application  /xml");
-    var speeches = findNodes("rede", document)
-    speeches.forEach(function(speech) {
-        loadSpeech(speech)
+    let headerData = structureHeaderDataXml(document)
+    findNodes("rede", document).forEach(function(speech) {
+        loadSpeech(speech, headerData)
     })
 }
 
@@ -367,11 +400,12 @@ class DataLoader{
         let recordsFiltered = dataToSend.length
         dataToSend = dataToSend.slice(start, start + length).map(function(elem){
             // combine party and role to one field here for easier display
+            const { speaker, comment } = elem;
             return  { speaker:{
-                        fullname: elem.speaker.fullname, 
-                        partyOrRole: elem.speaker.party + elem.speaker.role, // only one of those is not an empty string 
+                        fullname: speaker.fullname, 
+                        partyOrRole: speaker.party + speaker.role, // only one of those is not an empty string 
                     },
-                    comment: elem.comment
+                    comment: comment
                     }
         })
         return {data: dataToSend, 
@@ -382,12 +416,13 @@ class DataLoader{
 
     comments(){
         return {data:allComments.map(function(elem){
+            const { speaker, comment } = elem;
             // combine party and role to one field here for easier display
-            return  { speaker:{
-                        fullname: elem.speaker.fullname, 
-                        partyOrRole: elem.speaker.party + elem.speaker.role, // only one of those is not an empty string 
+            return  { speaker: {
+                        fullname: speaker.fullname, 
+                        partyOrRole: speaker.party + speaker.role, // only one of those is not an empty string 
                     },
-                    comment: elem.comment
+                    comment: comment
                     }
         })}
     }
