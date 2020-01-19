@@ -4,6 +4,7 @@ var http = require('http');
 var fs = require('fs');
 var url = require('url');
 const Nightmare = require('nightmare');
+const Xvfb = require('xvfb');
 const cheerio = require('cheerio');
 const logger = require('./logger')
 
@@ -69,9 +70,18 @@ exports.scrape = function(cb) {
     _callback = cb
     _downloadedLinks = 0
 
+    let xvfb = new Xvfb();
+    try {
+        xvfb.startSync();
+      }
+      catch (e) {
+        console.log(e);
+      }
+
     let nightmare = new Nightmare({ show: false })
     const url = 'https://www.bundestag.de/services/opendata'
 
+        
     // we request nightmare to browse to the bundestag.de url and extract the whole inner html
     nightmare
         .goto(url)
@@ -90,20 +100,27 @@ exports.scrape = function(cb) {
             } else {
                 logger.info("[scraper] did not download any files.")
                 _callback()
-            }  
+            }
+            xvfb.stopSync();    
         }).catch(err => {
+            xvfb.stopSync();  
             logger.info("[scraper] did not download any files.")
             _callback()
         });
-
-    // Extracting the links we need
+  
+    
+    // extracting the links we need
     let extractLinks = html => {
         data = [];
         const $ = cheerio.load(html);
         $('.bt-link-dokument').each(function() {
             data.push(this.attribs.href);
-         });
-         return data.filter(checkDocumentLink)
-    } 
+        });
+        logger.info(data)
+        logger.info(data.filter(checkDocumentLink))
+        return data.filter(checkDocumentLink)
+    }
+        
+
 
 }
