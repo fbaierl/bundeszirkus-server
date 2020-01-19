@@ -223,7 +223,6 @@ function loadSpeech(speech) {
  */
 function loadFile(dirPath, fileName){
     let filePath = dirPath + "/" + fileName
-    logger.info("[loader] loading file " + fileName)
     var fileContent = fs.readFileSync(filePath, "utf8")
     var document = DOMParser.parseFromString(fileContent, "application  /xml");
     var speeches = findNodes("rede", document)
@@ -352,9 +351,9 @@ class DataLoader{
             if(err){
                 return callback(err);
             }
+            logger.info("[loader] loading files:" + items)
             for (var i=0; i<items.length; i++) {
-                let fileName = items[i]
-                loadFile(dirPath, fileName)
+                loadFile(dirPath, items[i])
             }
             calculateStatisticalData(allComments)
             if(callback){
