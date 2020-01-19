@@ -85,7 +85,7 @@ exports.scrape = function(cb) {
     // we request nightmare to browse to the bundestag.de url and extract the whole inner html
     nightmare
         .goto(url)
-        .wait('body')
+        .wait(2000)
         .evaluate(() => document.querySelector('body').innerHTML)
         .end()
         .then(response => {
