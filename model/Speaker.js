@@ -1,4 +1,4 @@
-const modelUtil = require('./modelUtil.js')
+const modelUtil = require('./modelUtil')
 const xmlUtil = require('../xmlUtil')
 
 

@@ -4,8 +4,8 @@ const express = require('express')
 const expressApplication = express()
 const logger = require('./logger')
 
-const DataLoader = require('./dataLoader')
-var dataScraper = require('./dataScraper.js')
+const DataLoader = require('./DataLoader')
+const dataScraper = require('./dataScraper')
 
 const port = 3000
 
@@ -91,3 +91,5 @@ if(!isOfflineMode){
     logger.info("Starting server without scraping!")
     loadData()
 }
+
+
