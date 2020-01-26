@@ -19,8 +19,8 @@ expressApplication.use(express.static('public'))
 
 expressApplication.use('/node_modules', express.static(__dirname + '/node_modules/'));
 
-expressApplication.get('/comments', function(req, res){
-    res.send(dataLoader.comments())
+expressApplication.get('/all_comments', function(req, res){
+    res.send(dataLoader.allComments())
 })
 
 expressApplication.get('/comments_server_processing', function(req, res){    
@@ -37,23 +37,23 @@ expressApplication.get('/comments_server_processing', function(req, res){
     res.send(dataLoader.commentsSlice(start, length, searchParameters))
 })
 
-expressApplication.get("/random", function(req, res){
-    res.send(dataLoader.random())
+expressApplication.get("/random_comment", function(req, res){
+    res.send(dataLoader.randomComment())
 })
 
-expressApplication.get("/stats_total_parties", function(req, res){
+expressApplication.get("/comments_stats_total_parties", function(req, res){
     res.send(dataLoader.statsTotalParties())
 })
 
-expressApplication.get("/stats_total_politicians", function(req, res){
+expressApplication.get("/comments_stats_total_politicians", function(req, res){
     res.send(dataLoader.statsTotalPoliticians())
 })
 
-expressApplication.get("/stats_total_parties_passive", function(req, res){
+expressApplication.get("/comments_stats_total_parties_passive", function(req, res){
     res.send(dataLoader.statsTotalPartiesPassive())
 })
 
-expressApplication.get("/stats_total_politicians_passive", function(req, res){
+expressApplication.get("/comments_stats_total_politicians_passive", function(req, res){
     res.send(dataLoader.statsTotalPoliticiansPassive())
 })
 

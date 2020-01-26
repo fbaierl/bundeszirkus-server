@@ -28,16 +28,19 @@ function findComments(text){
 
 class Speech {
 
-
     constructor(speaker, comments){
        this.speaker = speaker
        this.comments = comments
     }
 
-    static fromXml(xml){
+    static fromXml(xml, sessionN){
         let speaker = Speaker.fromXml(xmlUtil.findNodes("redner", xml)[0])
         let comments = xmlUtil.findValues("kommentar", xml).flatMap(comment => findComments(comment))        
-        return new Speech(speaker, comments)
+        if(speaker && comments){
+            return new Speech(speaker, comments)
+        } else {
+            return
+        }
     }
 
 }

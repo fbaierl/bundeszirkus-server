@@ -19,6 +19,7 @@ let speaker11 = new Speaker('Thomas Oppermann', 'SPD', '')
 let speaker12 = new Speaker('Wolfgang Kubicki', 'FDP', '')
 let speaker13 = new Speaker('Petra Pau', 'DIE LINKE', '')
 let speaker14 = new Speaker('Claudia Roth', 'BÜNDNIS 90/DIE GRÜNEN', '')
+let speaker15 = new Speaker('Wolfgang Schäuble', '', 'Präsident')
 let speech1 = new Speech(speaker1, [])
 let speech2 = new Speech(speaker1, [])
 let speech3 = new Speech(speaker2, [new Comment('Katrin Göring-Eckardt', 'BÜNDNIS 90/DIE GRÜNEN', 'Was?'),
@@ -57,10 +58,12 @@ let speech15 = new Speech(speaker11, [])
 let speech16 = new Speech(speaker12, [])
 let speech17 = new Speech(speaker13, [])
 let speech18 = new Speech(speaker14, [])
-let speech19 = new Speech(speaker9, [])
+let speech19 = new Speech(speaker15, [])
 
 /**
  * Contains the data from '19001-data.xml'
  */
 let sessionsData = [speech1, speech2, speech3, speech4, speech5, speech6, speech7, speech8, speech9, speech10, speech11, speech12, speech13, speech14, speech15, speech16, speech17, speech18, speech19]
   
+
+// TODO use data to test

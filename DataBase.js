@@ -9,6 +9,20 @@ class DataBase {
      * Contains all comments.
      * 
      * Format:
+     * [
+     *   "Comment":{
+     *      "fullname":"Martin Schulz", 
+     *      "party":"SPD", 
+     *      "text":"Da kennt ihr euch ja aus!"
+     *   }
+     * }]
+     */
+    allComments = []
+
+    /**
+     * Contains all comments with speakers.
+     * 
+     * Format:
      * [{
      *   "speaker":{
      *      "fullname": "Dr. Wolfgang Schäuble", 
@@ -22,9 +36,9 @@ class DataBase {
      *   }
      * }]
      */
-    allComments = []
+    allCommentsWithSpeaker = []
 
-    /**
+    /**allComments
      * Data depicting how much comments a party made in total.
      * 
      * Format:
@@ -72,59 +86,55 @@ class DataBase {
     }
 
     /**
-     * Calculates all the data needed and keeps it in memory.
+     * Calculates all the data needed. 
+     * This is kept in memory to only calculate it once when the server starts/updates.
      */
     _calculateStatisticalData() {
         this.allComments = this.plenarySessions.flatMap(ps => ps.speeches).flatMap(s => s.comments)
+        this.allCommentsWithSpeaker = this._findCommentsWithSpeaker()
         this.totalCommentsPerParty = this._findCommentsPerParty()
-        this.totalCommentsPerPolitician = this._findCommentsPerPolitician(this.allComments).slice(0,20)
-        this.totalCommentsPerPartyPassive = this._findCommentsPerPartyPassive(this.allComments)
-        this.totalCommentsPerPoliticianPassive = this._findCommentsPerPoliticianPassive(this.allComments).slice(0,20)
+        this.totalCommentsPerPolitician = this._findCommentsPerPolitician().slice(0,20)
+        this.totalCommentsPerPartyPassive = this._findCommentsPerPartyPassive()
+        this.totalCommentsPerPoliticianPassive = this._findCommentsPerPoliticianPassive().slice(0,20)
+    }
+
+    _findCommentsWithSpeaker() {
+        return this.plenarySessions
+            .flatMap(ps => ps.speeches)
+            .flatMap(speech => speech.comments
+                .map( function(comment) {
+                    return { comment: comment, speaker: speech.speaker }
+                }))
     }
 
     /**
      * @returns {Object[]} comments per political party stats
      */
     _findCommentsPerParty(){ 
-
-        console.log(util.inspect(this.plenarySessions, {showHidden: false, depth: null}))
-
-        let x  = this.plenarySessions
-            .flatMap(ps => ps.speeches)
-            .flatMap(speech => speech.comments.map( function(comment) {
-                return { party: speech.speaker.party}}))
-        console.log(x)
-
-        let result = aH.findOccurencesOfParties(
-            x
-        ).sort(function (a, b) {
-            return b.occurences - a.occurences;
-        })
-        console.log("hello world")
-        console.log(x)
-        return x
+        let parties = this.plenarySessions
+            .flatMap(session => session.speeches)
+            .flatMap(speech => speech.comments)
+            .map( function(comment) {
+                return { party: comment.party}
+            })
+        let result = aH.findOccurencesOfParties(parties).sort(function (a, b) {
+            return b.occurences - a.occurences
+        })   
+        return result
     }
 
-    _findCommentsPerPartyPassive(allComments){
-        // TODO commnts no langer has speaker
-
-
-
-        return aH.findOccurencesOfParties(
-            allComments
-            // filter out speakers with a role instead of party affiliation
-            .filter(comment => comment.speaker.party != null && 
-                               comment.speaker.party != undefined && 
-                               comment.speaker.party != "")
-            // use speaker
-            .map(function(elem) {
-                return { 
-                    fullname: elem.speaker.fullname,
-                    party: elem.speaker.party
-                }
-        }))
-        .sort(function (a, b) {
-            return b.occurences - a.occurences;
+    _findCommentsPerPartyPassive(){
+        let parties = this.plenarySessions
+            .flatMap(ps => ps.speeches)
+            .filter(speech => speech.speaker.party != null && 
+                    speech.speaker.party != undefined && 
+                    speech.speaker.party != "")
+            .flatMap(speech => speech.comments
+                .map( function(comment) {
+                    return { party: speech.speaker.party}
+                }))
+        return aH.findOccurencesOfParties(parties).sort(function (a, b) {
+            return b.occurences - a.occurences
         })
     }
 
@@ -133,12 +143,12 @@ class DataBase {
      * @param {*} allComments 
      * @returns {Object[]} comments per politician
      */
-    _findCommentsPerPolitician(allComments){
+    _findCommentsPerPolitician(){
         return aH.findOccurencesOfPoliticians(
-            allComments.map(function(comment) {
+            this.allComments.map(function(comment) {
                 return {
-                fullname: comment.fullname,
-                party: comment.party
+                    fullname: comment.fullname,
+                    party: comment.party
                 }
             })
         )
@@ -147,25 +157,23 @@ class DataBase {
         })
     } 
 
-    _findCommentsPerPoliticianPassive(allComments){
-        return aH.findOccurencesOfPoliticians(
-            allComments
-            // use speaker
-            .map(function(comment) {
-                return { 
-                    fullname: comment.speaker.fullname,
-                    party: comment.speaker.party + elem.speaker.role  // only one of those is not an empty string 
-                }
-            })
-        )
-        .sort(function (a, b) {
-            return b.occurences - a.occurences;
+    _findCommentsPerPoliticianPassive(){ 
+        let politicians  = this.plenarySessions
+            .flatMap(ps => ps.speeches)
+            .filter(speech => speech.speaker.party != null && 
+                    speech.speaker.party != undefined && 
+                    speech.speaker.party != "")
+            .flatMap(speech => speech.comments
+                .map( function(comment) {
+                    return { 
+                        party: speech.speaker.party, 
+                        fullname: speech.speaker.fullname
+                    }
+                })) 
+        return aH.findOccurencesOfPoliticians(politicians).sort(function (a, b) {
+            return b.occurences - a.occurences
         })
     }
-
-
-
-
 
 }
 

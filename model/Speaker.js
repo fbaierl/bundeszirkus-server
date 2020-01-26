@@ -63,8 +63,7 @@ class Speaker {
                         party = parties[0].trim()
                 } else {
                         logger.info("[loader] Couldn't find role or party for speaker: " + firstname + " " +  lastname)
-                }
-                        
+                }     
                 return new Speaker(firstname + " " + lastname, party, role)
         }
 }

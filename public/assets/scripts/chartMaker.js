@@ -59,7 +59,7 @@ function ChartMaker()
     this.createTotalPartiesPassiveChart = function(domId){
         $.ajax({
             type: "GET",
-            url: "stats_total_parties_passive",
+            url: "comments_stats_total_parties_passive",
             dataType: "json",
             success: function(response) {
             var ctx = document.getElementById(domId).getContext('2d');
@@ -81,7 +81,7 @@ function ChartMaker()
     this.createTotalPartiesChart = function(domId){
         $.ajax({
             type: "GET",
-            url: "stats_total_parties",
+            url: "comments_stats_total_parties",
             dataType: "json",
             success: function(response) {
             var ctx = document.getElementById(domId).getContext('2d');
@@ -103,7 +103,7 @@ function ChartMaker()
     this.createTotalPoliticiansPassiveChart = function(domId){
         $.ajax({
             type: "GET",
-            url: "stats_total_politicians_passive",
+            url: "comments_stats_total_politicians_passive",
             dataType: "json",
             success: function(response) {
                 var ctx = document.getElementById(domId).getContext('2d');
@@ -134,7 +134,7 @@ function ChartMaker()
     this.createTotalPoliticiansChart = function(domId){
         $.ajax({
             type: "GET",
-            url: "stats_total_politicians",
+            url: "comments_stats_total_politicians",
             dataType: "json",
             success: function(response) {
                 var ctx = document.getElementById(domId).getContext('2d');
