@@ -3,9 +3,10 @@ var knowledge = require('./knowledge.js')
 var aH = require('./arrayHelper.js')
 var DOMParser = new (require('xmldom')).DOMParser;
 const logger = require('./logger')
+const xmlUtil = require('./xmlUtil')
 
-const Comment = require('./model/comment')
-const Speaker = require('./model/speaker')
+const Comment = require('./model/Comment')
+const Speaker = require('./model/Speaker')
 
 
 /**
@@ -62,54 +63,6 @@ totalCommentsPerPolitician = []
 totalCommentsPerPartyPassive = []
 
 
-/**
- * Finds basic (non-hierarchical) elements in an XML and returns its value. 
- * @param {*} element the nodes name to search the values for
- * @param {*} xml the xml to search in
- */
-function findValues(element, xml) {
-    var output = [];
-    if(!xml || !xml.childNodes){
-        return output;
-    }
-    var nodes = xml.childNodes;
-    if (nodes != null) {
-        for (var i = 0; i < nodes.length; i++) {
-            if (nodes[i].nodeName == element && 
-                nodes[i].childNodes.length == 1 && 
-                nodes[i].childNodes[0].nodeValue) {
-                output.push(nodes[i].childNodes[0].nodeValue);
-            } else {
-                output = output.concat(findValues(element, nodes[i]));
-            }
-        }
-    }
-    return output;
-}
-
-/**
- * Finds all nodes with the tag nodename in an XML.
- * Returns a list of nodes.
- * @param {*} nodeName the node's name to search for 
- * @param {*} xml
- */
-function findNodes(nodeName, xml){
-    var output = []
-    if(!xml || !xml.childNodes){
-        return output
-    }
-    var nodes = xml.childNodes
-    if(nodes){
-        for (var i = 0; i < nodes.length; i++) {
-            if(nodes[i].nodeName == nodeName){
-                 output.push(nodes[i])
-            } else {
-                output = output.concat(findNodes(nodeName, nodes[i]));
-            }
-        }
-    }
-    return output;
-}
 
 /**
  * Transforms a header data (<kopfdaten>) xml tag into json.
@@ -130,74 +83,17 @@ function findNodes(nodeName, xml){
  * @return { date: xxx, electionPeriod: xxx, sessionNumber: xxx }
  */
 function structureHeaderDataXml(headerDataXml){
-    let datumNode = findNodes("datum", headerDataXml)[0]
+    let datumNode = xmlUtil.findNodes("datum", headerDataXml)[0]
     var date = undefined
     if(datumNode) {
         date = datumNode.getAttribute("date") 
     }
-    let sessionNumber = findValues("sitzungsnr", headerDataXml)[0]
-    let electionPeriod = findValues("wahlperiode", headerDataXml)[0]
+    let sessionNumber = xmlUtil.findValues("sitzungsnr", headerDataXml)[0]
+    let electionPeriod = xmlUtil.findValues("wahlperiode", headerDataXml)[0]
     let result = { date: date, sessionNumber: sessionNumber, electionPeriod: electionPeriod }
     return result
 }
 
-
-/**
- * Transforms a speaker (<redner>) xml tag into json.
- * 
- * example 1:
- *  <redner id="11001938">
- *      <name>
- *          <titel>Dr.</titel>
- *          <vorname>Wolfgang</vorname>
- *          <nachname>Schäuble</nachname>
- *          <fraktion>CDU/CSU</fraktion>
- *      </name>
- *  </redner>
- *  will return: {fullname:"Dr. Wolfgang Schäuble", party:"CDU/CSU", "role:"""}
- * 
- * example 2:
- *  <redner id="11002190">
- *      <name>
- *          <vorname>Alterspräsident Dr. Hermann</vorname>
- *          <nachname>Otto Solms</nachname>
- *          <rolle>
- *              <rolle_lang>Alterspräsident</rolle_lang>
- *              <rolle_kurz>Alterspräsident</rolle_kurz>
- *          </rolle>
- *      </name>
- * </redner>
- * will return: {fullname:"Dr. Hermann Otto Solms", party:"", role:"Alterspräsident"}
- * 
- * @param {*} speechXml the speaker xml
- * @return {fullname:"xxx", party:"xxx", role:"xxx"}
- */
-function structureSpeaker(speakerXml){
-    // each speaker has a first and a last name
-    let firstnames = findValues("vorname", speakerXml)
-    let lastnames = findValues("nachname", speakerXml)
-    // in rare cases the xml may be broken...
-    if(firstnames.length <= 0 || lastnames <= 0) {
-      return  
-    } 
-    let firstname = firstnames[0].trim()
-    let lastname = lastnames[0].trim()
-    // each speaker has either information about their fraction OR their role
-    let role = ""
-    let party = ""
-    let roles = findValues("rolle_lang", speakerXml)
-    let parties = findValues("fraktion", speakerXml)
-    if(roles.length > 0){
-        role = roles[0].trim()
-        // sometimes the role is included in the firstname, so we remove it here
-        firstname = firstname.replace(role, "").trim()
-    } else if (parties.length > 0){
-        party = parties[0].trim()
-    } else {
-        logger.info("[loader] Couldn't find role or party for speaker: " + firstname + " " +  lastname)
-    }
-    return new Speaker(firstname + " " + lastname, party, role)
-}
 
 /**
  * Returns a list of structured comment objects. 
@@ -222,12 +118,12 @@ function structureComment(text){
 }
 
 function loadSpeech(speech, headerData) {
-    let speakerXml = findNodes("redner", speech)
+    let speakerXml = xmlUtil.findNodes("redner", speech)
     // should include one speaker tag per speech
-    let speaker = structureSpeaker(speakerXml[0])
+    let speaker = Speaker.fromXml(speakerXml[0])
     if(speaker){
         // find comments for each speech and push them to all comments list
-        let comments = findValues("kommentar", speech);
+        let comments = xmlUtil.findValues("kommentar", speech);
         comments.forEach(function(comment) {
             let resultArr = structureComment(comment)
             if(resultArr){
@@ -259,7 +155,7 @@ function loadFile(dirPath, fileName){
     var fileContent = fs.readFileSync(filePath, "utf8")
     var document = DOMParser.parseFromString(fileContent, "application  /xml");
     let headerData = structureHeaderDataXml(document)
-    findNodes("rede", document).forEach(function(speech) {
+    xmlUtil.findNodes("rede", document).forEach(function(speech) {
         loadSpeech(speech, headerData)
     })
 }
