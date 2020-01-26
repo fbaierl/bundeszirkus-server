@@ -108,7 +108,7 @@ class DataLoader{
      * Returns a random comment
      */
     randomComment(){
-        let allComments = dataBase.allComments
+        let allComments = dataBase.allCommentsWithSpeaker
         return allComments[Math.floor(Math.random() * allComments.length)]
     }
 
