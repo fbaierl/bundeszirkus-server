@@ -116,8 +116,6 @@ exports.scrape = function(cb) {
         $('.bt-link-dokument').each(function() {
             data.push(this.attribs.href);
         });
-        logger.info(data)
-        logger.info(data.filter(checkDocumentLink))
         return data.filter(checkDocumentLink)
     }
         

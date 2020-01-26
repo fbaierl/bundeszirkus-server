@@ -1,17 +1,19 @@
 var util = require('./../util.js')
 var modelUtil = require('./modelUtil.js')
 
-function Comment(fullname, party, text) {
-        this.fullname = fullname
-        this.party = party
-        this.text = text
-}
 
+class Comment {
 
-/**
- * Constructs a Comment object using a text passage from the protocols
- */
-function Comment(raw){
+        constructor(fullname, party, text) {
+                this.fullname = fullname
+                this.party = party
+                this.text = text
+        }
+
+        /**
+         Constructs a Comment object using a text passage from the protocols
+        */
+        static fromRaw(raw) {
         /*
         * Regex will result in capturing groups, e.g. for "(Beifall bei der AfD – Martin Schulz [SPD]: Da kennt ihr euch ja aus!)"
         * 1. "Martin Schulz"
@@ -33,16 +35,16 @@ function Comment(raw){
        let r = /(?:\(|^)?(.*) (?:\[.+\] )?\[(.*?)\](?::|, an .+? gewandt:) (.*?)(?:\)|$)/g
        let match = r.exec(raw);
        if(match){
-            let fullname = modelUtil.cleanUpFullName(match[1].trim())
-            let party = modelUtil.cleanUpParty(match[2].trim())
-            let text = match[3].trim()
-            this.fullname = util.cleanWhiteSpaces(fullname).trim()
-            this.party = util.cleanWhiteSpaces(party)
-            this.text = util.cleanWhiteSpaces(text)
+            let fullname = util.cleanWhiteSpaces(modelUtil.cleanUpFullName(match[1].trim()))
+            let party = util.cleanWhiteSpaces(modelUtil.cleanUpParty(match[2].trim()))
+            let text = util.cleanWhiteSpaces(match[3].trim())
+            return new Comment(fullname, party, text)
        } else {
            return {invalid:true}
        }
-
+        }
+       
 }
+
 
 module.exports = Comment

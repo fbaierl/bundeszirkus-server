@@ -213,7 +213,7 @@ function structureComment(text){
     let result = []
     let parts = text.split("–")
     parts.forEach(function(part){
-        let newComment = new Comment(part)
+        let newComment = Comment.fromRaw(part)
         if(!newComment.invalid){
             result.push(newComment)
         }

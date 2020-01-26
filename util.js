@@ -3,5 +3,5 @@
  * @param {Text} string 
  */
 exports.cleanWhiteSpaces = function(string){
-    return string.replace(/\s/g, ' ')
+    return string.replace(/\s/g, ' ').trim()
 } 

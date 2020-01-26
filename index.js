@@ -1,7 +1,7 @@
 
 const schedule = require('node-schedule') 
 const express = require('express')
-const app = express()
+const expressApplication = express()
 const logger = require('./logger')
 
 const DataLoader = require('./dataLoader')
@@ -9,18 +9,21 @@ var dataScraper = require('./dataScraper.js')
 
 const port = 3000
 
-var dataLoader
+var dataLoader = new DataLoader()
 var serverRunning = false
 
-app.use(express.static('public'))
 
-app.use('/node_modules', express.static(__dirname + '/node_modules/'));
+let isOfflineMode = process.argv.includes("offline")
 
-app.get('/comments', function(req, res){
+expressApplication.use(express.static('public'))
+
+expressApplication.use('/node_modules', express.static(__dirname + '/node_modules/'));
+
+expressApplication.get('/comments', function(req, res){
     res.send(dataLoader.comments())
 })
 
-app.get('/comments_server_processing', function(req, res){    
+expressApplication.get('/comments_server_processing', function(req, res){    
     let length = parseInt(req.query.length)
     let start = parseInt(req.query.start)
     let searchColumns = req.query.columns
@@ -34,29 +37,29 @@ app.get('/comments_server_processing', function(req, res){
     res.send(dataLoader.commentsSlice(start, length, searchParameters))
 })
 
-app.get("/random", function(req, res){
+expressApplication.get("/random", function(req, res){
     res.send(dataLoader.random())
 })
 
-app.get("/stats_total_parties", function(req, res){
+expressApplication.get("/stats_total_parties", function(req, res){
     res.send(dataLoader.statsTotalParties())
 })
 
-app.get("/stats_total_politicians", function(req, res){
+expressApplication.get("/stats_total_politicians", function(req, res){
     res.send(dataLoader.statsTotalPoliticians())
 })
 
-app.get("/stats_total_parties_passive", function(req, res){
+expressApplication.get("/stats_total_parties_passive", function(req, res){
     res.send(dataLoader.statsTotalPartiesPassive())
 })
 
-app.get("/stats_total_politicians_passive", function(req, res){
+expressApplication.get("/stats_total_politicians_passive", function(req, res){
     res.send(dataLoader.statsTotalPoliticiansPassive())
 })
 
-var startServer = function() { 
+let startServer = function() { 
     logger.info("Starting the server.")
-    app.listen(port, (err) =>  {
+    expressApplication.listen(port, (err) =>  {
         if(err){
             logger.info(err)
             serverRunning = false
@@ -66,9 +69,8 @@ var startServer = function() {
     }) 
 }
 
-var loadData = function() {
+let loadData = function() {
     logger.info("Loading data.") 
-    dataLoader = new DataLoader()
     let startServerIfNotRunning = () => {
         if(!serverRunning){
             startServer()
@@ -77,14 +79,15 @@ var loadData = function() {
     dataLoader.loadData(startServerIfNotRunning)
 }
 
-// schedule reloading/scraping of data every hour (at minute 0)
-schedule.scheduleJob('0 * * * *', () => {
-    // scrape & load data w/o restarting the server
-    logger.info("Starting scheduled scraping.") 
-    dataScraper.scrape(loadData) 
-}) 
-
-logger.info("Starting server!")
-// scrape, load data & start the server
-logger.info("Starting initial scraping.")
-dataScraper.scrape(loadData)
+if(!isOfflineMode){
+    schedule.scheduleJob('0 * * * *', () => {
+        // scrape & load data w/o restarting the server
+        logger.info("Starting scheduled scraping.") 
+        dataScraper.scrape(loadData) 
+    }) 
+    logger.info("Starting server with initial scraping.")
+    dataScraper.scrape(loadData)
+} else {
+    logger.info("Starting server without scraping!")
+    loadData()
+}
