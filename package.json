@@ -26,11 +26,11 @@
     "nightmare": "^3.0.2",
     "node-schedule": "^1.3.2",
     "scraperjs": "^1.2.0",
+    "winston": "3.2.1",
     "xml2js": "^0.4.23",
     "xmldom": "^0.2.1",
-    "yadcf": "^0.9.4",
-    "winston": "3.2.1",
-    "xvfb": "0.3.0"
+    "xvfb": "0.3.0",
+    "yadcf": "^0.9.4"
   },
   "devDependencies": {
     "express": "^4.17.1",
