@@ -33,7 +33,7 @@ class Speech {
        this.comments = comments
     }
 
-    static fromXml(xml, sessionN){
+    static fromXml(xml, todo){
         let speaker = Speaker.fromXml(xmlUtil.findNodes("redner", xml)[0])
         let comments = xmlUtil.findValues("kommentar", xml).flatMap(comment => findComments(comment))        
         if(speaker && comments){
