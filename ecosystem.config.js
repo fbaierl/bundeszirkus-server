@@ -2,6 +2,7 @@ module.exports = {
   apps: [{
     name: 'bundeszirkus-server',
     script: './index.js',
+    interpreter: 'node@13.7.0',
     env: {
       DISPLAY: ":99"
     }
