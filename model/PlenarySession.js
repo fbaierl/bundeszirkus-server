@@ -40,7 +40,7 @@ class PlenarySession {
      */
     static _structureHeaderDataXml(headerDataXml){
         let datumNode = xmlUtil.findNodes("datum", headerDataXml)[0]
-        var date = undefined // TODO 
+        let date = undefined
         if(datumNode) {
             date = datumNode.getAttribute("date") 
         }
