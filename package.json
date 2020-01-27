@@ -6,7 +6,7 @@
   "scripts": {
     "restart": "pm2 startOrRestart ecosystem.config.js",
     "deploy": "pm2 deploy ecosystem.config.js production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "express": "^4.17.1",
+    "mocha": "^7.0.1",
     "pm2": "^4.2.1"
   }
 }
