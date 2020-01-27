@@ -73,7 +73,7 @@ class DataBase {
     totalCommentsPerPartyPassive = []
     
     constructor(plenarySessions){
-        this.update(plenarySessions) // TODO date is undefined?????
+        this.update(plenarySessions)
     }
 
     reset(){
