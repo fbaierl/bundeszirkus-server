@@ -3,10 +3,6 @@ const DOMParser = new (require('xmldom')).DOMParser
 const logger = require('./logger')
 
 const knowledge = require('./knowledge')
-const aH = require('./arrayHelper')
-const xmlUtil = require('./xmlUtil')
-const Comment = require('./model/Comment')
-const Speaker = require('./model/Speaker')
 const PlenarySession = require('./model/PlenarySession')
 const DataBase = require('./DataBase')
 
@@ -17,7 +13,7 @@ const DataBase = require('./DataBase')
 const dataBase = new DataBase([])
 
 
-class DataLoader{
+class DataLoader {
 
 
     /**
@@ -25,29 +21,30 @@ class DataLoader{
      * in order to load all data neccessary.
      * @param {function} callback 
      */
-    loadData(callback){
-        var dirPath = "data"
-        var files = ""
+    loadDataSync(dataDirPath){
         logger.info("[loader] loading data ...")
-        fileSystem.readdir(dirPath, function(err, files) {
-            if(err){
-                return callback(err);
-            }
-            logger.info("[loader] loading files:" + files)
-            let plenarySessions = files.map(file => {
-                let filePath = dirPath + "/" + file
-                let fileContent = fileSystem.readFileSync(filePath, "utf8")
-                let document = DOMParser.parseFromString(fileContent, "application  /xml");
-                return PlenarySession.fromXml(document)
-            })
-            dataBase.reset()
-            dataBase.update(plenarySessions)    
-            if(callback){
-                callback()
-            }
-        });
+        let files = fileSystem.readdirSync(dataDirPath)
+        if(!files){
+            logger.error("[loader] error happened reading data dir.", err)
+        }
+        logger.info("[loader] loading " + files.length + " files.")
+        logger.debug("[loader] loading files:" + files)
+        let plenarySessions = files.map(file => {
+            let xml = this._readXmlFile(dataDirPath + "/" + file)
+            return PlenarySession.fromXml(xml)
+        })
+        dataBase.reset()
+        dataBase.update(plenarySessions)
     }
 
+    /**
+     * Reads an XML file.
+     * @param {*} filePath path to file
+     */
+    _readXmlFile(filePath){
+        let fileContent = fileSystem.readFileSync(filePath, "utf8")
+        return DOMParser.parseFromString(fileContent, "application  /xml");
+    }
 
     _applySearchParams(comments, searchParams){
         let result = comments
@@ -156,6 +153,10 @@ class DataLoader{
                 color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
             }
         }); 
+    }
+
+    plenarySessions(){
+        return dataBase.plenarySessions
     }
 
 }

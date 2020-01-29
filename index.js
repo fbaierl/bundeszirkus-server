@@ -5,15 +5,17 @@ const expressApplication = express()
 const logger = require('./logger')
 
 const DataLoader = require('./DataLoader')
+const DataWriter = require('./DataWriter')
 const dataScraper = require('./dataScraper')
 
 const port = 3000
-
-var dataLoader = new DataLoader()
-var serverRunning = false
-
+const dataDirPath = "data"
+const outFile = "data_out.json"
+const dataLoader = new DataLoader()
+let serverRunning = false
 
 let isOfflineMode = process.argv.includes("offline")
+let writeOutData = process.argv.includes("writeData")
 
 expressApplication.use(express.static('public'))
 
@@ -70,13 +72,14 @@ let startServer = function() {
 }
 
 let loadData = function() {
-    logger.info("Loading data.") 
-    let startServerIfNotRunning = () => {
-        if(!serverRunning){
-            startServer()
-        }
+    dataLoader.loadDataSync(dataDirPath)
+    if(writeOutData){
+        const writer = new DataWriter()
+        writer.writeJSONSync(outFile, dataLoader.plenarySessions())
     }
-    dataLoader.loadData(startServerIfNotRunning)
+    if(!serverRunning){
+        startServer()
+    }
 }
 
 if(!isOfflineMode){
