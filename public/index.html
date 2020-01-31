@@ -48,6 +48,7 @@
         chartMaker.createTotalPoliticiansChart('statsTotalPoliticiansChart')
         chartMaker.createTotalPartiesPassiveChart('statsTotalPartiesPassiveChart')
         chartMaker.createTotalPoliticiansPassiveChart('statsTotalPoliticiansPassiveChart')  
+        chartMaker.createTotalCommentsPerSessionPerPartyChart('statsTotalCommentsPerSessionPerPartyChart')  
         initDataTable();
       });
 
@@ -174,6 +175,15 @@
             <button id="nextInterruptionButton" onclick="loadRandomInterruption()"
                 style="margin-top:20px;" class="btn btn-info">Nächster Zwischenruf</button>
           </div>
+      </div>
+
+      <!--
+         total per session per party 
+      -->
+      <div class="jumbotron jumbo-light">
+        <div class="container">
+          <canvas  id="statsTotalCommentsPerSessionPerPartyChart"></canvas>
+        </div>
       </div>
         <!-- 
           active 

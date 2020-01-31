@@ -59,6 +59,11 @@ expressApplication.get("/comments_stats_total_politicians_passive", function(req
     res.send(dataLoader.statsTotalPoliticiansPassive())
 })
 
+expressApplication.get("/comments_stats_total_count_per_session_per_party", function(req, res){
+    res.send(dataLoader.statsTotalCommentsCountPerSessionPerParty())
+})
+
+
 let startServer = function() { 
     logger.info("Starting the server.")
     expressApplication.listen(port, (err) =>  {

@@ -161,5 +161,94 @@ function ChartMaker()
             }
         });
     }
+
+
+    this.createTotalCommentsPerSessionPerPartyChart = function(domId){
+        const ctx = document.getElementById(domId).getContext('2d')
+        ctx.canvas.width = horizontalBarChartCanvasWidth
+        ctx.canvas.height = horizontalBarChartCanvasHeight
+
+
+        let range = function (n) {
+            return Array(n).join().split(',').map(function(e, i) { return i; });
+          }  
+          
+        let commentsPerSessionLabels = function(data){
+        if(data[0]){
+            return range(data[0].values.length).map(x => x+1)
+        } else {
+            return []
+        }
+        }
+        
+        let zipSum = function(numbers) {
+        return numbers[0].map(function(_, i) { 
+            return numbers.reduce(function(prev, row) {
+            return row[i] + prev;
+            }, 0);
+        });
+        }
+        
+        let sum = function(a, b){
+            return a + b 
+        }
+
+        let commentsPerSessionDatasets = function(data){
+            let bars = data.map(function (d) {
+                  return {
+                    fill: false,
+                    label: d.party,
+                    data: d.values,
+                    borderColor: d.color
+                  }})  
+            let totalValues = zipSum(data.map(d => d.values))
+            console.log(totalValues)
+            let line = {
+              label: "total",
+              data: totalValues,
+              borderColor: "gray",
+              type: "line"
+            }
+            bars.push(line)
+            return bars
+          }
+
+
+        $.ajax({
+            type: "GET",
+            url: "comments_stats_total_count_per_session_per_party",
+            dataType: "json",
+            success: function(data) {
+                new Chart(ctx, {
+                    type: 'line',
+                    xAxisID: "Zitzungsnummer",
+                    yAxisID: "Anzahl Zwischenrufe",
+                    data: {
+                      labels: commentsPerSessionLabels(data),
+                      datasets: commentsPerSessionDatasets(data)
+                    },
+                    options: {
+                      scales: {
+                        xAxes: [{ 
+                          stacked: false,
+                          scaleLabel: {
+                            display: true,
+                            labelString: 'Sitzungsnummer'
+                          }
+                        }],
+                        yAxes: [{ 
+                          stacked: false,
+                          scaleLabel: {
+                            display: true,
+                            labelString: 'Anzahl Zwischenrufe'
+                          }
+                        }],
+                      }
+                    }
+                  });
+            }
+        });
+
+    }
 }
 

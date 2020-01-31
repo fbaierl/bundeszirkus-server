@@ -155,6 +155,17 @@ class DataLoader {
         }); 
     }
 
+    statsTotalCommentsCountPerSessionPerParty(){
+        return dataBase.totalCommentsCountPerSessionPerParty.map(function(e, i) {
+            let c = knowledge.partyColor(e.party)
+            return {
+                party: e.party,
+                values: e.values,
+                color: 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.75)'
+            }
+        })
+    }
+
     plenarySessions(){
         return dataBase.plenarySessions
     }

@@ -29,3 +29,6 @@ exports.partyColor = function(partyName){
 
 exports.validParties = 
 ['AfD', 'CDU/CSU', 'CDU', 'CSU', 'BÜNDNIS 90/DIE GRÜNEN', 'FDP', 'SPD', 'DIE LINKE', 'FRAKTIONSLOS']
+
+exports.allParties = 
+['AfD', 'CDU/CSU', 'BÜNDNIS 90/DIE GRÜNEN', 'FDP', 'SPD', 'DIE LINKE', 'FRAKTIONSLOS']

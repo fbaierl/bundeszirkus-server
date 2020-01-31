@@ -71,6 +71,11 @@ class DataBase {
      * }]
      */
     totalCommentsPerPartyPassive = []
+
+    /**
+     * TODO
+     */
+    totalCommentsCountPerSessionPerParty = []
     
     constructor(plenarySessions){
         this.update(plenarySessions)
@@ -96,6 +101,7 @@ class DataBase {
         this.totalCommentsPerPolitician = this._findCommentsPerPolitician().slice(0,20)
         this.totalCommentsPerPartyPassive = this._findCommentsPerPartyPassive()
         this.totalCommentsPerPoliticianPassive = this._findCommentsPerPoliticianPassive().slice(0,20)
+        this.totalCommentsPerSessionPerParty = this._findTotalCommentsCountPerSessionPerParty()
     }
 
     _findCommentsWithSpeaker() {
@@ -173,6 +179,61 @@ class DataBase {
         return aH.findOccurencesOfPoliticians(politicians).sort(function (a, b) {
             return b.occurences - a.occurences
         })
+    }
+
+    _findTotalCommentsCountPerSessionPerParty(){
+        const sortedPlenarySessions = this.plenarySessions.sort(function (a, b) {
+            if (a.sessionNumber > b.sessionNumber) {
+                return 1;
+            }
+            if (b.sessionNumber > a.sessionNumber) {
+                return -1;
+            }
+            return 0;
+        });
+
+        let valueMap = new Map()
+        sortedPlenarySessions.map(ps => {
+            ps.speeches.flatMap(s => s.comments).forEach ( comment => {
+                let partyList = valueMap.get(comment.party)   
+                if(!partyList){
+                    let newValue = []
+                    newValue[ps.sessionNumber - 1] = 1
+                    valueMap.set(comment.party, newValue)
+                } else {
+                    partyList[ps.sessionNumber - 1] = partyList[ps.sessionNumber - 1] + 1
+                }      
+            })
+        })
+
+        let result = []
+        Array.from(valueMap.keys()).forEach(key => {
+            result.push({
+                party : key,
+                values : valueMap.get(key)
+            })
+        })
+
+        console.log(result)
+        return result
+        
+
+            // .map(ps => {
+            //     ps.sessionNumber
+
+            //     ps.speeches
+            // }
+            //     )
+            // .flatMap(s => s.comments)
+
+        // return [
+        //     {"party" : "AfD", "values": [100, 120, 78, 19, 209] },
+        //     {"party" : "CDU/CSU", "values": [90, 20, 30, 10, 431] },
+        //     {"party" : "BÜNDNIS 90/DIE GRÜNEN", "values": [90, 10, 200, 123, 100] },
+        //     {"party" : "Linke", "values": [90, 10, 200, 100, 65] },
+        //     {"party" : "FDP", "values": [90, 10, 200, 123, 12] },
+        //     {"party" : "SPD", "values": [90, 10, 200, 99, 171] }
+        //    ];
     }
 
 }
