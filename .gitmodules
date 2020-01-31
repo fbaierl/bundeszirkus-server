@@ -1,0 +1,3 @@
+[submodule "blog/themes/bundeszirkus-hexo-theme-cactus"]
+	path = blog/themes/bundeszirkus-hexo-theme-cactus
+	url = https://github.com/fbaierl/bundeszirkus-hexo-theme-cactus.git

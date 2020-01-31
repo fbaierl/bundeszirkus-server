@@ -18,6 +18,7 @@ let isOfflineMode = process.argv.includes("offline")
 let writeOutData = process.argv.includes("writeData")
 
 expressApplication.use(express.static('public'))
+expressApplication.use('/blog', express.static('blog/public'))
 
 expressApplication.use('/node_modules', express.static(__dirname + '/node_modules/'));
 
