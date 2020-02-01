@@ -18,6 +18,7 @@ let isOfflineMode = process.argv.includes("offline")
 let writeOutData = process.argv.includes("writeData")
 
 expressApplication.use(express.static('public'))
+expressApplication.use('/blog', express.static('blog/public'))
 
 expressApplication.use('/node_modules', express.static(__dirname + '/node_modules/'));
 
@@ -63,7 +64,7 @@ let startServer = function() {
     logger.info("Starting the server.")
     expressApplication.listen(port, (err) =>  {
         if(err){
-            logger.info(err)
+            logger.error(err)
             serverRunning = false
         }
         serverRunning = true

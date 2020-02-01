@@ -1,295 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-	
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    <!-- data table -->
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css"/>
-    <script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-    <!-- cookie banner -->
-    <script type="text/javascript" src="/assets/scripts/cookie.notice.min.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!-- charts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script type="text/javascript" src="/node_modules/chart.piecelabel.js/src/Chart.PieceLabel.js"></script>
-    <script type="text/javascript" src="/assets/scripts/chartMaker.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <!-- yadcf (DataTables plugin) -->
-    <script type="stylesheet" src="/node_modules/yadcf/jquery.dataTables.yadcf.css"></script>
-    <script type="text/javascript" src="/node_modules/yadcf/jquery.dataTables.yadcf.js"></script>
+  <!-- data table -->
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="//cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css" />
+  <script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-    <title>Bundeszirkus</title>
+  <!-- cookie banner -->
+  <script type="text/javascript" src="/assets/scripts/cookie.notice.min.js"></script>
 
-    <!-- icon -->
-    <link rel="icon" type="image/png" href="icon_black.png"/>
+  <!-- charts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script type="text/javascript" src="/node_modules/chart.piecelabel.js/src/Chart.PieceLabel.js"></script>
+  <script type="text/javascript" src="/assets/scripts/chartMaker.js"></script>
 
-    <link href="bundeszirkus.css" rel="stylesheet">
+  <!-- yadcf (DataTables plugin) -->
+  <script type="stylesheet" src="/node_modules/yadcf/jquery.dataTables.yadcf.css"></script>
+  <script type="text/javascript" src="/node_modules/yadcf/jquery.dataTables.yadcf.js"></script>
 
-    <!-- Scripts -->
-    <script>
+  <title>Bundeszirkus</title>
 
-      $(document).ready(function () {
-        loadRandomInterruption();
-        let chartMaker = new ChartMaker()
-        chartMaker.createTotalPartiesChart('statsTotalPartiesChart')
-        chartMaker.createTotalPoliticiansChart('statsTotalPoliticiansChart')
-        chartMaker.createTotalPartiesPassiveChart('statsTotalPartiesPassiveChart')
-        chartMaker.createTotalPoliticiansPassiveChart('statsTotalPoliticiansPassiveChart')  
-        initDataTable();
+  <!-- icon -->
+  <link rel="icon" type="image/png" href="icon_black.png" />
+
+  <link href="bundeszirkus.css" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script>
+
+    $(document).ready(function () {
+      loadRandomInterruption();
+      let chartMaker = new ChartMaker()
+      chartMaker.createTotalPartiesChart('statsTotalPartiesChart')
+      chartMaker.createTotalPoliticiansChart('statsTotalPoliticiansChart')
+      chartMaker.createTotalPartiesPassiveChart('statsTotalPartiesPassiveChart')
+      chartMaker.createTotalPoliticiansPassiveChart('statsTotalPoliticiansPassiveChart')
+      initDataTable();
+    });
+
+    function initDataTable() {
+      let table = $('#allCommentsTable').DataTable({
+        processing: true,
+        serverSide: true,
+        ordering: false,
+        bLengthChange: false,
+        language: {
+          url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
+        },
+        ajax: "comments_server_processing",
+        sScrollX: "100%",
+        columns: [
+          { data: 'comment.text' },
+          { data: 'comment.fullname' },
+          { data: 'comment.party' },
+          { data: 'speaker.fullname' },
+          { data: 'speaker.partyOrRole' },
+        ]
       });
 
-      function initDataTable(){
-        let table = $('#allCommentsTable').DataTable({
-            processing: true,
-            serverSide: true,
-            ordering:  false,
-            bLengthChange: false,
-            language: {
-                url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
-              },
-            ajax: "comments_server_processing",
-            sScrollX: "100%",
-            columns: [
-                { data: 'comment.text' },
-                { data: 'comment.fullname' },
-                { data: 'comment.party' },
-                { data: 'speaker.fullname' },
-                { data: 'speaker.partyOrRole' },
-            ]
-            });
-            
-        let yadcfColumnDef = function(i){
-          return {
-            column_number: i,
-            filter_type: "text",
-            filter_delay: 500,
-            filter_reset_button_text: false,
-            filter_default_label: "Filter"
-          }
+      let yadcfColumnDef = function (i) {
+        return {
+          column_number: i,
+          filter_type: "text",
+          filter_delay: 500,
+          filter_reset_button_text: false,
+          filter_default_label: "Filter"
         }
-  
-        yadcf.init(table, [
-          yadcfColumnDef(0),
-          yadcfColumnDef(1),
-          yadcfColumnDef(2),
-          yadcfColumnDef(3),
-          yadcfColumnDef(4),
-        ]);
       }
 
-      function updateRandomInterruption(interruption){
-        $('#randInterruptionSpeakerFullname').html(interruption.speaker.fullname)
-        $('#randInterruptionSpeakerPartyOrRole').html("("+interruption.speaker.party + interruption.speaker.role + ")")
-        $('#randInterruptionFullname').html(interruption.comment.fullname)
-        $('#randInterruptionParty').html("("+interruption.comment.party+")")
-        $('#randInterruptionText').html("„"+interruption.comment.text+"“")
-      }
+      yadcf.init(table, [
+        yadcfColumnDef(0),
+        yadcfColumnDef(1),
+        yadcfColumnDef(2),
+        yadcfColumnDef(3),
+        yadcfColumnDef(4),
+      ]);
+    }
 
-      function loadRandomInterruption(){
-        $.ajax({
-          type: "GET",
-          url: "random_comment",
-          dataType: "json",
-          success: function(response) {
-            updateRandomInterruption(response)
-          }
-        });
-      }
-      
-    </script>
-  </head>
+    function updateRandomInterruption(interruption) {
+      $('#randInterruptionSpeakerFullname').html(interruption.speaker.fullname)
+      $('#randInterruptionSpeakerPartyOrRole').html("(" + interruption.speaker.party + interruption.speaker.role + ")")
+      $('#randInterruptionFullname').html(interruption.comment.fullname)
+      $('#randInterruptionParty').html("(" + interruption.comment.party + ")")
+      $('#randInterruptionText').html("„" + interruption.comment.text + "“")
+    }
 
-  <body>
+    function loadRandomInterruption() {
+      $.ajax({
+        type: "GET",
+        url: "random_comment",
+        dataType: "json",
+        success: function (response) {
+          updateRandomInterruption(response)
+        }
+      });
+    }
 
-    <!-- 
+  </script>
+</head>
+<body>
+  <!-- 
       nav bar 
     -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Bundeszirkus</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-         <ul class="navbar-nav mr-auto">
-           <li class="nav-item active">
-             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="impressum.html">Impressum</a>
-          </li>
-          <!-- <li class="nav-item active">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="icon_white.png" width="45" height="45" alt="">
+    </a>
+    <a class="navbar-brand" href="#">Bundeszirkus</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="articles.html">Artikel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="impressum.html">Impressum</a>
+        </li>
+        <!-- <li class="nav-item active">
             <a class="nav-link" href="/blog/blog.html">Blog </a>
           </li> -->
-         </ul>
-       </div>
-    </nav>
-    <!--
+      </ul>
+    </div>
+  </nav>
+  <!--
       main
     -->
-    <main role="main" >
-        <!-- 
+  <main role="main">
+    <!-- 
           intro 
         -->
-      <div class="jumbotron jumbo-dark horizontal-center">
-        <div style="font-size:1.2rem; max-width:900px;">
-          Bundeszirkus.de sammelt automatisiert Plenarprotokolle aus dem Deutschen Bundestag um diese in Bezug auf Zwischenrufe zu analysieren. 
-          Inspiriert wurde das Projekt von einem 
-          <u><a style="color:white;" href="https://projekte.sueddeutsche.de/artikel/politik/die-afd-im-bundestag-e362724/">Artikel der Süddeutschen Zeitung</a></u>.
-        </div>
+    <div class="jumbotron jumbo-dark horizontal-center">
+      <div style="font-size:1.2rem; max-width:900px;">
+        Bundeszirkus.de sammelt automatisiert Plenarprotokolle aus dem Deutschen Bundestag um diese in Bezug auf
+        Zwischenrufe zu analysieren.
+        Inspiriert wurde das Projekt von einem
+        <u><a style="color:white;"
+            href="https://projekte.sueddeutsche.de/artikel/politik/die-afd-im-bundestag-e362724/">Artikel der
+            Süddeutschen Zeitung</a></u>.
       </div>
-      <!-- 
+    </div>
+    <!-- 
         icon 
       -->
-      <div class="jumbotron jumbo-dark horizontal-center" style="padding:0px">
-        <img style="height:160px" src="icon_white.png">
-    </div>
-      <!--
+    <!-- <div class="jumbotron jumbo-dark horizontal-center" style="padding:0px">
+      <img style="height:160px" src="icon_white.png">
+    </div> -->
+    <!--
         random comment
       -->
-      <div id="randomInterruptionDiv" class="jumbotron jumbo-dark" >
-          <div style="text-align:center">
-            <h3 style="text-align:center; margin-bottom:30px;">Zufälliger Zwischenruf.</h3>
-            <p class="display-4" style="font-size:1.6rem;" id="randInterruptionText"/>
-            <div class="lead" style="font-size:1.2rem; line-height:1; margin-bottom:20px;">
-              <span id="randInterruptionFullname"></span>
-              <span id="randInterruptionParty"></span>
-              <span> zur Rede von </span>
-              <span id="randInterruptionSpeakerFullname"></span>
-              <span id="randInterruptionSpeakerPartyOrRole"></span>
-              <!-- TODO "in der x. Sitzung der aktuellen Legislaturperiode"-->
-            </div>
-            <button id="nextInterruptionButton" onclick="loadRandomInterruption()"
-                style="margin-top:20px;" class="btn btn-info">Nächster Zwischenruf</button>
-          </div>
+    <div id="randomInterruptionDiv" class="jumbotron jumbo-dark">
+      <div style="text-align:center">
+        <h3 style="text-align:center; margin-bottom:30px;">Zufälliger Zwischenruf.</h3>
+        <p class="display-4" style="font-size:1.6rem;" id="randInterruptionText" />
+        <div class="lead" style="font-size:1.2rem; line-height:1; margin-bottom:20px;">
+          <span id="randInterruptionFullname"></span>
+          <span id="randInterruptionParty"></span>
+          <span> zur Rede von </span>
+          <span id="randInterruptionSpeakerFullname"></span>
+          <span id="randInterruptionSpeakerPartyOrRole"></span>
+          <!-- TODO "in der x. Sitzung der aktuellen Legislaturperiode"-->
+        </div>
+        <button id="nextInterruptionButton" onclick="loadRandomInterruption()" style="margin-top:20px;"
+          class="btn btn-info">Nächster Zwischenruf</button>
       </div>
-        <!-- 
+    </div>
+    <!-- 
           active 
         -->
-        <div class="jumbotron jumbo-light">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm mb-5">
-                <h3 style="text-align:center; margin-bottom: 10px">
-                  <span>Welche </span> 
-                  <span style="text-decoration: underline;">Partei</span>
-                  <span> hat am meisten dazwischengerufen?</span>
-                </h3>
-                <div class="pie-chart-container">
-                  <canvas id="statsTotalPartiesChart"></canvas>
-                </div>
-              </div>
-            <div class="col-sm mb-5">
-              <h3 style="text-align:center; margin-bottom: 10px">
-                <span>Welcher </span>
-                <span style="text-decoration: underline;">Politiker</span>
-                <span> hat am meisten dazwischengerufen?</span>
-              </h3>
-              <div style="max-height:550px; max-width:400px; margin:auto">
-                <canvas  id="statsTotalPoliticiansChart"></canvas>
-              </div>
+    <div class="jumbotron jumbo-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm mb-5">
+            <h3 style="text-align:center; margin-bottom: 10px">
+              <span>Welche </span>
+              <span style="text-decoration: underline;">Partei</span>
+              <span> hat am meisten dazwischengerufen?</span>
+            </h3>
+            <div class="pie-chart-container">
+              <canvas id="statsTotalPartiesChart"></canvas>
+            </div>
+          </div>
+          <div class="col-sm mb-5">
+            <h3 style="text-align:center; margin-bottom: 10px">
+              <span>Welcher </span>
+              <span style="text-decoration: underline;">Politiker</span>
+              <span> hat am meisten dazwischengerufen?</span>
+            </h3>
+            <div style="max-height:550px; max-width:400px; margin:auto">
+              <canvas id="statsTotalPoliticiansChart"></canvas>
             </div>
           </div>
         </div>
       </div>
-      <!--
+    </div>
+    <!--
         passive
       -->
-      <div class="jumbotron jumbo-dark">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm mb-5">
-                <h3 style="text-align:center; margin-bottom: 10px">
-                  <span>Welcher </span> 
-                  <span style="text-decoration: underline;">Partei</span>
-                  <span> wurde am meisten dazwischengerufen?</span>
-                </h3>
-                <div class="pie-chart-container">
-                  <canvas id="statsTotalPartiesPassiveChart"></canvas>
-                </div>
-              </div>
-            <div class="col-sm mb-5">
-              <h3 style="text-align:center; margin-bottom: 10px">
-                <span>Welchem </span>
-                <span style="text-decoration: underline;">Politiker</span>
-                <span> wurde am meisten dazwischengerufen?</span>
-              </h3>
-              <div style="max-height:550px; max-width:400px; margin:auto">
-                <canvas  id="statsTotalPoliticiansPassiveChart"></canvas>
-              </div>
+    <div class="jumbotron jumbo-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm mb-5">
+            <h3 style="text-align:center; margin-bottom: 10px">
+              <span>Welcher </span>
+              <span style="text-decoration: underline;">Partei</span>
+              <span> wurde am meisten dazwischengerufen?</span>
+            </h3>
+            <div class="pie-chart-container">
+              <canvas id="statsTotalPartiesPassiveChart"></canvas>
+            </div>
+          </div>
+          <div class="col-sm mb-5">
+            <h3 style="text-align:center; margin-bottom: 10px">
+              <span>Welchem </span>
+              <span style="text-decoration: underline;">Politiker</span>
+              <span> wurde am meisten dazwischengerufen?</span>
+            </h3>
+            <div style="max-height:550px; max-width:400px; margin:auto">
+              <canvas id="statsTotalPoliticiansPassiveChart"></canvas>
             </div>
           </div>
         </div>
-      </div>           
-      <!-- 
+      </div>
+    </div>
+    <!-- 
         data table 
       -->
-      <div class="jumbotron jumbo-light" >
-        <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags.</h3>
-        <table id="allCommentsTable" class="display" style="width:100%">
-          <thead>
-            <tr>
-              <th>Zwischenruf</th>
-              <th>Name Zwischenrufer</th>
-              <th>Partei Zwischenrufer</th>
-              <th>Name Sprecher</th>
-              <th>Fraktion/Rolle Sprecher</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-      <!-- 
+    <div class="jumbotron jumbo-light">
+      <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags.
+      </h3>
+      <table id="allCommentsTable" class="display" style="width:100%">
+        <thead>
+          <tr>
+            <th>Zwischenruf</th>
+            <th>Name Zwischenrufer</th>
+            <th>Partei Zwischenrufer</th>
+            <th>Name Sprecher</th>
+            <th>Fraktion/Rolle Sprecher</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <!-- 
         footer 
       -->
 
-      <!-- "fork me on github" -->
-      <div>
-          <a href="https://github.com/fbaierl/bundeszirkus-server" class="github-corner" aria-label="View source on Github">
-            <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#e9ecef; color:#343a40; position: absolute; transform: scale(-1, 1);" aria-hidden="true">
-              <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-              <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-              <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
-            </svg>
-          </a>
-          <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-      </div>
+    <!-- "fork me on github" -->
+    <div>
+      <a href="https://github.com/fbaierl/bundeszirkus-server" class="github-corner" aria-label="View source on Github">
+        <svg width="80" height="80" viewBox="0 0 250 250"
+          style="fill:#e9ecef; color:#343a40; position: absolute; transform: scale(-1, 1);" aria-hidden="true">
+          <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+          <path
+            d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+            fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+          <path
+            d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+            fill="currentColor" class="octo-body"></path>
+        </svg>
+      </a>
+      <style>
+        .github-corner:hover .octo-arm {
+          animation: octocat-wave 560ms ease-in-out
+        }
 
-      <div class="jumbotron jumbo-dark horizontal-center">
+        @keyframes octocat-wave {
 
+          0%,
+          100% {
+            transform: rotate(0)
+          }
+
+          20%,
+          60% {
+            transform: rotate(-25deg)
+          }
+
+          40%,
+          80% {
+            transform: rotate(10deg)
+          }
+        }
+
+        @media (max-width:500px) {
+          .github-corner:hover .octo-arm {
+            animation: none
+          }
+
+          .github-corner .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+          }
+        }
+      </style>
+    </div>
+
+    <div class="jumbotron jumbo-dark horizontal-center">
+
+      <br>
+      <!-- Disclaimer -->
+      <div style="font-size:11px; max-width:700px;">
+        <h3 style="text-align:center; margin-bottom: 10px">
+          <span>Disclaimer</span>
+        </h3>
+        Alle Statistiken auf dieser Seite bezüglich von Zwischenrufen beziehen sich ausschließlich auf jene welche
+        präzise - d.h. mit dem vollen Namen und der Partei des Zwischenrufers - protokolliert wurden.
+        Falls im Protokoll lediglich "Zwischenrufe von der CDU/CSU" oder "Beifall von Seiten der AfD" beschrieben sind,
+        so finden diese Einträge (noch) keinerlei statistische Beachtung auf dieser Seite.
+        Alle Angaben dieser Seite sind ohne Gewähr.
+        Dieses Projekt ist komplett Open-source:
+        <a style="color:white;"
+          href="https://github.com/fbaierl/bundeszirkus-server">github.com/fbaierl/bundeszirkus-server</a>
         <br>
-          <!-- Disclaimer -->
-        <div style="font-size:11px; max-width:700px;">
-          <h3 style="text-align:center; margin-bottom: 10px">
-            <span>Disclaimer</span>
-          </h3>
-          Alle Statistiken auf dieser Seite bezüglich von Zwischenrufen beziehen sich ausschließlich auf jene welche präzise - d.h. mit dem vollen Namen und der Partei des Zwischenrufers - protokolliert wurden. 
-          Falls im Protokoll lediglich "Zwischenrufe von der CDU/CSU" oder "Beifall von Seiten der AfD" beschrieben sind, so finden diese Einträge (noch) keinerlei statistische Beachtung auf dieser Seite.
-          Alle Angaben dieser Seite sind ohne Gewähr.
-          Dieses Projekt ist komplett Open-source: 
-          <a style="color:white;" href="https://github.com/fbaierl/bundeszirkus-server">github.com/fbaierl/bundeszirkus-server</a> 
-          <br>
-          Korrektur- und Verbesserungsvorschläge sind jederzeit ausdrücklich erwünscht.
-        </div>
-        <br>
-        <!-- sources -->
-        <div style="line-height:1;">Quelle: <a style="color:white;" href="https://www.bundestag.de/service/opendata">bundestag.de/service/opendata</a></div>
-        <br>
-        <div>Bundeszirkus wurde entwickelt von 
-          <a style="color:white;" href="mailto:fbaierl1@gmail.com">Florian Baierl</a>
-        </div>
+        Korrektur- und Verbesserungsvorschläge sind jederzeit ausdrücklich erwünscht.
       </div>
-    </main>
-  </body>
+      <br>
+      <!-- sources -->
+      <div style="line-height:1;">Quelle: <a style="color:white;"
+          href="https://www.bundestag.de/service/opendata">bundestag.de/service/opendata</a></div>
+      <br>
+      <div>Bundeszirkus wurde entwickelt von
+        <a style="color:white;" href="mailto:fbaierl1@gmail.com">Florian Baierl</a>
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>
