@@ -72,16 +72,14 @@ exports.scrape = function(cb) {
 
     let xvfb = new Xvfb();
     try {
-        xvfb.startSync();
-      }
-      catch (e) {
-        console.log(e);
-      }
+        xvfb.startSync()
+    } catch (e) {
+        logger.error(e)
+    }
 
     let nightmare = new Nightmare({ show: false })
     const url = 'https://www.bundestag.de/services/opendata'
-
-        
+    
     // we request nightmare to browse to the bundestag.de url and extract the whole inner html
     nightmare
         .goto(url)
@@ -89,6 +87,7 @@ exports.scrape = function(cb) {
         .evaluate(() => document.querySelector('body').innerHTML)
         .end()
         .then(response => {
+            logger.info("asdfasdf")
             _downloadedLinks = 0
             let validLinks = extractLinks(response)
             _foundLinks = validLinks.length
@@ -104,7 +103,7 @@ exports.scrape = function(cb) {
             xvfb.stopSync();    
         }).catch(err => {
             xvfb.stopSync();  
-            logger.info("[scraper] did not download any files.")
+            logger.error("[scraper] did not download any files.")
             _callback()
         });
   

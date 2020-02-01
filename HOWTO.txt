@@ -25,7 +25,7 @@ xvfb-run — server-args=”-screen 0 1024x768x24" node app.js
 
 If you are still having issues with getting electron to work, you can enable debug logging:
 
-DEBUG=nightmare:*,electron:* xvfb-run — server-args=”-screen 0 1024x768x24" node cron.js
+DEBUG=nightmare:*,electron:* xvfb-run — server-args="-screen 0 1024x768x24" node index.js
 
 
 # Get the log file from remote
