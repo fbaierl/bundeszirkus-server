@@ -72,11 +72,11 @@ exports.scrape = function(cb) {
 
     let xvfb = new Xvfb();
     try {
-        xvfb.startSync();
-      }
-      catch (e) {
-        console.log(e);
-      }
+        xvfb.startSync()
+    } catch (e) {
+        logger.error(e)
+    }
+
 
     let nightmare = new Nightmare({ show: false })
     const url = 'https://www.bundestag.de/services/opendata'
@@ -104,7 +104,7 @@ exports.scrape = function(cb) {
             xvfb.stopSync();    
         }).catch(err => {
             xvfb.stopSync();  
-            logger.info("[scraper] did not download any files.")
+            logger.error("[scraper] did not download any files.")
             _callback()
         });
   

@@ -64,7 +64,7 @@ let startServer = function() {
     logger.info("Starting the server.")
     expressApplication.listen(port, (err) =>  {
         if(err){
-            logger.info(err)
+            logger.error(err)
             serverRunning = false
         }
         serverRunning = true
