@@ -174,6 +174,7 @@ function ChartMaker()
           }  
           
         let commentsPerSessionLabels = function(data){
+            console.log(data)
         if(data[0]){
             return range(data[0].values.length).map(x => x+1)
         } else {
@@ -182,11 +183,16 @@ function ChartMaker()
         }
         
         let zipSum = function(numbers) {
-        return numbers[0].map(function(_, i) { 
-            return numbers.reduce(function(prev, row) {
-            return row[i] + prev;
-            }, 0);
-        });
+            if(numbers.length > 0){
+                return numbers[0].map(function(_, i) { 
+                    return numbers.reduce(function(prev, row) {
+                    return row[i] + prev;
+                    }, 0);
+                });
+            } else {
+                return [0]
+            }
+
         }
         
         let sum = function(a, b){

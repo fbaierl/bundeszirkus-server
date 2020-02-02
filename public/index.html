@@ -51,7 +51,7 @@
   <!-- Scripts -->
   <script>
 
-  $(document).ready(function () {
+    $(document).ready(function () {
         loadRandomInterruption();
         let chartMaker = new ChartMaker()
         chartMaker.createTotalPartiesChart('statsTotalPartiesChart')
@@ -60,6 +60,7 @@
         chartMaker.createTotalPoliticiansPassiveChart('statsTotalPoliticiansPassiveChart')  
         chartMaker.createTotalCommentsPerSessionPerPartyChart('statsTotalCommentsPerSessionPerPartyChart')  
         initDataTable();
+    })
 
     function initDataTable() {
       let table = $('#allCommentsTable').DataTable({
@@ -118,7 +119,7 @@
         }
       });
     }
-
+ 
   </script>
 </head>
 <body>
@@ -168,12 +169,6 @@
             Süddeutschen Zeitung</a></u>.
       </div>
     </div>
-    <!-- 
-        icon 
-      -->
-    <!-- <div class="jumbotron jumbo-dark horizontal-center" style="padding:0px">
-      <img style="height:160px" src="icon_white.png">
-    </div> -->
     <!--
         random comment
       -->
@@ -192,14 +187,15 @@
         <button id="nextInterruptionButton" onclick="loadRandomInterruption()" style="margin-top:20px;"
           class="btn btn-info">Nächster Zwischenruf</button>
       </div>
-      <!--
-         total per session per party 
-      -->
-      <div class="jumbotron jumbo-light">
-        <div class="container">
-          <canvas  id="statsTotalCommentsPerSessionPerPartyChart"></canvas>
-        </div>
+    </div>
+    <!--
+        total per session per party 
+    -->
+    <div class="jumbotron jumbo-light">
+      <div class="container">
+        <canvas  id="statsTotalCommentsPerSessionPerPartyChart"></canvas>
       </div>
+    </div>
         <!-- 
           active 
         -->
