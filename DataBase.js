@@ -15,7 +15,7 @@ class DataBase {
      *      "party":"SPD", 
      *      "text":"Da kennt ihr euch ja aus!"
      *   }
-     * }]
+     * }, ...]
      */
     allComments = []
 
@@ -34,7 +34,7 @@ class DataBase {
      *      "party":"SPD", 
      *      "text":"Da kennt ihr euch ja aus!"
      *   }
-     * }]
+     * }, ...]
      */
     allCommentsWithSpeaker = []
 
@@ -45,7 +45,7 @@ class DataBase {
      * [{
      *  "party": "SPD",
      *  "occurences":100
-     * }]
+     * }, ...]
      */
     totalCommentsPerParty = []
 
@@ -57,7 +57,7 @@ class DataBase {
      *   "fullname": "Martin Schulz", 
      *   "party": "SPD", 
      *   "occurences": "100"
-     *  }]
+     *  }, ...]
      */
     totalCommentsPerPolitician = []
 
@@ -68,12 +68,18 @@ class DataBase {
      * [{
      *  "party": "SPD",
      *  "occurences": "100"
-     * }]
+     * }, ...]
      */
     totalCommentsPerPartyPassive = []
 
     /**
-     * TODO
+     * Total amount of comments per session per party.
+     * 
+     * Format:
+     * [{
+     *  "party":"BÜNDNIS 90/DIE GRÜNEN",
+     *  "values":[95,43, ...]
+     * }, ...]
      */
     totalCommentsCountPerSessionPerParty = []
     
