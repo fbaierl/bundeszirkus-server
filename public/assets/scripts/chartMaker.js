@@ -165,9 +165,6 @@ function ChartMaker()
 
     this.createTotalCommentsPerSessionPerPartyChart = function(domId){
         const ctx = document.getElementById(domId).getContext('2d')
-        ctx.canvas.width = horizontalBarChartCanvasWidth
-        ctx.canvas.height = horizontalBarChartCanvasHeight
-
 
         let range = function (n) {
             return Array(n).join().split(',').map(function(e, i) { return i; });
@@ -200,23 +197,13 @@ function ChartMaker()
         }
 
         let commentsPerSessionDatasets = function(data){
-            let bars = data.map(function (d) {
+            return data.map(function (d) {
                   return {
-                    fill: false,
+                    fill: true,
                     label: d.party,
                     data: d.values,
-                    borderColor: d.color
+                    backgroundColor: d.color
                   }})  
-            let totalValues = zipSum(data.map(d => d.values))
-            console.log(totalValues)
-            let line = {
-              label: "total",
-              data: totalValues,
-              borderColor: "gray",
-              type: "line"
-            }
-            bars.push(line)
-            return bars
           }
 
 
@@ -226,9 +213,11 @@ function ChartMaker()
             dataType: "json",
             success: function(data) {
                 new Chart(ctx, {
-                    type: 'line',
+                    type: 'bar',
                     xAxisID: "Zitzungsnummer",
                     yAxisID: "Anzahl Zwischenrufe",
+                    responsive: true,
+                    maintainAspectRatio: false,
                     data: {
                       labels: commentsPerSessionLabels(data),
                       datasets: commentsPerSessionDatasets(data)
@@ -236,14 +225,19 @@ function ChartMaker()
                     options: {
                       scales: {
                         xAxes: [{ 
-                          stacked: false,
+                          stacked: true,
                           scaleLabel: {
                             display: true,
                             labelString: 'Sitzungsnummer'
-                          }
+                          },
+                          ticks: {
+                            callback: function(tick, index, array) {
+                                return (index % 3) ? "" : tick;
+                            }
+                        }
                         }],
                         yAxes: [{ 
-                          stacked: false,
+                          stacked: true,
                           scaleLabel: {
                             display: true,
                             labelString: 'Anzahl Zwischenrufe'

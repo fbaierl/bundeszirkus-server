@@ -127,10 +127,10 @@
       nav bar 
     -->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.html">
       <img src="icon_white.png" width="45" height="45" alt="">
     </a>
-    <a class="navbar-brand" href="#">Bundeszirkus</a>
+    <a class="navbar-brand" href="index.html">Bundeszirkus</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -138,7 +138,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#">Zwischenrufe<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="articles.html">Artikel</a>
@@ -146,9 +146,6 @@
         <li class="nav-item">
           <a class="nav-link" href="impressum.html">Impressum</a>
         </li>
-        <!-- <li class="nav-item active">
-            <a class="nav-link" href="/blog/blog.html">Blog </a>
-          </li> -->
       </ul>
     </div>
   </nav>
@@ -174,7 +171,7 @@
       -->
     <div id="randomInterruptionDiv" class="jumbotron jumbo-dark">
       <div style="text-align:center">
-        <h3 style="text-align:center; margin-bottom:30px;">Zufälliger Zwischenruf.</h3>
+        <h3 style="text-align:center; margin-bottom:30px;">Zufälliger Zwischenruf</h3>
         <p class="display-4" style="font-size:1.6rem;" id="randInterruptionText" />
         <div class="lead" style="font-size:1.2rem; line-height:1; margin-bottom:20px;">
           <span id="randInterruptionFullname"></span>
@@ -192,8 +189,11 @@
         total per session per party 
     -->
     <div class="jumbotron jumbo-light">
+      <h3 style="text-align:center; margin-bottom: 10px">
+        <span>Anzahl aller Zwischenrufe</span>
+      </h3>
       <div class="container">
-        <canvas  id="statsTotalCommentsPerSessionPerPartyChart"></canvas>
+        <canvas id="statsTotalCommentsPerSessionPerPartyChart"></canvas>
       </div>
     </div>
         <!-- 
@@ -258,7 +258,7 @@
         data table 
       -->
     <div class="jumbotron jumbo-light">
-      <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags.
+      <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags
       </h3>
       <table id="allCommentsTable" class="display" style="width:100%">
         <thead>
