@@ -13,11 +13,11 @@ class PlenarySession {
     static fromXml(xml){
         let header = PlenarySession._structureHeaderDataXml(xml)
         let speeches = xmlUtil.findNodes("rede", xml)
-        .map(speechXml => Speech.fromXml(speechXml, header.sessionNumber))
-        .filter(function (el) { // this will filter out null and undefined (which may heppen if the XML is broken)
-            return el != null;
-          });
-        return new PlenarySession(header.data, header.sessionNumber, header.electionPeriod, speeches)
+            .map(speechXml => Speech.fromXml(speechXml, header.sessionNumber))
+            .filter(function (el) { // this will filter out null and undefined (which may heppen if the XML is broken)
+                return el != null;
+            });
+        return new PlenarySession(header.data, parseInt(header.sessionNumber), parseInt(header.electionPeriod), speeches)
     }
 
     /**

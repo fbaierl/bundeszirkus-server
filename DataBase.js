@@ -71,6 +71,11 @@ class DataBase {
      * }]
      */
     totalCommentsPerPartyPassive = []
+
+    /**
+     * TODO
+     */
+    totalCommentsCountPerSessionPerParty = []
     
     constructor(plenarySessions){
         this.update(plenarySessions)
@@ -96,6 +101,7 @@ class DataBase {
         this.totalCommentsPerPolitician = this._findCommentsPerPolitician().slice(0,20)
         this.totalCommentsPerPartyPassive = this._findCommentsPerPartyPassive()
         this.totalCommentsPerPoliticianPassive = this._findCommentsPerPoliticianPassive().slice(0,20)
+        this.totalCommentsCountPerSessionPerParty = this._findTotalCommentsCountPerSessionPerParty()
     }
 
     _findCommentsWithSpeaker() {
@@ -172,6 +178,60 @@ class DataBase {
                 })) 
         return aH.findOccurencesOfPoliticians(politicians).sort(function (a, b) {
             return b.occurences - a.occurences
+        })
+    }
+
+    _groupBy(xs, key) {
+        return xs.reduce(function(rv, x) {
+          (rv[x[key]] = rv[x[key]] || []).push(x);
+          return rv;
+        }, {});
+      };
+
+    _onlyUnique(value, index, self) { 
+        return self.indexOf(value) === index;
+    }
+
+    _findTotalCommentsCountPerSessionPerParty(){
+        const sortedPlenarySessions = this.plenarySessions.sort(function (a, b) {
+            if (a.sessionNumber > b.sessionNumber) {
+                return 1;
+            }
+            if (b.sessionNumber > a.sessionNumber) {
+                return -1;
+            }
+            return 0;
+        })
+
+        const commentsPerSessionGrouped = 
+                sortedPlenarySessions
+                    .map(ps =>
+                        this._groupBy(ps.speeches.flatMap(s => s.comments), 'party')
+                    )
+                        
+        const partyAndCountPerSession = commentsPerSessionGrouped.map(session => {
+            return Object.entries(session).map(([party, comments]) => {
+                return  {
+                    party : party,
+                    count : comments.length
+                }
+        })})
+
+        const partiesUnique = [... new Set(partyAndCountPerSession.flatMap(x => x.flatMap(y => y.party)))]
+
+        return partiesUnique.map(party => {
+            return {
+                party: party,
+                values: partyAndCountPerSession.map(session => {
+                    const keyValuePair = session.find(element => element.party === party)
+                    if(keyValuePair){
+                        return keyValuePair.count
+                    } else {
+                        return 0
+                    }
+                } )
+            }
+            
         })
     }
 

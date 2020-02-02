@@ -161,5 +161,94 @@ function ChartMaker()
             }
         });
     }
+
+
+    this.createTotalCommentsPerSessionPerPartyChart = function(domId){
+        const ctx = document.getElementById(domId).getContext('2d')
+
+        let range = function (n) {
+            return Array(n).join().split(',').map(function(e, i) { return i; });
+          }  
+          
+        let commentsPerSessionLabels = function(data){
+            console.log(data)
+        if(data[0]){
+            return range(data[0].values.length).map(x => x+1)
+        } else {
+            return []
+        }
+        }
+        
+        let zipSum = function(numbers) {
+            if(numbers.length > 0){
+                return numbers[0].map(function(_, i) { 
+                    return numbers.reduce(function(prev, row) {
+                    return row[i] + prev;
+                    }, 0);
+                });
+            } else {
+                return [0]
+            }
+
+        }
+        
+        let sum = function(a, b){
+            return a + b 
+        }
+
+        let commentsPerSessionDatasets = function(data){
+            return data.map(function (d) {
+                  return {
+                    fill: true,
+                    label: d.party,
+                    data: d.values,
+                    backgroundColor: d.color
+                  }})  
+          }
+
+
+        $.ajax({
+            type: "GET",
+            url: "comments_stats_total_count_per_session_per_party",
+            dataType: "json",
+            success: function(data) {
+                new Chart(ctx, {
+                    type: 'bar',
+                    xAxisID: "Zitzungsnummer",
+                    yAxisID: "Anzahl Zwischenrufe",
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    data: {
+                      labels: commentsPerSessionLabels(data),
+                      datasets: commentsPerSessionDatasets(data)
+                    },
+                    options: {
+                      scales: {
+                        xAxes: [{ 
+                          stacked: true,
+                          scaleLabel: {
+                            display: true,
+                            labelString: 'Sitzungsnummer'
+                          },
+                          ticks: {
+                            callback: function(tick, index, array) {
+                                return (index % 3) ? "" : tick;
+                            }
+                        }
+                        }],
+                        yAxes: [{ 
+                          stacked: true,
+                          scaleLabel: {
+                            display: true,
+                            labelString: 'Anzahl Zwischenrufe'
+                          }
+                        }],
+                      }
+                    }
+                  });
+            }
+        });
+
+    }
 }
 
