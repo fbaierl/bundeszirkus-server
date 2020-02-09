@@ -31,12 +31,16 @@ class DataScraper {
 
 	scrape(callback) {
 		let checkDocumentLink = this._checkDocumentLink
+
+		let xvfb = undefined
 		
 		if(useXvfb){
 			logger.info("Using Xvfb for scraping.")
-			let xvfb = new Xvfb()
+			xvfb = new Xvfb()
 			try {
+				logger.info("Xvfb start sync.")
 				xvfb.startSync()
+				logger.info("Xvfb synced.")
 			} catch (e) {
 				logger.error(e)
 			}
@@ -58,14 +62,14 @@ class DataScraper {
 					}
 				})
 				logger.info("[scraper] found " + hrefs.length + " valid links out of " + foundHrefs.length + "links in total.")
-				if(useXvfb){
-					xvfb.stopSync();
+				if(useXvfb && xvfb){
+					xvfb.stopSync()
 				}
 				callback(undefined, hrefs)
 				return
 			})
 			.catch(err => {
-				if(useXvfb){
+				if(useXvfb && xvfb){
 					xvfb.stopSync();  
 				}
 				logger.error("[scraper] did not download any files.")
