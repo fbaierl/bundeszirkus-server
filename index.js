@@ -1,4 +1,3 @@
-
 const schedule = require('node-schedule') 
 const express = require('express')
 const expressApplication = express()
@@ -6,18 +5,24 @@ const logger = require('./logger')
 
 const DataLoader = require('./DataLoader')
 const DataWriter = require('./DataWriter')
-const dataScraper = require('./dataScraper')
+const HrefScraper = require('./HrefScraper')
+const DataDownloader = require('./DataDownloader')
 
 const port = 3000
 const dataDirPath = "data"
 const outFile = "data_out.json"
+
 const dataLoader = new DataLoader()
+const hrefScraper = new HrefScraper()
+const dataDownloader = new DataDownloader()
+
 let serverRunning = false
 
-let isOfflineMode = process.argv.includes("offline")
-let writeOutData = process.argv.includes("writeData")
+const isOfflineMode = process.argv.includes("offline")
+const writeOutData = process.argv.includes("writeData")
 
 expressApplication.use(express.static('public'))
+
 expressApplication.use('/blog', express.static('blog/public'))
 
 expressApplication.use('/node_modules', express.static(__dirname + '/node_modules/'));
@@ -88,14 +93,23 @@ let loadData = function() {
     }
 }
 
+let scrapeAndLoad = function(){
+    hrefScraper.scrape((err, hrefs) => {
+        if(err){
+            logger.error(err)
+        }
+        dataDownloader.downloadData(hrefs, loadData)
+    })
+}
+
 if(!isOfflineMode){
     schedule.scheduleJob('0 * * * *', () => {
         // scrape & load data w/o restarting the server
         logger.info("Starting scheduled scraping.") 
-        dataScraper.scrape(loadData) 
+        scrapeAndLoad()
     }) 
     logger.info("Starting server with initial scraping.")
-    dataScraper.scrape(loadData)
+    scrapeAndLoad()
 } else {
     logger.info("Starting server without scraping!")
     loadData()
