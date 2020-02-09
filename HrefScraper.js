@@ -33,6 +33,7 @@ class DataScraper {
 		let checkDocumentLink = this._checkDocumentLink
 		
 		if(useXvfb){
+			logger.info("Using Xvfb for scraping.")
 			let xvfb = new Xvfb()
 			try {
 				xvfb.startSync()
