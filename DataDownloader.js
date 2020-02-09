@@ -1,6 +1,6 @@
 const logger = require('./logger')
 const fs = require('fs')
-var async = require('async');
+const async = require('async');
 const scraperjs = require('scraperjs')
 const url = require('url')
 

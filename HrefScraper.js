@@ -40,6 +40,7 @@ class DataScraper {
 				logger.error(e)
 			}
 		}
+		
 		let nightmare = new Nightmare({ show: false })
 	    // we request nightmare to browse to the bundestag.de url and extract the whole inner html
 	    nightmare
