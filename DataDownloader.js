@@ -8,9 +8,14 @@ const DATA_DOWNLOAD_DIR = './data/'
 
 class DataDownloader {
 
+
+    urlToFileName(href) {
+        return url.parse(href).pathname.split('/').pop()
+    }
+
 	async _downloadFileFromHref(href, callback) {
-	    let fileName = url.parse(href).pathname.split('/').pop();
-	    logger.info("[downloader] downloading file: " + fileName + " from href: " + href + ".")
+        let fileName = this.urlToFileName(href)
+        logger.info("[downloader] downloading file: " + fileName + " from href: " + href + ".")
 	    scraperjs.StaticScraper.create(href)
             .scrape(function($) {
                 return $.html()
@@ -20,12 +25,31 @@ class DataDownloader {
                 logger.info("[downloader] finished writing file " + fileName + ".")
                 callback(undefined)
             })
-	}
+    }
+    
+
+    async filesInData(){
+        return 
+    }
 
     downloadData(hrefs, callback){
         const _this = this
+        // don't download the data already present
+        let filesPresent = fs.readdirSync(DATA_DOWNLOAD_DIR)
+        
+        let filteredHrefs = hrefs.filter(value => {
+            let name = this.urlToFileName(value)
+            if(filesPresent.includes(name)){
+                console.log("Not downloading " + name + ": already present on disc.")
+                return false
+            } else {
+                return true
+            }
+            
+        })
+
         // parallel map: https://promise-nuggets.github.io/articles/14-map-in-parallel.html
-        async.map(hrefs, function(href, callback) {
+        async.map(filteredHrefs, function(href, callback) {
             _this._downloadFileFromHref(href, function (err) {
                 if (err) return callback(err);
                 callback(undefined);
