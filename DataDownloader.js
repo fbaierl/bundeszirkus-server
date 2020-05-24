@@ -13,18 +13,18 @@ class DataDownloader {
         return url.parse(href).pathname.split('/').pop()
     }
 
-	async _downloadFileFromHref(href, callback) {
+	async _downloadFileFromHref(href) {
         let fileName = this.urlToFileName(href)
         logger.info("[downloader] downloading file: " + fileName + " from href: " + href + ".")
-	    scraperjs.StaticScraper.create(href)
+	    await scraperjs.StaticScraper.create(href)
             .scrape(function($) {
                 return $.html()
             })
             .then(function(data) {
                 fs.writeFileSync(DATA_DOWNLOAD_DIR + fileName, data)
                 logger.info("[downloader] finished writing file " + fileName + ".")
-                callback(undefined)
             })
+        return fileName
     }
     
 
@@ -32,35 +32,36 @@ class DataDownloader {
         return 
     }
 
-    downloadData(hrefs, callback){
-        const _this = this
+
+    /**
+     * Downloads files from the given hrefs and saves it in data, if not already present.
+     * @param {*} hrefs hrefs to download
+     * @returns file names of downloaded files
+     */
+    async downloadData(hrefs){
         // don't download the data already present
         let filesPresent = fs.readdirSync(DATA_DOWNLOAD_DIR)
-        
         let filteredHrefs = hrefs.filter(value => {
             let name = this.urlToFileName(value)
             if(filesPresent.includes(name)){
-                console.log("Not downloading " + name + ": already present on disc.")
+                logger.info("Not downloading " + name + ": already present on disc.")
                 return false
             } else {
                 return true
             }
-            
         })
-
-        // parallel map: https://promise-nuggets.github.io/articles/14-map-in-parallel.html
-        async.map(filteredHrefs, function(href, callback) {
-            _this._downloadFileFromHref(href, function (err) {
-                if (err) return callback(err);
-                callback(undefined);
-            })
-        }, function(err) {
-            if(err){
-                logger.error(err)
+        let downloadedFileNames = []
+        if(filteredHrefs.length <= 0) {
+            logger.info("[downloader] nothing to download.")
+        } else {
+            logger.info("[downloader] starting downloads...")
+            for(const href of filteredHrefs){
+                downloadedFileNames.push(await this._downloadFileFromHref(href))
             }
             logger.info("[downloader] finished all downloads.")
-            callback()
-        });
+            
+        }
+        return downloadedFileNames
     }
 }
 
