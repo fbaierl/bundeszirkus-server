@@ -24,6 +24,7 @@
     "cheerio": "^1.0.0-rc.3",
     "electron": "^7.1.11",
     "express": "^4.17.1",
+    "isomorphic-git": "^1.4.0",
     "nightmare": "^3.0.2",
     "node-schedule": "^1.3.2",
     "scraperjs": "^1.2.0",

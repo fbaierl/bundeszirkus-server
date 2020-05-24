@@ -29,7 +29,7 @@ class DataScraper {
 	    return undefined
 	}
 
-	scrape(callback) {
+	async scrape() {
 		let checkDocumentLink = this._checkDocumentLink
 
 		let xvfb = undefined
@@ -47,14 +47,14 @@ class DataScraper {
 		}
 		
 		let nightmare = new Nightmare({ show: false })
-	    // we request nightmare to browse to the bundestag.de url and extract the whole inner html
-	    nightmare
+		// we request nightmare to browse to the bundestag.de url and extract the whole inner html
+		let hrefs = []
+	    await nightmare
 	        .goto(BT_LINK_OPENDATA)
 	        .wait(3000)
 			.evaluate(() => Array.from(document.querySelectorAll('.bt-link-dokument')).map(a => a.href)) // return of document.querySelectorAll is not serializable.
 			.end()
 			.then(foundHrefs => {
-				let hrefs = [];
 				foundHrefs.forEach(href => {
 					let candidate = checkDocumentLink(href)
 					if(candidate){
@@ -65,8 +65,6 @@ class DataScraper {
 				if(useXvfb && xvfb){
 					xvfb.stopSync()
 				}
-				callback(undefined, hrefs)
-				return
 			})
 			.catch(err => {
 				if(useXvfb && xvfb){
@@ -74,9 +72,8 @@ class DataScraper {
 				}
 				logger.error("[scraper] did not download any files.")
 				logger.error(err)
-				callback(err, undefined)
-				return
 			})
+		return hrefs
 	}
 }
 

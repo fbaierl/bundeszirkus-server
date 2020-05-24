@@ -7,6 +7,7 @@ const DataLoader = require('./DataLoader')
 const DataWriter = require('./DataWriter')
 const HrefScraper = require('./HrefScraper')
 const DataDownloader = require('./DataDownloader')
+const DataPusher = require('./DataPusher')
 
 const port = 3000
 const dataDirPath = "data"
@@ -15,6 +16,7 @@ const outFile = "data_out.json"
 const dataLoader = new DataLoader()
 const hrefScraper = new HrefScraper()
 const dataDownloader = new DataDownloader()
+const dataPusher = new DataPusher()
 
 let serverRunning = false
 
@@ -69,7 +71,6 @@ expressApplication.get("/comments_stats_total_count_per_session_per_party", func
     res.send(dataLoader.statsTotalCommentsCountPerSessionPerParty())
 })
 
-
 let startServer = function() { 
     logger.info("Starting the server.")
     expressApplication.listen(port, (err) =>  {
@@ -93,14 +94,17 @@ let loadData = function() {
     }
 }
 
-let scrapeAndLoad = function(){
-    hrefScraper.scrape((err, hrefs) => {
-        if(err){
-            logger.error(err)
-        }
-        dataDownloader.downloadData(hrefs, loadData)
-    })
+async function scrapeAndLoad() {
+    const hrefs = await hrefScraper.scrape()
+    const downloadedFileNames = await dataDownloader.downloadData(hrefs)
+    console.log(downloadedFileNames)
+    if(downloadedFileNames.length > 0){
+        logger.info("Downloaded new data, pushing to repository...")
+        await dataPusher.commitAndPushData(downloadedFileNames)
+    }
+    loadData()
 }
+
 
 if(!isOfflineMode){
     schedule.scheduleJob('0 * * * *', () => {
@@ -114,5 +118,4 @@ if(!isOfflineMode){
     logger.info("Starting server without scraping!")
     loadData()
 }
-
 
