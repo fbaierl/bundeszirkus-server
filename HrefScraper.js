@@ -61,7 +61,7 @@ class DataScraper {
 						hrefs.push(candidate)
 					}
 				})
-				logger.info("[scraper] found " + hrefs.length + " valid links out of " + foundHrefs.length + "links in total.")
+				logger.info("[scraper] found " + hrefs.length + " valid links out of " + foundHrefs.length + " links in total.")
 				if(useXvfb && xvfb){
 					xvfb.stopSync()
 				}

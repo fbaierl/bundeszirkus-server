@@ -1,6 +1,7 @@
 const fileSystem = require('fs')
 const DOMParser = new (require('xmldom')).DOMParser
 const logger = require('./logger')
+const path = require('path')
 
 const knowledge = require('./knowledge')
 const PlenarySession = require('./model/PlenarySession')
@@ -30,7 +31,7 @@ class DataLoader {
         logger.info("[loader] loading " + files.length + " files.")
         logger.debug("[loader] loading files:" + files)
         let plenarySessions = files.map(file => {
-            let xml = this._readXmlFile(dataDirPath + "/" + file)
+            let xml = this._readXmlFile(path.join(dataDirPath, file))
             return PlenarySession.fromXml(xml)
         })
         dataBase.reset()

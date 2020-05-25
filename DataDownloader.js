@@ -2,8 +2,7 @@ const logger = require('./logger')
 const fs = require('fs')
 const scraperjs = require('scraperjs')
 const url = require('url')
-
-const DATA_DOWNLOAD_DIR = './data/'
+const path = require('path');
 
 class DataDownloader {
 
@@ -12,7 +11,7 @@ class DataDownloader {
         return url.parse(href).pathname.split('/').pop()
     }
 
-	async _downloadFileFromHref(href) {
+	async _downloadFileFromHref(dataDirPath, href) {
         let fileName = this.urlToFileName(href)
         logger.info("[downloader] downloading file: " + fileName + " from href: " + href + ".")
 	    await scraperjs.StaticScraper.create(href)
@@ -20,7 +19,7 @@ class DataDownloader {
                 return $.html()
             })
             .then(function(data) {
-                fs.writeFileSync(DATA_DOWNLOAD_DIR + fileName, data)
+                fs.writeFileSync(path.join(dataDirPath, fileName), data)
                 logger.info("[downloader] finished writing file " + fileName + ".")
             })
         return fileName
@@ -37,9 +36,9 @@ class DataDownloader {
      * @param {*} hrefs hrefs to download
      * @returns file names of downloaded files
      */
-    async downloadData(hrefs){
+    async downloadData(dataDirPath, hrefs){
         // don't download the data already present
-        let filesPresent = fs.readdirSync(DATA_DOWNLOAD_DIR)
+        let filesPresent = fs.readdirSync(dataDirPath)
         let filteredHrefs = hrefs.filter(value => {
             let name = this.urlToFileName(value)
             if(filesPresent.includes(name)){
@@ -55,7 +54,7 @@ class DataDownloader {
         } else {
             logger.info("[downloader] starting downloads...")
             for(const href of filteredHrefs){
-                downloadedFileNames.push(await this._downloadFileFromHref(href))
+                downloadedFileNames.push(await this._downloadFileFromHref(dataDirPath, href))
             }
             logger.info("[downloader] finished all downloads.")
             

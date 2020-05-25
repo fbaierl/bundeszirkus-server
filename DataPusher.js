@@ -2,26 +2,31 @@ const git = require('isomorphic-git')
 const http = require('isomorphic-git/http/node')
 const fs = require('fs')
 const logger = require('./logger')
+const path = require('path')
 
 class DataPusher {
 
-    async commitAndPushData(fileNames, token) {
+    async commitAndPushData(dataDirPath, dataPath, fileNames, token) {
 
+        let files = fileNames.map(f => path.join(dataPath, f))
         // stage files
-        for(const file of fileNames){
-            await git.add({ fs, dir: '.', filepath: 'data/' + file })
+        for(const file of files){
+            await git.add({ 
+              fs, 
+              dir: dataDirPath, 
+              filepath: file })
         }
         logger.info("[pusher] staged files: " + fileNames + ".")
 
         // commit   
         let sha = await git.commit({
             fs,
-            dir: '.',
+            dir: dataDirPath,
             author: {
               name: 'Florian Baierl [server-bot]',
               email: 'fbaierl1@gmail.com',
             },
-            message: '[server-bot] added new data: ' + fileNames
+            message: '[data-bot] added new data: ' + fileNames
           })
         logger.info("[pusher] commited: " + sha + ".")
 
@@ -30,11 +35,10 @@ class DataPusher {
             username: token, // github allows to use token as username
             fs,
             http,
-            dir: '.',
+            dir: dataDirPath,
             remote: 'origin',
             ref: 'master',
             onAuth: url => {
-              console.log("ON AUTH ###################")
               return {
                 username: token
               }

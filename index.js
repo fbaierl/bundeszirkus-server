@@ -3,6 +3,7 @@ const express = require('express')
 const expressApplication = express()
 const logger = require('./logger')
 const fs = require('fs')
+const path = require('path');
 
 const DataLoader = require('./DataLoader')
 const DataWriter = require('./DataWriter')
@@ -11,7 +12,9 @@ const DataDownloader = require('./DataDownloader')
 const DataPusher = require('./DataPusher')
 
 const port = 3000
-const dataDirPath = "data"
+const dataRepoDirPath = "./../bundeszirkus-data" // data is in a second repo
+const dataPath = "plenary_minutes" // data inside data repo
+const relativeDataPath = path.join(dataRepoDirPath, dataPath)
 const outFile = "data_out.json"
 
 const dataLoader = new DataLoader()
@@ -85,7 +88,7 @@ let startServer = function() {
 }
 
 let loadData = function() {
-    dataLoader.loadDataSync(dataDirPath)
+    dataLoader.loadDataSync(relativeDataPath)
     if(writeOutData){
         const writer = new DataWriter()
         writer.writeJSONSync(outFile, dataLoader.plenarySessions())
@@ -97,14 +100,14 @@ let loadData = function() {
 
 async function scrapeAndLoad() {
     const hrefs = await hrefScraper.scrape()
-    const downloadedFileNames = await dataDownloader.downloadData(hrefs)
+    const downloadedFileNames = await dataDownloader.downloadData(relativeDataPath, hrefs)
 
     try {
         // read github token
         let auth = JSON.parse(fs.readFileSync('authentication.json', "utf8"))
         if(downloadedFileNames.length > 0){
             logger.info("Downloaded new data, pushing to repository...")
-            await dataPusher.commitAndPushData(downloadedFileNames, auth.token)
+            await dataPusher.commitAndPushData(dataRepoDirPath, dataPath, downloadedFileNames, auth.token)
         }
     } catch (e) {
         logger.error(e)
