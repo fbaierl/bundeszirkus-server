@@ -5,7 +5,7 @@ const logger = require('./logger')
 
 class DataPusher {
 
-    async commitAndPushData(fileNames) {
+    async commitAndPushData(fileNames, token) {
 
         // stage files
         for(const file of fileNames){
@@ -27,15 +27,18 @@ class DataPusher {
 
         // push
         let pushResult = await git.push({
+            username: token, // github allows to use token as username
             fs,
             http,
             dir: '.',
             remote: 'origin',
             ref: 'master',
-            onAuthFailure: (url, auth) => { 
-                logger.info("[pusher] auth failure for url " + url + ".") 
-                return { cancel: true }
-            },
+            onAuth: url => {
+              console.log("ON AUTH ###################")
+              return {
+                username: token
+              }
+            }
           })
         logger.info("[pusher] push result: " + pushResult)
     }

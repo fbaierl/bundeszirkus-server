@@ -2,6 +2,7 @@ const schedule = require('node-schedule')
 const express = require('express')
 const expressApplication = express()
 const logger = require('./logger')
+const fs = require('fs')
 
 const DataLoader = require('./DataLoader')
 const DataWriter = require('./DataWriter')
@@ -97,11 +98,18 @@ let loadData = function() {
 async function scrapeAndLoad() {
     const hrefs = await hrefScraper.scrape()
     const downloadedFileNames = await dataDownloader.downloadData(hrefs)
-    console.log(downloadedFileNames)
-    if(downloadedFileNames.length > 0){
-        logger.info("Downloaded new data, pushing to repository...")
-        await dataPusher.commitAndPushData(downloadedFileNames)
+
+    try {
+        // read github token
+        let auth = JSON.parse(fs.readFileSync('authentication.json', "utf8"))
+        if(downloadedFileNames.length > 0){
+            logger.info("Downloaded new data, pushing to repository...")
+            await dataPusher.commitAndPushData(downloadedFileNames, auth.token)
+        }
+    } catch (e) {
+        logger.error(e)
     }
+
     loadData()
 }
 
