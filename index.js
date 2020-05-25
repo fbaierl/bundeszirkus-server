@@ -104,7 +104,8 @@ async function scrapeAndLoad() {
 
     try {
         // read github token
-        let auth = JSON.parse(fs.readFileSync('authentication.json', "utf8"))
+        const authFilePath = path.join(dataRepoDirPath, 'authentication.json')
+        let auth = JSON.parse(fs.readFileSync(authFilePath, "utf8"))
         if(downloadedFileNames.length > 0){
             logger.info("Downloaded new data, pushing to repository...")
             await dataPusher.commitAndPushData(dataRepoDirPath, dataPath, downloadedFileNames, auth.token)
