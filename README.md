@@ -12,13 +12,13 @@ For the moment the [data repositry](https://github.com/fbaierl/bundeszirkus-data
 node index.js
 ```
 
-Xvfb has a number of dependencies to get working. Install the following:
+Xvfb has a number of dependencies. Install the following:
 
 ```
 apt-get update && apt-get install -y xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic x11-apps clang libdbus-1-dev libgtk2.0-dev libnotify-dev libgnome-keyring-dev libgconf2-dev libasound2-dev libcap-dev libcups2-dev libxtst-dev libxss1 libnss3-dev gcc-multilib g++-multilib
 ```
 
-Testing with nightmare:
+Test with nightmare:
 
 ```
 DEBUG=nightmare xvfb-run -a --server-args="-screen 0 1920x1080x24" node index.js
