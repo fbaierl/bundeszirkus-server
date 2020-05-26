@@ -29,6 +29,18 @@ Run with nightmare:
 xvfb-run -a --server-args="-screen 0 1920x1080x24" node index.js
 ```
 
+Setup on remote (run locally):
+
+```
+pm2 deploy ecosystem.config.js production setup
+```
+
+Deploy to remote (run locally):
+
+```
+npm run-script deploy
+```
+
 ## Useful commands
 
 ### Get the log file from remote
