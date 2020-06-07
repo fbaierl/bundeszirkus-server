@@ -1,4 +1,4 @@
-Link to the webpage: [bundeszirkus.de](http://bundeszirkus.de)
+# [bundeszirkus.de](http://bundeszirkus.de)
 
 ![Screenshot](/screencapture-bundeszirkus.png?raw=true "Screenshot Bundeszirkus.de")
 
@@ -47,6 +47,22 @@ npm run-script deploy
 
 ```
 sudo scp -i ~/.ssh/bundeszirkus.pem ubuntu@ec2-xx-xxx-xxx-xxx.us-east-2.compute.amazonaws.com:/home/ubuntu/bundeszirkus-server/current/bundeszirkus.log ~/remote-log.log
+```
+
+## Blog
+
+Make sure the theme submodule is checked out correctly on your local device before creating new blog posts.
+
+```
+hexo init
+```
+
+```
+hexo new example-post
+```
+
+```
+hexo generate
 ```
 
 ## MIT License
