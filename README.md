@@ -1,4 +1,4 @@
-# [bundeszirkus.de](http://bundeszirkus.de)
+# [Bundeszirkus.de](http://bundeszirkus.de)
 
 ![Screenshot](/screencapture-bundeszirkus.png?raw=true "Screenshot Bundeszirkus.de")
 
