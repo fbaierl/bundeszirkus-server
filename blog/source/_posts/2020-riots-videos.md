@@ -96,13 +96,14 @@ src="https://www.bitchute.com/embed/Jd140JWaU7X5/">
 
 {% raw %}
 <iframe width="100%" height="360"
-src="https://www.bitchute.com/embed/9qqx7qg5RWTy/">
+src="https://www.bitchute.com/embed/goo8pIbxsniQ/">
 </iframe>
 {% endraw %}
 
 {% raw %}
+<!-- 17 -->
 <iframe width="100%" height="360"
-src="https://www.bitchute.com/embed/PqxcCwmS2wLk/">
+src="https://www.bitchute.com/embed/9qqx7qg5RWTy/">
 </iframe>
 {% endraw %}
 
