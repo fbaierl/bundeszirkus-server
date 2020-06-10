@@ -4,7 +4,7 @@ date: 2020-06-07 18:57:50
 tags:
 ---
 
-A small compilation of the 2020 riots after George Floyds death.
+A 'small' collection of videos taken during the 2020 riots, that erupted after George Floyds death.
 
 The protests and riots began in Minneapolis on May 26, 2020, following the death of George Floyd, a 46-year-old black man, after Derek Chauvin, a white police officer, knelt on Floyd's neck for almost nine minutes during an arrest the previous day.
 
@@ -114,7 +114,7 @@ src="https://www.bitchute.com/embed/woccYetUTUJg/">
 
 {% raw %}
 <iframe width="100%" height="360"
-src="https://www.bitchute.com/embed/KX2zi5uyuu9U/">
+src="https://www.bitchute.com/embed/PqxcCwmS2wLk/">
 </iframe>
 {% endraw %}
 
