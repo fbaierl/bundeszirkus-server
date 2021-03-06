@@ -11,18 +11,6 @@ class Speaker {
         }
 
         /**
-         * Sometimes cities like 'Bremen' are used in the <fraktion>-tag, so this function checks
-         * if a party is really a valid party.
-         *  
-         * @param {*} party name of the party
-         */
-        static _checkParty(party){
-                return knowledge.validParties
-                        .map(p => p.toLowerCase())
-                        .includes(party.toLowerCase())
-        }
-
-        /**
          * Transforms a speaker (<redner>) xml tag into json.
          * 
          * example 1:
@@ -73,7 +61,7 @@ class Speaker {
                         firstname = firstname.replace(role, "").trim()
                 } else if (parties.length > 0){
                         party = modelUtil.cleanUpParty(parties[0].trim())
-                        if(!this._checkParty(party)){
+                        if(!knowledge.isValidParty(party)){
                                 return
                         }
                 } else {

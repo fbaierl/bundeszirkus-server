@@ -21,5 +21,12 @@ exports.cleanUpParty = function(raw) {
    if(raw.toLowerCase() === "fraktionslos"){
        raw = "Fraktionslos"
    }
+   // more work-around for faulty xml files
+   if(raw.includes("FDP")){
+       raw = "FDP"
+   }
+   if(raw.includes("DIE LINKE")){
+       raw = "DIE LINKE"
+   }
    return raw
 }

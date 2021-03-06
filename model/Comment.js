@@ -1,5 +1,6 @@
 const util = require('../util')
 const modelUtil = require('./modelUtil')
+const knowledge = require('../knowledge')
 
 
 class Comment {
@@ -38,6 +39,9 @@ class Comment {
                         let fullname = util.cleanWhiteSpaces(modelUtil.cleanUpFullName(match[1].trim()))
                         let party = util.cleanWhiteSpaces(modelUtil.cleanUpParty(match[2].trim()))
                         let text = util.cleanWhiteSpaces(match[3].trim())
+                        if(!knowledge.isValidParty(party)){
+                                return {invalid:true}
+                        }
                         return new Comment(fullname, party, text)
                 } else {
                         return {invalid:true}

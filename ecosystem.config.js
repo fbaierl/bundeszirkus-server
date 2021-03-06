@@ -16,7 +16,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: 'ec2-18-216-207-181.us-east-2.compute.amazonaws.com',
+      host: 'ec2-3-142-48-17.us-east-2.compute.amazonaws.com',
       key: '~/.ssh/bundeszirkus.pem',
       ref: 'origin/master',
       repo: 'git@github.com:fbaierl/bundeszirkus-server.git',

@@ -27,8 +27,19 @@ exports.partyColor = function(partyName){
     }    
 }
 
-exports.validParties = 
-['AfD', 'CDU/CSU', 'CDU', 'CSU', 'BÜNDNIS 90/DIE GRÜNEN', 'FDP', 'SPD', 'DIE LINKE', 'FRAKTIONSLOS']
-
 exports.allParties = 
 ['AfD', 'CDU/CSU', 'BÜNDNIS 90/DIE GRÜNEN', 'FDP', 'SPD', 'DIE LINKE', 'FRAKTIONSLOS']
+
+
+/**
+ * Sometimes cities like 'Bremen' are used in the <fraktion>-tag, so this function checks
+ * if a party is really a valid party.
+ *  
+ * @param {*} party name of the party
+ */
+exports.isValidParty = function(party) {
+    let validParties = ['AfD', 'CDU/CSU', 'CDU', 'CSU', 'BÜNDNIS 90/DIE GRÜNEN', 'FDP', 'SPD', 'DIE LINKE', 'FRAKTIONSLOS']
+    return validParties
+            .map(p => p.toLowerCase())
+            .includes(party.toLowerCase())
+}
