@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- data table -->
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="//cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css" />
+  <script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+  <!-- cookie banner -->
+  <script type="text/javascript" src="/assets/scripts/cookie.notice.min.js"></script>
+
+  <!-- charts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script type="text/javascript" src="/node_modules/chart.piecelabel.js/src/Chart.PieceLabel.js"></script>
+  <script type="text/javascript" src="/assets/scripts/chartMaker.js"></script>
+
+  <!-- yadcf (DataTables plugin) -->
+  <script type="stylesheet" src="/node_modules/yadcf/jquery.dataTables.yadcf.css"></script>
+  <script type="text/javascript" src="/node_modules/yadcf/jquery.dataTables.yadcf.js"></script>
+
+  <title>Bundeszirkus</title>
+
+
+  <!-- icon -->
+  <link rel="icon" type="image/png" href="icon_black.png" />
+
+  <link href="bundeszirkus.css" rel="stylesheet">
+
+
+  <script src="../assets/scripts/nav-bar.js?current=speeches" id="nav-bar"></script>
+
+</head>
+<body>
+  <div id="navbar"> </div>
+
+  <!--
+      main
+    -->
+  <main role="main">
+
+ 
+        
+    <div class="jumbotron jumbo-light horizontal-center">
+      <div style="font-size:1.2rem; max-width:900px;">
+        Bundeszirkus.de sammelt automatisiert Plenarprotokolle aus dem Deutschen Bundestag um diese in Bezug auf
+        Zwischenrufe zu analysieren.
+        Inspiriert wurde das Projekt von einem
+        <u><a style="color:white;"
+            href="https://projekte.sueddeutsche.de/artikel/politik/die-afd-im-bundestag-e362724/">Artikel der
+            Süddeutschen Zeitung</a></u>.
+      </div>
+    </div>
+
+
+    <div id="footer"> </div>
+
+    <script>
+      $("#footer").load("/footer.html");
+    </script>
+
+  </main>
+</body>
+
+</html>

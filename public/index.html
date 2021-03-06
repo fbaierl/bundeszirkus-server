@@ -48,21 +48,93 @@
 
   <link href="bundeszirkus.css" rel="stylesheet">
 
+  <!-- Scripts -->
+  <script>
 
-  <script src="../assets/scripts/nav-bar.js?current=speeches" id="nav-bar"></script>
+    $(document).ready(function () {
+        loadRandomInterruption();
+        let chartMaker = new ChartMaker()
+        chartMaker.createTotalPartiesChart('statsTotalPartiesChart')
+        chartMaker.createTotalPoliticiansChart('statsTotalPoliticiansChart')
+        chartMaker.createTotalPartiesPassiveChart('statsTotalPartiesPassiveChart')
+        chartMaker.createTotalPoliticiansPassiveChart('statsTotalPoliticiansPassiveChart')  
+        chartMaker.createTotalCommentsPerSessionPerPartyChart('statsTotalCommentsPerSessionPerPartyChart')  
+        initDataTable();
+    })
 
+    function initDataTable() {
+      let table = $('#allCommentsTable').DataTable({
+        processing: true,
+        serverSide: true,
+        ordering: false,
+        bLengthChange: false,
+        language: {
+          url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/German.json"
+        },
+        ajax: "comments_server_processing",
+        sScrollX: "100%",
+        columns: [
+          { data: 'comment.text' },
+          { data: 'comment.fullname' },
+          { data: 'comment.party' },
+          { data: 'speaker.fullname' },
+          { data: 'speaker.partyOrRole' },
+        ]
+      });
+
+      let yadcfColumnDef = function (i) {
+        return {
+          column_number: i,
+          filter_type: "text",
+          filter_delay: 500,
+          filter_reset_button_text: false,
+          filter_default_label: "Filter"
+        }
+      }
+
+      yadcf.init(table, [
+        yadcfColumnDef(0),
+        yadcfColumnDef(1),
+        yadcfColumnDef(2),
+        yadcfColumnDef(3),
+        yadcfColumnDef(4),
+      ]);
+    }
+
+    function updateRandomInterruption(interruption) {
+      $('#randInterruptionSpeakerFullname').html(interruption.speaker.fullname)
+      $('#randInterruptionSpeakerPartyOrRole').html("(" + interruption.speaker.party + interruption.speaker.role + ")")
+      $('#randInterruptionFullname').html(interruption.comment.fullname)
+      $('#randInterruptionParty').html("(" + interruption.comment.party + ")")
+      $('#randInterruptionText').html("„" + interruption.comment.text + "“")
+    }
+
+    function loadRandomInterruption() {
+      $.ajax({
+        type: "GET",
+        url: "random_comment",
+        dataType: "json",
+        success: function (response) {
+          updateRandomInterruption(response)
+        }
+      });
+    }
+ 
+  </script>
+
+  <script src="../assets/scripts/nav-bar.js?current=comments" id="nav-bar"></script>
 </head>
 <body>
   <div id="navbar"> </div>
-
+  
   <!--
       main
     -->
   <main role="main">
-
- 
-        
-    <div class="jumbotron jumbo-light horizontal-center">
+    <!-- 
+          intro 
+        -->
+    <div class="jumbotron jumbo-dark horizontal-center">
       <div style="font-size:1.2rem; max-width:900px;">
         Bundeszirkus.de sammelt automatisiert Plenarprotokolle aus dem Deutschen Bundestag um diese in Bezug auf
         Zwischenrufe zu analysieren.
@@ -72,14 +144,121 @@
             Süddeutschen Zeitung</a></u>.
       </div>
     </div>
+    <!--
+        random comment
+      -->
+    <div id="randomInterruptionDiv" class="jumbotron jumbo-dark">
+      <div style="text-align:center">
+        <h3 style="text-align:center; margin-bottom:30px;">Zufälliger Zwischenruf</h3>
+        <p class="display-4" style="font-size:1.6rem;" id="randInterruptionText" />
+        <div class="lead" style="font-size:1.2rem; line-height:1; margin-bottom:20px;">
+          <span id="randInterruptionFullname"></span>
+          <span id="randInterruptionParty"></span>
+          <span> zur Rede von </span>
+          <span id="randInterruptionSpeakerFullname"></span>
+          <span id="randInterruptionSpeakerPartyOrRole"></span>
+          <!-- TODO "in der x. Sitzung der aktuellen Legislaturperiode"-->
+        </div>
+        <button id="nextInterruptionButton" onclick="loadRandomInterruption()" style="margin-top:20px;"
+          class="btn btn-info">Nächster Zwischenruf</button>
+      </div>
+    </div>
+    <!--
+        total per session per party 
+    -->
+    <div class="jumbotron jumbo-light">
+      <h3 style="text-align:center; margin-bottom: 10px">
+        <span>Anzahl aller Zwischenrufe</span>
+      </h3>
+      <div class="container" style="height: 500px;">
+        <canvas id="statsTotalCommentsPerSessionPerPartyChart"></canvas>
+      </div>
+    </div>
+        <!-- 
+          active 
+        -->
+    <div class="jumbotron jumbo-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm mb-5">
+            <h3 style="text-align:center; margin-bottom: 10px">
+              <span>Welche </span>
+              <span style="text-decoration: underline;">Partei</span>
+              <span> hat am meisten dazwischengerufen?</span>
+            </h3>
+            <div class="pie-chart-container">
+              <canvas id="statsTotalPartiesChart"></canvas>
+            </div>
+          </div>
+          <div class="col-sm mb-5">
+            <h3 style="text-align:center; margin-bottom: 10px">
+              <span>Welcher </span>
+              <span style="text-decoration: underline;">Politiker</span>
+              <span> hat am meisten dazwischengerufen?</span>
+            </h3>
+            <div style="max-height:550px; max-width:400px; margin:auto">
+              <canvas id="statsTotalPoliticiansChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+        passive
+      -->
+    <div class="jumbotron jumbo-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm mb-5">
+            <h3 style="text-align:center; margin-bottom: 10px">
+              <span>Welcher </span>
+              <span style="text-decoration: underline;">Partei</span>
+              <span> wurde am meisten dazwischengerufen?</span>
+            </h3>
+            <div class="pie-chart-container">
+              <canvas id="statsTotalPartiesPassiveChart"></canvas>
+            </div>
+          </div>
+          <div class="col-sm mb-5">
+            <h3 style="text-align:center; margin-bottom: 10px">
+              <span>Welchem </span>
+              <span style="text-decoration: underline;">Politiker</span>
+              <span> wurde am meisten dazwischengerufen?</span>
+            </h3>
+            <div style="max-height:550px; max-width:400px; margin:auto">
+              <canvas id="statsTotalPoliticiansPassiveChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 
+        data table 
+      -->
+    <div class="jumbotron jumbo-light">
+      <h3 style="text-align:center; margin-bottom:20px;">Alle Zwischenrufe der 19. Wahlperiode des Deutschen Bundestags
+      </h3>
+      <table id="allCommentsTable" class="display" style="width:100%">
+        <thead>
+          <tr>
+            <th>Zwischenruf</th>
+            <th>Name Zwischenrufer</th>
+            <th>Partei Zwischenrufer</th>
+            <th>Name Sprecher</th>
+            <th>Fraktion/Rolle Sprecher</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
 
-
+        <!-- 
+      footer 
+    -->
     <div id="footer"> </div>
 
     <script>
-      $("#footer").load("/footer.html");
+      $("#footer").load( "/footer.html");
     </script>
-
   </main>
 </body>
 
